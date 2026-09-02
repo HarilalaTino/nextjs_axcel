@@ -1,6 +1,11 @@
+import NavMenu from "@/components/layout/header";
+import TopMenu from "@/components/layout/top-menu";
 
 export default function Home() {
   return (
-    <h1 className="text-2xl text-center">Welcome</h1>
+    <>
+    <TopMenu />
+    <NavMenu />
+    </>
   );
 }
