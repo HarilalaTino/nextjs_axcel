@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
+import AnimatedCounter from './animated-counter';
 
 const FEATURES = [
     "Nous assistons les étrangers envisageant d'investir à Madagascar.",
@@ -29,57 +29,6 @@ function ArrowIcon({ className = '' }: { className?: string }) {
     );
 }
 
-function AnimatedCounter({ target }: { target: number }) {
-    const counterRef = useRef<HTMLSpanElement>(null);
-    const [count, setCount] = useState(0);
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const counter = counterRef.current;
-
-        if (!counter) return;
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.1 },
-        );
-
-        observer.observe(counter);
-
-        return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => {
-        if (!isVisible) return;
-
-        const duration = 1500;
-        const startTime = performance.now();
-        let animationFrame: number;
-
-        const animate = (currentTime: number) => {
-            const progress = Math.min((currentTime - startTime) / duration, 1);
-            const easedProgress = 1 - Math.pow(1 - progress, 3);
-
-            setCount(Math.round(easedProgress * target));
-
-            if (progress < 1) {
-                animationFrame = requestAnimationFrame(animate);
-            }
-        };
-
-        animationFrame = requestAnimationFrame(animate);
-
-        return () => cancelAnimationFrame(animationFrame);
-    }, [isVisible, target]);
-
-    return <span ref={counterRef}>+{count}</span>;
-}
-
 export default function AboutSection() {
     return (
         <section className="relative overflow-hidden bg-white py-20 sm:py-28">
@@ -100,11 +49,6 @@ export default function AboutSection() {
             <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
                 {/* Colonne image */}
                 <div className="relative">
-                    {/* forme décorative derrière l'image */}
-                    <div
-                        className="absolute -left-5 -top-5 h-full w-full rounded-[2rem] bg-primary/90"
-                        aria-hidden="true"
-                    />
 
                     <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/20 sm:aspect-[5/6]">
                         <Image
@@ -117,10 +61,10 @@ export default function AboutSection() {
                     </div>
 
                     {/* badge flottant */}
-                    <div className="absolute -bottom-6 -right-6 flex items-center gap-3 rounded-2xl bg-white px-12 py-4 shadow-xl shadow-primary/15 ring-1 ring-slate-100 sm:-right-8 sm:-bottom-8">
+                    <div className="absolute -bottom-6 -right-6 flex items-center gap-3 rounded-2xl bg-white px-12 py-4 shadow-md shadow-primary/15 ring-1 ring-slate-100 sm:-right-8 sm:-bottom-8">
                         <div>
                             <p className="text-4xl font-extrabold leading-none text-primary">
-                                <AnimatedCounter target={300} />
+                               +<AnimatedCounter target={300} />
                             </p>
                             <p className="mt-1 text-xs font-medium text-slate-500">
                                 entreprises créées
@@ -139,8 +83,7 @@ export default function AboutSection() {
                     </span>
 
                     <h2 className="mt-4 text-3xl font-extrabold leading-tight text-primary sm:text-4xl">
-                        Créez votre société en toute sérénité,{' '}
-                        <span className="text-secondary">nous nous occupons de tout</span>
+                        Créez votre société en toute sérénité, nous nous occupons de tout
                     </h2>
 
                     <p className="mt-6 text-base leading-relaxed text-slate-500">

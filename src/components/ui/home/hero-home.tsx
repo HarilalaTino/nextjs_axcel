@@ -10,6 +10,7 @@ import {
     Users,
     Headset,
     HeartHandshake,
+    Landmark,
 } from 'lucide-react';
 
 const HERO_IMAGES = ['/images/home/hero-bg-1.jpg', '/images/home/hero-bg-2.jpg'];
@@ -76,7 +77,7 @@ export const SERVICES: ServiceCard[] = [
         description: 'Réservez une salle équipée pour vos réunions et rendez-vous professionnels.',
         ctaLabel: 'Réserver',
         href: '/location-salle-reunion',
-        icon: <Users size={20} />
+        icon: <Landmark size={20}/>
     },
     {
         title: 'Conseil et Assistance',
