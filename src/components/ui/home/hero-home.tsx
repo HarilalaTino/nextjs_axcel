@@ -7,7 +7,6 @@ import {
     User,
     Building2,
     MapPin,
-    Users,
     Headset,
     HeartHandshake,
     Landmark,
