@@ -41,7 +41,7 @@ function AnimatedServiceCard({ service, index }: { service: ServiceCard; index: 
 
 export default function ProfessionalServices() {
     return (
-        <section className="bg-slate-50 px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <section className="bg-slate-50 px-4 py-20 sm:px-6 sm:py-28 lg:px-8 relative overflow-hidden">
             <div className="mx-auto max-w-6xl">
                 <div className="mx-auto mb-12 max-w-2xl text-center">
                     <span className="text-sm font-semibold uppercase tracking-wide text-secondary">
@@ -61,6 +61,10 @@ export default function ProfessionalServices() {
                     ))}
                 </div>
             </div>
+            <div
+                className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
+                aria-hidden="true"
+            />
         </section>
     );
 }
