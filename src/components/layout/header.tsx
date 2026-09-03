@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import Image from "next/image";
-import TopMenu from './top-menu';
 
 type SubItem = {
   label: string;
@@ -16,33 +15,37 @@ type NavItem = {
   submenu?: SubItem[];
 };
 
-// TODO: remplacer par le contenu réel des sous-menus fourni par le client.
 const NAV_ITEMS: NavItem[] = [
   {
     label: 'Conseil et assistance',
     href: 'https://axcel.mg/service.html',
     submenu: [
-      { label: 'Audit et diagnostic', href: '/conseil/audit' },
-      { label: 'Accompagnement projet', href: '/conseil/accompagnement' },
-      { label: 'Support technique', href: '/conseil/support' },
+      { label: 'Conseil en création de société', href: '/conseil-creation-societe' },
+      { label: 'Assistance à la modification de société', href: '/assistance-modification-societe' },
+      { label: 'Assistance en formalisation d\'entreprise', href: '/assistance-formalisation-entreprise' },
+      { label: 'Consultation stratégique pour entrepreneurs', href: '/consultation-strategique' },
     ],
   },
   {
     label: 'Création',
     href: '/creation',
     submenu: [
-      { label: 'Site web', href: '/creation/site-web' },
-      { label: 'Identité visuelle', href: '/creation/identite-visuelle' },
-      { label: 'Application mobile', href: '/creation/application-mobile' },
+      { label: 'Creation Entreprise Individuelle', href: '/creation-entreprise-individuelle' },
+      { label: 'Creation Societe SARL & SARLU', href: '/creation-societe-sarl-sarlu' },
+      { label: 'Domiciliation', href: '/creation-domiciliation' },
+      { label: 'Location de salle de réunion', href: '/location-salle-reunion' },
+      { label: 'conseil et assistance', href: '/conseil-assistance' }, 
     ],
   },
   {
     label: 'Service de coursier',
     href: '/coursier',
     submenu: [
-      { label: 'Livraison express', href: '/coursier/express' },
-      { label: 'Livraison programmée', href: '/coursier/programmee' },
-      { label: 'Suivi de colis', href: '/coursier/suivi' },
+      { label: 'Récupération diplôme, relevé de note, équivalence..', href: '/coursier-recuperation-diplome' },
+      { label: 'Récupération / traduction acte de naissance, acte de mariage, ...', href: '/coursier-recuperation-traduction' },
+      { label: 'Récupération des certificats de mise en commerce', href: '/coursier-recuperation-certificats' },
+      { label: 'Récupération des certificats de consommabilité', href: '/coursier-recuperation-certificats-consommabilite' },
+      { label: 'Toutes enregistrement, certifications', href: '/coursier-toutes-enregistrement-certifications' },
     ],
   },
   { label: 'A propos de nous', href: '/a-propos' },
