@@ -87,7 +87,7 @@ export default function Footer() {
             </a>
             <span className="flex items-start gap-3">
               <MapPin size={17} className="mt-0.5 shrink-0" />
-              <span>Antananarivo, Madagascar</span>
+              <span>Arrêt bus pharmacie Aina Andravoahangy Ambony, Antananarivo 101</span>
             </span>
           </div>
         </div>
