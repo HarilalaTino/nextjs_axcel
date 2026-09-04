@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/dist/client/components/navigation";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import ScrollToTop from "@/components/ui/shared/scroll-top";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,6 +96,7 @@ export default async function RootLayout({
       <body className="min-h-full flex flex-col">
          <NextIntlClientProvider messages={messages}>
           {children}
+          <ScrollToTop />
         </NextIntlClientProvider>
         <Footer />
       </body>
