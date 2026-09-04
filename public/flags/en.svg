@@ -1,0 +1,28 @@
+<!-- public/flags/en.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <clipPath id="en-circle-clip">
+      <circle cx="256" cy="256" r="256"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#en-circle-clip)">
+    <!-- fond bleu -->
+    <rect width="512" height="512" fill="#00247D"/>
+
+    <!-- diagonales blanches -->
+    <polygon points="0,0 55,0 512,457 512,512 457,512 0,55" fill="#FFFFFF"/>
+    <polygon points="457,0 512,0 512,55 55,512 0,512 0,457" fill="#FFFFFF"/>
+
+    <!-- diagonales rouges -->
+    <polygon points="0,0 36,0 512,476 512,512 476,512 0,36" fill="#CF142B"/>
+    <polygon points="476,0 512,0 512,36 36,512 0,512 0,476" fill="#CF142B"/>
+
+    <!-- croix blanche horizontale/verticale -->
+    <rect x="206" width="100" height="512" fill="#FFFFFF"/>
+    <rect y="206" width="512" height="100" fill="#FFFFFF"/>
+
+    <!-- croix rouge horizontale/verticale -->
+    <rect x="226" width="60" height="512" fill="#CF142B"/>
+    <rect y="226" width="512" height="60" fill="#CF142B"/>
+  </g>
+</svg>

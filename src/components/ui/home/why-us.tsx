@@ -4,44 +4,40 @@ import {
   ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const properties: {
-  title: string;
-  description: string;
+    key: string;
   icon: LucideIcon;
 }[] = [
   {
-    title: "Tarif avantageux",
-    description:
-      "Des tarifs compétitifs sans sacrifier la qualité du service, où que vous soyez.",
+    key: "price",
     icon: BadgeDollarSign,
   },
   {
-    title: "Rapidité de service",
-    description:
-      "Un service rapide et efficace tout en respectant nos engagements et vos délais.",
+    key: "speed",
     icon: Clock3,
   },
   {
-    title: "Fiabilité et confidentialité",
-    description:
-      "Vos informations sont traitées avec le plus grand professionnalisme et confidentialité.",
+    key: "reliability",
     icon: ShieldCheck,
   },
 ];
 
 export default function WhyChooseUs() {
+  const t = useTranslations('Home');
+
   return (
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-5">
         <h2 className="text-center text-3xl font-extrabold text-primary md:text-4xl">
-          Pourquoi nous faire confiance ?
+          {t('whyUs.title')}
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {properties.map(({ title, description, icon: Icon }) => (
+          {properties.map(({ key, icon: Icon }) => (
             <article
-              key={title}
+              key={key}
               className="
                 flex
                 min-h-[170px]
@@ -65,11 +61,11 @@ export default function WhyChooseUs() {
               />
 
               <h3 className="mt-5 text-lg font-semibold text-[#111]">
-                {title}
+                {t(`whyUs.items.${key}.title`)}
               </h3>
 
               <p className="mt-2 max-w-[250px] text-sm leading-5 text-[#222]">
-                {description}
+                {t(`whyUs.items.${key}.description`)}
               </p>
             </article>
           ))}

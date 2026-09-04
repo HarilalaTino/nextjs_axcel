@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
+import { useTranslations } from 'next-intl';
 import {
     User,
     Building2,
@@ -15,9 +16,9 @@ import {
 const HERO_IMAGES = ['/images/home/hero-bg-1.jpg', '/images/home/hero-bg-2.jpg'];
 
 export type ServiceCard = {
-    title: string;
-    description: string;
-    ctaLabel: string;
+    titleKey: string;
+    descriptionKey: string;
+    ctaKey: string;
     href: string;
     icon: ReactNode;
 };
@@ -44,50 +45,52 @@ function ArrowIcon({ className = '' }: { className?: string }) {
 
 export const SERVICES: ServiceCard[] = [
     {
-        title: 'Création Entreprise Individuelle',
-        description: 'Lancez votre activité en solo avec un statut simple et rapide à mettre en place.',
-        ctaLabel: 'Créer',
+        titleKey: 'individual.title',
+        descriptionKey: 'individual.description',
+        ctaKey: 'create',
         href: '/creation-entreprise-individuelle',
         icon: <User size={20} />,
     },
     {
-        title: 'Création Société SARL - SARLU',
-        description: 'Structurez votre société à plusieurs associés avec une responsabilité limitée.',
-        ctaLabel: 'Créer',
+        titleKey: 'sarl.title',
+        descriptionKey: 'sarl.description',
+        ctaKey: 'create',
         href: '/creation-societe-sarl',
         icon: <Building2 size={20} />,
     },
     {
-        title: 'Création ONG et Association',
-        description: 'Structurez votre projet associatif ou humanitaire avec un statut adapté à votre mission.',
-        ctaLabel: 'Créer',
+        titleKey: 'association.title',
+        descriptionKey: 'association.description',
+        ctaKey: 'create',
         href: '/creation-ong-association',
         icon: <HeartHandshake size={20} />,
     },
     {
-        title: 'Domiciliation',
-        description: 'Domiciliez votre siège social à une adresse professionnelle reconnue.',
-        ctaLabel: 'Domicilier',
+        titleKey: 'domiciliation.title',
+        descriptionKey: 'domiciliation.description',
+        ctaKey: 'domiciliate',
         href: '/domiciliation',
         icon: <MapPin size={20} />
     },
     {
-        title: 'Location Salle de Réunion',
-        description: 'Réservez une salle équipée pour vos réunions et rendez-vous professionnels.',
-        ctaLabel: 'Réserver',
+        titleKey: 'meetingRoom.title',
+        descriptionKey: 'meetingRoom.description',
+        ctaKey: 'book',
         href: '/location-salle-reunion',
         icon: <Landmark size={20}/>
     },
     {
-        title: 'Conseil et Assistance',
-        description: 'Bénéficiez d\u2019un accompagnement juridique et administratif sur mesure.',
-        ctaLabel: 'Être conseillé',
+        titleKey: 'advice.title',
+        descriptionKey: 'advice.description',
+        ctaKey: 'getAdvice',
         href: '/conseil-assistance',
         icon: <Headset size={20} />
     },
 ];
 
 export function ServiceCardItem({ service }: { service: ServiceCard }) {
+    const t = useTranslations('Home');
+
     return (
         <div className="group relative flex h-full min-h-[250px] flex-col overflow-hidden rounded-2xl bg-white p-5 shadow-lg shadow-slate-900/5 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-slate-900/10 hover:ring-secondary/20">
             <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-secondary transition-transform duration-300 ease-out group-hover:scale-x-100" />
@@ -99,9 +102,9 @@ export function ServiceCardItem({ service }: { service: ServiceCard }) {
             </span>
 
             <h3 className="min-h-[3.5rem] text-lg font-extrabold uppercase leading-7 text-primary/80">
-                {service.title}
+                {t(`services.${service.titleKey}`)}
             </h3>
-            <p className="mt-1 min-h-[3rem] text-sm leading-6 text-slate-500">{service.description}</p>
+            <p className="mt-1 min-h-[3rem] text-sm leading-6 text-slate-500">{t(`services.${service.descriptionKey}`)}</p>
 
             <a
                 href={service.href}
@@ -111,7 +114,7 @@ export function ServiceCardItem({ service }: { service: ServiceCard }) {
 
                 <span className="absolute inset-0 bg-gradient-to-r from-secondary/10 via-secondary/20 to-secondary/30 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100" />
 
-                <span className="relative z-10">En savoir plus</span>
+                <span className="relative z-10">{t('learnMore')}</span>
                 <ArrowIcon className="relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
         </div>
@@ -173,6 +176,7 @@ function HeroBottomCurve() {
 
 export default function HeroServices() {
     const [activeImage, setActiveImage] = useState(0);
+    const t = useTranslations('Home');
 
     useEffect(() => {
         if (HERO_IMAGES.length <= 1) return;
@@ -189,7 +193,7 @@ export default function HeroServices() {
                     <Image
                         key={src}
                         src={src}
-                        alt="Présentation de l'entreprise"
+                        alt={t('heroImageAlt')}
                         fill
                         priority={index === 0}
                         sizes="100vw"
@@ -202,7 +206,7 @@ export default function HeroServices() {
                 <div className="absolute inset-0 hidden items-center px-6 md:flex lg:px-8">
                     <div className="mx-auto grid max-w-6xl grid-cols-2 gap-5 lg:grid-cols-3">
                         {SERVICES.map((service, index) => (
-                            <AnimatedHeroCard key={service.title} service={service} index={index} />
+                            <AnimatedHeroCard key={service.titleKey} service={service} index={index} />
                         ))}
                     </div>
                 </div>
@@ -213,14 +217,14 @@ export default function HeroServices() {
 
             <div className="px-4 pt-6 sm:px-6 md:hidden">
                 <h2 className="text-2xl font-bold text-primary">
-                    Choisir votre service
+                    {t('chooseService')}
                 </h2>
                 <span className="text-sm text-gray-500 mb-8 block">
-                    + de 300 entreprises créées depuis 2022
+                    {t('companiesCreated')}
                 </span>
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5">
                     {SERVICES.map((service, index) => (
-                        <AnimatedHeroCard key={`mobile-${service.title}`} service={service} index={index} />
+                        <AnimatedHeroCard key={`mobile-${service.titleKey}`} service={service} index={index} />
                     ))}
                 </div>
             </div>

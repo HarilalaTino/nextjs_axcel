@@ -2,12 +2,9 @@
 
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import AnimatedCounter from './animated-counter';
-
-const FEATURES = [
-    "Nous assistons les étrangers envisageant d'investir à Madagascar.",
-    'Nous proposons des services de coursiers administratifs professionnels.',
-];
 
 function ArrowIcon({ className = '' }: { className?: string }) {
     return (
@@ -30,6 +27,8 @@ function ArrowIcon({ className = '' }: { className?: string }) {
 }
 
 export default function AboutSection() {
+    const t = useTranslations('Home');
+
     return (
         <section className="relative overflow-hidden bg-white py-20 sm:py-28">
             <div
@@ -53,7 +52,7 @@ export default function AboutSection() {
                     <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/20 sm:aspect-[5/6]">
                         <Image
                             src="/images/home/about.jpg"
-                            alt="L'équipe Axcel Company"
+                            alt={t('aboutImageAlt')}
                             fill
                             sizes="(min-width: 1024px) 40vw, 90vw"
                             className="object-cover"
@@ -67,9 +66,7 @@ export default function AboutSection() {
                                +<AnimatedCounter target={300} />
                             </p>
                             <p className="mt-1 text-xs font-medium text-slate-500">
-                                entreprises créées
-                                <br />
-                                depuis 2022
+                                {t('companiesCreated')}
                             </p>
                         </div>
                     </div>
@@ -79,38 +76,35 @@ export default function AboutSection() {
                 <div>
                     <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-secondary">
                         <span className="h-px w-6 bg-secondary" />
-                        À propos de nous
+                        {t('about.label')}
                     </span>
 
                     <h2 className="mt-4 text-3xl font-extrabold leading-tight text-primary sm:text-4xl">
-                        Créez votre société en toute sérénité, nous nous occupons de tout
+                        {t('about.title')}
                     </h2>
 
                     <p className="mt-6 text-base leading-relaxed text-slate-500">
-                        Axcel Company est une société dédiée à fournir des services
-                        professionnels aux entreprises. Nous accompagnons depuis 2022 les
-                        entrepreneurs, les investisseurs dans la formalisation de leurs
-                        entreprises.
+                        {t('about.description')}
                     </p>
 
                     <ul className="mt-8 space-y-4">
-                        {FEATURES.map((feature) => (
-                            <li key={feature} className="flex items-start gap-3.5">
+                        {['foreignInvestors', 'courierServices'].map((featureKey) => (
+                            <li key={featureKey} className="flex items-start gap-3.5">
                                 <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
                                     <CheckCircle2 size={14} strokeWidth={2.5} />
                                 </span>
-                                <span className="text-slate-600">{feature}</span>
+                                <span className="text-slate-600">{t(`about.features.${featureKey}`)}</span>
                             </li>
                         ))}
                     </ul>
 
-                    <a
+                    <Link
                         href="/a-propos"
                         className="group mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-secondary hover:shadow-lg hover:shadow-secondary/25"
                     >
-                        En savoir plus
+                        {t('learnMore')}
                         <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

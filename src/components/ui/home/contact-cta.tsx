@@ -1,15 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 export default function ContactCTA() {
+  const t = useTranslations('Home');
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-primary via-primary to-[#14315c] px-6 py-20 text-center">
       <h2 className="text-3xl font-bold text-white sm:text-4xl">
-        Envie d&apos;échanger avec nous ?
+        {t('contact.title')}
       </h2>
 
       <p className="mx-auto mt-4 max-w-md text-slate-300">
-        Un projet, une question ou besoin d&apos;accompagnement ? On vous répond le plus vite possible
+        {t('contact.description')}
       </p>
 
       <div className="relative mt-8 inline-block">
@@ -38,7 +41,7 @@ export default function ContactCTA() {
             focus-visible:ring-offset-primary
           "
         >
-          Nous contacter
+          {t('contact.button')}
         </Link>
       </div>
     </section>

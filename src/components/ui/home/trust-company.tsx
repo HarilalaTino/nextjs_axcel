@@ -3,6 +3,7 @@
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { useTranslations } from "next-intl";
 
 const companies = [
   {
@@ -68,6 +69,7 @@ const companies = [
 ];
 
 export default function TrustedCompanies() {
+  const t = useTranslations('Home');
   const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
@@ -92,11 +94,11 @@ export default function TrustedCompanies() {
         {/* Heading */}
         <div className="mb-10 text-center">
           <span className="text-sm font-medium text-secondary uppercase tracking-wide">
-             Ils nous font confiance
+             {t('trustedLabel')}
           </span>
 
           <h2 className="mt-2 text-3xl font-extrabold text-primary md:text-4xl">
-            Des entreprises qui nous font confiance
+            {t('trustedTitle')}
           </h2>
         </div>
 

@@ -1,8 +1,11 @@
 'use client';
 
-import Link from 'next/link';
+
 import { useEffect, useRef, useState } from 'react';
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
+import LanguageSwitcher from '../ui/language-switcher';
 
 type SubItem = {
   label: string;
@@ -17,42 +20,42 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   {
-    label: 'Conseil et assistance',
-    href: 'https://axcel.mg/service.html',
+    label: 'advice',
+    href: '/service',
     submenu: [
-      { label: 'Conseil en création de société', href: '/conseil-creation-societe' },
-      { label: 'Assistance à la modification de société', href: '/assistance-modification-societe' },
-      { label: 'Assistance en formalisation d\'entreprise', href: '/assistance-formalisation-entreprise' },
-      { label: 'Consultation stratégique pour entrepreneurs', href: '/consultation-strategique' },
+      { label: 'adviceCreation', href: '/conseil-creation-societe' },
+      { label: 'adviceModification', href: '/assistance-modification-societe' },
+      { label: 'adviceFormalization', href: '/assistance-formalisation-entreprise' },
+      { label: 'adviceStrategic', href: '/consultation-strategique' },
     ],
   },
   {
-    label: 'Création',
+    label: 'creation',
     href: '/creation',
     submenu: [
-      { label: 'Creation Entreprise Individuelle', href: '/creation-entreprise-individuelle' },
-      { label: 'Creation Societe SARL & SARLU', href: '/creation-societe-sarl-sarlu' },
-      { label: 'Domiciliation', href: '/creation-domiciliation' },
-      { label: 'Location de salle de réunion', href: '/location-salle-reunion' },
-      { label: 'conseil et assistance', href: '/conseil-assistance' }, 
+      { label: 'creationIndividual', href: '/creation-entreprise-individuelle' },
+      { label: 'creationSarl', href: '/creation-societe-sarl-sarlu' },
+      { label: 'creationDomiciliation', href: '/creation-domiciliation' },
+      { label: 'creationMeetingRoom', href: '/location-salle-reunion' },
+      { label: 'creationAdvice', href: '/conseil-assistance' },
     ],
   },
   {
-    label: 'Service de coursier',
+    label: 'courier',
     href: '/coursier',
     submenu: [
-      { label: 'Récupération diplôme, relevé de note, équivalence..', href: '/coursier-recuperation-diplome' },
-      { label: 'Récupération / traduction acte de naissance, acte de mariage, ...', href: '/coursier-recuperation-traduction' },
-      { label: 'Récupération des certificats de mise en commerce', href: '/coursier-recuperation-certificats' },
-      { label: 'Récupération des certificats de consommabilité', href: '/coursier-recuperation-certificats-consommabilite' },
-      { label: 'Toutes enregistrement, certifications', href: '/coursier-toutes-enregistrement-certifications' },
+      { label: 'courierDiploma', href: '/coursier-recuperation-diplome' },
+      { label: 'courierBirthMarriage', href: '/coursier-recuperation-traduction' },
+      { label: 'courierMarketCertificates', href: '/coursier-recuperation-certificats' },
+      { label: 'courierConsumabilityCertificates', href: '/coursier-recuperation-certificats-consommabilite' },
+      { label: 'courierRegistrations', href: '/coursier-toutes-enregistrement-certifications' },
     ],
   },
-  { label: 'A propos de nous', href: '/a-propos' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'about', href: '/a-propos' },
+  { label: 'contact', href: '/contact' }
 ];
 
-function ChevronIcon({ open }: { open: boolean }) {
+export function ChevronIcon({ open }: { open: boolean }) {
   return (
     <svg
       width="14"
@@ -106,6 +109,8 @@ export default function NavMenu() {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
 
+  const t = useTranslations('Nav');
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -144,12 +149,12 @@ export default function NavMenu() {
         {/* Logo */}
         <Link href="/" className="shrink-0 text-primary" >
           <span className="text-lg font-semibold tracking-tight">
-             <Image src="/logo.png" alt="axcel" width={50} height={50} />
+            <Image src="/logo.png" alt="axcel" width={50} height={50} />
           </span>
         </Link>
 
         {/* Menu desktop */}
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Menu principal">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label={t('mainMenu')}>
           {NAV_ITEMS.map((item) => {
             const isOpen = openDesktopMenu === item.label;
             if (!item.submenu) {
@@ -159,7 +164,7 @@ export default function NavMenu() {
                   href={item.href}
                   className="rounded-md px-3 py-2 text-sm font-medium text-primary transition-colors hover:text-secondary"
                 >
-                  {item.label}
+                  {t(item.label)}
                 </Link>
               );
             }
@@ -176,7 +181,7 @@ export default function NavMenu() {
                   aria-expanded={isOpen}
                   aria-haspopup="true"
                 >
-                  {item.label}
+                  {t(item.label)}
                   <ChevronIcon open={isOpen} />
                 </button>
 
@@ -192,7 +197,7 @@ export default function NavMenu() {
                         role="menuitem"
                         className="block px-4 py-2 text-sm text-primary transition-colors hover:bg-slate-50 hover:text-secondary"
                       >
-                        {sub.label}
+                        {t(sub.label)}
                       </Link>
                     ))}
                   </div>
@@ -202,31 +207,37 @@ export default function NavMenu() {
           })}
         </nav>
 
-        {/* CTA Devis (desktop) */}
-        <Link
-          href="/devis"
-          className="hidden shrink-0 rounded-md px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 lg:inline-block bg-secondary"
-        >
-          Demande de Devis
-        </Link>
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
 
-        {/* Bouton burger (mobile) */}
-        <button
-          type="button"
-          className="text-primary lg:hidden"
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-expanded={mobileOpen}
-          aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-        >
-          <MenuIcon open={mobileOpen} />
-        </button>
+          {/* CTA Devis (desktop) */}
+          <Link
+            href="/devis"
+            className="hidden shrink-0 rounded-md px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 lg:inline-block bg-secondary"
+          >
+            {t('quote')}
+          </Link>
+
+          {/* Bouton burger (mobile) */}
+          <button
+            type="button"
+            className="text-primary lg:hidden"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? t('closeMenu') : t('openMenu')}
+          >
+            <MenuIcon open={mobileOpen} />
+          </button>
+        </div>
+
+
       </div>
 
       {/* Menu mobile */}
       {mobileOpen && (
         <nav
           className="border-t border-slate-100 bg-white px-4 pb-4 lg:hidden"
-          aria-label="Menu mobile"
+          aria-label={t('mobileMenu')}
         >
           {NAV_ITEMS.map((item) => {
             const isSubOpen = openMobileSubmenu === item.label;
@@ -238,7 +249,7 @@ export default function NavMenu() {
                   className="block border-b border-slate-50 py-3 text-sm font-medium text-primary"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {item.label}
+                  {t(item.label)}
                 </Link>
               );
             }
@@ -250,7 +261,7 @@ export default function NavMenu() {
                   aria-expanded={isSubOpen}
                   onClick={() => setOpenMobileSubmenu(isSubOpen ? null : item.label)}
                 >
-                  {item.label}
+                  {t(item.label)}
                   <ChevronIcon open={isSubOpen} />
                 </button>
                 {isSubOpen && (
@@ -276,7 +287,7 @@ export default function NavMenu() {
             className="mt-4 block rounded-md px-4 py-2 text-center text-sm font-semibold text-white bg-secondary"
             onClick={() => setMobileOpen(false)}
           >
-            Demande de Devis
+            {t('quote')}
           </Link>
         </nav>
       )}

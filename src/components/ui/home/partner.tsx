@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const companies = [
   {
@@ -24,6 +25,7 @@ const companies = [
 ];
 
 export default function Partner() {
+  const t = useTranslations('Home');
   return (
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
@@ -31,7 +33,7 @@ export default function Partner() {
         {/* Header */}
         <div className="mb-10">
           <h2 className="mt-2 text-center text-3xl font-extrabold text-primary md:text-4xl">
-            Nos partenaires
+            {t('partnersTitle')}
           </h2>
         </div>
 
