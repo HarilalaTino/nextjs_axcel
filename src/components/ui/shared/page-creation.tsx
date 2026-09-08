@@ -1,11 +1,9 @@
-import { AppPathname, Link } from '@/i18n/navigation';
-import { Ban, Building2, FileText, Home, MessageSquareMore, RefreshCcwDot, Tag } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
+import {  Tag } from 'lucide-react';
 import type { ReactNode } from 'react';
-import ElegantCard from './elegant-card';
 import Image from 'next/image';
-import ContactCTA from '../home/contact-cta';
 
-type AppRoute = Extract<AppPathname, string>;
+type TranslationFn = (key: string) => string;
 
 type CreationPageProps = {
   eyebrow: string;
@@ -13,35 +11,28 @@ type CreationPageProps = {
   description: ReactNode;
   imageSrc: string;
   creationType: string;
-  contactHref: AppRoute;
-  quoteHref: AppRoute;
-  contactLabel: string;
-  quoteLabel: string;
   price?: string;
-  priceNote: string;
-  additionalServicesLabel: string;
-  additionalServicesTitle: string;
-  additionalServicesDescription: string;
-  additionalServices: { title: string; description: string }[];
+  priceNote?: string;
+  t?: TranslationFn;
+  isReverseSection?: boolean;
 };
 
-export default function CreationPage({
+export default async function CreationPage({
   eyebrow,
   title,
   description,
   imageSrc,
   creationType,
-  contactHref,
-  quoteHref,
-  contactLabel,
-  quoteLabel,
   price,
   priceNote,
-  additionalServicesLabel,
-  additionalServicesTitle,
-  additionalServicesDescription,
-  additionalServices
+  t,
+  isReverseSection
 }: CreationPageProps) {
+  const contactHref = '/contact' as const;
+  const quoteHref = '/devis' as const;
+  const contactLabel = t ? t('contact') : 'Contact';
+  const quoteLabel = t ? t('quote') : 'Demander un devis';
+
   const contactUrl = {
     pathname: contactHref,
     query: { type: creationType }
@@ -51,20 +42,25 @@ export default function CreationPage({
     query: { type: creationType }
   } as const;
 
+
   return (
     <>
-      <section className="px-6 py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
-          <div>
+      <section className="px-6 py-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8  gap-12 lg:gap-20">
+          {isReverseSection ? (
+            <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
+              <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
+            </div>
+          ) : null}
+
+          <div className={isReverseSection ? 'flex-1' : 'flex-1'}>
             <p className="text-sm font-semibold uppercase tracking-wide text-secondary">{eyebrow}</p>
             <h1 className="mt-3 text-3xl font-bold leading-tight text-primary sm:text-4xl">
               {title}
             </h1>
             <div className="mt-4 h-1 w-16 bg-secondary" />
 
-            <div
-              className="mt-6 max-w-md text-primary/70"
-            >
+            <div className="mt-6 text-primary/70">
               {description}
             </div>
 
@@ -79,7 +75,7 @@ export default function CreationPage({
                   </small>
                 </div>
 
-                <div className="flex h-11 w-11 items-center justify-center  rounded-full bg-primary/10">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10">
                   <Tag className="h-5 w-5 text-gray-500" />
                 </div>
               </div>
@@ -101,38 +97,13 @@ export default function CreationPage({
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
-            <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
-          </div>
-        </div>
-
-        <section className="bg-white px-6 pt-30">
-          <div className="mx-auto max-w-6xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
-              {additionalServicesLabel}
-            </p>
-            <h2 className="mt-3 text-3xl font-bold text-primary sm:text-4xl">
-              {additionalServicesTitle}
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-primary/60">
-              {additionalServicesDescription}
-            </p>
-            <div className="mx-auto mt-6 h-1 w-16 bg-secondary" />
-
-            <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {additionalServices.map((service, index) => (
-                <ElegantCard
-                  key={service.title}
-                  icon={[Home, Building2, RefreshCcwDot, Ban, FileText, MessageSquareMore][index]}
-                  title={service.title}
-                  description={service.description}
-                />
-              ))}
+          {!isReverseSection ? (
+            <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
+              <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
             </div>
-          </div>
-        </section>
+          ) : null}
+        </div>
       </section>
-         <ContactCTA />     
     </>
   );
 }

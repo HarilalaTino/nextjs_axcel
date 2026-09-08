@@ -79,19 +79,7 @@
     "legalNotice": "Legal notice",
     "links": { "Accueil": "Home", "À propos de nous": "About us", "Nos services": "Our services", "Contact": "Contact" }
   },
-  "CreationIndividual": {
-    "eyebrow": "Sole proprietorship creation",
-    "title": "Launch your business as a sole proprietor",
-    "description": {
-      "intro": "supports sole proprietors by coordinating these formalities to simplify the launch of their business. This support notably enables you to obtain:",
-      "nif": "Tax Identification Number",
-      "stat": "Statistics",
-      "rcs": "Commercial and Companies Register"
-    },
-    "contact": "Contact us",
-    "quote": "Request a quote",
-    "price": "200,000 Ar",
-    "priceNote": "Excluding administrative fees",
+  "CreationPages": {
     "additionalServices": {
       "label": "We also offer other services",
       "title": "A complete range of services for a wide range of clients",
@@ -105,5 +93,37 @@
         "requests": { "title": "Various requests", "description": "We handle all types of requests, including approvals and ministerial authorizations." }
       }
     }
+  },
+  "CreationIndividual": {
+    "eyebrow": "Sole proprietorship creation",
+    "title": "Launch your business as a sole proprietor",
+    "description": {
+      "intro": "supports sole proprietors by coordinating these formalities to simplify the launch of their business. This support notably enables you to obtain:",
+      "nif": "Tax Identification Number",
+      "stat": "Statistics",
+      "rcs": "Commercial and Companies Register"
+    },
+    "contact": "Contact us",
+    "quote": "Request a quote",
+    "price": "200,000 Ar",
+    "priceNote": "Excluding administrative fees"
+  },
+  "CreationSocieteSarl": {
+    "eyebrow": "Company creation",
+    "title": "Creation of SARL (Limited Liability Company)",
+    "description" : "The most common legal form in Madagascar, bringing together 2 to 100 partners (individuals or legal entities, all nationalities). No minimum capital is required, and each partner's liability is limited to their contribution. Ideal for a project supported by several people.",
+    "contact": "Contact us",
+    "quote": "Request a quote",
+    "price": "400 000 Ar",
+    "priceNote": "Excluding administrative fees"
+  },
+  "CreationSocieteSarlu": {
+    "eyebrow": "Company creation",
+    "title": "Creation of SARLU (Limited Liability Company with a Single Partner)",
+    "description" : "The most common legal form in Madagascar, bringing together 1 to 100 partners (individuals or legal entities, all nationalities). No minimum capital is required, and each partner's liability is limited to their contribution. Ideal for a project supported by several people.",
+    "contact": "Contact us",
+    "quote": "Request a quote",
+    "price": "400 000 Ar",
+    "priceNote": "Excluding administrative fees"
   }
 }

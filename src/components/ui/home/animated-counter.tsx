@@ -15,12 +15,16 @@ export default function AnimatedCounter({
 }: AnimatedCounterProps) {
     const counterRef = useRef<HTMLSpanElement>(null);
     const [count, setCount] = useState(0);
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(() => typeof IntersectionObserver === 'undefined');
 
     useEffect(() => {
         const counter = counterRef.current;
 
         if (!counter) return;
+
+        if (typeof IntersectionObserver === 'undefined') {
+            return;
+        }
 
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -29,7 +33,7 @@ export default function AnimatedCounter({
                     observer.disconnect();
                 }
             },
-            { threshold: 0.1 },
+            { threshold: 0.2 },
         );
 
         observer.observe(counter);
@@ -40,24 +44,28 @@ export default function AnimatedCounter({
     useEffect(() => {
         if (!isVisible) return;
 
-        const duration = 1500;
-        const startTime = performance.now();
-        let animationFrame: number;
+        let timeoutId: ReturnType<typeof setTimeout> | undefined;
+        let current = 0;
 
-        const animate = (currentTime: number) => {
-            const progress = Math.min((currentTime - startTime) / duration, 1);
-            const easedProgress = 1 - Math.pow(1 - progress, 3);
+        const tick = () => {
+            current += Math.max(1, Math.round(target / 20));
 
-            setCount(Math.round(easedProgress * target));
-
-            if (progress < 1) {
-                animationFrame = requestAnimationFrame(animate);
+            if (current >= target) {
+                setCount(target);
+                return;
             }
+
+            setCount(current);
+            timeoutId = setTimeout(tick, 40);
         };
 
-        animationFrame = requestAnimationFrame(animate);
+        tick();
 
-        return () => cancelAnimationFrame(animationFrame);
+        return () => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+        };
     }, [isVisible, target]);
 
     return (

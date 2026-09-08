@@ -79,19 +79,7 @@
     "legalNotice": "Mentions légales",
     "links": { "Accueil": "Accueil", "À propos de nous": "À propos de nous", "Nos services": "Nos services", "Contact": "Contact" }
   },
-  "CreationIndividual": {
-    "eyebrow": "Création d'entreprise",
-    "title": "Lancez votre activité en tant qu'entrepreneur individuel",
-    "description": {
-      "intro": "accompagne les entrepreneurs individuels en coordonnant ces formalités pour simplifier le lancement de leur activité. Cet accompagnement permet notamment d'obtenir :",
-      "nif": "Numéro d'Identification Fiscale",
-      "stat": "Statistique",
-      "rcs": "Registre du Commerce et des Sociétés"
-    },
-    "contact": "Nous contacter",
-    "quote": "Demander un devis",
-    "price": "200 000 Ar",
-    "priceNote": "Hors frais administratifs",
+  "CreationPages": {
     "additionalServices": {
       "label": "Nous proposons aussi d'autres services",
       "title": "Une gamme de services complets pour des clients variés",
@@ -105,5 +93,37 @@
         "requests": { "title": "Diverses demandes", "description": "Nous traitons tous types de demandes (Agrément, autorisation ministérielle...)." }
       }
     }
+  },
+  "CreationIndividual": {
+    "eyebrow": "Création d'entreprise",
+    "title": "Lancez votre activité en tant qu'entrepreneur individuel",
+    "description": {
+      "intro": "accompagne les entrepreneurs individuels en coordonnant ces formalités pour simplifier le lancement de leur activité. Cet accompagnement permet notamment d'obtenir :",
+      "nif": "Numéro d'Identification Fiscale",
+      "stat": "Statistique",
+      "rcs": "Registre du Commerce et des Sociétés"
+    },
+    "contact": "Nous contacter",
+    "quote": "Demander un devis",
+    "price": "200 000 Ar",
+    "priceNote": "Hors frais administratifs"
+  },
+  "CreationSocieteSarl": {
+    "eyebrow": "Création de société",
+    "title": "Création de SARL (Société à Responsabilité Limitée)",
+    "description" : "Forme juridique la plus courante à Madagascar, réunissant de 2 à 100 associés (personnes physiques ou morales, toutes nationalités). Aucun capital minimum n&apos;est exigé, et la responsabilité de chaque associé est limitée à son apport. Idéale pour un projet porté à plusieurs.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis",
+    "price": "400 000 Ar",
+    "priceNote": "Hors frais administratifs"
+  },
+  "CreationSocieteSarlu": {
+    "eyebrow": "Création de société",
+    "title": "Création de SARLU (Société à Responsabilité Limitée Unipersonnelle)",
+    "description" : "Variante de la SARL destinée à l'entrepreneur qui souhaite créer seul sa société. Un seul associé, aucun capital minimum requis, et la même protection : la responsabilité reste limitée aux apports. Idéale pour un projet individuel.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis",
+    "price": "400 000 Ar",
+    "priceNote": "Hors frais administratifs"
   }
 }
