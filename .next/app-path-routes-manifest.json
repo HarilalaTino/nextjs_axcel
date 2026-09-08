@@ -1,5 +1,6 @@
 {
   "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
-  "/[locale]/page": "/[locale]"
+  "/[locale]/page": "/[locale]",
+  "/[locale]/creation-entreprise-individuelle/page": "/[locale]/creation-entreprise-individuelle"
 }

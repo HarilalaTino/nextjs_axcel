@@ -4,17 +4,19 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import { AppPathname, Link } from '@/i18n/navigation';
 import LanguageSwitcher from '../ui/language-switcher';
+
+type AppRoute = Extract<AppPathname, string>;
 
 type SubItem = {
   label: string;
-  href: string;
+  href: AppRoute;
 };
 
 type NavItem = {
   label: string;
-  href: string;
+  href: AppRoute;
   submenu?: SubItem[];
 };
 

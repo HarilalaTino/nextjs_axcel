@@ -15,7 +15,7 @@ export default function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer className="mt-auto bg-white text-primary">
+    <footer className="mt-auto bg-white text-primary border-t border-slate-200">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div className="sm:col-span-2 lg:col-span-1">
            <Link href="/" className="shrink-0 text-primary" >

@@ -26,6 +26,14 @@
         "nxtPlocale": "nxtPlocale"
       },
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[locale]/creation-entreprise-individuelle",
+      "regex": "^/([^/]+?)/creation\\-entreprise\\-individuelle(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-entreprise\\-individuelle(?:/)?$"
     }
   ],
   "staticRoutes": [

@@ -78,5 +78,32 @@
     "rights": "All rights reserved.",
     "legalNotice": "Legal notice",
     "links": { "Accueil": "Home", "À propos de nous": "About us", "Nos services": "Our services", "Contact": "Contact" }
+  },
+  "CreationIndividual": {
+    "eyebrow": "Sole proprietorship creation",
+    "title": "Launch your business as a sole proprietor",
+    "description": {
+      "intro": "supports sole proprietors by coordinating these formalities to simplify the launch of their business. This support notably enables you to obtain:",
+      "nif": "Tax Identification Number",
+      "stat": "Statistics",
+      "rcs": "Commercial and Companies Register"
+    },
+    "contact": "Contact us",
+    "quote": "Request a quote",
+    "price": "200,000 Ar",
+    "priceNote": "Excluding administrative fees",
+    "additionalServices": {
+      "label": "We also offer other services",
+      "title": "A complete range of services for a wide range of clients",
+      "description": "Our goal is to simplify administrative processes and ensure compliance with current regulations.",
+      "items": {
+        "taxCard": { "title": "Tax card renewal", "description": "Renew your tax card annually to comply with government requirements." },
+        "activity": { "title": "Change or add a business activity", "description": "Changes to your business, updates to your articles of association and required formalities." },
+        "headOffice": { "title": "Registered office change", "description": "Moving your registered office requires a series of legal and administrative procedures." },
+        "closure": { "title": "Business closure", "description": "For businesses wishing to cease their economic activity." },
+        "letter": { "title": "Administrative letter drafting", "description": "We draft administrative letters, such as approval requests and building permit applications." },
+        "requests": { "title": "Various requests", "description": "We handle all types of requests, including approvals and ministerial authorizations." }
+      }
+    }
   }
 }

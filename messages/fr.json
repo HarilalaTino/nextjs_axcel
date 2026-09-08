@@ -78,5 +78,32 @@
     "rights": "Tous droits réservés.",
     "legalNotice": "Mentions légales",
     "links": { "Accueil": "Accueil", "À propos de nous": "À propos de nous", "Nos services": "Nos services", "Contact": "Contact" }
+  },
+  "CreationIndividual": {
+    "eyebrow": "Création d'entreprise",
+    "title": "Lancez votre activité en tant qu'entrepreneur individuel",
+    "description": {
+      "intro": "accompagne les entrepreneurs individuels en coordonnant ces formalités pour simplifier le lancement de leur activité. Cet accompagnement permet notamment d'obtenir :",
+      "nif": "Numéro d'Identification Fiscale",
+      "stat": "Statistique",
+      "rcs": "Registre du Commerce et des Sociétés"
+    },
+    "contact": "Nous contacter",
+    "quote": "Demander un devis",
+    "price": "200 000 Ar",
+    "priceNote": "Hors frais administratifs",
+    "additionalServices": {
+      "label": "Nous proposons aussi d'autres services",
+      "title": "Une gamme de services complets pour des clients variés",
+      "description": "Notre objectif est de simplifier les processus administratifs et de garantir la conformité avec la réglementation en vigueur.",
+      "items": {
+        "taxCard": { "title": "Renouvellement carte fiscale", "description": "Renouveler annuellement la carte fiscale pour se conformer aux exigences de l'État." },
+        "activity": { "title": "Changement, rajout d'activité", "description": "Décision de changements, mise à jour des statuts, formalité à respecter." },
+        "headOffice": { "title": "Changement siège social", "description": "Modifier son siège principal nécessite une série de démarches juridiques et administratives." },
+        "closure": { "title": "Cessation d'activité", "description": "Pour les entreprises souhaitant procéder à l'arrêt de l'activité économique." },
+        "letter": { "title": "Rédaction lettre administrative", "description": "Nous rédigeons des lettres administratives telles que demande d'agrément, permis de construire." },
+        "requests": { "title": "Diverses demandes", "description": "Nous traitons tous types de demandes (Agrément, autorisation ministérielle...)." }
+      }
+    }
   }
 }
