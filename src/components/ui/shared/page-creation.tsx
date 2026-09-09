@@ -45,15 +45,15 @@ export default async function CreationPage({
 
   return (
     <>
-      <section className="px-6 py-10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8  gap-12 lg:gap-20">
+      <section className="page-creation-section px-6 py-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-12 px-4 sm:px-6 lg:gap-20 lg:px-8">
           {isReverseSection ? (
-            <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
+            <div className="page-creation-media relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
               <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
             </div>
           ) : null}
 
-          <div className={isReverseSection ? 'flex-1' : 'flex-1'}>
+          <div className="page-creation-content flex-1">
             <p className="text-sm font-semibold uppercase tracking-wide text-secondary">{eyebrow}</p>
             <h1 className="mt-3 text-3xl font-bold leading-tight text-primary sm:text-4xl">
               {title}
@@ -64,7 +64,7 @@ export default async function CreationPage({
               {description}
             </div>
 
-            <div className="mt-8 inline-block rounded-2xl border border-primary/7 bg-white px-7 py-3 shadow-xs">
+            <div className="page-creation-price mt-8 inline-block rounded-2xl border border-primary/7 bg-white px-7 py-3 shadow-xs">
               <div className="flex items-center justify-between gap-6 ">
                 <div>
                   <p className="mt-1 text-4xl font-bold text-primary">
@@ -98,7 +98,7 @@ export default async function CreationPage({
           </div>
 
           {!isReverseSection ? (
-            <div className="relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
+            <div className="page-creation-media relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
               <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
             </div>
           ) : null}

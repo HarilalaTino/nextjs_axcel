@@ -28,6 +28,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)(?:/)?$"
     },
     {
+      "page": "/[locale]/creation-domiciliation",
+      "regex": "^/([^/]+?)/creation\\-domiciliation(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-domiciliation(?:/)?$"
+    },
+    {
       "page": "/[locale]/creation-entreprise-individuelle",
       "regex": "^/([^/]+?)/creation\\-entreprise\\-individuelle(?:/)?$",
       "routeKeys": {

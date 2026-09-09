@@ -9,3 +9,39 @@
   --color-primary: #152039;
   --color-secondary: #ff6341;
 }
+
+@keyframes fade-up-in {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.page-creation-section {
+  animation: fade-up-in 0.7s ease-out both;
+}
+
+.page-creation-content {
+  animation: fade-up-in 0.8s 0.08s ease-out both;
+}
+
+.page-creation-media {
+  animation: fade-up-in 0.8s 0.12s ease-out both;
+}
+
+.page-creation-price {
+  animation: fade-up-in 0.8s 0.16s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-creation-section,
+  .page-creation-content,
+  .page-creation-media,
+  .page-creation-price {
+    animation: none;
+  }
+}
