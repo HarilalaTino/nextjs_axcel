@@ -125,5 +125,91 @@
     "quote": "Demander un devis",
     "price": "400 000 Ar",
     "priceNote": "Hors frais administratifs"
+  },
+  "CourierService": {
+    "courierDiplomaRetrieval" : {
+      "eyebrow": "Service de coursier",
+      "title": "Récupération de certificats, diplômes et relevés de notes",
+      "description": "Axcel Company vous propose un service rapide et fiable pour récupérer vos documents officiels en toute sécurité.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "bacc" : {
+        "label": "Relevé de notes BACC",
+        "price": "100 000 Ar"
+      },
+      "achievementCertificate" : {
+        "label": "Attestation de réussite",
+        "price": "100 000 Ar"
+      },
+      "Licence": {
+        "label": "Diplôme de Licence",
+        "price": "200 000 Ar"
+      },
+      "Master": {
+        "label": "Diplôme Master",
+        "price": "300 000 Ar"
+      }
+    },
+    "translationRetrieval": {
+      "eyebrow": "Service de coursier",
+      "title": "Récupération et traduction de documents administratifs",
+      "description": "Nous proposons des offres de récupération et de traduction de documents administratifs :",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "cinRectification": {
+        "label": "Rectification CIN",
+        "price": "300 000 Ar"
+      },
+      "bulletin3": {
+        "label": "Bulletin n°3",
+        "price": "38 000 Ar (1 bulettin) / 46 000Ar (2 bulletins) / 54 000 Ar (3 bulletins)"
+      },
+      "birthCertificateTranslation": {
+        "label": "Traduction acte de naissance",
+        "price": "50 000 Ar"
+      },
+      "birthCertificateCopy": {
+        "label": "Récupération copie de naissance",
+        "price": "30 000 Ar"
+      }
+    },
+    "certificateRetrieval": {
+      "eyebrow": "Service de coursier",
+      "title": "Récupération de certificats administratifs",
+      "description": "Nous mettons à votre disposition un ensemble de services dédiés à la récupération de vos démarches administratives et bancaires. Consultez la liste de nos prestations ci-dessous",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "payslip": {
+        "label": "Fiche de paie",
+        "price": "50 000 Ar / fiche"
+      },
+      "bankAccountCreation": {
+        "label": "Création compte bancaire",
+        "price": "100 000 Ar"
+      },
+      "simCardCreation": {
+        "label": "Création Puce",
+        "price": "100 000 Ar"
+      },
+      "fopEquivalence": {
+        "label": "Équivalence FOP",
+        "price": "100 000 Ar"
+      }
+    },
+    "automobileProcedure": {
+      "eyebrow": "Nos Prestations",
+      "title": "Procédures administratives pour l'automobile",
+      "description": "Nous proposons des services de récupération et de traitement des documents administratifs liés à l'automobile :",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "vehicleMutation": {
+        "label": "Mutation",
+        "price": "100 000 Ar"
+      },
+      "carteGrise": {
+        "label": "Changement de carte rose en carte grise",
+        "price": "100 000 Ar"
+      }
+    }
   }
 }

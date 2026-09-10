@@ -1,5 +1,5 @@
 import { Link } from '@/i18n/navigation';
-import {  Tag } from 'lucide-react';
+import { Tag } from 'lucide-react';
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 
@@ -64,22 +64,25 @@ export default async function CreationPage({
               {description}
             </div>
 
-            <div className="page-creation-price mt-8 inline-block rounded-2xl border border-primary/7 bg-white px-7 py-3 shadow-xs">
-              <div className="flex items-center justify-between gap-6 ">
-                <div>
-                  <p className="mt-1 text-4xl font-bold text-primary">
-                    {price}
-                  </p>
-                  <small className="text-sm text-primary/60">
-                    {priceNote}
-                  </small>
-                </div>
+            {price && priceNote && (
+              <div className="page-creation-price mt-8 inline-block rounded-2xl border border-primary/7 bg-white px-7 py-3 shadow-xs">
+                <div className="flex items-center justify-between gap-6 ">
+                  <div>
+                    <p className="mt-1 text-4xl font-bold text-primary">
+                      {price}
+                    </p>
+                    <small className="text-sm text-primary/60">
+                      {priceNote}
+                    </small>
+                  </div>
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10">
-                  <Tag className="h-5 w-5 text-gray-500" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10">
+                    <Tag className="h-5 w-5 text-gray-500" />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
+
 
             <div className="mt-8 flex gap-3">
               <Link

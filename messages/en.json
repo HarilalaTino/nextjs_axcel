@@ -125,5 +125,91 @@
     "quote": "Request a quote",
     "price": "400 000 Ar",
     "priceNote": "Excluding administrative fees"
+  },
+  "CourierService": {
+    "courierDiplomaRetrieval" : {
+      "eyebrow": "Courier Service",
+      "title": "Diploma and Transcript Retrieval",
+      "description": "Axcel Company offers a fast and reliable service to retrieve your official documents securely.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "bacc" : {
+        "label": "BACC Transcript",
+        "price": "100 000 Ar"
+      },
+      "achievementCertificate" : {
+        "label": "Achievement Certificate",
+        "price": "100 000 Ar"
+      },
+      "Licence": {
+        "label": "Bachelor's degree",
+        "price": "200 000 Ar"
+      },
+      "Master": {
+        "label": "Master's degree",
+        "price": "300 000 Ar"
+      }
+    },
+    "translationRetrieval": {
+      "eyebrow": "Courier Service",
+      "title": "Retrieval and Translation of Administrative Documents",
+      "description": "We offer packages for retrieval and translation of administrative documents :",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "cinRectification": {
+        "label": "CIN correction",
+        "price": "300 000 Ar"
+      },
+      "bulletin3": {
+        "label": "Bulletin n°3",
+        "price": "38 000 Ar (1 bulettin) / 46 000Ar (2 bulletin) / 54 000 Ar (3 bulletin)"
+      },
+      "birthCertificateTranslation": {
+        "label": "Translation of Birth Certificate",
+        "price": "50 000 Ar"
+      },
+      "birthCertificateCopy": {
+        "label": "Retrieval of Birth Certificate Copy",
+        "price": "30 000 Ar"
+      }
+    },
+    "certificateRetrieval": {
+      "eyebrow": "Courier service",
+      "title": "Retrieval of administrative certificates",
+      "description": "We provide you with a range of services dedicated to retrieving your administrative and banking procedures. See our list of services below.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "payslip": {
+        "label": "Payslip",
+        "price": "50 000 Ar / slip"
+      },
+      "bankAccountCreation": {
+        "label": "Bank account opening",
+        "price": "100 000 Ar"
+      },
+      "simCardCreation": {
+        "label": "SIM card creation",
+        "price": "100 000 Ar"
+      },
+      "fopEquivalence": {
+        "label": "FOP equivalence",
+        "price": "100 000 Ar"
+      }
+    },
+    "automobileProcedure": {
+      "eyebrow": "Our Services",
+      "title": "Administrative Procedures for Vehicles",
+      "description": "We offer document retrieval and processing services for vehicle-related administrative procedures:",
+      "contact": "Contact Us",
+      "quote": "Request a Quote",
+      "vehicleMutation": {
+        "label": "Vehicle Transfer",
+        "price": "100 000 Ar"
+      },
+      "carteGrise": {
+        "label": "Change from a pink card to a gray card",
+        "price": "100 000 Ar"
+      }
+    }
   }
 }

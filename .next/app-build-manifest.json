@@ -12,18 +12,18 @@
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-c5a697ddbf82d774.js",
       "static/chunks/main-app-eb3590d0db1a33aa.js",
-      "static/css/12d788bde38896bb.css",
+      "static/css/c7592430d2b97fcb.css",
       "static/chunks/994-92064e48d80ea555.js",
       "static/chunks/app/[locale]/layout-63d725e6c6c896c7.js"
     ],
-    "/[locale]/creation-domiciliation/page": [
+    "/[locale]/creation-entreprise-individuelle/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-c5a697ddbf82d774.js",
       "static/chunks/main-app-eb3590d0db1a33aa.js",
       "static/chunks/994-92064e48d80ea555.js",
-      "static/chunks/914-c70b2c301015c8f8.js",
-      "static/chunks/app/[locale]/creation-domiciliation/page-0c28bcace100f701.js"
+      "static/chunks/608-51781e4bbdfbe9af.js",
+      "static/chunks/app/[locale]/creation-entreprise-individuelle/page-cc26cdff373c886a.js"
     ],
     "/[locale]/creation-societe-sarl-sarlu/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",
@@ -31,8 +31,16 @@
       "static/chunks/255-c5a697ddbf82d774.js",
       "static/chunks/main-app-eb3590d0db1a33aa.js",
       "static/chunks/994-92064e48d80ea555.js",
-      "static/chunks/914-c70b2c301015c8f8.js",
-      "static/chunks/app/[locale]/creation-societe-sarl-sarlu/page-10be5f0822ad46ce.js"
+      "static/chunks/608-51781e4bbdfbe9af.js",
+      "static/chunks/app/[locale]/creation-societe-sarl-sarlu/page-cc26cdff373c886a.js"
+    ],
+    "/[locale]/creation-domiciliation/page": [
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/994-92064e48d80ea555.js",
+      "static/chunks/app/[locale]/creation-domiciliation/page-c4dd30f2301ea371.js"
     ],
     "/[locale]/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",
@@ -41,17 +49,16 @@
       "static/chunks/main-app-eb3590d0db1a33aa.js",
       "static/chunks/994-92064e48d80ea555.js",
       "static/chunks/347-c37d0631c0447a58.js",
-      "static/chunks/914-c70b2c301015c8f8.js",
-      "static/chunks/app/[locale]/page-3c1db08e0c779677.js"
+      "static/chunks/608-51781e4bbdfbe9af.js",
+      "static/chunks/app/[locale]/page-e49de30f1875df4d.js"
     ],
-    "/[locale]/creation-entreprise-individuelle/page": [
+    "/[locale]/service-coursier/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-c5a697ddbf82d774.js",
       "static/chunks/main-app-eb3590d0db1a33aa.js",
       "static/chunks/994-92064e48d80ea555.js",
-      "static/chunks/914-c70b2c301015c8f8.js",
-      "static/chunks/app/[locale]/creation-entreprise-individuelle/page-10be5f0822ad46ce.js"
+      "static/chunks/app/[locale]/service-coursier/page-caef17ac33a7f460.js"
     ]
   }
 }

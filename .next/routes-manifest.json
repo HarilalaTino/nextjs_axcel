@@ -50,6 +50,14 @@
         "nxtPlocale": "nxtPlocale"
       },
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-societe\\-sarl\\-sarlu(?:/)?$"
+    },
+    {
+      "page": "/[locale]/service-coursier",
+      "regex": "^/([^/]+?)/service\\-coursier(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/service\\-coursier(?:/)?$"
     }
   ],
   "staticRoutes": [

@@ -13,7 +13,7 @@ export default async function ProprietorshipCreationPage() {
             <TopMenu />
             <NavMenu />
             <CreationPage
-                creationType="entreprise-individuelle"
+                creationType="sole-proprietorship-creation"
                 eyebrow={t("eyebrow")}
                 title={t("title")}
                 description={

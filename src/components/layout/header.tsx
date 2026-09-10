@@ -44,14 +44,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     label: 'courier',
-    href: '/coursier',
-    submenu: [
-      { label: 'courierDiploma', href: '/coursier-recuperation-diplome' },
-      { label: 'courierBirthMarriage', href: '/coursier-recuperation-traduction' },
-      { label: 'courierMarketCertificates', href: '/coursier-recuperation-certificats' },
-      { label: 'courierConsumabilityCertificates', href: '/coursier-recuperation-certificats-consommabilite' },
-      { label: 'courierRegistrations', href: '/coursier-toutes-enregistrement-certifications' },
-    ],
+    href: '/service-coursier'
   },
   { label: 'about', href: '/a-propos' },
   { label: 'contact', href: '/contact' }

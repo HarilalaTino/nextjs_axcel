@@ -13,7 +13,7 @@ export default async function CreationSocieteSarlSarluPage() {
             <TopMenu />
             <NavMenu />
             <CreationPage
-                creationType="sarl"
+                creationType="sarl-creation"
                 eyebrow={t("eyebrow")}
                 title={t("title")}
                 description={
@@ -27,7 +27,7 @@ export default async function CreationSocieteSarlSarluPage() {
                 t={t}
             />
             <CreationPage
-                creationType="sarlu"
+                creationType="sarlu-creation"
                 eyebrow={tSarlu("eyebrow")}
                 title={tSarlu("title")}
                 description={

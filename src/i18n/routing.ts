@@ -21,10 +21,6 @@ export const routing = defineRouting({
       fr: '/creation',
       en: '/company-creation'
     },
-    '/coursier': {
-      fr: '/coursier',
-      en: '/courier'
-    },
     '/conseil-creation-societe': {
       fr: '/conseil-creation-societe',
       en: '/business-creation-advice'
@@ -61,25 +57,9 @@ export const routing = defineRouting({
       fr: '/conseil-assistance',
       en: '/advice-assistance'
     },
-    '/coursier-recuperation-diplome': {
-      fr: '/coursier-recuperation-diplome',
-      en: '/courier-diploma-retrieval'
-    },
-    '/coursier-recuperation-traduction': {
-      fr: '/coursier-recuperation-traduction',
-      en: '/courier-birth-marriage-certificate'
-    },
-    '/coursier-recuperation-certificats': {
-      fr: '/coursier-recuperation-certificats',
-      en: '/courier-market-certificates'
-    },
-    '/coursier-recuperation-certificats-consommabilite': {
-      fr: '/coursier-recuperation-certificats-consommabilite',
-      en: '/courier-consumability-certificates'
-    },
-    '/coursier-toutes-enregistrement-certifications': {
-      fr: '/coursier-toutes-enregistrement-certifications',
-      en: '/courier-all-registrations'
+    '/service-coursier': {
+      fr: '/service-coursier',
+      en: '/courier-services'
     },
     '/domiciliation': {
       fr: '/domiciliation',

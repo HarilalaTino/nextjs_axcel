@@ -1,8 +1,9 @@
 {
+  "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
-  "/[locale]/creation-domiciliation/page": "/[locale]/creation-domiciliation",
-  "/[locale]/creation-societe-sarl-sarlu/page": "/[locale]/creation-societe-sarl-sarlu",
-  "/[locale]/page": "/[locale]",
   "/[locale]/creation-entreprise-individuelle/page": "/[locale]/creation-entreprise-individuelle",
-  "/_not-found/page": "/_not-found"
+  "/[locale]/creation-societe-sarl-sarlu/page": "/[locale]/creation-societe-sarl-sarlu",
+  "/[locale]/creation-domiciliation/page": "/[locale]/creation-domiciliation",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/service-coursier/page": "/[locale]/service-coursier"
 }
