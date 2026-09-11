@@ -21,7 +21,7 @@ export default async function CreationSocieteSarlSarluPage() {
                         <p>{t("description")}</p>
                     </>
                 }
-                imageSrc="/images/home/hero-bg-1.jpg"
+                imageSrc="/images/company/SARL.jpg"
                 price={t("price")}
                 priceNote={t("priceNote")}
                 t={t}
@@ -35,7 +35,7 @@ export default async function CreationSocieteSarlSarluPage() {
                         <p>{tSarlu("description")}</p>
                     </>
                 }
-                imageSrc="/images/home/hero-bg-1.jpg"
+                imageSrc="/images/company/SARLU.jpg"
                 price={tSarlu("price")}
                 priceNote={tSarlu("priceNote")}
                 t={tSarlu}

@@ -26,7 +26,7 @@ export default async function ProprietorshipCreationPage() {
                         </ul>
                     </>
                 }
-                imageSrc="/images/home/hero-bg-1.jpg"
+                imageSrc="/images/company/individual.jpg"
                 price={t("price")}
                 priceNote={t("priceNote")}
                 t={t}

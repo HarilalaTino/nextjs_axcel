@@ -42,18 +42,25 @@ export default async function CreationPage({
     query: { type: creationType }
   } as const;
 
+  const contentClassName = isReverseSection
+    ? 'page-creation-content page-creation-content-right'
+    : 'page-creation-content page-creation-content-left';
+
+  const mediaClassName = isReverseSection
+    ? 'page-creation-media page-creation-media-left'
+    : 'page-creation-media page-creation-media-right';
 
   return (
     <>
       <section className="page-creation-section px-6 py-10">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-12 px-4 sm:px-6 lg:gap-20 lg:px-8">
           {isReverseSection ? (
-            <div className="page-creation-media relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
+            <div className={`${mediaClassName} relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg`}>
               <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
             </div>
           ) : null}
 
-          <div className="page-creation-content flex-1">
+          <div className={`${contentClassName} flex-1`}>
             <p className="text-sm font-semibold uppercase tracking-wide text-secondary">{eyebrow}</p>
             <h1 className="mt-3 text-3xl font-bold leading-tight text-primary sm:text-4xl">
               {title}
@@ -101,7 +108,7 @@ export default async function CreationPage({
           </div>
 
           {!isReverseSection ? (
-            <div className="page-creation-media relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg">
+            <div className={`${mediaClassName} relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg`}>
               <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
             </div>
           ) : null}
