@@ -1,30 +1,64 @@
 {
   "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/app/_not-found/page-688d2bbee34f0949.js"
+    ],
     "/[locale]/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/[locale]/layout.css",
-      "static/chunks/app/[locale]/layout.js"
-    ],
-    "/[locale]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/page.js"
-    ],
-    "/[locale]/service-coursier/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/service-coursier/page.js"
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/css/770d2fef8c362489.css",
+      "static/chunks/994-92064e48d80ea555.js",
+      "static/chunks/app/[locale]/layout-63d725e6c6c896c7.js"
     ],
     "/[locale]/creation-entreprise-individuelle/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/creation-entreprise-individuelle/page.js"
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/994-92064e48d80ea555.js",
+      "static/chunks/608-51781e4bbdfbe9af.js",
+      "static/chunks/app/[locale]/creation-entreprise-individuelle/page-cc26cdff373c886a.js"
+    ],
+    "/[locale]/creation-domiciliation/page": [
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/994-92064e48d80ea555.js",
+      "static/chunks/app/[locale]/creation-domiciliation/page-c4dd30f2301ea371.js"
+    ],
+    "/[locale]/page": [
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/994-92064e48d80ea555.js",
+      "static/chunks/347-c37d0631c0447a58.js",
+      "static/chunks/608-51781e4bbdfbe9af.js",
+      "static/chunks/app/[locale]/page-e49de30f1875df4d.js"
     ],
     "/[locale]/creation-societe-sarl-sarlu/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/creation-societe-sarl-sarlu/page.js"
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/994-92064e48d80ea555.js",
+      "static/chunks/608-51781e4bbdfbe9af.js",
+      "static/chunks/app/[locale]/creation-societe-sarl-sarlu/page-cc26cdff373c886a.js"
+    ],
+    "/[locale]/service-coursier/page": [
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/994-92064e48d80ea555.js",
+      "static/chunks/app/[locale]/service-coursier/page-caef17ac33a7f460.js"
     ]
   }
 }
