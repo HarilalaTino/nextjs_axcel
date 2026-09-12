@@ -12,26 +12,36 @@ export default async function ProprietorshipCreationPage() {
         <div>
             <TopMenu />
             <NavMenu />
-            <CreationPage
-                creationType="sole-proprietorship-creation"
-                eyebrow={t("eyebrow")}
-                title={t("title")}
-                description={
-                    <>
-                        <strong>Axcel Company</strong> {t("description.intro")}
-                        <ul className="mt-4 list-disc list-inside space-y-1 pl-4">
-                            <li><strong>NIF</strong> ({t("description.nif")})</li>
-                            <li><strong>STAT</strong> ({t("description.stat")})</li>
-                            <li><strong>RCS</strong> ({t("description.rcs")})</li>
-                        </ul>
-                    </>
-                }
-                imageSrc="/images/company/individual.jpg"
-                price={t("price")}
-                priceNote={t("priceNote")}
-                t={t}
-            />
-            <ElegantCardWrapper />
+            <div className="overflow-hidden relative">
+                <div
+                    className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/5"
+                    aria-hidden="true"
+                />
+                <CreationPage
+                    creationType="sole-proprietorship-creation"
+                    eyebrow={t("eyebrow")}
+                    title={t("title")}
+                    description={
+                        <>
+                            <strong>Axcel Company</strong> {t("description.intro")}
+                            <ul className="mt-4 list-disc list-inside space-y-1 pl-4">
+                                <li><strong>NIF</strong> ({t("description.nif")})</li>
+                                <li><strong>STAT</strong> ({t("description.stat")})</li>
+                                <li><strong>RCS</strong> ({t("description.rcs")})</li>
+                            </ul>
+                        </>
+                    }
+                    imageSrc="/images/company/individual.jpg"
+                    price={t("price")}
+                    priceNote={t("priceNote")}
+                    t={t}
+                />
+                <ElegantCardWrapper />
+                <div
+                    className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
+                    aria-hidden="true"
+                />
+            </div>
             <ContactCTA />
         </div>
     )

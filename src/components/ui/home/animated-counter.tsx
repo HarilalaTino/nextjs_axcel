@@ -41,6 +41,10 @@ export default function AnimatedCounter({
         return () => observer.disconnect();
     }, []);
 
+    const formatNumber = (value:  number) => {
+        return new Intl.NumberFormat('fr-FR').format(value);
+    };
+
     useEffect(() => {
         if (!isVisible) return;
 
@@ -54,6 +58,8 @@ export default function AnimatedCounter({
                 setCount(target);
                 return;
             }
+
+
 
             setCount(current);
             timeoutId = setTimeout(tick, 40);
@@ -70,7 +76,7 @@ export default function AnimatedCounter({
 
     return (
         <span ref={counterRef}>
-            {prefix}{count}{suffix}
+            {prefix}{formatNumber(count)}{suffix}
         </span>
     );
 }

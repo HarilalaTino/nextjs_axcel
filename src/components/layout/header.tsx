@@ -22,16 +22,6 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   {
-    label: 'advice',
-    href: '/service',
-    submenu: [
-      { label: 'adviceCreation', href: '/conseil-creation-societe' },
-      { label: 'adviceModification', href: '/assistance-modification-societe' },
-      { label: 'adviceFormalization', href: '/assistance-formalisation-entreprise' },
-      { label: 'adviceStrategic', href: '/consultation-strategique' },
-    ],
-  },
-  {
     label: 'creation',
     href: '/creation',
     submenu: [
@@ -45,6 +35,16 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: 'courier',
     href: '/service-coursier'
+  },
+  {
+    label: 'advice',
+    href: '/service',
+    submenu: [
+      { label: 'adviceCreation', href: '/conseil-creation-societe' },
+      { label: 'adviceModification', href: '/assistance-modification-societe' },
+      { label: 'adviceFormalization', href: '/assistance-formalisation-entreprise' },
+      { label: 'adviceStrategic', href: '/consultation-strategique' },
+    ],
   },
   { label: 'about', href: '/a-propos' },
   { label: 'contact', href: '/contact' }
