@@ -1,5 +1,6 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/[locale]/service-coursier/page": "app/[locale]/service-coursier/page.js",
-  "/[locale]/creation-domiciliation/page": "app/[locale]/creation-domiciliation/page.js"
+  "/[locale]/location-salle-reunion/page": "app/[locale]/location-salle-reunion/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/domiciliation/page": "app/[locale]/domiciliation/page.js"
 }

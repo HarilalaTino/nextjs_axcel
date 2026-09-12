@@ -225,5 +225,12 @@
         "fourth": "Une image plus crédible vis-à-vis de vos clients et partenaires"
       
       }
-    }
+  },
+  "MeetingRoom": {
+    "eyebrow": "Location de salle de réunion",
+      "title": "Des espaces prêts à l'emploi pour vos réunions",
+      "description": "Organiser une réunion professionnelle demande souvent une logistique lourde : réservation d'un lieu adapté, mobilier, connexion internet, équipement audiovisuel… Avec la location de salle de réunion, tout est déjà en place pour démarrer immédiatement, sans contrainte d'aménagement ni d'entretien. Des salles entièrement équipées sont mises à disposition des entreprises et des particuliers, pour accueillir des réunions, des rendez-vous clients ou des sessions de travail, ponctuellement ou de façon régulière.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+  }
 }

@@ -1,8 +1,8 @@
 // File: C:\Users\TINO\Documents\Projects\ME\axcel\nextjs_axcel\src\app\[locale]\creation-domiciliation\page.tsx
-import * as entry from '../../../../../src/app/[locale]/creation-domiciliation/page.js'
+import * as entry from '../../../../../src/app/[locale]/domiciliation/page.jsx'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../../src/app/[locale]/creation-domiciliation/page.js')
+type TEntry = typeof import('../../../../../src/app/[locale]/domiciliation/page.jsx')
 
 type SegmentParams<T extends Object = any> = T extends Record<string, any>
   ? { [K in keyof T]: T[K] extends string ? string | string[] | undefined : never }

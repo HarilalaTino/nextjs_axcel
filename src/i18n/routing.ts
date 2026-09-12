@@ -45,10 +45,6 @@ export const routing = defineRouting({
       fr: '/creation-societe-sarl-sarlu',
       en: '/sarl-sarlu-company-creation'
     },
-    '/creation-domiciliation': {
-      fr: '/creation-domiciliation',
-      en: '/domiciliation'
-    },
     '/location-salle-reunion': {
       fr: '/location-salle-reunion',
       en: '/meeting-room-rental'

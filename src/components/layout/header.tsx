@@ -27,7 +27,7 @@ const NAV_ITEMS: NavItem[] = [
     submenu: [
       { label: 'creationIndividual', href: '/creation-entreprise-individuelle' },
       { label: 'creationSarl', href: '/creation-societe-sarl-sarlu' },
-      { label: 'creationDomiciliation', href: '/creation-domiciliation' },
+      { label: 'creationDomiciliation', href: '/domiciliation' },
       { label: 'creationMeetingRoom', href: '/location-salle-reunion' },
       { label: 'creationAdvice', href: '/conseil-assistance' },
     ],

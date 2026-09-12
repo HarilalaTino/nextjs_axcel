@@ -11,10 +11,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/service-coursier/page.js"
     ],
-    "/[locale]/creation-domiciliation/page": [
+    "/[locale]/domiciliation/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/creation-domiciliation/page.js"
+      "static/chunks/app/[locale]/domiciliation/page.js"
+    ],
+    "/[locale]/location-salle-reunion/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/location-salle-reunion/page.js"
+    ],
+    "/[locale]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/page.js"
     ]
   }
 }

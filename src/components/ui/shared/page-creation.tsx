@@ -15,6 +15,7 @@ type CreationPageProps = {
   priceNote?: string;
   t?: TranslationFn;
   isReverseSection?: boolean;
+  hideDevis?: boolean;
 };
 
 export default async function CreationPage({
@@ -26,7 +27,8 @@ export default async function CreationPage({
   price,
   priceNote,
   t,
-  isReverseSection
+  isReverseSection,
+  hideDevis
 }: CreationPageProps) {
   const contactHref = '/contact' as const;
   const quoteHref = '/devis' as const;
@@ -98,12 +100,15 @@ export default async function CreationPage({
               >
                 {contactLabel}
               </Link>
-              <Link
-                href={quoteUrl}
-                className="rounded-md bg-secondary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-secondary/90"
-              >
-                {quoteLabel}
-              </Link>
+              {!hideDevis && (
+                <Link
+                  href={quoteUrl}
+                  className="rounded-md bg-secondary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-secondary/90"
+                >
+                  {quoteLabel}
+                </Link>
+              )}
+
             </div>
           </div>
 

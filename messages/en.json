@@ -224,5 +224,12 @@
         "third": "Centralized receipt of your mail and official documents",
         "fourth": "A more credible image with your clients and partners"
       }
-    }
+  },
+  "MeetingRoom": {
+  "eyebrow": "Meeting room rental",
+    "title": "Ready-to-use spaces for your meetings",
+    "description": "Organizing a professional meeting often requires heavy logistics: booking a suitable venue, furniture, internet connection, audiovisual equipment... With meeting room rental, everything is already in place to start immediately, without constraints of layout or maintenance. Fully equipped rooms are made available to businesses and individuals to host meetings, client appointments, or work sessions, occasionally or on a regular basis.",
+    "contact": "Contact us",
+    "quote": "Request a quote"
+  }
 }

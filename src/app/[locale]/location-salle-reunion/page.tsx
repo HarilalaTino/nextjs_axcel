@@ -5,10 +5,11 @@ import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
 import CreationPage from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
 
-export default async function CreationDomiciliationPage() {
-    const t = await getTranslations("Domiciliation");
+export default async function LocationMeetingRoomPage() {
+    const t = await getTranslations("MeetingRoom");
+
     return (
-        <>
+        <div>
             <TopMenu />
             <NavMenu />
             <div className="overflow-hidden relative">
@@ -21,26 +22,19 @@ export default async function CreationDomiciliationPage() {
                     eyebrow={t("eyebrow")}
                     title={t("title")}
                     description={
-                        <>
-                            <p>{t("description")}</p>
-                            <ul className="mt-4 list-disc list-inside space-y-1 pl-4">
-                                <li>{t("why.first")}</li>
-                                <li>{t("why.second")}</li>
-                                <li>{t("why.third")}</li>
-                                <li>{t("why.fourth")}</li>
-                            </ul>
-                        </>
+                        <p>{t("description")}</p>
                     }
-                    imageSrc="/images/domiciliation/domiciliation.jpg"
+                    imageSrc="/images/meeting_room/meeting-room.jpg"
                     t={t}
+                    hideDevis
                 />
+                <ElegantCardWrapper />
                 <div
                     className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
                     aria-hidden="true"
                 />
-                <ElegantCardWrapper />
             </div>
             <ContactCTA />
-        </>
+        </div>
     )
 }
