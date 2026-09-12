@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/[locale]/location-salle-reunion/page": "/[locale]/location-salle-reunion",
+  "/[locale]/creation-entreprise-individuelle/page": "/[locale]/creation-entreprise-individuelle",
+  "/[locale]/creation-societe-sarl-sarlu/page": "/[locale]/creation-societe-sarl-sarlu",
+  "/[locale]/creation-ong-association/page": "/[locale]/creation-ong-association",
+  "/[locale]/domiciliation/page": "/[locale]/domiciliation",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/service-coursier/page": "/[locale]/service-coursier"
+}
