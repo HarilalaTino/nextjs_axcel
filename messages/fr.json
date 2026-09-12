@@ -211,5 +211,19 @@
         "price": "100 000 Ar"
       }
     }
-  }
+  },
+  "Domiciliation": {
+      "eyebrow": "Domiciliation d'entreprise ",
+      "title": "Une adresse officielle pour votre société",
+      "description": "La domiciliation d'entreprise permet d'attribuer un siège social à votre société, sans que vous ayez besoin d'y exercer physiquement votre activité. C'est l'adresse qui apparaîtra sur l'ensemble de vos documents officiels : statuts, immatriculation, factures et correspondances. Toute société doit obligatoirement disposer d'un siège social, qui sert de référence administrative et fiscale auprès des autorités.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "why": {
+        "first": "Une adresse professionnelle reconnue, distincte de votre domicile personnel",
+        "second": "Une immatriculation facilitée auprès des administrations compétentes",
+        "third": "La réception centralisée de votre courrier et de vos documents officiels",
+        "fourth": "Une image plus crédible vis-à-vis de vos clients et partenaires"
+      
+      }
+    }
 }

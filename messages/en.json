@@ -211,5 +211,18 @@
         "price": "100 000 Ar"
       }
     }
-  }
+  },
+  "Domiciliation": {
+      "eyebrow": "Business domiciliation",
+      "title": "An official address for your company",
+      "description": "Business domiciliation allows you to assign a registered office to your company without needing to physically carry out your activity there. This is the address that will appear on all your official documents: statutes, registration, invoices, and correspondence. Every company must necessarily have a registered office, which serves as the administrative and tax reference with the authorities.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "why": {
+        "first": "A recognized professional address, separate from your personal home",
+        "second": "Easier registration with the competent authorities",
+        "third": "Centralized receipt of your mail and official documents",
+        "fourth": "A more credible image with your clients and partners"
+      }
+    }
 }
