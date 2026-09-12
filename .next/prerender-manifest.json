@@ -1,1 +1,66 @@
-{"version":4,"routes":{"/fr/creation-societe-sarl-sarlu":{},"/en/creation-societe-sarl-sarlu":{},"/fr/creation-domiciliation":{},"/en/creation-domiciliation":{},"/fr/creation-entreprise-individuelle":{},"/en/creation-entreprise-individuelle":{},"/fr":{},"/en":{},"/fr/service-coursier":{},"/en/service-coursier":{}},"dynamicRoutes":{"/[locale]/creation-societe-sarl-sarlu":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/[locale]/creation-societe-sarl-sarlu","routeRegex":"^\\/([^/]+?)\\/creation\\-societe\\-sarl\\-sarlu(?:\\/)?$","allowHeader":[]},"/[locale]/creation-domiciliation":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/[locale]/creation-domiciliation","routeRegex":"^\\/([^/]+?)\\/creation\\-domiciliation(?:\\/)?$","allowHeader":[]},"/[locale]/creation-entreprise-individuelle":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/[locale]/creation-entreprise-individuelle","routeRegex":"^\\/([^/]+?)\\/creation\\-entreprise\\-individuelle(?:\\/)?$","allowHeader":[]},"/[locale]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/[locale]","routeRegex":"^\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/[locale]/service-coursier":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/[locale]/service-coursier","routeRegex":"^\\/([^/]+?)\\/service\\-coursier(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"85a116b3075a63164aac0d4ce21dd071","previewModeSigningKey":"c1c0823630ae84776cc46767946da9820e4c37a2f736ad3f9584d9d1da076380","previewModeEncryptionKey":"b33145b73536cb3edad08c2d3bbda4d4c61c3963e64642de1ee3faa7e0ab8522"}}
+{
+  "version": 4,
+  "routes": {
+    "/_not-found": {
+      "initialStatus": 404,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/_not-found",
+      "dataRoute": "/_not-found.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/favicon.ico": {
+      "initialHeaders": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/x-icon",
+        "x-next-cache-tags": "_N_T_/layout,_N_T_/favicon.ico/layout,_N_T_/favicon.ico/route,_N_T_/favicon.ico"
+      },
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/favicon.ico",
+      "dataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "40b569a8aa5db6639de25ba7cb11350b",
+    "previewModeSigningKey": "22a37730b0d630aa4e44a9e56361df678beb2a7a7156b2abea20c9af052a7c2b",
+    "previewModeEncryptionKey": "784778022def8fc23700ae179b843bab20943582a90d98da19d8f77a3a634a54"
+  }
+}
