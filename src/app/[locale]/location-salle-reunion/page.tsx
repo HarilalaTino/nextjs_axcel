@@ -18,7 +18,7 @@ export default async function LocationMeetingRoomPage() {
                     aria-hidden="true"
                 />
                 <CreationPage
-                    creationType="sole-proprietorship-creation"
+                    creationType="meeting-room"
                     eyebrow={t("eyebrow")}
                     title={t("title")}
                     description={

@@ -17,7 +17,7 @@ export default async function CreationDomiciliationPage() {
                     aria-hidden="true"
                 />
                 <CreationPage
-                    creationType="sole-proprietorship-creation"
+                    creationType="domiciliation"
                     eyebrow={t("eyebrow")}
                     title={t("title")}
                     description={

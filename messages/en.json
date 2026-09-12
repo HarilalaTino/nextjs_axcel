@@ -8,6 +8,7 @@
     "adviceStrategic": "Strategic consultation for entrepreneurs",
     "creationIndividual": "Sole proprietorship creation",
     "creationSarl": "SARL & SARLU company creation",
+    "creationNogAndAssociation": "NGO and Association creation",
     "creationDomiciliation": "Domiciliation",
     "creationMeetingRoom": "Meeting room rental",
     "creationAdvice": "Advice and assistance",
@@ -231,5 +232,21 @@
     "description": "Organizing a professional meeting often requires heavy logistics: booking a suitable venue, furniture, internet connection, audiovisual equipment... With meeting room rental, everything is already in place to start immediately, without constraints of layout or maintenance. Fully equipped rooms are made available to businesses and individuals to host meetings, client appointments, or work sessions, occasionally or on a regular basis.",
     "contact": "Contact us",
     "quote": "Request a quote"
+  },
+  "NgoAssociationCreation": {
+    "ngo": {
+      "eyebrow": "Build your humanitarian and social commitment",
+      "title": "NGO Creation (Non-Governmental Organization)",
+      "description": "An NGO is a legal status distinct from an association, intended for groups with humanitarian, socio-economic, or development objectives, carrying out their activities professionally and on a permanent basis. Its recognition is more tightly regulated than that of an association: it requires official approval in addition to the statutes and declaration.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
+    "associationCreation": {
+      "eyebrow": "Give life to a collective project without profit motive",
+      "title": "Association Creation",
+      "description": "An association is a group of people united around a common objective, without profit motive. Its creation is based on drafting statutes and filing a declaration with the competent authorities, along with the list of founding members and the board.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    }
   }
 }

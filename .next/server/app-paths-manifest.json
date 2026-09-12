@@ -1,6 +1,6 @@
 {
-  "/[locale]/service-coursier/page": "app/[locale]/service-coursier/page.js",
+  "/[locale]/domiciliation/page": "app/[locale]/domiciliation/page.js",
   "/[locale]/location-salle-reunion/page": "app/[locale]/location-salle-reunion/page.js",
   "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/domiciliation/page": "app/[locale]/domiciliation/page.js"
+  "/[locale]/creation-ong-association/page": "app/[locale]/creation-ong-association/page.js"
 }

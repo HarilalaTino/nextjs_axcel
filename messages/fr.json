@@ -8,6 +8,7 @@
     "adviceStrategic": "Consultation stratégique pour entrepreneurs",
     "creationIndividual": "Création Entreprise Individuelle",
     "creationSarl": "Création Société SARL & SARLU",
+    "creationNogAndAssociation": "Création ONG et Association",
     "creationDomiciliation": "Domiciliation",
     "creationMeetingRoom": "Location de salle de réunion",
     "creationAdvice": "Conseil et assistance",
@@ -232,5 +233,22 @@
       "description": "Organiser une réunion professionnelle demande souvent une logistique lourde : réservation d'un lieu adapté, mobilier, connexion internet, équipement audiovisuel… Avec la location de salle de réunion, tout est déjà en place pour démarrer immédiatement, sans contrainte d'aménagement ni d'entretien. Des salles entièrement équipées sont mises à disposition des entreprises et des particuliers, pour accueillir des réunions, des rendez-vous clients ou des sessions de travail, ponctuellement ou de façon régulière.",
       "contact": "Nous contacter",
       "quote": "Demander un devis"
+  },
+  "NgoAssociationCreation": {
+    "ngo": {
+      "eyebrow": "Structurez votre engagement humanitaire et social",
+      "title": "Création ONG (Organisation Non Gouvernementale)",
+      "description": "L'ONG est un statut distinct de l'association, destiné aux groupements à vocation humanitaire, socio-économique ou de développement, exerçant leurs activités de façon professionnelle et permanente. Sa reconnaissance est plus encadrée que celle d'une association : elle nécessite un agrément officiel, en plus des statuts et de la déclaration.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "associationCreation": {
+      "eyebrow": "Donnez vie à un projet collectif, sans but lucratif",
+      "title": "Création Association",
+      "description": "Une association est un groupement de personnes réunies autour d'un objectif commun, sans but lucratif. Sa création repose sur la rédaction de statuts et une déclaration auprès des autorités compétentes, avec la liste des membres fondateurs et du bureau.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    }
   }
+  
 }
