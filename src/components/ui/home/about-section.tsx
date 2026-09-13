@@ -45,7 +45,7 @@ export default function AboutSection() {
                 aria-hidden="true"
             />
 
-            <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+            <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
                 {/* Colonne image */}
                 <div className="relative">
 

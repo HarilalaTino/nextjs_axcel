@@ -66,6 +66,50 @@
     },
     "contact": { "title": "Envie d'échanger avec nous ?", "description": "Un projet, une question ou besoin d'accompagnement ? On vous répond le plus vite possible.", "button": "Nous contacter" }
   },
+  "About": {
+    "creationPage": {
+      "eyebrow": "A propos de Axcel Company",
+      "title": "Société de conseil et d'assistance",
+      "description": "est une société dédiée à fournir des services professionnels aux entreprises. Nous accompagnons depuis 2022 les entrepreneurs, les investisseurs dans la formalisation de leurs entreprises.",
+      "lists": {
+        "first": " Nous assistons les étrangers envisageant d'investir à Madagascar.",
+        "second": "Nous proposons des services de coursiers administratifs professionnels.",
+        "third": "Nous proposons une gamme de services complets pour répondre aux besoins variés de nos clients en matière de gestion d'entreprise."
+      },
+       "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "findMore": "En savoir plus"
+    },
+    "stats": {
+      "eyebrow": "Notre vision & engagement",
+      "title": "Simplifier les démarches administratives et garantir la conformité avec la réglementation en vigueur.",
+      "description": "Notre objectif est de simplifier les démarches administratives et de garantir la conformité avec la réglementation en vigueur, afin de permettre à nos clients de se concentrer sur le développement et la croissance de leur activité en toute sérénité.",
+      "subtitle": "Depuis sa création, nos clients se répartissent en 4 groupes d'activités.",
+      "items": {
+        "companyCreation": "Création d'entreprises",
+        "advice": "Conseil et assistance",
+        "administrativeLetters": "Lettres administratives",
+        "otherServices": "Autres services"
+      },
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "service": {
+      "eyebrow": "Surplus",
+      "title": "Services variés et professionnels",
+      "description": "En plus du conseil et de l'assistance administrative, nous proposons une gamme de services complets pour répondre aux besoins variés de nos clients en matière de gestion d'entreprise.",
+      "progressItemsOne": {
+        "label": "Atteindre vos objectifs",
+        "value": 75
+      },
+      "progressItemsTwo": {
+        "label": "Faciliter vos démarches administratives",
+        "value": 90
+      },
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    }
+  },
   "Footer": {
     "description": "Société dédiée à fournir des services professionnels aux entreprises : création, modification, conseil et assistance administrative.",
     "navigation": "Navigation",

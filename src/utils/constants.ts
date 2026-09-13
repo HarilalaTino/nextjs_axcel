@@ -53,3 +53,4 @@ export function getActivityBySlug(slug: string) {
 export function getActivityByValue(value: string) {
   return activityOptions.find((a) => a.value === value);
 }
+

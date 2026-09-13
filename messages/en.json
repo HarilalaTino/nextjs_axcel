@@ -66,6 +66,50 @@
     },
     "contact": { "title": "Would you like to talk to us?", "description": "A project, a question or need support? We will get back to you as soon as possible.", "button": "Contact us" }
   },
+  "About": {
+    "creationPage": {
+      "eyebrow": "About Axcel Company",
+      "title": "Consulting and support company",
+      "description": "is a company dedicated to providing professional services to businesses. Since 2022, we have supported entrepreneurs and investors in formalizing their companies.",
+      "lists": {
+        "first": "We assist foreigners considering investing in Madagascar.",
+        "second": "We offer professional administrative courier services.",
+        "third": "We offer a comprehensive range of services to meet the diverse needs of our clients in business management."
+      },
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "findMore": "Find out more"
+    },
+    "stats": {
+      "eyebrow": "Our vision and commitment",
+      "title": "Simplify administrative procedures and ensure compliance with current regulations.",
+      "description": "Our goal is to simplify administrative procedures and ensure compliance with current regulations so that our clients can focus on the development and growth of their business with complete peace of mind.",
+      "subtitle": "Since its creation, our clients have been divided into 4 activity groups.",
+      "items": {
+        "companyCreation": "Business creation",
+        "advice": "Advice and support",
+        "administrativeLetters": "Administrative letters",
+        "otherServices": "Other services"
+      },
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
+    "service": {
+      "eyebrow": "Surplus",
+      "title": "Varied and professional services",
+      "description": "In addition to advice and administrative assistance, we offer a complete range of services to meet the diverse needs of our clients in business management.",
+      "progressItemsOne": {
+        "label": "Achieve your goals",
+        "value": 75
+      },
+      "progressItemsTwo": {
+        "label": "Simplify your administrative procedures",
+        "value": 90
+      },
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    }
+  },
   "Footer": {
     "description": "A company dedicated to providing professional business services: creation, modification, advice and administrative assistance.",
     "navigation": "Navigation",

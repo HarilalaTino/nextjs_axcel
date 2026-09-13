@@ -3,7 +3,7 @@ import { Tag } from 'lucide-react';
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 
-type TranslationFn = (key: string) => string;
+export type TranslationFn = (key: string) => string;
 
 type CreationPageProps = {
   eyebrow: string;
@@ -16,6 +16,8 @@ type CreationPageProps = {
   t?: TranslationFn;
   isReverseSection?: boolean;
   hideDevis?: boolean;
+  hideContact?: boolean;
+  overidecta?: ReactNode;
 };
 
 export default async function CreationPage({
@@ -28,7 +30,9 @@ export default async function CreationPage({
   priceNote,
   t,
   isReverseSection,
-  hideDevis
+  hideDevis,
+  hideContact,
+  overidecta
 }: CreationPageProps) {
   const contactHref = '/contact' as const;
   const quoteHref = '/devis' as const;
@@ -64,7 +68,7 @@ export default async function CreationPage({
 
           <div className={`${contentClassName} flex-1`}>
             <p className="text-sm font-semibold uppercase tracking-wide text-secondary">{eyebrow}</p>
-            <h1 className="mt-3 text-3xl font-bold leading-tight text-primary sm:text-4xl">
+            <h1 className="text-3xl font-extrabold leading-tight text-primary sm:text-4xl">
               {title}
             </h1>
             <div className="mt-4 h-1 w-16 bg-secondary" />
@@ -94,12 +98,17 @@ export default async function CreationPage({
 
 
             <div className="mt-8 flex gap-3">
-              <Link
-                href={contactUrl}
-                className="rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary/90"
-              >
-                {contactLabel}
-              </Link>
+              {!hideContact && (
+                <Link
+                  href={contactUrl}
+                  className="rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary/90"
+                >
+                  {contactLabel}
+                </Link>
+              )
+
+              }
+
               {!hideDevis && (
                 <Link
                   href={quoteUrl}
@@ -108,6 +117,8 @@ export default async function CreationPage({
                   {quoteLabel}
                 </Link>
               )}
+
+              {overidecta && <div>{overidecta}</div>}
 
             </div>
           </div>
