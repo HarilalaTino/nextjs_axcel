@@ -1,14 +1,4 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/[locale]/conseil-assistance/page": "app/[locale]/conseil-assistance/page.js",
-  "/[locale]/a-propos/page": "app/[locale]/a-propos/page.js",
-  "/[locale]/creation-entreprise-individuelle/page": "app/[locale]/creation-entreprise-individuelle/page.js",
-  "/[locale]/creation-societe-sarl-sarlu/page": "app/[locale]/creation-societe-sarl-sarlu/page.js",
-  "/[locale]/domiciliation/page": "app/[locale]/domiciliation/page.js",
-  "/[locale]/creation-ong-association/page": "app/[locale]/creation-ong-association/page.js",
-  "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/location-salle-reunion/page": "app/[locale]/location-salle-reunion/page.js",
-  "/[locale]/recrutement/page": "app/[locale]/recrutement/page.js",
+  "/[locale]/devis/page": "app/[locale]/devis/page.js",
   "/[locale]/service-coursier/page": "app/[locale]/service-coursier/page.js"
 }
