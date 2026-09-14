@@ -130,6 +130,18 @@
     "legalNotice": "Legal notice",
     "links": { "Accueil": "Home", "À propos de nous": "About us", "Nos services": "Our services", "Contact": "Contact" }
   },
+  "ContactPage": {
+    "title": "Let's talk about your project",
+    "subtitle": "A question, a quote, or an appointment? Choose the channel that suits you, and we will respond quickly.",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "address": "Address",
+    "mapTitle": "Location",
+    "ctaTitle": "Need a quick answer?",
+    "ctaButton": "Chat on WhatsApp"
+  },
   "CreationPages": {
     "additionalServices": {
       "label": "We also offer other services",

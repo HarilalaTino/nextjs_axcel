@@ -130,6 +130,18 @@
     "legalNotice": "Mentions légales",
     "links": { "Accueil": "Accueil", "À propos de nous": "À propos de nous", "Nos services": "Nos services", "Contact": "Contact" }
   },
+  "ContactPage": {
+    "title": "Parlons de votre projet",
+    "subtitle": "Une question, un devis, un rendez-vous ? Choisissez le canal qui vous convient, nous répondons rapidement.",
+    "phone": "Téléphone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "address": "Adresse",
+    "mapTitle": "Localisation",
+    "ctaTitle": "Besoin d'une réponse rapide ?",
+    "ctaButton": "Discuter sur WhatsApp"
+  },
   "CreationPages": {
     "additionalServices": {
       "label": "Nous proposons aussi d'autres services",

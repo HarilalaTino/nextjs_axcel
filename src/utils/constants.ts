@@ -1,9 +1,11 @@
 import { coursierRecuperationCertificats, coursierRecuperationCertificatsConsommabilite, coursierRecuperationDiplome, coursierRecuperationTraduction, coursierToutesEnregistrementCertifications, Menu } from "./service-data";
 
-export const PRIMARY_PHONE_NUMBER = "+261 38 77 77 76";
+export const PRIMARY_PHONE_NUMBER = "+261 38 77 777 76";
 export const SECONDARY_PHONE_NUMBER = "+261 34 11 918 40";
 export const EMAIL_ADDRESS = "contact@axcel.mg";
 export const COMPANY_ADDRESS = "Arrêt bus pharmacie Aina Andravoahangy Ambony, Antananarivo 101";
+export const FACEBOOK_COMPANY = "https://web.facebook.com/profile.php?id=100092397681842"
+export const LOCALISATION = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d561.1111063038651!2d47.53103885175317!3d-18.900804840103564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f0870055b9bc97%3A0x6e0757c9e4cef2da!2sAXCEL%20COMPANY!5e0!3m2!1sfr!2smg!4v1789404432595!5m2!1sfr!2smg"
 
 export const services: Menu[] = [
   coursierRecuperationDiplome,

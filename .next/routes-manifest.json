@@ -44,6 +44,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/conseil\\-assistance(?:/)?$"
     },
     {
+      "page": "/[locale]/contact",
+      "regex": "^/([^/]+?)/contact(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/contact(?:/)?$"
+    },
+    {
       "page": "/[locale]/creation-entreprise-individuelle",
       "regex": "^/([^/]+?)/creation\\-entreprise\\-individuelle(?:/)?$",
       "routeKeys": {
