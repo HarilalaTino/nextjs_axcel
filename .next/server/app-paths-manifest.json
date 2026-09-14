@@ -1,4 +1,6 @@
 {
+  "/api/devis/route": "app/api/devis/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/[locale]/devis/page": "app/[locale]/devis/page.js",
   "/[locale]/service-coursier/page": "app/[locale]/service-coursier/page.js"
 }

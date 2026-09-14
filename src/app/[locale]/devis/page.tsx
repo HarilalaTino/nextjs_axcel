@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Mail, MessageSquareText, Phone, UserRound, AlertCircle } from 'lucide-react';
 import TopMenu from '@/components/ui/home/top-menu';
 import NavMenu from '@/components/layout/header';
@@ -16,15 +17,20 @@ type FormState = {
 };
 
 const requestOptions = [
-  { value: 'creation-individuelle', label: "Création d'entreprise individuelle" },
-  { value: 'creation-sarl-sarlu', label: 'Création société SARL / SARLU' },
-  { value: 'creation-ong-association', label: 'Création ONG et Association' },
+  { value: 'sole-proprietorship-creation', label: "Création d'entreprise individuelle" },
+  { value: 'sarl-creation', label: 'Création société SARL' },
+  { value: 'sarlu-creation', label: 'Création société SARLU' },
+  { value: 'domiciliation-creation', label: 'Création domiciliation' },
+  { value: 'meeting-room-rental', label: 'Location de salle de réunion' },
+  { value: 'advice-assistance', label: 'Conseil et assistance' },
+  { value: 'courier-diploma-retrieval', label: 'Récupération de certificats, diplômes et relevés de notes' },
+  { value: 'courier-translation-retrieval', label: 'Récupération et traduction de documents administratifs' },
+  { value: 'courier-certificates-retrieval', label: 'Récupération des certificats administratifs' },
+  { value: 'courier-automobile-procedure', label: 'Procédures administratives pour l\'automobile' },
+  { value: 'courier-consumability-certificates', label: 'Certificats de consommabilité' },
+  { value: 'courier-all-registrations', label: 'Toutes enregistrements et certifications' },
   { value: 'domiciliation', label: 'Domiciliation' },
-  { value: 'location-salle-reunion', label: 'Location de salle de réunion' },
-  { value: 'recrutement', label: 'Recrutement' },
-  { value: 'service-coursier', label: 'Service de coursier' },
-  { value: 'conseil-assistance', label: 'Conseil et assistance' },
-  { value: 'other', label: 'Autres' },
+  { value: 'Autres', label: 'Autre demande' },
 ];
 
 const originOptions: Array<{ value: Origin; label: string; description: string }> = [
@@ -48,9 +54,21 @@ const initialForm: FormState = {
   message: '',
 };
 
+function getInitialDemande(type: string | null): string {
+  if (!type) return initialForm.demande;
+
+  const matchingOption = requestOptions.find((option) => option.value === type);
+  return matchingOption ? matchingOption.value : initialForm.demande;
+}
+
 export default function QuotePage() {
+  const searchParams = useSearchParams();
+  const requestedType = searchParams.get('type');
   const [origin, setOrigin] = useState<Origin | null>(null);
-  const [form, setForm] = useState<FormState>(initialForm);
+  const [form, setForm] = useState<FormState>(() => ({
+    ...initialForm,
+    demande: getInitialDemande(requestedType),
+  }));
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -237,8 +255,7 @@ export default function QuotePage() {
                 </div>
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="text-sm text-slate-600">
-                    {origin === 'malgache' ? 'Client local' : 'Client international'}
+                  <div>
                   </div>
 
                   <button
