@@ -108,6 +108,10 @@
       },
       "contact": "Contact us",
       "quote": "Request a quote"
+    },
+    "teamSection": {
+      "eyebrow": "Management team member",
+      "title": "Our high-performing and ambitious team"
     }
   },
   "Footer": {

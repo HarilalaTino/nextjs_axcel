@@ -108,6 +108,10 @@
       },
       "contact": "Nous contacter",
       "quote": "Demander un devis"
+    },
+    "teamSection": {
+      "eyebrow": "Membre d'équipe dirigeante",
+      "title": "Notre équipe performante et ambitieuse"
     }
   },
   "Footer": {

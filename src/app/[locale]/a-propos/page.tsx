@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import StatsSection from "./stats-section";
 import ServicesSection from "./service-section";
 import Link from "next/link";
+import TeamSection from "./team-secton";
 
 export default async function AboutPage() {
     const t = await getTranslations("About.creationPage");
@@ -47,6 +48,7 @@ export default async function AboutPage() {
                 />
 
                 <StatsSection />
+                <div className="pt-10"></div>
                 <CreationPage
                     creationType="sole-proprietorship-creation"
                     eyebrow={serviceTranslation("eyebrow")}
@@ -63,6 +65,7 @@ export default async function AboutPage() {
                     hideContact
                     isReverseSection
                 />
+                < TeamSection />
                 <div
                     className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
                     aria-hidden="true"

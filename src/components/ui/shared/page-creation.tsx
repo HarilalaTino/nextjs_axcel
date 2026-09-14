@@ -61,8 +61,8 @@ export default async function CreationPage({
       <section className="page-creation-section px-6 py-10">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-12 px-4 sm:px-6 lg:gap-20 lg:px-8">
           {isReverseSection ? (
-            <div className={`${mediaClassName} relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg`}>
-              <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
+            <div className={`${mediaClassName} group relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg`}>
+              <Image src={imageSrc} alt={title} className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110" fill />
             </div>
           ) : null}
 
@@ -124,9 +124,10 @@ export default async function CreationPage({
           </div>
 
           {!isReverseSection ? (
-            <div className={`${mediaClassName} relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg`}>
-              <Image src={imageSrc} alt={title} className="h-full w-full object-cover" fill />
+            <div className={`${mediaClassName} group relative aspect-square w-full max-w-md overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg`}>
+              <Image src={imageSrc} alt={title} className="h-full w-full object-cover  transition-transform duration-500 ease-out group-hover:scale-110" fill />
             </div>
+            
           ) : null}
         </div>
       </section>
