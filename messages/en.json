@@ -1,7 +1,7 @@
 {
   "Nav": {
-    "advice": "Advice",
-    "creation": "Creation",
+    "adviceAndAssistance": "Advice and assistance",
+    "creation": "Creations",
     "adviceCreation": "Business creation advice",
     "adviceModification": "Company modification assistance",
     "adviceFormalization": "Business formalization assistance",
@@ -9,9 +9,9 @@
     "creationIndividual": "Sole proprietorship creation",
     "creationSarl": "SARL & SARLU company creation",
     "creationNogAndAssociation": "NGO and Association creation",
+    "recruitment": "Recruitment",
     "creationDomiciliation": "Domiciliation",
     "creationMeetingRoom": "Meeting room rental",
-    "creationAdvice": "Advice and assistance",
     "courier": "Courier service",
     "courierDiploma": "Diploma retrieval, transcripts, equivalence..",
     "courierBirthMarriage": "Retrieval / translation of birth certificate, marriage certificate, ...",
@@ -44,11 +44,13 @@
       "association": { "title": "NGO and association creation", "description": "Structure your community or humanitarian project with a status suited to your mission." },
       "domiciliation": { "title": "Business domiciliation", "description": "Register your head office at a recognized professional address." },
       "meetingRoom": { "title": "Meeting room rental", "description": "Book an equipped room for your meetings and professional appointments." },
+      "recruitment": { "title": "Recruitment", "description": "Find the right talent and simplify your hiring process with personalized support." },
       "advice": { "title": "Advice and assistance", "description": "Benefit from tailored legal and administrative support." },
       "create": "Create",
       "domiciliate": "Domiciliate",
       "book": "Book",
-      "getAdvice": "Get advice"
+      "getAdvice": "Get advice",
+      "contact": "Contact us"
     },
     "about": {
       "label": "About us",
@@ -296,5 +298,12 @@
       "contact": "Contact us",
       "quote": "Request a quote"
     }
+  },
+  "Recruitment": {
+    "eyebrow": "Our services",
+    "title": "Recruitment & Talent Sourcing",
+    "description": "We support companies in Madagascar in identifying and selecting the best candidates, from sourcing to pre-screening, to effectively meet your qualified staffing needs.",
+    "contact": "Contact us",
+    "quote": "Request a quote"
   }
 }

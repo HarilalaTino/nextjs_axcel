@@ -83,10 +83,10 @@ export const SERVICES: ServiceCard[] = [
         icon: <Landmark size={20}/>
     },
     {
-        titleKey: 'advice.title',
-        descriptionKey: 'advice.description',
-        ctaKey: 'getAdvice',
-        href: '/conseil-assistance',
+        titleKey: 'recruitment.title',
+        descriptionKey: 'recruitment.description',
+        ctaKey: 'contact',
+        href: '/recrutement',
         icon: <Headset size={20} />
     },
 ];

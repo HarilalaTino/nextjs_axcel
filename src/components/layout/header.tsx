@@ -30,7 +30,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'creationNogAndAssociation', href: '/creation-ong-association' },
       { label: 'creationDomiciliation', href: '/domiciliation' },
       { label: 'creationMeetingRoom', href: '/location-salle-reunion' },
-      { label: 'creationAdvice', href: '/conseil-assistance' },
+      { label: 'recruitment', href: '/recrutement' }
     ],
   },
   {
@@ -38,14 +38,8 @@ const NAV_ITEMS: NavItem[] = [
     href: '/service-coursier'
   },
   {
-    label: 'advice',
-    href: '/service',
-    submenu: [
-      { label: 'adviceCreation', href: '/conseil-creation-societe' },
-      { label: 'adviceModification', href: '/assistance-modification-societe' },
-      { label: 'adviceFormalization', href: '/assistance-formalisation-entreprise' },
-      { label: 'adviceStrategic', href: '/consultation-strategique' },
-    ],
+    label: 'adviceAndAssistance',
+    href: '/service'
   },
   { label: 'about', href: '/a-propos' },
   { label: 'contact', href: '/contact' }

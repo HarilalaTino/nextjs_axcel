@@ -68,6 +68,10 @@ export const routing = defineRouting({
     '/mentions-legales': {
       fr: '/mentions-legales',
       en: '/legal-notice'
+    },
+    '/recrutement': {
+      fr: '/recrutement',
+      en: '/recruitment'
     }
   }
 });
