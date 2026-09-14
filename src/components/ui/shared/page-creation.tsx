@@ -40,8 +40,7 @@ export default async function CreationPage({
   const quoteLabel = t ? t('quote') : 'Demander un devis';
 
   const contactUrl = {
-    pathname: contactHref,
-    query: { type: creationType }
+    pathname: contactHref
   } as const;
   const quoteUrl = {
     pathname: quoteHref,
