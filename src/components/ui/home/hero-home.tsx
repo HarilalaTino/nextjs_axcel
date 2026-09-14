@@ -12,6 +12,9 @@ import {
     HeartHandshake,
     Landmark,
 } from 'lucide-react';
+import { AppPathname, Link } from '@/i18n/navigation';
+
+type AppRoute = Extract<AppPathname, string>;
 
 const HERO_IMAGES = ['/images/home/hero-bg-1.jpg', '/images/home/hero-bg-2.jpg'];
 
@@ -19,7 +22,7 @@ export type ServiceCard = {
     titleKey: string;
     descriptionKey: string;
     ctaKey: string;
-    href: string;
+    href: AppRoute;
     icon: ReactNode;
 };
 
@@ -55,7 +58,7 @@ export const SERVICES: ServiceCard[] = [
         titleKey: 'sarl.title',
         descriptionKey: 'sarl.description',
         ctaKey: 'create',
-        href: '/creation-societe-sarl',
+        href: '/creation-societe-sarl-sarlu',
         icon: <Building2 size={20} />,
     },
     {
@@ -106,7 +109,7 @@ export function ServiceCardItem({ service }: { service: ServiceCard }) {
             </h3>
             <p className="mt-1 min-h-[3rem] text-sm leading-6 text-slate-500">{t(`services.${service.descriptionKey}`)}</p>
 
-            <a
+            <Link
                 href={service.href}
                 className="group/cta relative mt-auto inline-flex w-fit items-center gap-1.5 overflow-hidden rounded-full py-2 pl-4 pr-3 text-sm font-semibold text-secondary"
             >
@@ -116,7 +119,7 @@ export function ServiceCardItem({ service }: { service: ServiceCard }) {
 
                 <span className="relative z-10">{t('learnMore')}</span>
                 <ArrowIcon className="relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </Link>
         </div>
     );
 }
