@@ -269,7 +269,7 @@ export default function NavMenu() {
                         className="block py-2 text-sm text-slate-600"
                         onClick={() => setMobileOpen(false)}
                       >
-                        {sub.label}
+                        {t(sub.label)}
                       </Link>
                     ))}
                   </div>
