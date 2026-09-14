@@ -311,6 +311,25 @@
     "title": "Business Advice and Assistance",
     "description": "We support entrepreneurs and investors, including foreigners, in all their administrative and legal procedures in Madagascar — company incorporation, professional administrative couriers, and tailored management solutions — for reliable support at every stage of your business.",
     "contact": "Contact us",
-    "quote": "Request a quote"
+    "quote": "Request a quote",
+    "processSteps": {
+      "title": "Simple support without detours",
+      "subtitle": "Three steps to entrust your process to experts",
+      "step1": {
+        "label": "Step 1 — Immediate",
+        "title": "You share your project with us",
+        "description": "A quick discussion to understand your need: company creation, domiciliation, recruitment, or administrative support."
+      },
+      "step2": {
+        "label": "Step 2 — 24 to 48h",
+        "title": "We prepare your file",
+        "description": "Our advisors identify the required procedures and draft the documents tailored to your situation."
+      },
+      "step3": {
+        "label": "Step 3 — Until completion",
+        "title": "We ensure the follow-up",
+        "description": "We support you all the way through: filing, signature, and obtaining your official documents."
+      }
+    }
   }
 }

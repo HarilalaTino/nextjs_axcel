@@ -309,9 +309,28 @@
   },
   "AdviceAndAssistance": {
     "eyebrow": "Depuis 2022",
-      "title": "Conseils et Assistance aux entreprises",
-      "description": "Nous accompagnons les entrepreneurs et investisseurs, y compris étrangers, dans toutes leurs démarches administratives et juridiques à Madagascar — formalisation d'entreprise, coursiers administratifs professionnels et solutions de gestion sur mesure — pour un accompagnement fiable à chaque étape de votre activité.",
-      "contact": "Nous contacter",
-      "quote": "Demander un devis"
+    "title": "Conseils et Assistance aux entreprises",
+    "description": "Nous accompagnons les entrepreneurs et investisseurs, y compris étrangers, dans toutes leurs démarches administratives et juridiques à Madagascar — formalisation d'entreprise, coursiers administratifs professionnels et solutions de gestion sur mesure — pour un accompagnement fiable à chaque étape de votre activité.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis",
+    "processSteps": {
+      "title": "Un accompagnement simple et sans détour",
+      "subtitle": "Trois étapes pour confier votre démarche à des experts",
+      "step1": {
+        "label": "Étape 1 — Immédiat",
+        "title": "Vous nous exposez votre projet",
+        "description": "Un échange rapide pour cerner votre besoin : création d'entreprise, domiciliation, recrutement ou accompagnement administratif."
+      },
+      "step2": {
+        "label": "Étape 2 — 24 à 48h",
+        "title": "Nous préparons votre dossier",
+        "description": "Nos conseillers identifient les démarches nécessaires et rédigent les documents adaptés à votre situation."
+      },
+      "step3": {
+        "label": "Étape 3 — Jusqu'à l'aboutissement",
+        "title": "Nous assurons le suivi",
+        "description": "Nous vous accompagnons jusqu'au bout : dépôt, signature et obtention de vos documents officiels."
+      }
+    }
   }
 }

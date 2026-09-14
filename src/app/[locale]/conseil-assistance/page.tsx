@@ -1,9 +1,9 @@
 import NavMenu from "@/components/layout/header";
 import ContactCTA from "@/components/ui/home/contact-cta";
 import TopMenu from "@/components/ui/home/top-menu";
-import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
 import CreationPage from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
+import ProcessSteps from "./step";
 
 export default async function AdviceAndAssistance() {
     const t = await getTranslations("AdviceAndAssistance");
@@ -29,7 +29,7 @@ export default async function AdviceAndAssistance() {
                     hideDevis
                     t={t}
                 />
-                <ElegantCardWrapper />
+                <ProcessSteps />
                 <div
                     className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
                     aria-hidden="true"
