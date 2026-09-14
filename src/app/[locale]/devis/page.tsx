@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Mail, MessageSquareText, Phone, UserRound, AlertCircle } from 'lucide-react';
 import TopMenu from '@/components/ui/home/top-menu';
@@ -16,59 +17,73 @@ type FormState = {
   message: string;
 };
 
-const requestOptions = [
+const frenchRequestOptions = [
   { value: 'sole-proprietorship-creation', label: "Création d'entreprise individuelle" },
   { value: 'sarl-creation', label: 'Création société SARL' },
   { value: 'sarlu-creation', label: 'Création société SARLU' },
-  { value: 'domiciliation-creation', label: 'Création domiciliation' },
-  { value: 'meeting-room-rental', label: 'Location de salle de réunion' },
-  { value: 'advice-assistance', label: 'Conseil et assistance' },
+  { value: 'ngo-creation', label: 'Création ONG' },
+  { value: 'association-creation', label: 'Création Association' },
+  { value: 'domiciliation', label: 'Domiciliation' },
+  { value: 'meeting-room', label: 'Location de salle de réunion' },
+  { value: 'recruitment', label: 'Recrutement' },
   { value: 'courier-diploma-retrieval', label: 'Récupération de certificats, diplômes et relevés de notes' },
   { value: 'courier-translation-retrieval', label: 'Récupération et traduction de documents administratifs' },
   { value: 'courier-certificates-retrieval', label: 'Récupération des certificats administratifs' },
   { value: 'courier-automobile-procedure', label: 'Procédures administratives pour l\'automobile' },
-  { value: 'courier-consumability-certificates', label: 'Certificats de consommabilité' },
-  { value: 'courier-all-registrations', label: 'Toutes enregistrements et certifications' },
-  { value: 'domiciliation', label: 'Domiciliation' },
-  { value: 'Autres', label: 'Autre demande' },
-];
+  { value: 'autres', label: 'Autre demande' },
+] as const;
 
-const originOptions: Array<{ value: Origin; label: string; description: string }> = [
-  {
-    value: 'malgache',
-    label: 'Malgache',
-    description: 'Vous résidez ou êtes basé à Madagascar.',
-  },
-  {
-    value: 'etranger',
-    label: 'Étranger',
-    description: 'Vous êtes un client international ou résident à l’étranger.',
-  },
-];
+const getFrenchRequestLabel = (slug: string) => frenchRequestOptions.find((option) => option.value === slug)?.label ?? slug;
 
-const initialForm: FormState = {
+const getInitialForm = (type: string | null): FormState => ({
   nom: '',
   phone: '',
   email: '',
-  demande: requestOptions[0].value,
+  demande: getInitialDemande(type),
   message: '',
-};
+});
 
 function getInitialDemande(type: string | null): string {
-  if (!type) return initialForm.demande;
+  const defaultValue = frenchRequestOptions[0].value;
+  if (!type) return defaultValue;
 
-  const matchingOption = requestOptions.find((option) => option.value === type);
-  return matchingOption ? matchingOption.value : initialForm.demande;
+  const matchingOption = frenchRequestOptions.find((option) => option.value === type);
+  return matchingOption ? matchingOption.value : defaultValue;
 }
 
 export default function QuotePage() {
+  const t = useTranslations('QuotePage');
   const searchParams = useSearchParams();
   const requestedType = searchParams.get('type');
+  const requestOptions: Array<{ value: string; label: string }> = [
+    { value: 'sole-proprietorship-creation', label: t('requestOptions.soleProprietorshipCreation') },
+    { value: 'sarl-creation', label: t('requestOptions.sarlCreation') },
+    { value: 'sarlu-creation', label: t('requestOptions.sarluCreation') },
+    { value: 'ngo-creation', label: t('requestOptions.ngoCreation') },
+    { value: 'association-creation', label: t('requestOptions.associationCreation') },
+    { value: 'domiciliation', label: t('requestOptions.domiciliation') },
+    { value: 'meeting-room', label: t('requestOptions.meetingRoom') },
+    { value: 'recruitment', label: t('requestOptions.recruitment') },
+    { value: 'courier-diploma-retrieval', label: t('requestOptions.courierDiplomaRetrieval') },
+    { value: 'courier-translation-retrieval', label: t('requestOptions.courierTranslationRetrieval') },
+    { value: 'courier-certificates-retrieval', label: t('requestOptions.courierCertificatesRetrieval') },
+    { value: 'courier-automobile-procedure', label: t('requestOptions.courierAutomobileProcedure') },
+    { value: 'autres', label: t('requestOptions.autres') },
+  ];
+  const originOptions: Array<{ value: Origin; label: string; description: string }> = [
+    {
+      value: 'malgache',
+      label: t('origin.malgache'),
+      description: t('origin.malgacheDescription'),
+    },
+    {
+      value: 'etranger',
+      label: t('origin.etranger'),
+      description: t('origin.etrangerDescription'),
+    },
+  ];
   const [origin, setOrigin] = useState<Origin | null>(null);
-  const [form, setForm] = useState<FormState>(() => ({
-    ...initialForm,
-    demande: getInitialDemande(requestedType),
-  }));
+  const [form, setForm] = useState<FormState>(() => getInitialForm(requestedType));
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -86,36 +101,39 @@ export default function QuotePage() {
     event.preventDefault();
 
     if (!origin) {
-      setError('Veuillez d’abord choisir votre origine.');
+      setError(t('errors.originRequired'));
       return;
     }
 
+    const payload = {
+      ...form,
+      demande: getFrenchRequestLabel(form.demande),
+      origin,
+    };
+
     setIsSubmitting(true);
     setError(null);
-
+    
     try {
       const response = await fetch('/api/devis', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...form,
-          origin,
-        }),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data?.error || 'Une erreur est survenue lors de l’envoi du devis.');
+        throw new Error(data?.error || t('errors.generic'));
       }
 
       setSubmitted(true);
-      setForm(initialForm);
+      setForm(getInitialForm(requestedType));
       setOrigin(null);
     } catch (submitError) {
-      const message = submitError instanceof Error ? submitError.message : 'Une erreur inconnue est survenue.';
+      const message = submitError instanceof Error ? submitError.message : t('errors.unknown');
       setError(message);
     } finally {
       setIsSubmitting(false);
@@ -132,13 +150,13 @@ export default function QuotePage() {
           <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(21,32,57,0.08)] sm:p-8 lg:p-12">
             <div className="mx-auto max-w-2xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-                Demande de devis
+                {t('eyebrow')}
               </p>
               <h1 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-                Choisissez votre origine puis décrivez votre besoin
+                {t('title')}
               </h1>
               <p className="mt-3 text-sm text-slate-600 sm:text-base">
-                Sélectionnez votre profil pour recevoir une réponse adaptée à votre situation.
+                {t('subtitle')}
               </p>
             </div>
 
@@ -182,13 +200,13 @@ export default function QuotePage() {
                   <label className="block">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <UserRound className="h-4 w-4 text-secondary" />
-                      Nom et prénom
+                      {t('form.fullName')}
                     </span>
                     <input
                       type="text"
                       value={form.nom}
                       onChange={(event) => handleInputChange('nom', event.target.value)}
-                      placeholder="Ex : Rakoto Jean"
+                      placeholder={t('form.fullNamePlaceholder')}
                       className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                       required
                     />
@@ -197,13 +215,13 @@ export default function QuotePage() {
                   <label className="block">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <Phone className="h-4 w-4 text-secondary" />
-                      Numéro téléphone
+                      {t('form.phone')}
                     </span>
                     <input
                       type="tel"
                       value={form.phone}
                       onChange={(event) => handleInputChange('phone', event.target.value)}
-                      placeholder="Ex : +261 34 00 000 00"
+                      placeholder={t('form.phonePlaceholder')}
                       className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                       required
                     />
@@ -212,20 +230,20 @@ export default function QuotePage() {
                   <label className="block md:col-span-2">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <Mail className="h-4 w-4 text-secondary" />
-                      Email
+                      {t('form.email')}
                     </span>
                     <input
                       type="email"
                       value={form.email}
                       onChange={(event) => handleInputChange('email', event.target.value)}
-                      placeholder="Ex : nom@email.com"
+                      placeholder={t('form.emailPlaceholder')}
                       className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                       required
                     />
                   </label>
 
                   <label className="block md:col-span-2">
-                    <span className="mb-2 text-sm font-semibold text-primary">Type de demande</span>
+                    <span className="mb-2 text-sm font-semibold text-primary">{t('form.requestType')}</span>
                     <select
                       value={form.demande}
                       onChange={(event) => handleInputChange('demande', event.target.value)}
@@ -242,13 +260,14 @@ export default function QuotePage() {
                   <label className="block md:col-span-2">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <MessageSquareText className="h-4 w-4 text-secondary" />
-                      Message
+                      {t('form.message')}
                     </span>
                     <textarea
                       value={form.message}
                       onChange={(event) => handleInputChange('message', event.target.value)}
-                      rows={5}
-                      placeholder="Décrivez votre besoin, vos objectifs ou les démarches à réaliser..."
+                      rows={8}
+                      maxLength={1200}
+                      placeholder={t('form.messagePlaceholder')}
                       className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                     />
                   </label>
@@ -263,7 +282,7 @@ export default function QuotePage() {
                     disabled={isSubmitting}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-70"
                   >
-                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer la demande'}
+                    {isSubmitting ? t('form.submitting') : t('form.submit')}
                     {!isSubmitting && <ArrowRight className="h-4 w-4" />}
                   </button>
                 </div>
@@ -274,7 +293,7 @@ export default function QuotePage() {
               <div className="mt-6 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-4 text-red-700">
                 <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
                 <div>
-                  <p className="font-semibold">L’envoi du devis a échoué.</p>
+                  <p className="font-semibold">{t('errors.title')}</p>
                   <p className="text-sm">{error}</p>
                 </div>
               </div>
@@ -284,9 +303,9 @@ export default function QuotePage() {
               <div className="mt-6 flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-800">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
                 <div>
-                  <p className="font-semibold">Votre demande a bien été enregistrée.</p>
+                  <p className="font-semibold">{t('success.title')}</p>
                   <p className="text-sm">
-                    Nous reviendrons vers vous rapidement pour vous proposer un devis adapté à votre demande.
+                    {t('success.description')}
                   </p>
                 </div>
               </div>

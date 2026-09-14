@@ -18,7 +18,7 @@ export default async function Recruitment() {
                     aria-hidden="true"
                 />
                 <CreationPage
-                    creationType="sole-proprietorship-creation"
+                    creationType="recruitment"
                     eyebrow={t("eyebrow")}
                     title={t("title")}
                     description={
@@ -27,7 +27,6 @@ export default async function Recruitment() {
                         </>
                     }
                     imageSrc="/images/recruitment/recruitment.jpg"
-                    hideDevis
                     t={t}
                 />
                 <ElegantCardWrapper />

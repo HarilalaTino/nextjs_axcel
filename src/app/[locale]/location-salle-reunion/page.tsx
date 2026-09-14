@@ -26,7 +26,6 @@ export default async function LocationMeetingRoomPage() {
                     }
                     imageSrc="/images/meeting_room/meeting-room.jpg"
                     t={t}
-                    hideDevis
                 />
                 <ElegantCardWrapper />
                 <div

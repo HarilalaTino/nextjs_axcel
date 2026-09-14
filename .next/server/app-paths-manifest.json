@@ -1,6 +1,8 @@
 {
-  "/api/devis/route": "app/api/devis/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/[locale]/devis/page": "app/[locale]/devis/page.js",
-  "/[locale]/service-coursier/page": "app/[locale]/service-coursier/page.js"
+  "/[locale]/recrutement/page": "app/[locale]/recrutement/page.js",
+  "/[locale]/service-coursier/page": "app/[locale]/service-coursier/page.js",
+  "/[locale]/conseil-assistance/page": "app/[locale]/conseil-assistance/page.js",
+  "/[locale]/creation-entreprise-individuelle/page": "app/[locale]/creation-entreprise-individuelle/page.js",
+  "/[locale]/devis/page": "app/[locale]/devis/page.js"
 }

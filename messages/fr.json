@@ -332,5 +332,56 @@
         "description": "Nous vous accompagnons jusqu'au bout : dépôt, signature et obtention de vos documents officiels."
       }
     }
+  },
+  "QuotePage": {
+    "eyebrow": "Demande de devis",
+    "title": "Choisissez votre origine puis décrivez votre besoin",
+    "subtitle": "Sélectionnez votre profil pour recevoir une réponse adaptée à votre situation.",
+    "origin": {
+      "malgache": "Malgache",
+      "malgacheDescription": "Vous résidez ou êtes basé à Madagascar.",
+      "etranger": "Étranger",
+      "etrangerDescription": "Vous êtes un client international ou résident à l’étranger.",
+      "localClient": "Client local",
+      "internationalClient": "Client international"
+    },
+    "requestOptions": {
+      "soleProprietorshipCreation": "Création d'entreprise individuelle",
+      "sarlCreation": "Création société SARL",
+      "sarluCreation": "Création société SARLU",
+      "ngoCreation": "Création ONG",
+      "associationCreation": "Création Association",
+      "domiciliation": "Domiciliation",
+      "meetingRoom": "Location de salle de réunion",
+      "recruitment": "Recrutement",
+      "courierDiplomaRetrieval": "Récupération de certificats, diplômes et relevés de notes",
+      "courierTranslationRetrieval": "Récupération et traduction de documents administratifs",
+      "courierCertificatesRetrieval": "Récupération des certificats administratifs",
+      "courierAutomobileProcedure": "Procédures administratives pour l'automobile",
+      "autres": "Autre demande"
+    },
+    "form": {
+      "fullName": "Nom et prénom",
+      "fullNamePlaceholder": "Ex : Rakoto Jean",
+      "phone": "Numéro téléphone",
+      "phonePlaceholder": "Ex : +261 34 00 000 00",
+      "email": "Email",
+      "emailPlaceholder": "Ex : nom@email.com",
+      "requestType": "Type de demande",
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre besoin, vos objectifs ou les démarches à réaliser...",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours..."
+    },
+    "errors": {
+      "originRequired": "Veuillez d’abord choisir votre origine.",
+      "generic": "Une erreur est survenue lors de l’envoi du devis.",
+      "unknown": "Une erreur inconnue est survenue.",
+      "title": "L’envoi du devis a échoué."
+    },
+    "success": {
+      "title": "Votre demande a bien été enregistrée.",
+      "description": "Nous reviendrons vers vous rapidement pour vous proposer un devis adapté à votre demande."
+    }
   }
 }

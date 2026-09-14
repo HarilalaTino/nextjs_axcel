@@ -331,5 +331,56 @@
         "description": "We support you all the way through: filing, signature, and obtaining your official documents."
       }
     }
+  },
+  "QuotePage": {
+    "eyebrow": "Request a quote",
+    "title": "Choose your origin then describe your need",
+    "subtitle": "Select your profile to receive a response tailored to your situation.",
+    "origin": {
+      "malgache": "Malagasy",
+      "malgacheDescription": "You live or are based in Madagascar.",
+      "etranger": "Foreign",
+      "etrangerDescription": "You are an international client or resident abroad.",
+      "localClient": "Local client",
+      "internationalClient": "International client"
+    },
+    "requestOptions": {
+      "soleProprietorshipCreation": "Sole proprietorship creation",
+      "sarlCreation": "SARL company creation",
+      "sarluCreation": "SARLU company creation",
+      "ngoCreation": "NGO creation",
+      "associationCreation": "Association creation",
+      "domiciliation": "Domiciliation",
+      "meetingRoom": "Meeting room rental",
+      "recruitment": "Recruitment",
+      "courierDiplomaRetrieval": "Retrieval of certificates, diplomas and transcripts",
+      "courierTranslationRetrieval": "Retrieval and translation of administrative documents",
+      "courierCertificatesRetrieval": "Retrieval of administrative certificates",
+      "courierAutomobileProcedure": "Administrative procedures for automobiles",
+      "autres": "Other request"
+    },
+    "form": {
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Example: Rakoto Jean",
+      "phone": "Phone number",
+      "phonePlaceholder": "Example: +261 34 00 000 00",
+      "email": "Email",
+      "emailPlaceholder": "Example: name@email.com",
+      "requestType": "Request type",
+      "message": "Message",
+      "messagePlaceholder": "Describe your need, your goals or the procedures to carry out...",
+      "submit": "Send the request",
+      "submitting": "Sending..."
+    },
+    "errors": {
+      "originRequired": "Please select your origin first.",
+      "generic": "An error occurred while sending the quote request.",
+      "unknown": "An unknown error occurred.",
+      "title": "The quote request failed."
+    },
+    "success": {
+      "title": "Your request has been recorded.",
+      "description": "We will get back to you quickly to propose a quote tailored to your request."
+    }
   }
 }

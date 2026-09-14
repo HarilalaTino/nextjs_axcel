@@ -33,7 +33,6 @@ export default async function CreationDomiciliationPage() {
                     }
                     imageSrc="/images/domiciliation/domiciliation.jpg"
                     t={t}
-                    hideDevis
                 />
                 <div
                     className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
