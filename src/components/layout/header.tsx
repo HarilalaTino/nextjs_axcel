@@ -39,7 +39,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     label: 'adviceAndAssistance',
-    href: '/service'
+    href: '/conseil-assistance'
   },
   { label: 'about', href: '/a-propos' },
   { label: 'contact', href: '/contact' }
