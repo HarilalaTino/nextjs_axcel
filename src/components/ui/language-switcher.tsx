@@ -54,14 +54,14 @@ export default function LanguageSwitcher() {
         className="flex items-center gap-2 rounded-md px-2 py-1 text-sm text-primary transition-colors"
       >
         <Flag code={LOCALE_DATA[locale].flagCode} />
-        <span>{LOCALE_DATA[locale].label}</span>
+        <span className="block lg:hidden xl:block">{LOCALE_DATA[locale].label}</span>
         <span className="text-lg mt-1">
           <ChevronIcon open={isOpen} />
         </span>
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-full mt-3 min-w-[200px] rounded-xl bg-white py-1 shadow-xl z-50">
+        <div className="absolute left-0 top-full mt-3 w-40 lg:min-w-[200px] rounded-xl bg-white py-1 shadow-xl z-50">
           <span className="absolute -top-2 left-6 h-4 w-4 rotate-45 bg-white" />
           {routing.locales.map((loc, index) => (
             <div key={loc}>

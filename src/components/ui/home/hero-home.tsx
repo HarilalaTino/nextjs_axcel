@@ -80,7 +80,7 @@ export const SERVICES: ServiceCard[] = [
         descriptionKey: 'meetingRoom.description',
         ctaKey: 'book',
         href: '/location-salle-reunion',
-        icon: <Landmark size={20}/>
+        icon: <Landmark size={20} />
     },
     {
         titleKey: 'recruitment.title',
@@ -161,19 +161,19 @@ function AnimatedHeroCard({ service, index }: { service: ServiceCard; index: num
 }
 
 function HeroBottomCurve() {
-  return (
-    <svg
-      className="absolute inset-x-0 bottom-0 z-10 h-16 w-full text-white lg:h-20"
-      viewBox="0 0 1920 160"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M0,0 C 480,140 1440,140 1920,0 L1920,160 L0,160 Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
+    return (
+        <svg
+            className="absolute inset-x-0 bottom-0 hidden z-10 h-16 w-full text-white lg:block lg:h-20"
+            viewBox="0 0 1920 160"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+        >
+            <path
+                d="M0,0 C 480,140 1440,140 1920,0 L1920,160 L0,160 Z"
+                fill="currentColor"
+            />
+        </svg>
+    );
 }
 
 
@@ -191,7 +191,7 @@ export default function HeroServices() {
 
     return (
         <section className="relative bg-white">
-            <div className="hidden md:block relative h-[420px] overflow-hidden md:h-[820px] lg:h-[740px]">
+            <div className=" relative h-[420px] overflow-hidden md:h-[820px] lg:h-[740px]">
                 {HERO_IMAGES.map((src, index) => (
                     <Image
                         key={src}
@@ -206,7 +206,30 @@ export default function HeroServices() {
                 ))}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent" />
 
-                <div className="absolute inset-0 hidden items-center px-6 md:flex lg:px-8">
+                <div className="absolute block inset-x-0 top-0 z-20 px-6 pt-8 sm:pt-14 md:hidden lg:px-8 lg:pt-20">
+                    <div className="mx-auto max-w-6xl">
+                        <div className="max-w-2xl">
+                            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                                {t('heroTitle')}
+                            </h1>
+                            <p className="mt-4 max-w-xl text-base text-white/80 sm:text-lg">
+                                {t('heroDescription')}
+                            </p>
+
+                            <div className="mt-6 flex flex-wrap items-center gap-4">
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-secondary/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-secondary/40"
+                                >
+                                    {t('heroContact')}
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="hidden md:block absolute inset-0 items-center px-6 md:flex lg:px-8">
+
                     <div className="mx-auto grid max-w-6xl grid-cols-2 gap-5 lg:grid-cols-3">
                         {SERVICES.map((service, index) => (
                             <AnimatedHeroCard key={service.titleKey} service={service} index={index} />
@@ -216,20 +239,6 @@ export default function HeroServices() {
 
                 {/* Courbe en bas du hero */}
                 <HeroBottomCurve />
-            </div>
-
-            <div className="px-4 pt-6 sm:px-6 md:hidden">
-                <h2 className="text-2xl font-bold text-primary">
-                    {t('chooseService')}
-                </h2>
-                <span className="text-sm text-gray-500 mb-8 block">
-                    {t('companiesCreated')}
-                </span>
-                <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5">
-                    {SERVICES.map((service, index) => (
-                        <AnimatedHeroCard key={`mobile-${service.titleKey}`} service={service} index={index} />
-                    ))}
-                </div>
             </div>
         </section>
     );

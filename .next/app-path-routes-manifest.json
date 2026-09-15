@@ -1,17 +1,17 @@
 {
   "/api/devis/route": "/api/devis",
   "/favicon.ico/route": "/favicon.ico",
-  "/_not-found/page": "/_not-found",
   "/[locale]/a-propos/page": "/[locale]/a-propos",
-  "/[locale]/conseil-assistance/page": "/[locale]/conseil-assistance",
   "/[locale]/contact/page": "/[locale]/contact",
-  "/[locale]/creation-entreprise-individuelle/page": "/[locale]/creation-entreprise-individuelle",
-  "/[locale]/creation-ong-association/page": "/[locale]/creation-ong-association",
+  "/[locale]/conseil-assistance/page": "/[locale]/conseil-assistance",
   "/[locale]/creation-societe-sarl-sarlu/page": "/[locale]/creation-societe-sarl-sarlu",
+  "/[locale]/creation-entreprise-individuelle/page": "/[locale]/creation-entreprise-individuelle",
   "/[locale]/devis/page": "/[locale]/devis",
   "/[locale]/domiciliation/page": "/[locale]/domiciliation",
-  "/[locale]/location-salle-reunion/page": "/[locale]/location-salle-reunion",
-  "/[locale]/page": "/[locale]",
   "/[locale]/recrutement/page": "/[locale]/recrutement",
-  "/[locale]/service-coursier/page": "/[locale]/service-coursier"
+  "/[locale]/page": "/[locale]",
+  "/[locale]/creation-ong-association/page": "/[locale]/creation-ong-association",
+  "/[locale]/location-salle-reunion/page": "/[locale]/location-salle-reunion",
+  "/[locale]/service-coursier/page": "/[locale]/service-coursier",
+  "/_not-found/page": "/_not-found"
 }

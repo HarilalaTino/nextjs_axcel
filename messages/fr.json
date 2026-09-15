@@ -30,6 +30,9 @@
     "learnMore": "En savoir plus",
     "chooseService": "Choisir votre service",
     "companiesCreated": "entreprises, hôtel, réstaurant, association, ONG, églises crée dépuis",
+    "heroTitle": "Création d'entreprise, service de coursier, statuts juridiques et recrutement à Antananarivo",
+    "heroDescription": "Création, modification, embauche, contrats : dites-nous ce qu'il vous faut, on gère le reste. Formalités et accompagnement juridique disponibles à tout moment.",
+    "heroContact": "Nous contacter",
     "heroImageAlt": "Présentation d'Axcel Company",
     "aboutImageAlt": "L'équipe Axcel Company",
     "servicesLabel": "Nos expertises",
@@ -174,7 +177,7 @@
   "CreationSocieteSarl": {
     "eyebrow": "Création de société",
     "title": "Création de SARL (Société à Responsabilité Limitée)",
-    "description" : "Forme juridique la plus courante à Madagascar, réunissant de 2 à 100 associés (personnes physiques ou morales, toutes nationalités). Aucun capital minimum n&apos;est exigé, et la responsabilité de chaque associé est limitée à son apport. Idéale pour un projet porté à plusieurs.",
+    "description" : "Forme juridique la plus courante à Madagascar, réunissant de 2 à 100 associés (personnes physiques ou morales, toutes nationalités). Aucun capital minimum n'est exigé, et la responsabilité de chaque associé est limitée à son apport. Idéale pour un projet porté à plusieurs.",
     "contact": "Nous contacter",
     "quote": "Demander un devis",
     "price": "400 000 Ar",

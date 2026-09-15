@@ -45,9 +45,9 @@ export default function AboutSection() {
                 aria-hidden="true"
             />
 
-            <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
+            <div className="relative mx-auto px-8 grid max-w-6xl grid-cols-1 items-center gap-16 xl:px-0 lg:grid-cols-2 lg:gap-20">
                 {/* Colonne image */}
-                <div className="relative">
+                <div className="relative order-2 lg:order-1">
 
                     <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/20 sm:aspect-[5/6]">
                         <Image
@@ -74,7 +74,7 @@ export default function AboutSection() {
                 </div>
 
                 {/* Colonne contenu */}
-                <div>
+                <div className='order-1 lg:order-2'>
                     <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-secondary">
                         <span className="h-px w-6 bg-secondary" />
                         {t('about.label')}

@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
 
   return (
     <section className="bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-5xl px-5">
+      <div className="mx-auto max-w-5xl px-8">
         <h2 className="text-center text-3xl font-extrabold text-primary md:text-4xl">
           {t('whyUs.title')}
         </h2>
