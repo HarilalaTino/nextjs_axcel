@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { nom, phone, email, demande, message, origin } = body ?? {};
+    const { nom, phone, whatsapp, email, demande, message, origin, domicilierAxcel } = body ?? {};
 
     if (!nom || !phone || !email || !demande || !origin) {
       return NextResponse.json(
@@ -44,7 +44,10 @@ export async function POST(request: NextRequest) {
     const subject = `Nouvelle demande de devis - ${origin === 'malgache' ? 'Malgache' : 'Étranger'}`;
     const senderAddress = process.env.SMTP_FROM || 'devis@axcel.mg';
     const recipientAddress = process.env.DEVIS_TO || 'contact@axcel.mg';
+
     const copiedIn = process.env.DEVIS_CC?.split(',').map((item) => item.trim()).filter(Boolean) ?? ['crm@axcel.mg'];
+
+
     const requestLabels: Record<string, string> = {
       'creation-individuelle': "Création d'entreprise individuelle",
       'creation-sarl-sarlu': 'Création société SARL / SARLU',
@@ -63,9 +66,11 @@ export async function POST(request: NextRequest) {
         <h2 style="margin-bottom: 12px;">Nouvelle demande de devis</h2>
         <p><strong>Nom :</strong> ${String(nom)}</p>
         <p><strong>Téléphone :</strong> ${String(phone)}</p>
+        ${whatsapp ? `<p><strong>WhatsApp :</strong> ${String(whatsapp)}</p>` : ''}
         <p><strong>Email :</strong> ${String(email)}</p>
         <p><strong>Origine :</strong> ${origin === 'malgache' ? 'Malgache' : 'Étranger'}</p>
         <p><strong>Type de demande :</strong> ${formattedDemande}</p>
+        <p><strong>Domicilier chez Axcel Company :</strong> ${domicilierAxcel ? 'Oui' : 'Non'}</p>
         <p><strong>Message :</strong></p>
         <p>${String(message || 'Aucun message fourni')}</p>
       </div>
@@ -74,7 +79,7 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: `Axcel Company <${senderAddress}>`,
       to: recipientAddress,
-      cc: copiedIn.length > 0 ? copiedIn : ['crm@axcel.mg'],
+      cc: copiedIn.length > 0 ? copiedIn : undefined,
       replyTo: String(email),
       subject,
       html,

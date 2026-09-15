@@ -390,7 +390,9 @@
       "message": "Message",
       "messagePlaceholder": "Describe your need, your goals or the procedures to carry out...",
       "submit": "Send the request",
-      "submitting": "Sending..."
+      "submitting": "Sending...",
+      "RegisteredOffice": "Establish your business address with Axcel Company",
+      "optional": "Optional"
     },
     "errors": {
       "originRequired": "Please select your origin first.",

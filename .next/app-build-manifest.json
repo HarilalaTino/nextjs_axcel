@@ -19,9 +19,18 @@
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-c5a697ddbf82d774.js",
       "static/chunks/main-app-eb3590d0db1a33aa.js",
-      "static/css/2092ff5742691a95.css",
+      "static/css/a567a46482c6dc54.css",
       "static/chunks/970-231e38a1b744aa8a.js",
       "static/chunks/app/[locale]/layout-6d3b3ae8e0d1886a.js"
+    ],
+    "/[locale]/creation-entreprise-individuelle/page": [
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/970-231e38a1b744aa8a.js",
+      "static/chunks/608-52649eb1ec87e219.js",
+      "static/chunks/app/[locale]/creation-entreprise-individuelle/page-b5bf1fa234349eb0.js"
     ],
     "/[locale]/a-propos/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",
@@ -42,15 +51,6 @@
       "static/chunks/479-af284c1332cc2f0e.js",
       "static/chunks/608-52649eb1ec87e219.js",
       "static/chunks/app/[locale]/conseil-assistance/page-70b91a15edba9616.js"
-    ],
-    "/[locale]/creation-entreprise-individuelle/page": [
-      "static/chunks/webpack-8510fa57cb3ef209.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-c5a697ddbf82d774.js",
-      "static/chunks/main-app-eb3590d0db1a33aa.js",
-      "static/chunks/970-231e38a1b744aa8a.js",
-      "static/chunks/608-52649eb1ec87e219.js",
-      "static/chunks/app/[locale]/creation-entreprise-individuelle/page-b5bf1fa234349eb0.js"
     ],
     "/[locale]/contact/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",
@@ -95,16 +95,7 @@
       "static/chunks/main-app-eb3590d0db1a33aa.js",
       "static/chunks/970-231e38a1b744aa8a.js",
       "static/chunks/246-33d7cc9fe20a7c1b.js",
-      "static/chunks/app/[locale]/devis/page-1c6f5dbc62a6ccb1.js"
-    ],
-    "/[locale]/location-salle-reunion/page": [
-      "static/chunks/webpack-8510fa57cb3ef209.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-c5a697ddbf82d774.js",
-      "static/chunks/main-app-eb3590d0db1a33aa.js",
-      "static/chunks/970-231e38a1b744aa8a.js",
-      "static/chunks/608-52649eb1ec87e219.js",
-      "static/chunks/app/[locale]/location-salle-reunion/page-b5bf1fa234349eb0.js"
+      "static/chunks/app/[locale]/devis/page-dd05140ce1ba6568.js"
     ],
     "/[locale]/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",
@@ -124,6 +115,15 @@
       "static/chunks/970-231e38a1b744aa8a.js",
       "static/chunks/608-52649eb1ec87e219.js",
       "static/chunks/app/[locale]/recrutement/page-b5bf1fa234349eb0.js"
+    ],
+    "/[locale]/location-salle-reunion/page": [
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/970-231e38a1b744aa8a.js",
+      "static/chunks/608-52649eb1ec87e219.js",
+      "static/chunks/app/[locale]/location-salle-reunion/page-b5bf1fa234349eb0.js"
     ],
     "/[locale]/service-coursier/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",

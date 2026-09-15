@@ -12,9 +12,11 @@ type Origin = 'malgache' | 'etranger';
 type FormState = {
   nom: string;
   phone: string;
+  whatsapp: string;
   email: string;
   demande: string;
   message: string;
+  domicilierAxcel: boolean;
 };
 
 const frenchRequestOptions = [
@@ -38,9 +40,11 @@ const getFrenchRequestLabel = (slug: string) => frenchRequestOptions.find((optio
 const getInitialForm = (type: string | null): FormState => ({
   nom: '',
   phone: '',
+  whatsapp: '',
   email: '',
   demande: getInitialDemande(type),
   message: '',
+  domicilierAxcel: false,
 });
 
 function getInitialDemande(type: string | null): string {
@@ -97,6 +101,12 @@ export default function QuotePage() {
     setError(null);
   };
 
+  const handleToggleChange = (field: keyof FormState, value: boolean) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+    setSubmitted(false);
+    setError(null);
+  };
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -110,7 +120,8 @@ export default function QuotePage() {
       demande: getFrenchRequestLabel(form.demande),
       origin,
     };
-
+    console.log(payload);
+    
     setIsSubmitting(true);
     setError(null);
     
@@ -227,7 +238,21 @@ export default function QuotePage() {
                     />
                   </label>
 
-                  <label className="block md:col-span-2">
+                  <label className="block">
+                    <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
+                      <Phone className="h-4 w-4 text-secondary" />
+                      WhatsApp <span className="font-normal text-slate-400">({t("form.optional")})</span>
+                    </span>
+                    <input
+                      type="tel"
+                      value={form.whatsapp}
+                      onChange={(event) => handleInputChange('whatsapp', event.target.value)}
+                      placeholder="Ex : +261 34 00 000 00"
+                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                    />
+                  </label>
+
+                  <label className="block">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <Mail className="h-4 w-4 text-secondary" />
                       {t('form.email')}
@@ -256,6 +281,27 @@ export default function QuotePage() {
                       ))}
                     </select>
                   </label>
+
+                  <div className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white px-4 py-3 md:col-span-2">
+                    <span className="text-sm font-semibold text-primary">
+                      {t('form.RegisteredOffice')}
+                    </span>
+                    <button
+                      type="button"
+                      role="switch"
+                      aria-checked={form.domicilierAxcel}
+                      onClick={() => handleToggleChange('domicilierAxcel', !form.domicilierAxcel)}
+                      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 ${
+                        form.domicilierAxcel ? 'bg-secondary' : 'bg-slate-300'
+                      }`}
+                    >
+                      <span
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${
+                          form.domicilierAxcel ? 'translate-x-6' : 'translate-x-1'
+                        }`}
+                      />
+                    </button>
+                  </div>
 
                   <label className="block md:col-span-2">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">

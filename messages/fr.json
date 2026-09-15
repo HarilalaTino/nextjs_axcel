@@ -391,7 +391,9 @@
       "message": "Message",
       "messagePlaceholder": "Décrivez votre besoin, vos objectifs ou les démarches à réaliser...",
       "submit": "Envoyer la demande",
-      "submitting": "Envoi en cours..."
+      "submitting": "Envoi en cours...",
+      "RegisteredOffice": "Domiciliez chez Axcel Company",
+      "optional": "Facultatif"
     },
     "errors": {
       "originRequired": "Veuillez d’abord choisir votre origine.",
