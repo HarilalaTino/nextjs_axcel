@@ -43,8 +43,8 @@ export async function POST(request: NextRequest) {
 
     const subject = `Nouvelle demande de devis - ${origin === 'malgache' ? 'Malgache' : 'Étranger'}`;
     const senderAddress = process.env.SMTP_FROM || 'devis@axcel.mg';
-    const recipientAddress = process.env.DEVIS_TO || 'crm@axcel.mg';
-    const copiedIn = process.env.DEVIS_CC;
+    const recipientAddress = process.env.DEVIS_TO || 'contact@axcel.mg';
+    const copiedIn = process.env.DEVIS_CC?.split(',').map((item) => item.trim()).filter(Boolean) ?? ['crm@axcel.mg'];
     const requestLabels: Record<string, string> = {
       'creation-individuelle': "Création d'entreprise individuelle",
       'creation-sarl-sarlu': 'Création société SARL / SARLU',
@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: `Axcel Company <${senderAddress}>`,
       to: recipientAddress,
-      cc: copiedIn,
+      cc: copiedIn.length > 0 ? copiedIn : ['crm@axcel.mg'],
       replyTo: String(email),
       subject,
       html,
