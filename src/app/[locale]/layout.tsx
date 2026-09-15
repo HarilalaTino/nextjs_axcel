@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     images: ["/images/home/hero-bg-1.jpg"],
   },
   robots: {
-    index: false,
-    follow: false,
+    index: process.env.NEXT_PUBLIC_SITE_URL === "https://axcel.mg",
+    follow: process.env.NEXT_PUBLIC_SITE_URL === "https://axcel.mg",
   },
 };
 
