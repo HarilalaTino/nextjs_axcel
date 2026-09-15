@@ -125,13 +125,18 @@
     "secondaryNavigation": "Navigation secondaire",
     "services": "Services",
     "contact": "Nous contacter",
-    "companyCreation": "Création d'entreprise",
+    "home": "Accueil",
+    "individualCreation": "Création d'entreprise individuelle",
+    "companyCreation": "Création de société SARL - SARLU",
+    "associationCreation": "Création ONG et association",
     "domiciliation": "Domiciliation",
     "meetingRoom": "Location de salle",
     "advice": "Conseil et assistance",
+    "courier": "Service de coursier",
+    "recruitment": "Recrutement",
     "rights": "Tous droits réservés.",
     "legalNotice": "Mentions légales",
-    "links": { "Accueil": "Accueil", "À propos de nous": "À propos de nous", "Nos services": "Nos services", "Contact": "Contact" }
+    "links": { "home": "Accueil", "about": "À propos de nous", "quote": "Demander un devis", "contact": "Contact" }
   },
   "ContactPage": {
     "title": "Parlons de votre projet",

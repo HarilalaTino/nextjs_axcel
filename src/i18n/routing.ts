@@ -19,29 +19,9 @@ export const routing = defineRouting({
       fr: '/devis',
       en: '/quote'
     },
-    '/service': {
-      fr: '/service',
-      en: '/services'
-    },
     '/creation': {
       fr: '/creation',
-      en: '/company-creation'
-    },
-    '/conseil-creation-societe': {
-      fr: '/conseil-creation-societe',
-      en: '/business-creation-advice'
-    },
-    '/assistance-modification-societe': {
-      fr: '/assistance-modification-societe',
-      en: '/company-modification-assistance'
-    },
-    '/assistance-formalisation-entreprise': {
-      fr: '/assistance-formalisation-entreprise',
-      en: '/business-formalization-assistance'
-    },
-    '/consultation-strategique': {
-      fr: '/consultation-strategique',
-      en: '/strategic-consultation'
+      en: '/creation'
     },
     '/creation-entreprise-individuelle': {
       fr: '/creation-entreprise-individuelle',

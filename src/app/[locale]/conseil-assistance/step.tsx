@@ -56,7 +56,7 @@ export default function ProcessSteps() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6, ease: smoothEase }}
-          className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl lg:text-4xl"
+          className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl"
         >
           {t("processSteps.title")}
         </motion.h2>

@@ -125,13 +125,18 @@
     "secondaryNavigation": "Secondary navigation",
     "services": "Services",
     "contact": "Contact us",
-    "companyCreation": "Company creation",
+    "home": "Home",
+    "individualCreation": "Sole proprietorship creation",
+    "companyCreation": "SARL - SARLU company creation",
+    "associationCreation": "NGO and association creation",
     "domiciliation": "Business domiciliation",
     "meetingRoom": "Room rental",
     "advice": "Advice and assistance",
+    "courier": "Courier service",
+    "recruitment": "Recruitment",
     "rights": "All rights reserved.",
     "legalNotice": "Legal notice",
-    "links": { "Accueil": "Home", "À propos de nous": "About us", "Nos services": "Our services", "Contact": "Contact" }
+    "links": { "home": "Home", "about": "About us", "quote": "Request a quote", "contact": "Contact" }
   },
   "ContactPage": {
     "title": "Let's talk about your project",

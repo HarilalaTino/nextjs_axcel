@@ -97,8 +97,8 @@ export default async function RootLayout({
          <NextIntlClientProvider messages={messages}>
           {children}
           <ScrollToTop />
+          <Footer />
         </NextIntlClientProvider>
-        <Footer />
       </body>
     </html>
   );

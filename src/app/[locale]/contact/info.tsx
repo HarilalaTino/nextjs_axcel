@@ -102,7 +102,7 @@ export default function InfoContact() {
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-12">
         <div className="grid gap-16 lg:grid-cols-[1fr_1.15fr] lg:items-start">
           <div>
-            <h1 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl lg:text-4xl">
+            <h1 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
               {t('title')}
             </h1>
             <div className="mt-4 h-1 w-16 bg-secondary"></div>

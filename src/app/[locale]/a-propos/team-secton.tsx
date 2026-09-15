@@ -63,12 +63,12 @@ function TeamCard({ name, role, image }: Member) {
 export default function TeamSection() {
   const t = useTranslations('About.teamSection');
   return (
-    <section className="w-full bg-white px-4 py-16">
+    <section className="w-full bg-white px-6 py-16">
       <div className="mx-auto max-w-6xl text-center">
         <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-500">
            {t('eyebrow')}
         </p>
-        <h2 className="text-3xl font-extrabold leading-tight text-primary sm:text-4xl">
+        <h2 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
            {t('title')}
         </h2>
         <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-secondary" />
@@ -78,7 +78,7 @@ export default function TeamSection() {
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
-          className="mt-12 grid grid-cols-1 gap-20 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-12 grid grid-cols-1 gap-10 xl:gap-20 sm:grid-cols-2 lg:grid-cols-3"
         >
           {TEAM.map((member) => (
             <TeamCard key={member.name} {...member} />

@@ -95,7 +95,7 @@ export default function StatsSection() {
                 <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-500">
                     {t("eyebrow")}
                 </p>
-                <h2 className="text-3xl font-extrabold leading-tight text-primary sm:text-4xl">
+                <h2 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
                     {t("title")}
                 </h2>
                 <div className="mt-4 h-1 w-16 bg-secondary" />

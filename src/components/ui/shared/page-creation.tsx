@@ -61,7 +61,7 @@ export default async function CreationPage({
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-2 sm:px-4 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
           <div className={`${contentClassName} w-full flex-1 ${isReverseSection ? 'lg:order-2' : ''}`}>
             <p className="text-sm font-semibold uppercase tracking-wide text-secondary">{eyebrow}</p>
-            <h1 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl lg:text-4xl">
+            <h1 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
               {title}
             </h1>
             <div className="mt-4 h-1 w-16 bg-secondary" />
