@@ -153,6 +153,47 @@
     "ctaTitle": "Need a quick answer?",
     "ctaButton": "Chat on WhatsApp"
   },
+  "LegalNotice": {
+    "eyebrow": "Legal information",
+    "title": "Legal notice",
+    "intro": "This page provides the legal information relating to the website and services of Axcel Company.",
+    "publisher": {
+      "title": "Website publisher",
+      "nameLabel": "Name",
+      "name": "Axcel Company",
+      "activityLabel": "Activity",
+      "activity": "Professional business services: company creation, modifications, advice, administrative assistance and courier services.",
+      "registrationLabel": "Registration",
+      "registration": "Registration details must be completed by the publisher."
+    },
+    "contact": { "title": "Contact details" },
+    "hosting": {
+      "title": "Hosting",
+      "content": "The site axcel.mg is hosted by o2switch."
+    },
+    "intellectualProperty": {
+      "title": "Intellectual property",
+      "content": "All content on this website, including text, images, logos, graphic elements and structure, is protected by applicable intellectual property rules. Any unauthorized reproduction or reuse is prohibited."
+    },
+    "personalData": {
+      "title": "Personal data",
+      "content": "Data submitted through forms or contact channels is used only to respond to requests and follow up on communications. For any question or request concerning your data, you can contact Axcel Company at contact@axcel.mg."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "The website may use cookies required for its operation and to improve the user experience. You can configure your browser to limit or refuse cookies."
+    },
+    "liability": {
+      "title": "Liability",
+      "content": "Axcel Company makes reasonable efforts to keep the information accurate and up to date. However, the publisher cannot guarantee that the content will always be complete or that the website will be uninterrupted or error-free."
+    },
+    "law": {
+      "title": "Applicable law",
+      "content": "The website and this legal notice are governed by the laws applicable in Madagascar, subject to any mandatory rules that may apply."
+    },
+    "contactButton": "Contact us",
+    "homeButton": "Back to home"
+  },
   "CreationPages": {
     "additionalServices": {
       "label": "We also offer other services",

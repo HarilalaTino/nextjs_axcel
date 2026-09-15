@@ -153,6 +153,47 @@
     "ctaTitle": "Besoin d'une réponse rapide ?",
     "ctaButton": "Discuter sur WhatsApp"
   },
+  "LegalNotice": {
+    "eyebrow": "Informations légales",
+    "title": "Mentions légales",
+    "intro": "Cette page présente les informations légales relatives au site et aux services d'Axcel Company.",
+    "publisher": {
+      "title": "Éditeur du site",
+      "nameLabel": "Nom",
+      "name": "Axcel Company",
+      "activityLabel": "Activité",
+      "activity": "Services professionnels aux entreprises : création, modification, conseil, assistance administrative et services de coursier.",
+      "registrationLabel": "Immatriculation",
+      "registration": "Les informations d'immatriculation doivent être complétées par l'éditeur."
+    },
+    "contact": { "title": "Coordonnées" },
+    "hosting": {
+      "title": "Hébergement",
+      "content": "Le site axcel.mg est hébergé par o2switch"
+    },
+    "intellectualProperty": {
+      "title": "Propriété intellectuelle",
+      "content": "L'ensemble des contenus présents sur ce site, notamment les textes, images, logos, éléments graphiques et structure, est protégé par les règles applicables en matière de propriété intellectuelle. Toute reproduction ou réutilisation non autorisée est interdite."
+    },
+    "personalData": {
+      "title": "Données personnelles",
+      "content": "Les données transmises via les formulaires ou les moyens de contact sont utilisées uniquement pour répondre aux demandes et assurer le suivi des échanges. Pour toute question ou demande relative à vos données, vous pouvez contacter Axcel Company à l'adresse contact@axcel.mg."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "Le site peut utiliser des cookies nécessaires à son fonctionnement et à l'amélioration de l'expérience utilisateur. Vous pouvez configurer votre navigateur pour limiter ou refuser les cookies."
+    },
+    "liability": {
+      "title": "Responsabilité",
+      "content": "Axcel Company s'efforce de maintenir des informations exactes et à jour. Toutefois, l'éditeur ne peut garantir l'exhaustivité permanente des contenus ni l'absence d'interruption ou d'erreur sur le site."
+    },
+    "law": {
+      "title": "Droit applicable",
+      "content": "Le site et les présentes mentions légales sont soumis au droit applicable à Madagascar, sous réserve des règles impératives pouvant s'appliquer."
+    },
+    "contactButton": "Nous contacter",
+    "homeButton": "Retour à l'accueil"
+  },
   "CreationPages": {
     "additionalServices": {
       "label": "Nous proposons aussi d'autres services",

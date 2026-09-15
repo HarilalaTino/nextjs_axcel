@@ -19,7 +19,7 @@
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-c5a697ddbf82d774.js",
       "static/chunks/main-app-eb3590d0db1a33aa.js",
-      "static/css/0d9526c0f0ba94bd.css",
+      "static/css/468394de2e98942b.css",
       "static/chunks/970-231e38a1b744aa8a.js",
       "static/chunks/app/[locale]/layout-6d3b3ae8e0d1886a.js"
     ],
@@ -105,6 +105,14 @@
       "static/chunks/970-231e38a1b744aa8a.js",
       "static/chunks/608-f15da9933d91e3bb.js",
       "static/chunks/app/[locale]/location-salle-reunion/page-b5bf1fa234349eb0.js"
+    ],
+    "/[locale]/mentions-legales/page": [
+      "static/chunks/webpack-8510fa57cb3ef209.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-c5a697ddbf82d774.js",
+      "static/chunks/main-app-eb3590d0db1a33aa.js",
+      "static/chunks/970-231e38a1b744aa8a.js",
+      "static/chunks/app/[locale]/mentions-legales/page-205807a36af7fdfb.js"
     ],
     "/[locale]/page": [
       "static/chunks/webpack-8510fa57cb3ef209.js",

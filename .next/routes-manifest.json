@@ -100,6 +100,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/location\\-salle\\-reunion(?:/)?$"
     },
     {
+      "page": "/[locale]/mentions-legales",
+      "regex": "^/([^/]+?)/mentions\\-legales(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/mentions\\-legales(?:/)?$"
+    },
+    {
       "page": "/[locale]/recrutement",
       "regex": "^/([^/]+?)/recrutement(?:/)?$",
       "routeKeys": {
