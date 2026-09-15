@@ -8,6 +8,8 @@ import { getTranslations } from "next-intl/server";
 export default async function CreationSocieteSarlSarluPage() {
     const t = await getTranslations("CreationSocieteSarl");
     const tSarlu = await getTranslations("CreationSocieteSarlu");
+    const nav = await getTranslations("Nav");
+
     return (
         <>
             <TopMenu />
@@ -17,6 +19,9 @@ export default async function CreationSocieteSarlSarluPage() {
                     className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/5"
                     aria-hidden="true"
                 />
+                <h1 className="text-xs font-normal text-transparent absolute -z-10">
+                    {nav("creationSarl")}
+                </h1>
                 <CreationPage
                     creationType="sarl-creation"
                     eyebrow={t("eyebrow")}

@@ -7,6 +7,8 @@ import { getTranslations } from "next-intl/server";
 
 export default async function CreationDomiciliationPage() {
     const t = await getTranslations("Domiciliation");
+    const nav = await getTranslations("Nav");
+
     return (
         <>
             <TopMenu />
@@ -16,6 +18,9 @@ export default async function CreationDomiciliationPage() {
                     className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/5"
                     aria-hidden="true"
                 />
+                <h1 className="text-xs font-normal text-transparent absolute -z-10">
+                    {nav("creationDomiciliation")}
+                </h1>
                 <CreationPage
                     creationType="domiciliation"
                     eyebrow={t("eyebrow")}

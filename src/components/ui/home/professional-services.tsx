@@ -35,7 +35,7 @@ function AnimatedServiceCard({ service, index }: { service: ServiceCard; index: 
                 }`}
             style={{ transitionDelay: `${index * 100}ms` }}
         >
-            <ServiceCardItem service={service} />
+            <ServiceCardItem service={service} titleAs='span' />
         </div>
     );
 }

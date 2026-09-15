@@ -160,12 +160,12 @@ export default function QuotePage() {
         <div className="mx-auto max-w-5xl">
           <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(21,32,57,0.08)] sm:p-8 lg:p-12">
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+              <h1 className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
                 {t('eyebrow')}
-              </p>
-              <h1 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-                {t('title')}
               </h1>
+              <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
+                {t('title')}
+              </h2>
               <p className="mt-3 text-sm text-slate-600 sm:text-base">
                 {t('subtitle')}
               </p>

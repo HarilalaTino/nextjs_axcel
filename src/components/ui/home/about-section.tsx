@@ -80,9 +80,9 @@ export default function AboutSection() {
                         {t('about.label')}
                     </span>
 
-                    <h2 className="mt-4 text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
+                    <span className="block mt-4 text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
                         {t('about.title')}
-                    </h2>
+                    </span>
 
                     <p className="mt-6 text-base leading-relaxed text-slate-500">
                         {t('about.description')}

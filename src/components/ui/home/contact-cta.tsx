@@ -8,9 +8,9 @@ export default function ContactCTA() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-primary via-primary to-[#14315c] px-6 py-20 text-center">
-      <h2 className="text-3xl font-bold text-white sm:text-4xl">
+      <span className="text-3xl font-bold text-white sm:text-4xl">
         {t('contact.title')}
-      </h2>
+      </span>
 
       <p className="mx-auto mt-4 max-w-md text-slate-300">
         {t('contact.description')}

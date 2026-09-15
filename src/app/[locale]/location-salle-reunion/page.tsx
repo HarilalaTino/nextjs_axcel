@@ -7,6 +7,7 @@ import { getTranslations } from "next-intl/server";
 
 export default async function LocationMeetingRoomPage() {
     const t = await getTranslations("MeetingRoom");
+    const nav = await getTranslations("Nav");
 
     return (
         <div>
@@ -17,6 +18,9 @@ export default async function LocationMeetingRoomPage() {
                     className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/5"
                     aria-hidden="true"
                 />
+                <h1 className="text-xs font-normal text-transparent absolute -z-10">
+                    {nav("creationMeetingRoom")}
+                </h1>
                 <CreationPage
                     creationType="meeting-room"
                     eyebrow={t("eyebrow")}

@@ -149,9 +149,9 @@ export default function TrustedCompanies() {
                         hover:scale-105
                         "
                   />
-                  <p className="ml-2 text-sm font-medium text-gray-700 text-center">
+                  <h3 className="ml-2 text-sm font-medium text-gray-700 text-center">
                     {company.name}
-                  </p>
+                  </h3>
                 </div>
               </div>
             ))}

@@ -91,8 +91,14 @@ export const SERVICES: ServiceCard[] = [
     },
 ];
 
-export function ServiceCardItem({ service }: { service: ServiceCard }) {
+type ServiceCardItemProps = {
+    service: ServiceCard;
+    titleAs?: 'h2' | 'span';
+};
+
+export function ServiceCardItem({ service, titleAs = 'h2' }: ServiceCardItemProps) {
     const t = useTranslations('Home');
+    const TitleTag = titleAs;
 
     return (
         <div className="group relative flex h-full min-h-[250px] flex-col overflow-hidden rounded-2xl bg-white p-5 shadow-lg shadow-slate-900/5 ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-slate-900/10 hover:ring-secondary/20">
@@ -104,9 +110,10 @@ export function ServiceCardItem({ service }: { service: ServiceCard }) {
                 {service.icon}
             </span>
 
-            <h3 className="min-h-[3.5rem] text-lg font-extrabold uppercase leading-7 text-primary/80">
+            <TitleTag className="min-h-[3.5rem] text-lg font-extrabold uppercase leading-7 text-primary/80">
                 {t(`services.${service.titleKey}`)}
-            </h3>
+            </TitleTag>
+
             <p className="mt-1 min-h-[3rem] text-sm leading-6 text-slate-500">{t(`services.${service.descriptionKey}`)}</p>
 
             <Link
