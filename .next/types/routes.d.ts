@@ -5,7 +5,7 @@ type AppRoutes = "/[locale]" | "/[locale]/a-propos" | "/[locale]/conseil-assista
 type AppRouteHandlerRoutes = "/api/devis"
 type PageRoutes = never
 type LayoutRoutes = "/[locale]"
-type RedirectRoutes = never
+type RedirectRoutes = "/a-propos.html" | "/assistance-formalisation-entreprise.html" | "/assistance-modification-societe.html" | "/conseil-creation-societe.html" | "/consultation-strategique-entrepreneurs.html" | "/contact.html" | "/creation-association.html" | "/creation-entreprise-individuelle.html" | "/creation-etablissement.html" | "/creation-ong.html" | "/creation-sa-sau.html" | "/creation-sarl-sarlu.html" | "/index.html" | "/ouverture-succursale-filiale.html" | "/recuperation-certificats-de-consommabilite.html" | "/recuperation-certificats-de-mise-en-commerce.html" | "/recuperation-diplome-releve-note-equivalence.html" | "/recuperation-traduction-acte-naissance-acte-de-mariage.html" | "/service.html" | "/toutes-enregistrement-et-certification.html"
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes | AppRouteHandlerRoutes
 
@@ -24,7 +24,27 @@ interface ParamMap {
   "/[locale]/mentions-legales": { "locale": string; }
   "/[locale]/recrutement": { "locale": string; }
   "/[locale]/service-coursier": { "locale": string; }
+  "/a-propos.html": {}
   "/api/devis": {}
+  "/assistance-formalisation-entreprise.html": {}
+  "/assistance-modification-societe.html": {}
+  "/conseil-creation-societe.html": {}
+  "/consultation-strategique-entrepreneurs.html": {}
+  "/contact.html": {}
+  "/creation-association.html": {}
+  "/creation-entreprise-individuelle.html": {}
+  "/creation-etablissement.html": {}
+  "/creation-ong.html": {}
+  "/creation-sa-sau.html": {}
+  "/creation-sarl-sarlu.html": {}
+  "/index.html": {}
+  "/ouverture-succursale-filiale.html": {}
+  "/recuperation-certificats-de-consommabilite.html": {}
+  "/recuperation-certificats-de-mise-en-commerce.html": {}
+  "/recuperation-diplome-releve-note-equivalence.html": {}
+  "/recuperation-traduction-acte-naissance-acte-de-mariage.html": {}
+  "/service.html": {}
+  "/toutes-enregistrement-et-certification.html": {}
 }
 
 

@@ -10,6 +10,126 @@
       "internal": true,
       "statusCode": 308,
       "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/index\\.html(?:/)?$"
+    },
+    {
+      "source": "/conseil-creation-societe.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/conseil-creation-societe\\.html(?:/)?$"
+    },
+    {
+      "source": "/assistance-modification-societe.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/assistance-modification-societe\\.html(?:/)?$"
+    },
+    {
+      "source": "/assistance-formalisation-entreprise.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/assistance-formalisation-entreprise\\.html(?:/)?$"
+    },
+    {
+      "source": "/consultation-strategique-entrepreneurs.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/consultation-strategique-entrepreneurs\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-sa-sau.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-sa-sau\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-etablissement.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-etablissement\\.html(?:/)?$"
+    },
+    {
+      "source": "/ouverture-succursale-filiale.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ouverture-succursale-filiale\\.html(?:/)?$"
+    },
+    {
+      "source": "/service.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/service\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-sarl-sarlu.html",
+      "destination": "/fr/creation-societe-sarl-sarlu",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-sarl-sarlu\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-entreprise-individuelle.html",
+      "destination": "/fr/creation-entreprise-individuelle",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-entreprise-individuelle\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-association.html",
+      "destination": "/fr/creation-ong-association",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-association\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-ong.html",
+      "destination": "/fr/creation-ong-association",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-ong\\.html(?:/)?$"
+    },
+    {
+      "source": "/a-propos.html",
+      "destination": "/fr/a-propos",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/a-propos\\.html(?:/)?$"
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/fr/contact",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/contact\\.html(?:/)?$"
+    },
+    {
+      "source": "/recuperation-diplome-releve-note-equivalence.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/recuperation-diplome-releve-note-equivalence\\.html(?:/)?$"
+    },
+    {
+      "source": "/recuperation-traduction-acte-naissance-acte-de-mariage.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/recuperation-traduction-acte-naissance-acte-de-mariage\\.html(?:/)?$"
+    },
+    {
+      "source": "/recuperation-certificats-de-mise-en-commerce.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/recuperation-certificats-de-mise-en-commerce\\.html(?:/)?$"
+    },
+    {
+      "source": "/recuperation-certificats-de-consommabilite.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/recuperation-certificats-de-consommabilite\\.html(?:/)?$"
+    },
+    {
+      "source": "/toutes-enregistrement-et-certification.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/toutes-enregistrement-et-certification\\.html(?:/)?$"
     }
   ],
   "headers": [],
