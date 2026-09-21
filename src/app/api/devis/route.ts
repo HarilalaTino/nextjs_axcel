@@ -4,7 +4,19 @@ import nodemailer from 'nodemailer';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { nom, phone, whatsapp, email, demande, message, origin, domicilierAxcel } = body ?? {};
+    const { nom, phone, whatsapp, email, demande, message, origin, domicilierAxcel, captchaToken } = body ?? {};
+
+    const verifyRes = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+    });
+
+    const verifyData = await verifyRes.json();
+
+    if (!verifyData.success) {
+      return Response.json({ error: 'Vérification captcha échouée' }, { status: 400 });
+    }
 
     if (!nom || !phone || !email || !demande || !origin) {
       return NextResponse.json(

@@ -1,0 +1,20 @@
+{
+  "/api/devis/route": "/api/devis",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/robots.txt/route": "/robots.txt",
+  "/favicon.ico/route": "/favicon.ico",
+  "/_not-found/page": "/_not-found",
+  "/[locale]/a-propos/page": "/[locale]/a-propos",
+  "/[locale]/contact/page": "/[locale]/contact",
+  "/[locale]/conseil-assistance/page": "/[locale]/conseil-assistance",
+  "/[locale]/creation-entreprise-individuelle/page": "/[locale]/creation-entreprise-individuelle",
+  "/[locale]/creation-ong-association/page": "/[locale]/creation-ong-association",
+  "/[locale]/creation-societe-sarl-sarlu/page": "/[locale]/creation-societe-sarl-sarlu",
+  "/[locale]/devis/page": "/[locale]/devis",
+  "/[locale]/domiciliation/page": "/[locale]/domiciliation",
+  "/[locale]/location-salle-reunion/page": "/[locale]/location-salle-reunion",
+  "/[locale]/mentions-legales/page": "/[locale]/mentions-legales",
+  "/[locale]/recrutement/page": "/[locale]/recrutement",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/service-coursier/page": "/[locale]/service-coursier"
+}

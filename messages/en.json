@@ -448,7 +448,9 @@
       "formInvalid": "Please correct the required fields before submitting.",
       "generic": "An error occurred while sending the quote request.",
       "unknown": "An unknown error occurred.",
-      "title": "The quote request failed."
+      "title": "The quote request failed.",   
+      "captchaRequired": "Please complete the reCAPTCHA before submitting your request."
+
     },
     "success": {
       "title": "Your request has been recorded.",

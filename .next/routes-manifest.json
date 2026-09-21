@@ -1,1 +1,290 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[],"fallback":[]},"redirects":[{"source":"/:path+/","destination":"/:path+","permanent":true,"internal":true,"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"},{"source":"/index.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/index\\.html(?:\\/)?$"},{"source":"/conseil-creation-societe.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/conseil-creation-societe\\.html(?:\\/)?$"},{"source":"/assistance-modification-societe.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/assistance-modification-societe\\.html(?:\\/)?$"},{"source":"/assistance-formalisation-entreprise.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/assistance-formalisation-entreprise\\.html(?:\\/)?$"},{"source":"/consultation-strategique-entrepreneurs.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/consultation-strategique-entrepreneurs\\.html(?:\\/)?$"},{"source":"/creation-sa-sau.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/creation-sa-sau\\.html(?:\\/)?$"},{"source":"/creation-etablissement.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/creation-etablissement\\.html(?:\\/)?$"},{"source":"/ouverture-succursale-filiale.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/ouverture-succursale-filiale\\.html(?:\\/)?$"},{"source":"/service.html","destination":"/fr","permanent":true,"regex":"^(?!\\/_next)\\/service\\.html(?:\\/)?$"},{"source":"/creation-sarl-sarlu.html","destination":"/fr/creation-societe-sarl-sarlu","permanent":true,"regex":"^(?!\\/_next)\\/creation-sarl-sarlu\\.html(?:\\/)?$"},{"source":"/creation-entreprise-individuelle.html","destination":"/fr/creation-entreprise-individuelle","permanent":true,"regex":"^(?!\\/_next)\\/creation-entreprise-individuelle\\.html(?:\\/)?$"},{"source":"/creation-association.html","destination":"/fr/creation-ong-association","permanent":true,"regex":"^(?!\\/_next)\\/creation-association\\.html(?:\\/)?$"},{"source":"/creation-ong.html","destination":"/fr/creation-ong-association","permanent":true,"regex":"^(?!\\/_next)\\/creation-ong\\.html(?:\\/)?$"},{"source":"/a-propos.html","destination":"/fr/a-propos","permanent":true,"regex":"^(?!\\/_next)\\/a-propos\\.html(?:\\/)?$"},{"source":"/contact.html","destination":"/fr/contact","permanent":true,"regex":"^(?!\\/_next)\\/contact\\.html(?:\\/)?$"},{"source":"/recuperation-diplome-releve-note-equivalence.html","destination":"/fr/service-coursier","permanent":true,"regex":"^(?!\\/_next)\\/recuperation-diplome-releve-note-equivalence\\.html(?:\\/)?$"},{"source":"/recuperation-traduction-acte-naissance-acte-de-mariage.html","destination":"/fr/service-coursier","permanent":true,"regex":"^(?!\\/_next)\\/recuperation-traduction-acte-naissance-acte-de-mariage\\.html(?:\\/)?$"},{"source":"/recuperation-certificats-de-mise-en-commerce.html","destination":"/fr/service-coursier","permanent":true,"regex":"^(?!\\/_next)\\/recuperation-certificats-de-mise-en-commerce\\.html(?:\\/)?$"},{"source":"/recuperation-certificats-de-consommabilite.html","destination":"/fr/service-coursier","permanent":true,"regex":"^(?!\\/_next)\\/recuperation-certificats-de-consommabilite\\.html(?:\\/)?$"},{"source":"/toutes-enregistrement-et-certification.html","destination":"/fr/service-coursier","permanent":true,"regex":"^(?!\\/_next)\\/toutes-enregistrement-et-certification\\.html(?:\\/)?$"}],"headers":[]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/index\\.html(?:/)?$"
+    },
+    {
+      "source": "/conseil-creation-societe.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/conseil-creation-societe\\.html(?:/)?$"
+    },
+    {
+      "source": "/assistance-modification-societe.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/assistance-modification-societe\\.html(?:/)?$"
+    },
+    {
+      "source": "/assistance-formalisation-entreprise.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/assistance-formalisation-entreprise\\.html(?:/)?$"
+    },
+    {
+      "source": "/consultation-strategique-entrepreneurs.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/consultation-strategique-entrepreneurs\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-sa-sau.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-sa-sau\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-etablissement.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-etablissement\\.html(?:/)?$"
+    },
+    {
+      "source": "/ouverture-succursale-filiale.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ouverture-succursale-filiale\\.html(?:/)?$"
+    },
+    {
+      "source": "/service.html",
+      "destination": "/fr",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/service\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-sarl-sarlu.html",
+      "destination": "/fr/creation-societe-sarl-sarlu",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-sarl-sarlu\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-entreprise-individuelle.html",
+      "destination": "/fr/creation-entreprise-individuelle",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-entreprise-individuelle\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-association.html",
+      "destination": "/fr/creation-ong-association",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-association\\.html(?:/)?$"
+    },
+    {
+      "source": "/creation-ong.html",
+      "destination": "/fr/creation-ong-association",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/creation-ong\\.html(?:/)?$"
+    },
+    {
+      "source": "/a-propos.html",
+      "destination": "/fr/a-propos",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/a-propos\\.html(?:/)?$"
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/fr/contact",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/contact\\.html(?:/)?$"
+    },
+    {
+      "source": "/recuperation-diplome-releve-note-equivalence.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/recuperation-diplome-releve-note-equivalence\\.html(?:/)?$"
+    },
+    {
+      "source": "/recuperation-traduction-acte-naissance-acte-de-mariage.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/recuperation-traduction-acte-naissance-acte-de-mariage\\.html(?:/)?$"
+    },
+    {
+      "source": "/recuperation-certificats-de-mise-en-commerce.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/recuperation-certificats-de-mise-en-commerce\\.html(?:/)?$"
+    },
+    {
+      "source": "/recuperation-certificats-de-consommabilite.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/recuperation-certificats-de-consommabilite\\.html(?:/)?$"
+    },
+    {
+      "source": "/toutes-enregistrement-et-certification.html",
+      "destination": "/fr/service-coursier",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/toutes-enregistrement-et-certification\\.html(?:/)?$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/[locale]",
+      "regex": "^/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[locale]/a-propos",
+      "regex": "^/([^/]+?)/a\\-propos(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/a\\-propos(?:/)?$"
+    },
+    {
+      "page": "/[locale]/conseil-assistance",
+      "regex": "^/([^/]+?)/conseil\\-assistance(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/conseil\\-assistance(?:/)?$"
+    },
+    {
+      "page": "/[locale]/contact",
+      "regex": "^/([^/]+?)/contact(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/contact(?:/)?$"
+    },
+    {
+      "page": "/[locale]/creation-entreprise-individuelle",
+      "regex": "^/([^/]+?)/creation\\-entreprise\\-individuelle(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-entreprise\\-individuelle(?:/)?$"
+    },
+    {
+      "page": "/[locale]/creation-ong-association",
+      "regex": "^/([^/]+?)/creation\\-ong\\-association(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-ong\\-association(?:/)?$"
+    },
+    {
+      "page": "/[locale]/creation-societe-sarl-sarlu",
+      "regex": "^/([^/]+?)/creation\\-societe\\-sarl\\-sarlu(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-societe\\-sarl\\-sarlu(?:/)?$"
+    },
+    {
+      "page": "/[locale]/devis",
+      "regex": "^/([^/]+?)/devis(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/devis(?:/)?$"
+    },
+    {
+      "page": "/[locale]/domiciliation",
+      "regex": "^/([^/]+?)/domiciliation(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/domiciliation(?:/)?$"
+    },
+    {
+      "page": "/[locale]/location-salle-reunion",
+      "regex": "^/([^/]+?)/location\\-salle\\-reunion(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/location\\-salle\\-reunion(?:/)?$"
+    },
+    {
+      "page": "/[locale]/mentions-legales",
+      "regex": "^/([^/]+?)/mentions\\-legales(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/mentions\\-legales(?:/)?$"
+    },
+    {
+      "page": "/[locale]/recrutement",
+      "regex": "^/([^/]+?)/recrutement(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/recrutement(?:/)?$"
+    },
+    {
+      "page": "/[locale]/service-coursier",
+      "regex": "^/([^/]+?)/service\\-coursier(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/service\\-coursier(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/robots.txt",
+      "regex": "^/robots\\.txt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/robots\\.txt(?:/)?$"
+    },
+    {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

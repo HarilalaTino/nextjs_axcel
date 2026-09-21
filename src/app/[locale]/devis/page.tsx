@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Mail, MessageSquareText, Phone, UserRound, AlertCircle } from 'lucide-react';
@@ -94,6 +95,8 @@ export default function QuotePage() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [captchaError, setCaptchaError] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const validateField = (field: keyof FormState, value: string): string | null => {
     if (field === 'nom') {
@@ -166,15 +169,23 @@ export default function QuotePage() {
       return;
     }
 
+    const captchaToken = recaptchaRef.current?.getValue();
+    if (!captchaToken) {
+      setCaptchaError(t('errors.captchaRequired'));
+      return;
+    }
+    setCaptchaError(null);
+
     const payload = {
       ...form,
       demande: getFrenchRequestLabel(form.demande),
       origin,
+      captchaToken,
     };
-    
+
     setIsSubmitting(true);
     setError(null);
-    
+
     try {
       const response = await fetch('/api/devis', {
         method: 'POST',
@@ -193,6 +204,7 @@ export default function QuotePage() {
       setSubmitted(true);
       setForm(getInitialForm(requestedType));
       setOrigin(null);
+      recaptchaRef.current?.reset();
     } catch (submitError) {
       const message = submitError instanceof Error ? submitError.message : t('errors.unknown');
       setError(message);
@@ -233,18 +245,16 @@ export default function QuotePage() {
                       setOrigin(option.value);
                       setSubmitted(false);
                     }}
-                    className={`rounded-2xl border p-5 text-left transition-all duration-200 ${
-                      selected
+                    className={`rounded-2xl border p-5 text-left transition-all duration-200 ${selected
                         ? 'border-secondary bg-secondary/5 shadow-md shadow-secondary/10'
                         : 'border-slate-200 bg-white hover:border-secondary/60 hover:bg-slate-50'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between gap-4">
                       <span className="text-lg font-bold text-primary">{option.label}</span>
                       <span
-                        className={`flex h-5 w-5 items-center justify-center rounded-full border-2 ${
-                          selected ? 'border-secondary bg-secondary' : 'border-slate-300 bg-white'
-                        }`}
+                        className={`flex h-5 w-5 items-center justify-center rounded-full border-2 ${selected ? 'border-secondary bg-secondary' : 'border-slate-300 bg-white'
+                          }`}
                       >
                         {selected && <span className="h-2 w-2 rounded-full bg-white" />}
                       </span>
@@ -256,7 +266,7 @@ export default function QuotePage() {
             </div>
 
             {origin && (
-              <form onSubmit={handleSubmit} className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
+              <form onSubmit={handleSubmit} noValidate className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
                 <div className="grid gap-5 md:grid-cols-2">
                   <label className="block">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
@@ -267,13 +277,11 @@ export default function QuotePage() {
                       type="text"
                       value={form.nom}
                       onChange={(event) => handleInputChange('nom', event.target.value)}
-                      placeholder={t('form.fullNamePlaceholder')}
                       aria-invalid={Boolean(fieldErrors.nom)}
-                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${
-                        fieldErrors.nom
+                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${fieldErrors.nom
                           ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
                           : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
-                      }`}
+                        }`}
                     />
                     {fieldErrors.nom && <p className="mt-1 text-xs text-red-600">{fieldErrors.nom}</p>}
                   </label>
@@ -287,13 +295,11 @@ export default function QuotePage() {
                       type="tel"
                       value={form.phone}
                       onChange={(event) => handleInputChange('phone', event.target.value)}
-                      placeholder={t('form.phonePlaceholder')}
                       aria-invalid={Boolean(fieldErrors.phone)}
-                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${
-                        fieldErrors.phone
+                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${fieldErrors.phone
                           ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
                           : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
-                      }`}
+                        }`}
                     />
                     {fieldErrors.phone && <p className="mt-1 text-xs text-red-600">{fieldErrors.phone}</p>}
                   </label>
@@ -307,7 +313,6 @@ export default function QuotePage() {
                       type="tel"
                       value={form.whatsapp}
                       onChange={(event) => handleInputChange('whatsapp', event.target.value)}
-                      placeholder="Ex : +261 34 00 000 00"
                       className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                     />
                   </label>
@@ -323,7 +328,6 @@ export default function QuotePage() {
                       onChange={(event) => handleInputChange('email', event.target.value)}
                       placeholder={t('form.emailPlaceholder')}
                       className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-                      required
                     />
                   </label>
 
@@ -333,11 +337,10 @@ export default function QuotePage() {
                       value={form.demande}
                       onChange={(event) => handleInputChange('demande', event.target.value)}
                       aria-invalid={Boolean(fieldErrors.demande)}
-                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${
-                        fieldErrors.demande
+                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${fieldErrors.demande
                           ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
                           : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
-                      }`}
+                        }`}
                     >
                       {requestOptions.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -357,14 +360,12 @@ export default function QuotePage() {
                       role="switch"
                       aria-checked={form.domicilierAxcel}
                       onClick={() => handleToggleChange('domicilierAxcel', !form.domicilierAxcel)}
-                      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 ${
-                        form.domicilierAxcel ? 'bg-secondary' : 'bg-slate-300'
-                      }`}
+                      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 ${form.domicilierAxcel ? 'bg-secondary' : 'bg-slate-300'
+                        }`}
                     >
                       <span
-                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${
-                          form.domicilierAxcel ? 'translate-x-6' : 'translate-x-1'
-                        }`}
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${form.domicilierAxcel ? 'translate-x-6' : 'translate-x-1'
+                          }`}
                       />
                     </button>
                   </div>
@@ -383,6 +384,16 @@ export default function QuotePage() {
                       className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                     />
                   </label>
+
+                  {/*reCAPTCHA*/}
+                  <div className="md:col-span-2">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                      onChange={() => setCaptchaError(null)}
+                    />
+                    {captchaError && <p className="mt-2 text-xs text-red-600">{captchaError}</p>}
+                  </div>
                 </div>
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

@@ -449,7 +449,8 @@
       "formInvalid": "Veuillez corriger les champs obligatoires avant l’envoi.",
       "generic": "Une erreur est survenue lors de l’envoi du devis.",
       "unknown": "Une erreur inconnue est survenue.",
-      "title": "L’envoi du devis a échoué."
+      "title": "L’envoi du devis a échoué.",
+      "captchaRequired": "Merci de valider le reCAPTCHA avant d'envoyer votre demande."
     },
     "success": {
       "title": "Votre demande a bien été enregistrée.",
