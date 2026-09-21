@@ -440,6 +440,12 @@
     },
     "errors": {
       "originRequired": "Please select your origin first.",
+      "fullNameRequired": "Full name is required.",
+      "fullNameMinLength": "Full name must contain at least 2 characters.",
+      "phoneRequired": "Phone number is required.",
+      "phoneInvalid": "Phone number is invalid.",
+      "requestTypeRequired": "Please select a request type.",
+      "formInvalid": "Please correct the required fields before submitting.",
       "generic": "An error occurred while sending the quote request.",
       "unknown": "An unknown error occurred.",
       "title": "The quote request failed."

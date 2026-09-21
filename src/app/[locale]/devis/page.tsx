@@ -55,6 +55,8 @@ function getInitialDemande(type: string | null): string {
   return matchingOption ? matchingOption.value : defaultValue;
 }
 
+type FieldErrors = Partial<Record<'nom' | 'phone' | 'demande', string>>;
+
 export default function QuotePage() {
   const t = useTranslations('QuotePage');
   const searchParams = useSearchParams();
@@ -88,15 +90,59 @@ export default function QuotePage() {
   ];
   const [origin, setOrigin] = useState<Origin | null>(null);
   const [form, setForm] = useState<FormState>(() => getInitialForm(requestedType));
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const validateField = (field: keyof FormState, value: string): string | null => {
+    if (field === 'nom') {
+      const trimmed = value.trim();
+      if (!trimmed) return t('errors.fullNameRequired');
+      if (trimmed.length < 2) return t('errors.fullNameMinLength');
+      return null;
+    }
+
+    if (field === 'phone') {
+      const trimmed = value.trim();
+      if (!trimmed) return t('errors.phoneRequired');
+      if (!/^(?:\+?[0-9\s().-]{8,20})$/.test(trimmed)) return t('errors.phoneInvalid');
+      return null;
+    }
+
+    if (field === 'demande') {
+      if (!value || !requestOptions.some((option) => option.value === value)) {
+        return t('errors.requestTypeRequired');
+      }
+      return null;
+    }
+
+    return null;
+  };
+
+  const validateForm = (): boolean => {
+    const nextErrors: FieldErrors = {
+      nom: validateField('nom', form.nom) ?? undefined,
+      phone: validateField('phone', form.phone) ?? undefined,
+      demande: validateField('demande', form.demande) ?? undefined,
+    };
+
+    setFieldErrors(nextErrors);
+    return !Object.values(nextErrors).some((message) => Boolean(message));
+  };
 
   const handleInputChange = (
     field: keyof FormState,
     value: string,
   ) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+    if (field === 'nom' || field === 'phone' || field === 'demande') {
+      const errorMessage = validateField(field, value);
+      setFieldErrors((prev) => ({
+        ...prev,
+        [field]: errorMessage ?? undefined,
+      }));
+    }
     setSubmitted(false);
     setError(null);
   };
@@ -115,12 +161,16 @@ export default function QuotePage() {
       return;
     }
 
+    if (!validateForm()) {
+      setError(t('errors.formInvalid'));
+      return;
+    }
+
     const payload = {
       ...form,
       demande: getFrenchRequestLabel(form.demande),
       origin,
     };
-    console.log(payload);
     
     setIsSubmitting(true);
     setError(null);
@@ -211,37 +261,47 @@ export default function QuotePage() {
                   <label className="block">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <UserRound className="h-4 w-4 text-secondary" />
-                      {t('form.fullName')}
+                      {t('form.fullName')}<span className='text-red-500'>*</span>
                     </span>
                     <input
                       type="text"
                       value={form.nom}
                       onChange={(event) => handleInputChange('nom', event.target.value)}
                       placeholder={t('form.fullNamePlaceholder')}
-                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-                      required
+                      aria-invalid={Boolean(fieldErrors.nom)}
+                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${
+                        fieldErrors.nom
+                          ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
+                          : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
+                      }`}
                     />
+                    {fieldErrors.nom && <p className="mt-1 text-xs text-red-600">{fieldErrors.nom}</p>}
                   </label>
 
                   <label className="block">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <Phone className="h-4 w-4 text-secondary" />
-                      {t('form.phone')}
+                      {t('form.phone')}<span className='text-red-500'>*</span>
                     </span>
                     <input
                       type="tel"
                       value={form.phone}
                       onChange={(event) => handleInputChange('phone', event.target.value)}
                       placeholder={t('form.phonePlaceholder')}
-                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-                      required
+                      aria-invalid={Boolean(fieldErrors.phone)}
+                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${
+                        fieldErrors.phone
+                          ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
+                          : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
+                      }`}
                     />
+                    {fieldErrors.phone && <p className="mt-1 text-xs text-red-600">{fieldErrors.phone}</p>}
                   </label>
 
                   <label className="block">
                     <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <Phone className="h-4 w-4 text-secondary" />
-                      WhatsApp <span className="font-normal text-slate-400">({t("form.optional")})</span>
+                      WhatsApp
                     </span>
                     <input
                       type="tel"
@@ -268,11 +328,16 @@ export default function QuotePage() {
                   </label>
 
                   <label className="block md:col-span-2">
-                    <span className="mb-2 text-sm font-semibold text-primary">{t('form.requestType')}</span>
+                    <span className="mb-2 text-sm font-semibold text-primary">{t('form.requestType')} <span className='text-red-500'>*</span></span>
                     <select
                       value={form.demande}
                       onChange={(event) => handleInputChange('demande', event.target.value)}
-                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                      aria-invalid={Boolean(fieldErrors.demande)}
+                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${
+                        fieldErrors.demande
+                          ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
+                          : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
+                      }`}
                     >
                       {requestOptions.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -280,6 +345,7 @@ export default function QuotePage() {
                         </option>
                       ))}
                     </select>
+                    {fieldErrors.demande && <p className="mt-1 text-xs text-red-600">{fieldErrors.demande}</p>}
                   </label>
 
                   <div className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white px-4 py-3 md:col-span-2">

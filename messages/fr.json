@@ -441,6 +441,12 @@
     },
     "errors": {
       "originRequired": "Veuillez d’abord choisir votre origine.",
+      "fullNameRequired": "Le nom et prénom sont requis.",
+      "fullNameMinLength": "Le nom et prénom doivent contenir au moins 2 caractères.",
+      "phoneRequired": "Le numéro de téléphone est requis.",
+      "phoneInvalid": "Le numéro de téléphone est invalide.",
+      "requestTypeRequired": "Veuillez sélectionner un type de demande.",
+      "formInvalid": "Veuillez corriger les champs obligatoires avant l’envoi.",
       "generic": "Une erreur est survenue lors de l’envoi du devis.",
       "unknown": "Une erreur inconnue est survenue.",
       "title": "L’envoi du devis a échoué."
