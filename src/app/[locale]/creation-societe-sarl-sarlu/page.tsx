@@ -2,13 +2,27 @@ import NavMenu from "@/components/layout/header";
 import ContactCTA from "@/components/ui/home/contact-cta";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
-import CreationPage from "@/components/ui/shared/page-creation";
+import CreationPage, { Tier } from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
 
 export default async function CreationSocieteSarlSarluPage() {
     const t = await getTranslations("CreationSocieteSarl");
     const tSarlu = await getTranslations("CreationSocieteSarlu");
     const nav = await getTranslations("Nav");
+
+    const tiers: Tier[] = [
+        {
+            label: 'Malgaches',
+            amount: '400 000 Ar',
+            quoteUrl: "citizen",
+        },
+        {
+            label: 'Strangers',
+            amount: '500 000 Ar',
+            quoteUrl: "stranger",
+            alt: '100 €'
+        }
+    ]
 
     return (
         <>
@@ -32,8 +46,7 @@ export default async function CreationSocieteSarlSarluPage() {
                         </>
                     }
                     imageSrc="/images/company/SARL.jpg"
-                    price={t("price")}
-                    priceNote={t("priceNote")}
+                    tiers={tiers}
                     t={t}
                 />
                 <CreationPage
@@ -46,8 +59,7 @@ export default async function CreationSocieteSarlSarluPage() {
                         </>
                     }
                     imageSrc="/images/company/SARLU.jpg"
-                    price={tSarlu("price")}
-                    priceNote={tSarlu("priceNote")}
+                    tiers={tiers}
                     t={tSarlu}
                     isReverseSection
                 />

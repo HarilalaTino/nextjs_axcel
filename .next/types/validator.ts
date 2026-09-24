@@ -56,6 +56,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/[locale]/certificat-mise-en-commerce/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/certificat-mise-en-commerce">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/certificat-mise-en-commerce/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/[locale]/conseil-assistance/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/[locale]/conseil-assistance">> = Specific
@@ -87,6 +96,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/[locale]/creation-ong-association">> = Specific
   const handler = {} as typeof import("../../src/app/[locale]/creation-ong-association/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/[locale]/creation-sa-sau-sci/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/creation-sa-sau-sci">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/creation-sa-sau-sci/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -155,10 +173,19 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../src/app/[locale]/service-coursier/page.tsx
+// Validate ../../src/app/[locale]/recuperation-diplome-releves/page.tsx
 {
-  type __IsExpected<Specific extends AppPageConfig<"/[locale]/service-coursier">> = Specific
-  const handler = {} as typeof import("../../src/app/[locale]/service-coursier/page.js")
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/recuperation-diplome-releves">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/recuperation-diplome-releves/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/[locale]/recuperation-traduction-document/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/recuperation-traduction-document">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/recuperation-traduction-document/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

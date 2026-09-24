@@ -2,13 +2,17 @@ import NavMenu from "@/components/layout/header";
 import ContactCTA from "@/components/ui/home/contact-cta";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
-import CreationPage from "@/components/ui/shared/page-creation";
+import CreationPage, { BasicPrice } from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
 
 export default async function NgoAssociationCreation() {
-    const ngo = await getTranslations('NgoAssociationCreation.ngo');
-    const association = await getTranslations('NgoAssociationCreation.associationCreation');
+    const forProfit = await getTranslations('NgoAssociationCreation.forProfit');
+    const nonProfit = await getTranslations('NgoAssociationCreation.nonProfit');
     const nav = await getTranslations("Nav");
+    const basicPrice: BasicPrice = {
+        originalPrice: '400 000',
+        euroEquivalence: '80'
+    }
     return (
         <>
             <TopMenu />
@@ -22,28 +26,30 @@ export default async function NgoAssociationCreation() {
                     {nav("creationNogAndAssociation")}
                 </h1>
                 <CreationPage
-                    creationType="ngo-creation"
-                    eyebrow={ngo("eyebrow")}
-                    title={ngo("title")}
+                    creationType="for-profit-association"
+                    eyebrow={forProfit("eyebrow")}
+                    title={forProfit("title")}
                     description={
                         <>
-                            <p>{ngo("description")}</p>
+                            <p>{forProfit("description")}</p>
                         </>
                     }
-                    imageSrc="/images/ngo/ngo.jpg"
-                    t={ngo}
+                    basicDisplayPrice={basicPrice}
+                    imageSrc="/images/association/forProfit.jpg"
+                    t={forProfit}
                 />
                 <CreationPage
-                    creationType="association-creation"
-                    eyebrow={association("eyebrow")}
-                    title={association("title")}
+                    creationType="non-profit-association"
+                    eyebrow={nonProfit("eyebrow")}
+                    title={nonProfit("title")}
                     description={
                         <>
-                            <p>{association("description")}</p>
+                            <p>{nonProfit("description")}</p>
                         </>
                     }
-                    imageSrc="/images/association/association.jpg"
-                    t={association}
+                    imageSrc="/images/association/nonProfit.jpg"
+                    t={nonProfit}
+                    basicDisplayPrice={basicPrice}
                     isReverseSection
                 />
                 <ElegantCardWrapper />

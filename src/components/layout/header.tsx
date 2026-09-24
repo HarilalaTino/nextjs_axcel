@@ -28,14 +28,19 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'creationIndividual', href: '/creation-entreprise-individuelle' },
       { label: 'creationSarl', href: '/creation-societe-sarl-sarlu' },
       { label: 'creationNogAndAssociation', href: '/creation-ong-association' },
+      { label: 'creationSA&SAU&SCI', href: '/creation-sa-sau-sci' },
       { label: 'creationDomiciliation', href: '/domiciliation' },
-      { label: 'creationMeetingRoom', href: '/location-salle-reunion' },
-      { label: 'recruitment', href: '/recrutement' }
+      { label: 'draftingDocument', href: '/redaction-documents-administratifs' }
     ],
   },
   {
     label: 'courier',
-    href: '/service-coursier'
+    href: '/service-coursier',
+    submenu: [
+      { label: 'courierDiploma', href: '/recuperation-diplome-releves' },
+      { label: 'courierBirthMarriage', href: '/recuperation-traduction-document' },
+      { label: 'certificateOfCommercialization', href: '/certificat-mise-en-commerce' },
+    ]
   },
   {
     label: 'adviceAndAssistance',
@@ -177,7 +182,7 @@ export default function NavMenu() {
 
                 {isOpen && (
                   <div
-                    className="absolute left-0 top-full min-w-64 rounded-lg border border-slate-100 bg-white py-2 shadow-lg"
+                    className="absolute left-0 top-full min-w-80 rounded-lg border py-2 border-slate-100 bg-white shadow-lg"
                     role="menu"
                   >
                     {item.submenu.map((sub) => (
@@ -185,10 +190,11 @@ export default function NavMenu() {
                         key={sub.label}
                         href={sub.href}
                         role="menuitem"
-                        className="block px-4 py-2 text-sm text-primary transition-colors hover:bg-slate-50 hover:text-secondary"
+                        className="block text-sm text-primary gap-2 pl-8 pr-4 py-3 items-center transition-colors hover:bg-slate-50 hover:text-secondary"
                       >
-                        {t(sub.label)}
+                         {t(sub.label)}
                       </Link>
+
                     ))}
                   </div>
                 )}
@@ -198,7 +204,6 @@ export default function NavMenu() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <LanguageSwitcher />
 
           {/* CTA Devis (desktop) */}
           <Link
@@ -207,6 +212,8 @@ export default function NavMenu() {
           >
             {t('quote')}
           </Link>
+
+          <LanguageSwitcher />
 
           {/* Bouton burger (mobile) */}
           <button

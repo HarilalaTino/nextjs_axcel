@@ -58,6 +58,26 @@ export const routing = defineRouting({
     '/recrutement': {
       fr: '/recrutement',
       en: '/recruitment'
+    },
+    '/redaction-documents-administratifs': {
+      fr: '/redaction-documents-administratifs',
+      en: '/drafting-administrative document'
+    },
+    '/recuperation-diplome-releves': {
+      fr: '/recuperation-diplome-releves',
+      en: '/diploma-and-transcript-collection'
+    },
+    '/recuperation-traduction-document': {
+      fr: '/recuperation-traduction-document',
+      en: '/recovery-translation-retrieval'
+    },
+    '/certificat-mise-en-commerce': {
+      fr: '/certificat-mise-en-commerce',
+      en: '/certificate-of-market-authorization'
+    },
+    '/creation-sa-sau-sci': {
+      fr: '/creation-sa-sau-sci',
+      en: '/creation-sa-sau-sci'
     }
   }
 });

@@ -1,4 +1,11 @@
 {
+  "Global": {
+    "quoteLabel": "Request a quote",
+    "priceNote": "Excluding administrative fees",
+    "Malgaches": "Malagasy",
+    "Strangers": "Strangers",
+    "or": "or"
+  },
   "Nav": {
     "adviceAndAssistance": "Advice and assistance",
     "creation": "Creations",
@@ -7,14 +14,15 @@
     "adviceFormalization": "Business formalization assistance",
     "adviceStrategic": "Strategic consultation for entrepreneurs",
     "creationIndividual": "Sole proprietorship creation",
-    "creationSarl": "SARL & SARLU company creation",
-    "creationNogAndAssociation": "NGO and Association creation",
+    "creationSarl": "SARL - SARLU company creation",
+    "creationNogAndAssociation": "Association creation",
     "recruitment": "Recruitment",
+    "draftingDocument": "Drafting Administrative Documents",
     "creationDomiciliation": "Domiciliation",
     "creationMeetingRoom": "Meeting room rental",
     "courier": "Courier service",
-    "courierDiploma": "Diploma retrieval, transcripts, equivalence..",
-    "courierBirthMarriage": "Retrieval / translation of birth certificate, marriage certificate, ...",
+    "courierDiploma": "Collection of diplomas, transcripts, and equivalency certificates.",
+    "courierBirthMarriage": "Collection and translation of administrative documents.",
     "courierMarketCertificates": "Retrieval of market authorization certificates",
     "courierConsumabilityCertificates": "Retrieval of consumability certificates",
     "courierRegistrations": "All registrations, certifications",
@@ -27,8 +35,10 @@
     "mobileMenu": "Mobile menu",
     "courierServiceTitle": "Professional courier service in Antananarivo",
     "adviceTitle": "Business Consulting and Assistance in Madagascar",
-    "aboutTitle": "The Team Behind Your Projects in Madagascar"
-  },
+    "aboutTitle": "The Team Behind Your Projects in Madagascar",   
+    "certificateOfCommercialization": "Retrieval of Certificates of Authorization to Market",
+    "creationSA&SAU&SCI": "Creation SA - SAU - SCI"
+},
   "Home": {
     "learnMore": "Learn more",
     "chooseService": "Choose your service",
@@ -244,7 +254,7 @@
   "CourierService": {
     "courierDiplomaRetrieval" : {
       "eyebrow": "Courier Service",
-      "title": "Diploma and Transcript Retrieval",
+      "title": "Diploma collection, transcript of records, equivalency",
       "description": "Axcel Company offers a fast and reliable service to retrieve your official documents securely.",
       "contact": "Contact us",
       "quote": "Request a quote",
@@ -267,7 +277,7 @@
     },
     "translationRetrieval": {
       "eyebrow": "Courier Service",
-      "title": "Retrieval and Translation of Administrative Documents",
+      "title": "Collection and translation of administrative documents.",
       "description": "We offer packages for retrieval and translation of administrative documents :",
       "contact": "Contact us",
       "quote": "Request a quote",
@@ -325,6 +335,68 @@
         "label": "Change from a pink card to a gray card",
         "price": "100 000 Ar"
       }
+    },
+    "certificateOfCommercialization": {
+      "eyebrow": "Our Services",
+      "title": "Retrieval of Certificates of Authorization to Market",
+      "description": "A service designed for companies wishing to obtain their certificates of authorization to market from the relevant authorities. We handle the follow-up and retrieval of the required documents, helping you save time and simplify your administrative procedures.",
+      "contact": "Contact Us",
+      "quote": "Request a Quote",
+      "price": "300,000 Ar",
+      "priceNote": "Excluding administrative fees"
+    }
+
+  },
+  "societyCreation": {
+    "sa": {
+      "eyebrow": "SA — Public Limited Company",
+      "title": "A solid structure for major projects",
+      "description": "The Public Limited Company (SA) is the standard legal structure for high-capital businesses and large-scale projects in Madagascar.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "keyPoints": {
+        "title": "Key points",
+        "items": {
+          "shareholders": "Minimum of 2 shareholders (individuals or legal entities)",
+          "liability": "Shareholders' liability is limited to their contributions",
+          "governance": "Structured governance: Board of Directors, Chief Executive Officer, Statutory Auditor",
+          "investors": "Suitable for partnerships with foreign or institutional investors"
+        }
+      }
+    },
+    "sau": {
+      "eyebrow": "SAU — Single-Shareholder Joint-Stock Company",
+      "title": "Go it alone, with the strength of a joint-stock company",
+      "description": "The SAU allows a sole entrepreneur to set up a joint-stock company without needing to bring in other partners, while keeping full control.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "keyPoints": {
+        "title": "Key features",
+        "items": {
+          "shareholders": "A single shareholder, individual or legal entity",
+          "liability": "Liability limited to the contributions made",
+          "governance": "Simplified governance compared to a standard SA",
+          "evolution": "Can easily evolve into a full SA by bringing in new shareholders",
+          "credibility": "A credible structure for dealing with banks, partners, and institutional clients"
+        }
+      }
+    },
+    "sci": {
+      "eyebrow": "SCI — Real Estate Holding Company",
+      "title": "Structure and protect your real estate assets",
+      "description": "The SCI is the dedicated legal structure for jointly holding, managing, and transferring real estate.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "keyPoints": {
+        "title": "Key features",
+        "items": {
+          "partners": "Minimum of 2 partners",
+          "capital": "No minimum share capital required — freely set by the partners",
+          "purpose": "Civil (non-commercial) purpose, limited to property management",
+          "liability": "Partners' liability proportional to their share in the capital",
+          "transmission": "An effective tool for organizing co-ownership, easing inheritance transfers, or optimizing rental management"
+        }
+      }
     }
   },
   "Domiciliation": {
@@ -333,6 +405,7 @@
       "description": "Business domiciliation allows you to assign a registered office to your company without needing to physically carry out your activity there. This is the address that will appear on all your official documents: statutes, registration, invoices, and correspondence. Every company must necessarily have a registered office, which serves as the administrative and tax reference with the authorities.",
       "contact": "Contact us",
       "quote": "Request a quote",
+      "annotation": "Minimum 6 months paid in advance.",
       "why": {
         "first": "A recognized professional address, separate from your personal home",
         "second": "Easier registration with the competent authorities",
@@ -348,19 +421,26 @@
     "quote": "Request a quote"
   },
   "NgoAssociationCreation": {
-    "ngo": {
-      "eyebrow": "Build your humanitarian and social commitment",
-      "title": "NGO Creation (Non-Governmental Organization)",
-      "description": "An NGO is a legal status distinct from an association, intended for groups with humanitarian, socio-economic, or development objectives, carrying out their activities professionally and on a permanent basis. Its recognition is more tightly regulated than that of an association: it requires official approval in addition to the statutes and declaration.",
+    "forProfit": {
+      "eyebrow": "Bring your collective project to life through a profit-generating activity",
+      "title": "Creating a For-Profit Association",
+      "description": "A for-profit association is an organization established by several individuals who wish to jointly carry out a revenue-generating activity. Its creation generally involves defining its purpose, drafting its bylaws, and completing the required administrative formalities. We assist you throughout the various stages of setting up and establishing your association.",
       "contact": "Contact us",
-      "quote": "Request a quote"
+      "quote": "Request a Quote"
     },
     "associationCreation": {
-      "eyebrow": "Give life to a collective project without profit motive",
-      "title": "Association Creation",
-      "description": "An association is a group of people united around a common objective, without profit motive. Its creation is based on drafting statutes and filing a declaration with the competent authorities, along with the list of founding members and the board.",
+      "eyebrow": "Bring your collective project to life with a non-profit purpose",
+      "title": "Creating a Non-Profit Association",
+      "description": "A non-profit association is a group of individuals brought together around a common purpose, without the intention of distributing profits among its members. Its creation generally involves defining its purpose, drafting its bylaws, and completing the required administrative formalities, including registration or declaration with the relevant authorities. We assist you throughout the various stages of setting up and establishing your association.",
       "contact": "Contact us",
-      "quote": "Request a quote"
+      "quote": "Request a Quote"
+    },
+    "religiousAssociation": {
+      "eyebrow": "Bring your religious project to life within a structured framework",
+      "title": "Creating a Religious Association",
+      "description": "A religious association is a group of individuals established around the practice, exercise, or promotion of a religion and its religious activities. Its creation generally involves defining its purpose, drafting its bylaws, and completing the required administrative formalities with the relevant authorities. We assist you throughout the various stages of setting up and establishing your religious association.",
+      "contact": "Contact us",
+      "quote": "Request a Quote"
     }
   },
   "Recruitment": {

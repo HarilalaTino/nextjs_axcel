@@ -1,4 +1,11 @@
 {
+  "Global": {
+    "quoteLabel": "Demander un devis",
+    "priceNote": "Hors frais administratifs",
+    "Malgaches": "Malgaches",
+    "Strangers": "Étrangers",
+    "or": "ou"
+  },
   "Nav": {
     "adviceAndAssistance": "Conseils et Assistance",
     "creation": "Créations",
@@ -8,13 +15,14 @@
     "adviceStrategic": "Consultation stratégique pour entrepreneurs",
     "creationIndividual": "Création Entreprise Individuelle",
     "recruitment": "Recrutement",
-    "creationSarl": "Création Société SARL & SARLU",
-    "creationNogAndAssociation": "Création ONG et Association",
+    "draftingDocument": "Rédaction de documents administratifs",
+    "creationSarl": "Création Société SARL - SARLU",
+    "creationNogAndAssociation": "Création Association",
     "creationDomiciliation": "Domiciliation",
     "creationMeetingRoom": "Location de salle de réunion",
     "courier": "Service de coursier",
-    "courierDiploma": "Récupération diplôme, relevé de note, équivalence..",
-    "courierBirthMarriage": "Récupération / traduction acte de naissance, acte de mariage, ...",
+    "courierDiploma": "Récupération diplôme, relevé de note, équivalence",
+    "courierBirthMarriage": "Récupération et traduction de documents administratifs",
     "courierMarketCertificates": "Récupération des certificats de mise en commerce",
     "courierConsumabilityCertificates": "Récupération des certificats de consommabilité",
     "courierRegistrations": "Toutes enregistrement, certifications",
@@ -27,7 +35,9 @@
     "mobileMenu": "Menu mobile",
     "courierServiceTitle": "Service de coursier professionnel à Antananarivo",
     "adviceTitle": "Conseil et assistance aux entreprises à Madagascar",
-    "aboutTitle": "L'équipe qui accompagne vos projets à Madagascar"
+    "aboutTitle": "L'équipe qui accompagne vos projets à Madagascar",
+    "certificateOfCommercialization": "Récupération des certificats de mise en commerce",
+    "creationSA&SAU&SCI": "Création SA - SAU - SCI"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -244,7 +254,7 @@
   "CourierService": {
     "courierDiplomaRetrieval" : {
       "eyebrow": "Service de coursier",
-      "title": "Récupération de certificats, diplômes et relevés de notes",
+      "title": "Récupération diplôme, relevé de note, équivalence",
       "description": "Axcel Company vous propose un service rapide et fiable pour récupérer vos documents officiels en toute sécurité.",
       "contact": "Nous contacter",
       "quote": "Demander un devis",
@@ -325,6 +335,67 @@
         "label": "Changement de carte rose en carte grise",
         "price": "100 000 Ar"
       }
+    },
+    "certificateOfCommercialization": {
+      "eyebrow": "Nos Prestations",
+      "title": "Récupération des certificats de mise en commerce",
+      "description": "Service destiné aux entreprises souhaitant récupérer leurs certificats de mise en commerce auprès des autorités compétentes. Nous prenons en charge le suivi et la récupération des documents afin de vous faire gagner du temps et de simplifier vos démarches administratives.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "price": "300 000 Ar",
+      "priceNote": "Hors frais administratifs"
+    }
+  },
+  "societyCreation": {
+    "sa": {
+      "eyebrow": "SA — Société Anonyme",
+      "title": "Une structure solide pour les grands projets",
+      "description": "La Société Anonyme (SA) est la forme juridique de référence pour les entreprises à fort capital et les projets d'envergure à Madagascar.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "keyPoints": {
+        "title": "Points clés",
+        "items": {
+          "shareholders": "Minimum de 2 actionnaires (personnes physiques ou morales)",
+          "liability": "Responsabilité des actionnaires limitée à leurs apports",
+          "governance": "Gouvernance structurée : Conseil d'Administration, Directeur Général, Commissaire aux Comptes",
+          "investors": "Adaptée aux partenariats avec des investisseurs étrangers ou institutionnels"
+        }
+      }
+    },
+    "sau": {
+      "eyebrow": "SAU — Société par Actions Unipersonnelle",
+      "title": "Entreprendre seul, avec la puissance d'une société par actions",
+      "description": "La SAU permet à un entrepreneur unique de créer une société par actions sans devoir s'associer à d'autres personnes, tout en gardant un contrôle total.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "keyPoints": {
+        "title": "Points clés",
+        "items": {
+          "shareholders": "Un seul actionnaire, personne physique ou morale",
+          "liability": "Responsabilité limitée aux apports effectués",
+          "governance": "Gouvernance simplifiée par rapport à la SA classique",
+          "evolution": "Possibilité d'évoluer facilement vers une SA en accueillant de nouveaux actionnaires",
+          "credibility": "Structure crédible pour traiter avec des banques, partenaires et clients institutionnels"
+        }
+      }
+    },
+    "sci": {
+      "eyebrow": "SCI — Société Civile Immobilière",
+      "title": "Structurer et protéger votre patrimoine immobilier",
+      "description": "La SCI est la forme juridique dédiée à la détention, la gestion et la transmission de biens immobiliers à plusieurs.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "keyPoints": {
+        "title": "Points clés",
+        "items": {
+          "partners": "Minimum de 2 associés",
+          "capital": "Aucun capital social minimum imposé, librement fixé par les associés",
+          "purpose": "Objet civil (gestion de biens immobiliers), à l'exclusion des activités commerciales",
+          "liability": "Responsabilité des associés proportionnelle à leur part dans le capital",
+          "transmission": "Outil efficace pour organiser une indivision, faciliter une transmission ou optimiser la gestion locative"
+        }
+      }
     }
   },
   "Domiciliation": {
@@ -332,6 +403,7 @@
       "title": "Une adresse officielle pour votre société",
       "description": "La domiciliation d'entreprise permet d'attribuer un siège social à votre société, sans que vous ayez besoin d'y exercer physiquement votre activité. C'est l'adresse qui apparaîtra sur l'ensemble de vos documents officiels : statuts, immatriculation, factures et correspondances. Toute société doit obligatoirement disposer d'un siège social, qui sert de référence administrative et fiscale auprès des autorités.",
       "contact": "Nous contacter",
+      "annotation": "Minimum 6 mois payés à l’avance.",
       "quote": "Demander un devis",
       "why": {
         "first": "Une adresse professionnelle reconnue, distincte de votre domicile personnel",
@@ -349,17 +421,24 @@
       "quote": "Demander un devis"
   },
   "NgoAssociationCreation": {
-    "ngo": {
-      "eyebrow": "Structurez votre engagement humanitaire et social",
-      "title": "Création ONG (Organisation Non Gouvernementale)",
-      "description": "L'ONG est un statut distinct de l'association, destiné aux groupements à vocation humanitaire, socio-économique ou de développement, exerçant leurs activités de façon professionnelle et permanente. Sa reconnaissance est plus encadrée que celle d'une association : elle nécessite un agrément officiel, en plus des statuts et de la déclaration.",
+    "forProfit": {
+      "eyebrow": "Donnez vie à votre projet collectif, avec une activité lucrative",
+      "title": "Création d’une association à but lucratif",
+      "description": "L’association à but lucratif est une structure créée par plusieurs personnes qui souhaitent mener ensemble une activité génératrice de revenus. Sa création nécessite notamment la définition de son objet, la rédaction des statuts et l’accomplissement des formalités administratives requises. Nous vous accompagnons dans les différentes étapes de création et de mise en place de votre association.",
       "contact": "Nous contacter",
       "quote": "Demander un devis"
     },
-    "associationCreation": {
-      "eyebrow": "Donnez vie à un projet collectif, sans but lucratif",
-      "title": "Création Association",
-      "description": "Une association est un groupement de personnes réunies autour d'un objectif commun, sans but lucratif. Sa création repose sur la rédaction de statuts et une déclaration auprès des autorités compétentes, avec la liste des membres fondateurs et du bureau.",
+    "nonProfit": {
+      "eyebrow": "Donnez vie à votre projet collectif, sans but lucratif",
+      "title": "Création d’une association à but non lucratif",
+      "description": "L’association à but non lucratif est un groupement de personnes réunies autour d’un objectif commun, sans vocation à partager des bénéfices entre ses membres. Sa création repose notamment sur la définition de son objet, la rédaction des statuts et l’accomplissement des formalités administratives requises, notamment la déclaration auprès des autorités compétentes. Nous vous accompagnons dans les différentes étapes de création et de mise en place de votre association.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "religious": {
+      "eyebrow": "Donnez vie à votre projet religieux dans un cadre structuré",
+      "title": "Création d’une association cultuelle",
+      "description": "L’association cultuelle est un groupement de personnes constitué autour de la pratique, de l’exercice ou de la promotion d’une religion et de ses activités cultuelles. Sa création repose notamment sur la définition de son objet, la rédaction des statuts et l’accomplissement des formalités administratives requises auprès des autorités compétentes. Nous vous accompagnons dans les différentes étapes de création et de mise en place de votre association cultuelle.",
       "contact": "Nous contacter",
       "quote": "Demander un devis"
     }

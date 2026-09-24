@@ -2,12 +2,25 @@ import NavMenu from "@/components/layout/header";
 import ContactCTA from "@/components/ui/home/contact-cta";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
-import CreationPage from "@/components/ui/shared/page-creation";
+import CreationPage, { Tier } from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
 
 export default async function ProprietorshipCreationPage() {
     const t = await getTranslations("CreationIndividual");
     const nav = await getTranslations("Nav");
+    const tiers: Tier[] = [
+         {
+            label: "Malgaches",
+            amount: "240 000 Ar",
+            quoteUrl: "citizen",
+        },
+        {
+            label: "Strangers",
+            amount: "400 000 Ar",
+            alt: "80 €",
+            quoteUrl: "stranger",
+        },
+    ]
     return (
         <div>
             <TopMenu />
@@ -36,8 +49,7 @@ export default async function ProprietorshipCreationPage() {
                         </>
                     }
                     imageSrc="/images/company/individual.jpg"
-                    price={t("price")}
-                    priceNote={t("priceNote")}
+                    tiers={tiers}
                     t={t}
                 />
                 <ElegantCardWrapper />

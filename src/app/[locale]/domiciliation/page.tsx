@@ -2,13 +2,17 @@ import NavMenu from "@/components/layout/header";
 import ContactCTA from "@/components/ui/home/contact-cta";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
-import CreationPage from "@/components/ui/shared/page-creation";
+import CreationPage, { BasicPrice } from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
 
 export default async function CreationDomiciliationPage() {
     const t = await getTranslations("Domiciliation");
     const nav = await getTranslations("Nav");
-
+    const basicPrice: BasicPrice = {
+        originalPrice: '100 000',
+        euroEquivalence: '20',
+        annotation: <span className="text-red-800">{t('annotation')}</span>
+    }
     return (
         <>
             <TopMenu />
@@ -37,6 +41,7 @@ export default async function CreationDomiciliationPage() {
                         </>
                     }
                     imageSrc="/images/domiciliation/domiciliation.jpg"
+                    basicDisplayPrice={basicPrice}
                     t={t}
                 />
                 <div
