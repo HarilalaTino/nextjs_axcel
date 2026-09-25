@@ -103,5 +103,9 @@ export const routing = defineRouting({
       fr: '/redaction-contrat-travail-bail-prestation',
       en: '/drafting-work-contract-lease-service'
     },
+    '/conseil-juridique': {
+      fr: '/conseil-juridique',
+      en: '/legal-consulting'
+    },
   }
 });

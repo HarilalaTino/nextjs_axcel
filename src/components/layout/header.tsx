@@ -51,6 +51,7 @@ const NAV_ITEMS: NavItem[] = [
     href: '/service-juridique',
     submenu: [
       { label: 'draftingContractLeaseServiceProvider', href: '/redaction-contrat-travail-bail-prestation' },
+      { label: 'legalConsulting', href: '/conseil-juridique' }
     ],
     minWidth: 'min-w-96'
   },

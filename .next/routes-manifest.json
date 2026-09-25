@@ -172,6 +172,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/conseil\\-assistance(?:/)?$"
     },
     {
+      "page": "/[locale]/conseil-juridique",
+      "regex": "^/([^/]+?)/conseil\\-juridique(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/conseil\\-juridique(?:/)?$"
+    },
+    {
       "page": "/[locale]/contact",
       "regex": "^/([^/]+?)/contact(?:/)?$",
       "routeKeys": {

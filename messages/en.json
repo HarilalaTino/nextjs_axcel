@@ -43,7 +43,8 @@
     "religiousCreation": "Establishment of a religious association",
     "AllOtherCertificationRecoveries": "All other recoveries and certifications",
     "legalDdepartment": "Legal department",
-    "draftingContractLeaseServiceProvider": "Drafting of employment contract - lease - service provider"
+    "draftingContractLeaseServiceProvider": "Drafting of employment contract - lease - service provider",
+    "legalConsulting": "Legal Consulting"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -571,6 +572,13 @@
         }
       }
     }
+  },
+  "legalConsulting": {
+    "eyebrow": "Legal Consulting",
+    "title": "Legal support tailored to your business",
+    "description": "We support you on all legal matters related to the creation, management, and growth of your business in Madagascar.",
+    "contact": "Contact us",
+    "quote": "Request a quote"
   },
   "QuotePage": {
     "eyebrow": "Request a quote",
