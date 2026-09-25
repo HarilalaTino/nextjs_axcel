@@ -44,7 +44,8 @@
     "legalDdepartment": "Service juridique",
     "draftingContractLeaseServiceProvider": "Rédaction de contrats de travail, de contrats de bail et de contrats de prestation de services",
     "legalConsulting": "Conseil juridique",
-    "dismissalAssistance": "Assistance au procédure de licenciement"
+    "dismissalAssistance": "Assistance au procédure de licenciement",
+    "rightofWork": "Etablissement reglement intérieur, affiliation CNAPS / OSTIE, declaration IRSA"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -487,7 +488,7 @@
   "Recruitment": {
     "eyebrow": "Nos services",
       "title": "Recrutement & Sourcing de talents",
-      "description": "Nous accompagnons les entreprises à Madagascar dans l'identification et la sélection des meilleurs profils, du sourcing à la présélection, pour répondre efficacement à vos besoins en personnel qualifié.",
+      "description": "Nous accompagnons les entreprises à Madagascar dans l'identification et la sélection des meilleurs profils, en combinant sourcing ciblé, analyse des candidatures et entretiens de présélection. Notre approche nous permet de vous proposer des candidats qualifiés, alignés avec votre culture d'entreprise et vos exigences métier, afin de réduire vos délais de recrutement et de sécuriser vos décisions d'embauche.",
       "contact": "Nous contacter",
       "quote": "Demander un devis"
   },
@@ -586,6 +587,29 @@
     "description": "Nous vous accompagnons dans la conduite de vos procédures de licenciement à Madagascar, du respect des étapes légales jusqu'à la notification, afin de limiter les risques de contestation.",
     "contact": "Nous contacter",
     "quote": "Demander un devis"
+  },
+  "rightofWork": {
+    "internalRegulations": {
+        "eyebrow": "Établissement du règlement intérieur",
+        "title": "Un règlement intérieur conforme pour encadrer la vie de l'entreprise",
+        "description": "Nous rédigeons votre règlement intérieur en conformité avec le Code du travail malgache, en y intégrant les règles de discipline, d'hygiène et de sécurité applicables à votre entreprise, ainsi que les formalités de consultation et de dépôt auprès de l'inspection du travail.",
+        "contact": "Nous contacter",
+        "quote": "Demander un devis"
+      },
+    "cnapsOstieAffiliation": {
+        "eyebrow": "Affiliation CNAPS / OSTIE",
+        "title": "Une affiliation sociale en règle dès votre premier salarié",
+        "description": "Nous vous accompagnons dans l'affiliation obligatoire de votre entreprise à la CNaPS et à l'OSTIE dès l'embauche de votre premier salarié, ainsi que dans l'immatriculation de vos employés, afin de sécuriser leur couverture sociale et d'éviter tout risque de redressement.",
+        "contact": "Nous contacter",
+        "quote": "Demander un devis"
+      },
+    "irsaDeclaration": {
+        "eyebrow": "Déclaration IRSA",
+        "title": "Une gestion fiable de vos déclarations de salaires",
+        "description": "Nous prenons en charge le calcul, la retenue et la déclaration mensuelle de l'Impôt sur les Revenus Salariaux et Assimilés (IRSA) de vos employés, ainsi que le suivi de vos déclarations annuelles récapitulatives, afin de garantir votre conformité fiscale et d'éviter tout retard de paiement.",
+        "contact": "Nous contacter",
+        "quote": "Demander un devis"
+      }
   },
   "QuotePage": {
     "eyebrow": "Demande de devis",

@@ -45,7 +45,8 @@
     "legalDdepartment": "Legal department",
     "draftingContractLeaseServiceProvider": "Drafting of employment contract - lease - service provider",
     "legalConsulting": "Legal Consulting",
-    "dismissalAssistance": "Assistance with the dismissal procedure"
+    "dismissalAssistance": "Assistance with the dismissal procedure",
+    "rightofWork": "Establishment of internal regulations, CNAPS / OSTIE affiliation, IRSA declaration"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -488,7 +489,7 @@
   "Recruitment": {
     "eyebrow": "Our services",
     "title": "Recruitment & Talent Sourcing",
-    "description": "We support companies in Madagascar in identifying and selecting the best candidates, from sourcing to pre-screening, to effectively meet your qualified staffing needs.",
+    "description": "We support businesses in Madagascar in identifying and selecting the best talent, combining targeted sourcing, application screening, and preliminary interviews. Our approach allows us to put forward qualified candidates who align with your company culture and business requirements, helping you reduce recruitment timelines and make more confident hiring decisions.",
     "contact": "Contact us",
     "quote": "Request a quote"
   },
@@ -588,6 +589,27 @@
     "contact": "Contact us",
     "quote": "Request a quote"
   },
+  "internalRegulations": {
+    "eyebrow": "Internal Work Rules Drafting",
+    "title": "Compliant internal work rules to govern day-to-day company life",
+    "description": "We draft your internal work rules in line with Malagasy labor law, covering discipline, health, and safety provisions specific to your business, along with the required consultation and filing steps with the labor inspectorate.",
+    "contact": "Contact us",
+    "quote": "Request a quote"
+  },
+  "cnapsOstieAffiliation": {
+      "eyebrow": "CNAPS / OSTIE Affiliation",
+      "title": "Proper social affiliation from your very first employee",
+      "description": "We support you with the mandatory affiliation of your company to CNaPS and OSTIE as soon as you hire your first employee, as well as the registration of your staff, ensuring their social coverage and helping you avoid the risk of penalties.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
+  "irsaDeclaration": {
+      "eyebrow": "IRSA Tax Declaration",
+      "title": "Reliable management of your payroll tax filings",
+      "description": "We handle the calculation, withholding, and monthly declaration of the Income Tax on Salaries and Related Income (IRSA) for your employees, along with your annual summary filings, ensuring your tax compliance and helping you avoid late payment penalties.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
   "QuotePage": {
     "eyebrow": "Request a quote",
     "title": "Choose your origin then describe your need",

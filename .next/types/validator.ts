@@ -182,6 +182,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/[locale]/droit-du-travail/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/droit-du-travail">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/droit-du-travail/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/[locale]/location-salle-reunion/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/[locale]/location-salle-reunion">> = Specific

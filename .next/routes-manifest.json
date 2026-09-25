@@ -268,6 +268,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/domiciliation(?:/)?$"
     },
     {
+      "page": "/[locale]/droit-du-travail",
+      "regex": "^/([^/]+?)/droit\\-du\\-travail(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/droit\\-du\\-travail(?:/)?$"
+    },
+    {
       "page": "/[locale]/location-salle-reunion",
       "regex": "^/([^/]+?)/location\\-salle\\-reunion(?:/)?$",
       "routeKeys": {

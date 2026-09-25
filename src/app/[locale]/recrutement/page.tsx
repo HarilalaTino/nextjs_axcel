@@ -31,6 +31,7 @@ export default async function Recruitment() {
                         </>
                     }
                     imageSrc="/images/recruitment/recruitment.jpg"
+                    ctasDisplay
                     t={t}
                 />
                 <ElegantCardWrapper />

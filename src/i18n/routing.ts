@@ -111,5 +111,9 @@ export const routing = defineRouting({
       fr: '/assistance-procedure-licenciement',
       en: '/dismissal-assistance'
     },
+    '/droit-du-travail': {
+      fr: '/droit-du-travail',
+      en: '/labor-law'
+    },
   }
 });

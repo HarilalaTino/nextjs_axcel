@@ -53,6 +53,8 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'draftingContractLeaseServiceProvider', href: '/redaction-contrat-travail-bail-prestation' },
       { label: 'legalConsulting', href: '/conseil-juridique' },
       { label: 'dismissalAssistance', href: '/assistance-procedure-licenciement' },
+      { label: 'recruitment', href: '/recrutement' },
+      { label: 'rightofWork', href: '/droit-du-travail' },
     ],
     minWidth: 'min-w-96'
   },
