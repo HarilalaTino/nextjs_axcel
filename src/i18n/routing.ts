@@ -95,5 +95,13 @@ export const routing = defineRouting({
       fr: '/toutes-autres-recuperations-et-certifications',
       en: '/all-other-recoveries-and-certifications'
     },
+    '/service-juridique': {
+      fr: '/service-juridique',
+      en: '/legal-department'
+    },
+    '/redaction-contrat-travail-bail-prestation': {
+      fr: '/redaction-contrat-travail-bail-prestation',
+      en: '/drafting-work-contract-lease-service'
+    },
   }
 });

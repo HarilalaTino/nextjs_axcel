@@ -292,6 +292,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/recuperation\\-traduction\\-document(?:/)?$"
     },
     {
+      "page": "/[locale]/redaction-contrat-travail-bail-prestation",
+      "regex": "^/([^/]+?)/redaction\\-contrat\\-travail\\-bail\\-prestation(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/redaction\\-contrat\\-travail\\-bail\\-prestation(?:/)?$"
+    },
+    {
       "page": "/[locale]/toutes-autres-recuperations-et-certifications",
       "regex": "^/([^/]+?)/toutes\\-autres\\-recuperations\\-et\\-certifications(?:/)?$",
       "routeKeys": {

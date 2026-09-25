@@ -41,7 +41,9 @@
     "travelAgencyCreation": "Travel Agency Creation",
     "wholesaleDesignCreation": "Wholesale design",
     "religiousCreation": "Establishment of a religious association",
-    "AllOtherCertificationRecoveries": "All other recoveries and certifications"
+    "AllOtherCertificationRecoveries": "All other recoveries and certifications",
+    "legalDdepartment": "Legal department",
+    "draftingContractLeaseServiceProvider": "Drafting of employment contract - lease - service provider"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -511,6 +513,62 @@
         "label": "Step 3 — Until completion",
         "title": "We ensure the follow-up",
         "description": "We support you all the way through: filing, signature, and obtaining your official documents."
+      }
+    }
+  },
+  "contractDrafting": {
+    "employmentContract": {
+      "eyebrow": "Employment Contract Drafting",
+      "title": "A compliant, tailor-made employment contract",
+      "description": "We draft your employment contracts (permanent and fixed-term) in line with Malagasy labor law, securing the employer-employee relationship from the moment of hiring.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "keyPoints": {
+        "title": "Key features",
+        "items": {
+          "writtenForm": "Contract must be in writing, stating the job title and professional category",
+          "classification": "Indication of the minimum classification index corresponding to the position",
+          "salary": "Precise mention of the salary and any benefits or bonuses",
+          "effectiveDate": "Clearly stated effective date of the contract",
+          "contractType": "Appropriate choice between a permanent contract (CDI) and a fixed-term contract (CDD) depending on the nature of the role",
+          "trialPeriod": "Specific clauses (trial period, notice period, confidentiality, non-compete) tailored to your company's needs"
+        }
+      }
+    },
+    "leaseContract": {
+      "eyebrow": "Lease Agreement Drafting",
+      "title": "A clear lease that protects both landlord and tenant",
+      "description": "We draft lease agreements (residential, commercial, or professional) tailored to your situation, helping prevent disputes between the parties.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "keyPoints": {
+        "title": "Key features",
+        "items": {
+          "parties": "Clear identification of the landlord, the tenant, and the leased property",
+          "duration": "Lease duration, renewal and termination conditions",
+          "rent": "Rent amount, payment terms, and review conditions",
+          "deposit": "Amount of the security deposit",
+          "obligations": "Clear allocation of charges and maintenance obligations between the parties",
+          "specificClauses": "Clauses tailored to the type of lease (residential, commercial, professional)"
+        }
+      }
+    },
+    "serviceProviderContract": {
+      "eyebrow": "Service Provider Contract Drafting",
+      "title": "Frame your relationships with your service providers",
+      "description": "We draft service agreements tailored to your business, securing your collaborations with independent contractors or partner companies.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "keyPoints": {
+        "title": "Key features",
+        "items": {
+          "scope": "Precise definition of the assignment, deliverables, and execution timeline",
+          "payment": "Payment terms, schedule, and any applicable penalties",
+          "independence": "Independence clause for the provider, to avoid reclassification as an employment contract",
+          "confidentiality": "Confidentiality clauses and protection of shared data or information",
+          "liability": "Allocation of liability in case of breach or delay",
+          "termination": "Early termination conditions and dispute resolution terms"
+        }
       }
     }
   },

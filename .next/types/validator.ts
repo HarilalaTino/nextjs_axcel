@@ -218,6 +218,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/[locale]/redaction-contrat-travail-bail-prestation/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/redaction-contrat-travail-bail-prestation">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/redaction-contrat-travail-bail-prestation/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/[locale]/toutes-autres-recuperations-et-certifications/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/[locale]/toutes-autres-recuperations-et-certifications">> = Specific

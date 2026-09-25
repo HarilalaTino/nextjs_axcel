@@ -18,6 +18,7 @@ type NavItem = {
   label: string;
   href: AppRoute;
   submenu?: SubItem[];
+  minWidth?: string;
 };
 
 const NAV_ITEMS: NavItem[] = [
@@ -44,6 +45,14 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'certificateOfMarketabilityAndCommercialization', href: '/certificat-consommabilite-et-mise-en-commerce' },
       { label: 'AllOtherCertificationRecoveries', href: '/toutes-autres-recuperations-et-certifications' },
     ]
+  },
+  {
+    label: 'legalDdepartment',
+    href: '/service-juridique',
+    submenu: [
+      { label: 'draftingContractLeaseServiceProvider', href: '/redaction-contrat-travail-bail-prestation' },
+    ],
+    minWidth: 'min-w-96'
   },
   {
     label: 'adviceAndAssistance',
@@ -185,7 +194,7 @@ export default function NavMenu() {
 
                 {isOpen && (
                   <div
-                    className="absolute left-0 top-full min-w-80 rounded-lg border py-2 border-slate-100 bg-white shadow-lg"
+                    className={`absolute left-0 top-full ${item.minWidth ?? 'min-w-80'} rounded-lg border py-2 border-slate-100 bg-white shadow-lg`}
                     role="menu"
                   >
                     {item.submenu.map((sub) => (

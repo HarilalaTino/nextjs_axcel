@@ -40,7 +40,9 @@
     "travelAgencyCreation": "Création agence de voyage",
     "wholesaleDesignCreation": "Création grossiste",
     "religiousCreation": "Creation association cultuelle",
-    "AllOtherCertificationRecoveries": "Toutes autres récupérations et certifications"
+    "AllOtherCertificationRecoveries": "Toutes autres récupérations et certifications",
+    "legalDdepartment": "Service juridique",
+    "draftingContractLeaseServiceProvider": "Rédaction de contrats de travail, de contrats de bail et de contrats de prestation de services"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -510,6 +512,62 @@
         "label": "Étape 3 — Jusqu'à l'aboutissement",
         "title": "Nous assurons le suivi",
         "description": "Nous vous accompagnons jusqu'au bout : dépôt, signature et obtention de vos documents officiels."
+      }
+    }
+  },
+  "contractDrafting": {
+    "employmentContract": {
+      "eyebrow": "Rédaction de contrat de travail",
+      "title": "Un contrat de travail conforme et sur mesure",
+      "description": "Nous rédigeons vos contrats de travail (CDI, CDD) en conformité avec le Code du travail malgache, afin de sécuriser la relation entre employeur et salarié dès l'embauche.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "keyPoints": {
+        "title": "Points clés",
+        "items": {
+          "writtenForm": "Contrat obligatoirement écrit, mentionnant l'intitulé du poste et la catégorie professionnelle",
+          "classification": "Indication de l'indice minimum de classification correspondant au poste occupé",
+          "salary": "Mention précise de la rémunération et des éventuels avantages ou primes",
+          "effectiveDate": "Date de prise d'effet du contrat clairement indiquée",
+          "contractType": "Choix adapté entre CDI (Contrat à Durée Indéterminée) et CDD (Contrat à Durée Déterminée) selon la nature du poste",
+          "trialPeriod": "Clauses spécifiques (période d'essai, préavis, confidentialité, non-concurrence) selon les besoins de l'entreprise"
+        }
+      }
+    },
+    "leaseContract": {
+      "eyebrow": "Rédaction de contrat de bail",
+      "title": "Un bail clair pour protéger bailleur et locataire",
+      "description": "Nous rédigeons des contrats de bail (habitation, commercial ou professionnel) adaptés à votre situation, afin de prévenir tout litige entre les parties.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "keyPoints": {
+        "title": "Points clés",
+        "items": {
+          "parties": "Identification précise du bailleur, du locataire et du bien loué",
+          "duration": "Durée du bail, conditions de renouvellement et de résiliation",
+          "rent": "Montant du loyer, modalités de paiement et de révision",
+          "deposit": "Montant de la caution ou dépôt de garantie",
+          "obligations": "Répartition claire des charges et des obligations d'entretien entre les parties",
+          "specificClauses": "Clauses adaptées selon le type de bail (habitation, commercial, professionnel)"
+        }
+      }
+    },
+    "serviceProviderContract": {
+      "eyebrow": "Rédaction de contrat prestataire",
+      "title": "Encadrez vos relations avec vos prestataires",
+      "description": "Nous rédigeons des contrats de prestation de services adaptés à votre activité, pour sécuriser vos collaborations avec vos prestataires indépendants ou sociétés partenaires.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis",
+      "keyPoints": {
+        "title": "Points clés",
+        "items": {
+          "scope": "Définition précise de la mission, des livrables et des délais d'exécution",
+          "payment": "Modalités de rémunération, échéancier de paiement et pénalités éventuelles",
+          "independence": "Clause d'indépendance du prestataire pour éviter toute requalification en contrat de travail",
+          "confidentiality": "Clauses de confidentialité et de protection des données ou informations échangées",
+          "liability": "Répartition des responsabilités en cas de manquement ou de retard",
+          "termination": "Conditions de résiliation anticipée et de résolution des litiges"
+        }
       }
     }
   },
