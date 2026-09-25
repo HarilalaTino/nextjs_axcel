@@ -198,20 +198,36 @@ export default function NavMenu() {
 
                 {isOpen && (
                   <div
-                    className={`absolute left-0 top-full ${item.minWidth ?? 'min-w-80'} rounded-lg border py-2 border-slate-100 bg-white shadow-lg`}
+                    className={`absolute left-0 top-full ${item.minWidth ?? 'min-w-[22rem]'} rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-[0_20px_45px_-10px_rgba(15,23,42,0.18)] ring-1 ring-slate-100 backdrop-blur-sm`}
                     role="menu"
                   >
-                    {item.submenu.map((sub) => (
-                      <Link
-                        key={sub.label}
-                        href={sub.href}
-                        role="menuitem"
-                        className="block text-sm text-primary gap-2 pl-8 pr-4 py-3 items-center transition-colors hover:bg-slate-50 hover:text-secondary"
-                      >
-                         {t(sub.label)}
-                      </Link>
-
-                    ))}
+                    <div className="grid gap-1">
+                      {item.submenu.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          role="menuitem"
+                          className="group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-slate-700 transition-all duration-200 hover:bg-primary/5 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/30"
+                        >
+                          <span className="flex-1">{t(sub.label)}</span>
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="text-slate-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-secondary"
+                            aria-hidden="true"
+                          >
+                            <path d="M5 12h14" />
+                            <path d="m13 5 7 7-7 7" />
+                          </svg>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -242,8 +258,6 @@ export default function NavMenu() {
             <MenuIcon open={mobileOpen} />
           </button>
         </div>
-
-
       </div>
 
       {/* Menu mobile */}
