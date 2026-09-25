@@ -9,6 +9,7 @@ export default async function CreationDomiciliationPage() {
     const t = await getTranslations("Domiciliation");
     const nav = await getTranslations("Nav");
     const basicPrice: BasicPrice = {
+        title: 'Prix mensuelle',
         originalPrice: '100 000',
         euroEquivalence: '20',
         annotation: <span className="text-red-800">{t('annotation')}</span>

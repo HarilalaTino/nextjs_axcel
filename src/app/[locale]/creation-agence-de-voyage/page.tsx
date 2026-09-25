@@ -1,0 +1,50 @@
+import NavMenu from "@/components/layout/header";
+import ContactCTA from "@/components/ui/home/contact-cta";
+import TopMenu from "@/components/ui/home/top-menu";
+import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
+import CreationPage, { BasicPrice } from "@/components/ui/shared/page-creation";
+import { getTranslations } from "next-intl/server";
+
+export default async function TravelAgencyCreation() {
+    const t = await getTranslations("travelAgencyCreation");
+    const nav = await getTranslations("Nav");
+    const basicPrice: BasicPrice = {
+        originalPrice: '2 000 000',
+        euroEquivalence: '400'
+    }
+    return (
+        <div>
+            <TopMenu />
+            <NavMenu />
+            <div className="overflow-hidden relative">
+                <div
+                    className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/5"
+                    aria-hidden="true"
+                />
+                <h1 className="text-xs font-normal text-transparent absolute -z-10">
+                    {nav("travelAgencyCreation")}
+                </h1>
+
+                <CreationPage
+                    creationType="travel-agency-creation"
+                    eyebrow={t("eyebrow")}
+                    title={t("title")}
+                    description={
+                        <>
+                            <p>{t("description")}</p>
+                        </>
+                    }
+                    imageSrc="/images/company/travel.jpg"
+                    basicDisplayPrice={basicPrice}
+                    t={t}
+                />
+                <ElegantCardWrapper />
+                <div
+                    className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
+                    aria-hidden="true"
+                />
+            </div>
+            <ContactCTA />
+        </div>
+    )
+}

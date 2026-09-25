@@ -156,12 +156,12 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/a\\-propos(?:/)?$"
     },
     {
-      "page": "/[locale]/certificat-mise-en-commerce",
-      "regex": "^/([^/]+?)/certificat\\-mise\\-en\\-commerce(?:/)?$",
+      "page": "/[locale]/certificat-consommabilite-et-mise-en-commerce",
+      "regex": "^/([^/]+?)/certificat\\-consommabilite\\-et\\-mise\\-en\\-commerce(?:/)?$",
       "routeKeys": {
         "nxtPlocale": "nxtPlocale"
       },
-      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/certificat\\-mise\\-en\\-commerce(?:/)?$"
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/certificat\\-consommabilite\\-et\\-mise\\-en\\-commerce(?:/)?$"
     },
     {
       "page": "/[locale]/conseil-assistance",
@@ -180,12 +180,36 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/contact(?:/)?$"
     },
     {
+      "page": "/[locale]/creation-agence-de-voyage",
+      "regex": "^/([^/]+?)/creation\\-agence\\-de\\-voyage(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-agence\\-de\\-voyage(?:/)?$"
+    },
+    {
+      "page": "/[locale]/creation-association-cultuelle",
+      "regex": "^/([^/]+?)/creation\\-association\\-cultuelle(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-association\\-cultuelle(?:/)?$"
+    },
+    {
       "page": "/[locale]/creation-entreprise-individuelle",
       "regex": "^/([^/]+?)/creation\\-entreprise\\-individuelle(?:/)?$",
       "routeKeys": {
         "nxtPlocale": "nxtPlocale"
       },
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-entreprise\\-individuelle(?:/)?$"
+    },
+    {
+      "page": "/[locale]/creation-grossiste",
+      "regex": "^/([^/]+?)/creation\\-grossiste(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/creation\\-grossiste(?:/)?$"
     },
     {
       "page": "/[locale]/creation-ong-association",
@@ -266,6 +290,14 @@
         "nxtPlocale": "nxtPlocale"
       },
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/recuperation\\-traduction\\-document(?:/)?$"
+    },
+    {
+      "page": "/[locale]/toutes-autres-recuperations-et-certifications",
+      "regex": "^/([^/]+?)/toutes\\-autres\\-recuperations\\-et\\-certifications(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/toutes\\-autres\\-recuperations\\-et\\-certifications(?:/)?$"
     }
   ],
   "staticRoutes": [

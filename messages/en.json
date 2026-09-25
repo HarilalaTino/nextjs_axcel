@@ -36,8 +36,12 @@
     "courierServiceTitle": "Professional courier service in Antananarivo",
     "adviceTitle": "Business Consulting and Assistance in Madagascar",
     "aboutTitle": "The Team Behind Your Projects in Madagascar",   
-    "certificateOfCommercialization": "Retrieval of Certificates of Authorization to Market",
-    "creationSA&SAU&SCI": "Creation SA - SAU - SCI"
+    "certificateOfMarketabilityAndCommercialization": "Retrieval of consumability certificates and market release",
+    "creationSA&SAU&SCI": "Creation SA - SAU - SCI",
+    "travelAgencyCreation": "Travel Agency Creation",
+    "wholesaleDesignCreation": "Wholesale design",
+    "religiousCreation": "Establishment of a religious association",
+    "AllOtherCertificationRecoveries": "All other recoveries and certifications"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -298,42 +302,62 @@
         "price": "30 000 Ar"
       }
     },
-    "certificateRetrieval": {
-      "eyebrow": "Courier service",
-      "title": "Retrieval of administrative certificates",
-      "description": "We provide you with a range of services dedicated to retrieving your administrative and banking procedures. See our list of services below.",
-      "contact": "Contact us",
-      "quote": "Request a quote",
-      "payslip": {
-        "label": "Payslip",
-        "price": "50 000 Ar / slip"
+    "allOtherCertificationRecoveries": {
+      "certificateRetrieval": {
+        "eyebrow": "Courier service",
+        "title": "Retrieval of administrative certificates",
+        "description": "We provide you with a range of services dedicated to retrieving your administrative and banking procedures. See our list of services below.",
+        "contact": "Contact us",
+        "quote": "Request a quote",
+        "payslip": {
+          "label": "Payslip",
+          "price": "50 000 Ar / slip"
+        },
+        "bankAccountCreation": {
+          "label": "Bank account opening",
+          "price": "100 000 Ar"
+        },
+        "simCardCreation": {
+          "label": "SIM card creation",
+          "price": "100 000 Ar"
+        },
+        "fopEquivalence": {
+          "label": "FOP equivalence",
+          "price": "100 000 Ar"
+        }
       },
-      "bankAccountCreation": {
-        "label": "Bank account opening",
-        "price": "100 000 Ar"
-      },
-      "simCardCreation": {
-        "label": "SIM card creation",
-        "price": "100 000 Ar"
-      },
-      "fopEquivalence": {
-        "label": "FOP equivalence",
-        "price": "100 000 Ar"
+      "automobileProcedure": {
+        "eyebrow": "Our Services",
+        "title": "Administrative Procedures for Vehicles",
+        "description": "We offer document retrieval and processing services for vehicle-related administrative procedures:",
+        "contact": "Contact Us",
+        "quote": "Request a Quote",
+        "vehicleMutation": {
+          "label": "Vehicle Transfer",
+          "price": "100 000 Ar"
+        },
+        "carteGrise": {
+          "label": "Change from a pink card to a gray card",
+          "price": "100 000 Ar"
+        }
       }
     },
-    "automobileProcedure": {
-      "eyebrow": "Our Services",
-      "title": "Administrative Procedures for Vehicles",
-      "description": "We offer document retrieval and processing services for vehicle-related administrative procedures:",
-      "contact": "Contact Us",
-      "quote": "Request a Quote",
-      "vehicleMutation": {
-        "label": "Vehicle Transfer",
-        "price": "100 000 Ar"
-      },
-      "carteGrise": {
-        "label": "Change from a pink card to a gray card",
-        "price": "100 000 Ar"
+    "consumabilityCertification": {
+      "eyebrow": "Consumability Certificate & Market Authorization",
+      "title": "Secure the market launch of your food products",
+      "description": "Before any distribution or sale in Madagascar, food products and dietary supplements must obtain a consumability certificate as well as a market authorization.",
+      "contact": "Contact us",
+      "quote": "Request a quote",
+      "keyPoints": {
+        "title": "Key features",
+        "items": {
+          "healthCertificate": "Consumability certificate issued by the Ministry in charge of Health, certifying that the product is fit for consumption",
+          "commerceAuthorization": "Market authorization (mise en commercialisation) issued by the Ministry in charge of Commerce",
+          "registration": "Mandatory registration with the Food Safety and Quality Control Agency for product classification purposes",
+          "validity": "Certificate issued per manufacturing batch, with validity tied to the expiration date shown on the packaging",
+          "establishmentRegistration": "Mandatory registration of any importer, seller, or food business concerned with the Control Agency",
+          "customs": "Required documentation for customs clearance and market release, in line with applicable customs procedures"
+        }
       }
     },
     "certificateOfCommercialization": {
@@ -399,13 +423,34 @@
       }
     }
   },
+  "travelAgencyCreation": {
+    "eyebrow": "Travel Agency",
+      "title": "Launch your travel agency in full compliance",
+      "description": "Setting up a travel agency in Madagascar requires a specific license from the Ministry in charge of Tourism, in addition to the standard registration of your company.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+  },
+  "wholesaleCreation": {
+    "eyebrow": "Wholesale Business Creation",
+      "title": "Structure your wholesale business the right way",
+      "description": "Operating as a wholesaler in Madagascar requires, beyond company registration, compliance with specific commercial formalities related to purchasing and reselling goods in bulk.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+  },
+  "religious": {
+    "eyebrow": "Bring your religious project to life within a structured framework",
+    "title": "Creating a Religious Association",
+    "description": "A religious association is a group of individuals established around the practice, exercise, or promotion of a religion and its religious activities. Its creation generally involves defining its purpose, drafting its bylaws, and completing the required administrative formalities with the relevant authorities. We assist you throughout the various stages of setting up and establishing your religious association.",
+    "contact": "Contact us",
+    "quote": "Request a Quote"
+  },
   "Domiciliation": {
       "eyebrow": "Business domiciliation",
       "title": "An official address for your company",
       "description": "Business domiciliation allows you to assign a registered office to your company without needing to physically carry out your activity there. This is the address that will appear on all your official documents: statutes, registration, invoices, and correspondence. Every company must necessarily have a registered office, which serves as the administrative and tax reference with the authorities.",
       "contact": "Contact us",
       "quote": "Request a quote",
-      "annotation": "Minimum 6 months paid in advance.",
+      "annotation": "Minimum 6-month contract",
       "why": {
         "first": "A recognized professional address, separate from your personal home",
         "second": "Easier registration with the competent authorities",
@@ -432,13 +477,6 @@
       "eyebrow": "Bring your collective project to life with a non-profit purpose",
       "title": "Creating a Non-Profit Association",
       "description": "A non-profit association is a group of individuals brought together around a common purpose, without the intention of distributing profits among its members. Its creation generally involves defining its purpose, drafting its bylaws, and completing the required administrative formalities, including registration or declaration with the relevant authorities. We assist you throughout the various stages of setting up and establishing your association.",
-      "contact": "Contact us",
-      "quote": "Request a Quote"
-    },
-    "religiousAssociation": {
-      "eyebrow": "Bring your religious project to life within a structured framework",
-      "title": "Creating a Religious Association",
-      "description": "A religious association is a group of individuals established around the practice, exercise, or promotion of a religion and its religious activities. Its creation generally involves defining its purpose, drafting its bylaws, and completing the required administrative formalities with the relevant authorities. We assist you throughout the various stages of setting up and establishing your religious association.",
       "contact": "Contact us",
       "quote": "Request a Quote"
     }

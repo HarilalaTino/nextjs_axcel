@@ -13,18 +13,17 @@
     "adviceModification": "Assistance à la modification de société",
     "adviceFormalization": "Assistance en formalisation d'entreprise",
     "adviceStrategic": "Consultation stratégique pour entrepreneurs",
-    "creationIndividual": "Création Entreprise Individuelle",
+    "creationIndividual": "Création entreprise individuelle",
     "recruitment": "Recrutement",
     "draftingDocument": "Rédaction de documents administratifs",
-    "creationSarl": "Création Société SARL - SARLU",
-    "creationNogAndAssociation": "Création Association",
+    "creationSarl": "Création société SARL - SARLU",
+    "creationNogAndAssociation": "Création association",
     "creationDomiciliation": "Domiciliation",
     "creationMeetingRoom": "Location de salle de réunion",
     "courier": "Service de coursier",
     "courierDiploma": "Récupération diplôme, relevé de note, équivalence",
     "courierBirthMarriage": "Récupération et traduction de documents administratifs",
     "courierMarketCertificates": "Récupération des certificats de mise en commerce",
-    "courierConsumabilityCertificates": "Récupération des certificats de consommabilité",
     "courierRegistrations": "Toutes enregistrement, certifications",
     "about": "A propos de nous",
     "contact": "Contact",
@@ -36,8 +35,12 @@
     "courierServiceTitle": "Service de coursier professionnel à Antananarivo",
     "adviceTitle": "Conseil et assistance aux entreprises à Madagascar",
     "aboutTitle": "L'équipe qui accompagne vos projets à Madagascar",
-    "certificateOfCommercialization": "Récupération des certificats de mise en commerce",
-    "creationSA&SAU&SCI": "Création SA - SAU - SCI"
+    "certificateOfMarketabilityAndCommercialization": "Récupération des certificats de consommabilité et mise en commerce",
+    "creationSA&SAU&SCI": "Création SA - SAU - SCI",
+    "travelAgencyCreation": "Création agence de voyage",
+    "wholesaleDesignCreation": "Création grossiste",
+    "religiousCreation": "Creation association cultuelle",
+    "AllOtherCertificationRecoveries": "Toutes autres récupérations et certifications"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -298,43 +301,63 @@
         "price": "30 000 Ar"
       }
     },
-    "certificateRetrieval": {
-      "eyebrow": "Service de coursier",
-      "title": "Récupération de certificats administratifs",
-      "description": "Nous mettons à votre disposition un ensemble de services dédiés à la récupération de vos démarches administratives et bancaires. Consultez la liste de nos prestations ci-dessous",
-      "contact": "Nous contacter",
-      "quote": "Demander un devis",
-      "payslip": {
-        "label": "Fiche de paie",
-        "price": "50 000 Ar / fiche"
+    "allOtherCertificationRecoveries": {
+      "certificateRetrieval": {
+        "eyebrow": "Service de coursier",
+        "title": "Récupération de certificats administratifs",
+        "description": "Nous mettons à votre disposition un ensemble de services dédiés à la récupération de vos démarches administratives et bancaires. Consultez la liste de nos prestations ci-dessous",
+        "contact": "Nous contacter",
+        "quote": "Demander un devis",
+        "payslip": {
+          "label": "Fiche de paie",
+          "price": "50 000 Ar / fiche"
+        },
+        "bankAccountCreation": {
+          "label": "Création compte bancaire",
+          "price": "100 000 Ar"
+        },
+        "simCardCreation": {
+          "label": "Création Puce",
+          "price": "100 000 Ar"
+        },
+        "fopEquivalence": {
+          "label": "Équivalence FOP",
+          "price": "100 000 Ar"
+        }
       },
-      "bankAccountCreation": {
-        "label": "Création compte bancaire",
-        "price": "100 000 Ar"
-      },
-      "simCardCreation": {
-        "label": "Création Puce",
-        "price": "100 000 Ar"
-      },
-      "fopEquivalence": {
-        "label": "Équivalence FOP",
-        "price": "100 000 Ar"
+      "automobileProcedure": {
+        "eyebrow": "Nos Prestations",
+        "title": "Procédures administratives pour l'automobile",
+        "description": "Nous proposons des services de récupération et de traitement des documents administratifs liés à l'automobile :",
+        "contact": "Nous contacter",
+        "quote": "Demander un devis",
+        "vehicleMutation": {
+          "label": "Mutation",
+          "price": "100 000 Ar"
+        },
+        "carteGrise": {
+          "label": "Changement de carte rose en carte grise",
+          "price": "100 000 Ar"
+        }
       }
     },
-    "automobileProcedure": {
-      "eyebrow": "Nos Prestations",
-      "title": "Procédures administratives pour l'automobile",
-      "description": "Nous proposons des services de récupération et de traitement des documents administratifs liés à l'automobile :",
-      "contact": "Nous contacter",
-      "quote": "Demander un devis",
-      "vehicleMutation": {
-        "label": "Mutation",
-        "price": "100 000 Ar"
-      },
-      "carteGrise": {
-        "label": "Changement de carte rose en carte grise",
-        "price": "100 000 Ar"
-      }
+    "consumabilityCertification": {
+      "eyebrow": "Certificat de consommabilité et mise en commerce",
+        "title": "Sécurisez la mise sur le marché de vos produits alimentaires",
+        "description": "Avant toute distribution ou vente à Madagascar, les denrées alimentaires et compléments alimentaires doivent obtenir un certificat de consommabilité ainsi qu'une autorisation de mise en commercialisation.",
+        "contact": "Nous contacter",
+        "quote": "Demander un devis",
+        "keyPoints": {
+          "title": "Points clés",
+          "items": {
+            "healthCertificate": "Certificat de consommabilité délivré par le Ministère chargé de la Santé, attestant que le produit est propre à la consommation",
+            "commerceAuthorization": "Autorisation de mise en commercialisation délivrée par le Ministère chargé du Commerce",
+            "registration": "Enregistrement obligatoire auprès de l'Agence de Contrôle de la Sécurité Sanitaire et de la Qualité des Denrées Alimentaires en vue de la classification du produit",
+            "validity": "Certificat délivré par lot de fabrication, avec une validité liée à la date d'expiration mentionnée sur l'emballage",
+            "establishmentRegistration": "Immatriculation obligatoire de tout importateur, vendeur ou établissement agro-alimentaire concerné auprès de l'Agence de Contrôle",
+            "customs": "Documents requis lors du dédouanement et de la mise en vente, conformément aux procédures douanières en vigueur"
+          }
+        }
     },
     "certificateOfCommercialization": {
       "eyebrow": "Nos Prestations",
@@ -398,12 +421,33 @@
       }
     }
   },
+  "travelAgencyCreation": {
+    "eyebrow": "Agence de voyage",
+      "title": "Lancez votre agence de voyage en toute conformité",
+      "description": "La création d'une agence de voyage à Madagascar est soumise à un agrément spécifique du Ministère en charge du Tourisme, en plus de l'immatriculation classique de votre société.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+  },
+  "wholesaleCreation": {
+    "eyebrow": "Création d'un commerce de gros (Grossiste)",
+      "title": "Structurez votre activité de vente en gros en toute légalité",
+      "description": "L'activité de grossiste à Madagascar nécessite, au-delà de l'immatriculation de votre société, le respect de formalités commerciales spécifiques liées à l'achat et à la revente de marchandises en grande quantité.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+  },
+  "religious": {
+    "eyebrow": "Donnez vie à votre projet religieux dans un cadre structuré",
+    "title": "Création d’une association cultuelle",
+    "description": "L’association cultuelle est un groupement de personnes constitué autour de la pratique, de l’exercice ou de la promotion d’une religion et de ses activités cultuelles. Sa création repose notamment sur la définition de son objet, la rédaction des statuts et l’accomplissement des formalités administratives requises auprès des autorités compétentes. Nous vous accompagnons dans les différentes étapes de création et de mise en place de votre association cultuelle.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis"
+  },
   "Domiciliation": {
       "eyebrow": "Domiciliation d'entreprise ",
       "title": "Une adresse officielle pour votre société",
       "description": "La domiciliation d'entreprise permet d'attribuer un siège social à votre société, sans que vous ayez besoin d'y exercer physiquement votre activité. C'est l'adresse qui apparaîtra sur l'ensemble de vos documents officiels : statuts, immatriculation, factures et correspondances. Toute société doit obligatoirement disposer d'un siège social, qui sert de référence administrative et fiscale auprès des autorités.",
       "contact": "Nous contacter",
-      "annotation": "Minimum 6 mois payés à l’avance.",
+      "annotation": "Contrat minimum de 6 mois",
       "quote": "Demander un devis",
       "why": {
         "first": "Une adresse professionnelle reconnue, distincte de votre domicile personnel",
@@ -432,13 +476,6 @@
       "eyebrow": "Donnez vie à votre projet collectif, sans but lucratif",
       "title": "Création d’une association à but non lucratif",
       "description": "L’association à but non lucratif est un groupement de personnes réunies autour d’un objectif commun, sans vocation à partager des bénéfices entre ses membres. Sa création repose notamment sur la définition de son objet, la rédaction des statuts et l’accomplissement des formalités administratives requises, notamment la déclaration auprès des autorités compétentes. Nous vous accompagnons dans les différentes étapes de création et de mise en place de votre association.",
-      "contact": "Nous contacter",
-      "quote": "Demander un devis"
-    },
-    "religious": {
-      "eyebrow": "Donnez vie à votre projet religieux dans un cadre structuré",
-      "title": "Création d’une association cultuelle",
-      "description": "L’association cultuelle est un groupement de personnes constitué autour de la pratique, de l’exercice ou de la promotion d’une religion et de ses activités cultuelles. Sa création repose notamment sur la définition de son objet, la rédaction des statuts et l’accomplissement des formalités administratives requises auprès des autorités compétentes. Nous vous accompagnons dans les différentes étapes de création et de mise en place de votre association cultuelle.",
       "contact": "Nous contacter",
       "quote": "Demander un devis"
     }

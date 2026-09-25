@@ -71,13 +71,29 @@ export const routing = defineRouting({
       fr: '/recuperation-traduction-document',
       en: '/recovery-translation-retrieval'
     },
-    '/certificat-mise-en-commerce': {
-      fr: '/certificat-mise-en-commerce',
+    '/certificat-consommabilite-et-mise-en-commerce': {
+      fr: '/certificat-consommabilite-et-mise-en-commerce',
       en: '/certificate-of-market-authorization'
     },
     '/creation-sa-sau-sci': {
       fr: '/creation-sa-sau-sci',
       en: '/creation-sa-sau-sci'
-    }
+    },
+    '/creation-agence-de-voyage': {
+      fr: '/creation-agence-de-voyage',
+      en: '/travel-agency-creation'
+    },
+    '/creation-grossiste': {
+      fr: '/creation-grossiste',
+      en: '/wholesale-design'
+    },
+    '/creation-association-cultuelle': {
+      fr: '/creation-association-cultuelle',
+      en: '/establishment-of-religious-association'
+    },
+    '/toutes-autres-recuperations-et-certifications': {
+      fr: '/toutes-autres-recuperations-et-certifications',
+      en: '/all-other-recoveries-and-certifications'
+    },
   }
 });

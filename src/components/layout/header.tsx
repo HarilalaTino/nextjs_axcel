@@ -29,8 +29,10 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'creationSarl', href: '/creation-societe-sarl-sarlu' },
       { label: 'creationNogAndAssociation', href: '/creation-ong-association' },
       { label: 'creationSA&SAU&SCI', href: '/creation-sa-sau-sci' },
+      { label: 'travelAgencyCreation', href: '/creation-agence-de-voyage' },
+      { label: 'wholesaleDesignCreation', href: '/creation-grossiste' },
+      { label: 'religiousCreation', href: '/creation-association-cultuelle' },
       { label: 'creationDomiciliation', href: '/domiciliation' },
-      { label: 'draftingDocument', href: '/redaction-documents-administratifs' }
     ],
   },
   {
@@ -39,7 +41,8 @@ const NAV_ITEMS: NavItem[] = [
     submenu: [
       { label: 'courierDiploma', href: '/recuperation-diplome-releves' },
       { label: 'courierBirthMarriage', href: '/recuperation-traduction-document' },
-      { label: 'certificateOfCommercialization', href: '/certificat-mise-en-commerce' },
+      { label: 'certificateOfMarketabilityAndCommercialization', href: '/certificat-consommabilite-et-mise-en-commerce' },
+      { label: 'AllOtherCertificationRecoveries', href: '/toutes-autres-recuperations-et-certifications' },
     ]
   },
   {

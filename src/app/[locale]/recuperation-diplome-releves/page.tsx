@@ -12,11 +12,8 @@ export const metadata = {
   description: 'Service de coursier pour la récupération de certificats, diplômes et relevés de notes. Axcel Company vous propose un service rapide et fiable pour récupérer vos documents officiels en toute sécurité.',
 };
 
-export default async function CourierService() {
+export default async function CourierDiplomaRetrieval() {
   const diplomaTranscription = await getTranslations("CourierService.courierDiplomaRetrieval");
-  const translationRetrieval = await getTranslations("CourierService.translationRetrieval");
-  const certificateRetrieval = await getTranslations("CourierService.certificateRetrieval");
-  const automobileProcedure = await getTranslations("CourierService.automobileProcedure");
   const nav = await getTranslations("Nav");
 
   return (

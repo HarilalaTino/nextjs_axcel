@@ -30,6 +30,7 @@ export interface Tier {
 }
 
 export type BasicPrice = {
+  title?: string;
   originalPrice: string;
   euroEquivalence: string;
   annotation?: ReactNode
@@ -131,6 +132,7 @@ export default async function CreationPage({
                 <div className="page-creation-price mt-8 rounded-2xl border border-primary/7 bg-white px-4 py-3 shadow-xs sm:inline-block sm:px-7">
                   <div className="flex items-center justify-between gap-4 sm:gap-6">
                     <div>
+                      <span className='text-primary/70'>{basicDisplayPrice.title}</span>
                       <p className="mt-1 text-3xl font-bold flex items-end justify-center gap-2 text-primary sm:text-4xl">
                         {basicDisplayPrice.originalPrice} Ar <span className="text-base font-base"><EqualApproximately /></span>  {basicDisplayPrice.euroEquivalence} €
                       </p>
