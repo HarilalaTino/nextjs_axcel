@@ -43,7 +43,8 @@
     "AllOtherCertificationRecoveries": "Toutes autres récupérations et certifications",
     "legalDdepartment": "Service juridique",
     "draftingContractLeaseServiceProvider": "Rédaction de contrats de travail, de contrats de bail et de contrats de prestation de services",
-    "legalConsulting": "Conseil juridique"
+    "legalConsulting": "Conseil juridique",
+    "dismissalAssistance": "Assistance au procédure de licenciement"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -576,6 +577,13 @@
     "eyebrow": "Conseil juridique",
     "title": "Un accompagnement juridique adapté à votre activité",
     "description": "Nous vous accompagnons dans toutes les problématiques juridiques liées à la création, à la gestion et au développement de votre entreprise à Madagascar.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis"
+  },
+  "dismissalAssistance": {
+    "eyebrow": "Assistance procédure de licenciement",
+    "title": "Sécurisez vos procédures de licenciement",
+    "description": "Nous vous accompagnons dans la conduite de vos procédures de licenciement à Madagascar, du respect des étapes légales jusqu'à la notification, afin de limiter les risques de contestation.",
     "contact": "Nous contacter",
     "quote": "Demander un devis"
   },

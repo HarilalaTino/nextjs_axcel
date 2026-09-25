@@ -107,5 +107,9 @@ export const routing = defineRouting({
       fr: '/conseil-juridique',
       en: '/legal-consulting'
     },
+    '/assistance-procedure-licenciement': {
+      fr: '/assistance-procedure-licenciement',
+      en: '/dismissal-assistance'
+    },
   }
 });

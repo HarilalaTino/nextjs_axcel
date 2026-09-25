@@ -156,6 +156,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/a\\-propos(?:/)?$"
     },
     {
+      "page": "/[locale]/assistance-procedure-licenciement",
+      "regex": "^/([^/]+?)/assistance\\-procedure\\-licenciement(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/assistance\\-procedure\\-licenciement(?:/)?$"
+    },
+    {
       "page": "/[locale]/certificat-consommabilite-et-mise-en-commerce",
       "regex": "^/([^/]+?)/certificat\\-consommabilite\\-et\\-mise\\-en\\-commerce(?:/)?$",
       "routeKeys": {

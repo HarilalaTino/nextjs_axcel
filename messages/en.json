@@ -44,7 +44,8 @@
     "AllOtherCertificationRecoveries": "All other recoveries and certifications",
     "legalDdepartment": "Legal department",
     "draftingContractLeaseServiceProvider": "Drafting of employment contract - lease - service provider",
-    "legalConsulting": "Legal Consulting"
+    "legalConsulting": "Legal Consulting",
+    "dismissalAssistance": "Assistance with the dismissal procedure"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -577,6 +578,13 @@
     "eyebrow": "Legal Consulting",
     "title": "Legal support tailored to your business",
     "description": "We support you on all legal matters related to the creation, management, and growth of your business in Madagascar.",
+    "contact": "Contact us",
+    "quote": "Request a quote"
+  },
+  "dismissalAssistance": {
+    "eyebrow": "Dismissal Procedure Assistance",
+    "title": "Handle your dismissal procedures with confidence",
+    "description": "We support you throughout your dismissal procedures in Madagascar, from following the required legal steps through to notification, helping to reduce the risk of disputes.",
     "contact": "Contact us",
     "quote": "Request a quote"
   },
