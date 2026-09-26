@@ -10,6 +10,7 @@
   --color-secondary: #ff6341;
 }
 
+
 @keyframes fade-up-in {
   0% {
     opacity: 0;
@@ -41,6 +42,10 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.wrap {
+  max-width: 1400px;
 }
 
 .page-creation-section {

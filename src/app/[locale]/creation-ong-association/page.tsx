@@ -8,10 +8,16 @@ import { getTranslations } from "next-intl/server";
 export default async function NgoAssociationCreation() {
     const forProfit = await getTranslations('NgoAssociationCreation.forProfit');
     const nonProfit = await getTranslations('NgoAssociationCreation.nonProfit');
+    const t = await getTranslations("religious");
     const nav = await getTranslations("Nav");
     const basicPrice: BasicPrice = {
         originalPrice: '400 000',
         euroEquivalence: '80'
+    }
+
+    const basicReligiousPrice: BasicPrice = {
+        originalPrice: '2 000 000',
+        euroEquivalence: '400'
     }
     return (
         <>
@@ -51,6 +57,19 @@ export default async function NgoAssociationCreation() {
                     t={nonProfit}
                     basicDisplayPrice={basicPrice}
                     isReverseSection
+                />
+                <CreationPage
+                    creationType="establishment-of-religious-association"
+                    eyebrow={t("eyebrow")}
+                    title={t("title")}
+                    description={
+                        <>
+                            <p>{t("description")}</p>
+                        </>
+                    }
+                    imageSrc="/images/company/travel.jpg"
+                    basicDisplayPrice={basicReligiousPrice}
+                    t={t}
                 />
                 <ElegantCardWrapper />
                 <div

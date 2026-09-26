@@ -135,5 +135,21 @@ export const routing = defineRouting({
       fr: '/formation-ressources-humaines',
       en: '/human-resources-training'
     },
+    '/conseil-en-creation-de-societe': {
+      fr: '/conseil-en-creation-de-societe',
+      en: '/company-creation-advice'
+    },
+    '/assistance-modification-de-societe': {
+      fr: '/assistance-modification-de-societe',
+      en: '/company-modification-assistance'
+    },
+    '/assistance-formalisation-d-entreprise': {
+      fr: '/assistance-formalisation-d-entreprise',
+      en: '/business-formalization-assistance'
+    },
+    '/consultation-strategique-pour-entrepreneurs': {
+      fr: '/consultation-strategique-pour-entrepreneurs',
+      en: '/strategic-consultation-for-entrepreneurs'
+    },
   }
 });

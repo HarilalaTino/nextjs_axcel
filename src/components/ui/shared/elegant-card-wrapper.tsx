@@ -14,7 +14,7 @@ export default async function ElegantCardWrapper() {
   ];
     return (
         <section className="bg-white px-6 py-20">
-          <div className="mx-auto max-w-6xl text-center">
+          <div className="mx-auto max-w-7xl text-center">
             <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
               {creationPages('additionalServices.label')}
             </p>

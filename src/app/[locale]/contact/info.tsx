@@ -99,7 +99,7 @@ export default function InfoContact() {
 
   return (
     <main>
-      <section className="mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-12">
+      <section className="mx-auto wrap px-6 py-20 md:px-12 md:py-12">
         <div className="grid gap-16 lg:grid-cols-[1fr_1.15fr] lg:items-start">
           <div>
             <h1 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
@@ -134,7 +134,7 @@ export default function InfoContact() {
       </section>
 
       <section className="bg-slate-50">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-center gap-10 px-6 py-10 md:flex-row md:items-center md:px-12">
+        <div className="mx-auto flex wrap flex-col items-start justify-center gap-10 px-6 py-10 md:flex-row md:items-center md:px-12">
           <p className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl ">{t('ctaTitle')}</p>
 
           <a

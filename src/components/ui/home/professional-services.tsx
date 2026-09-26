@@ -45,7 +45,7 @@ export default function ProfessionalServices() {
 
     return (
         <section className="bg-slate-50 px-4 py-20 sm:px-6 sm:py-28 lg:px-8 relative overflow-hidden">
-            <div className="mx-auto max-w-6xl">
+            <div className="mx-auto max-w-7xl">
                 <div className="mx-auto mb-12 max-w-2xl text-center">
                     <span className="text-sm font-semibold uppercase tracking-wide text-secondary">
                         {t('servicesLabel')}

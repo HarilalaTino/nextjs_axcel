@@ -33,7 +33,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-auto bg-white text-primary border-t border-slate-200">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
+      <div className="mx-auto grid wrap gap-10 px-6 py-14 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
         <div className="col-span-2 sm:col-span-1">
            <Link href="/" className="shrink-0 text-primary" >
           <span className="text-lg font-semibold tracking-tight">
@@ -112,7 +112,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-slate-200">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <div className="mx-auto flex wrap flex-col gap-2 px-6 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} Axcel Company. {t('rights')}</p>
           <div className="flex gap-4">
             <Link href="/mentions-legales" className="transition-colors hover:text-secondary">

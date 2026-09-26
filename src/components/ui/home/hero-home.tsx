@@ -214,7 +214,7 @@ export default function HeroServices() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent" />
 
                 <div className="absolute block inset-x-0 top-0 z-20 px-6 pt-8 sm:pt-14 md:hidden lg:px-8 lg:pt-20">
-                    <div className="mx-auto max-w-6xl">
+                    <div className="mx-auto max-w-7xl">
                         <div className="max-w-2xl">
                             <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
                                 {t('heroTitle')}
@@ -237,7 +237,7 @@ export default function HeroServices() {
 
                 <div className="hidden md:block absolute inset-0 items-center px-6 md:flex lg:px-8">
 
-                    <div className="mx-auto grid max-w-6xl grid-cols-2 gap-5 lg:grid-cols-3">
+                    <div className="mx-auto grid max-w-7xl grid-cols-2 gap-5 lg:grid-cols-3">
                         {SERVICES.map((service, index) => (
                             <AnimatedHeroCard key={service.titleKey} service={service} index={index} />
                         ))}

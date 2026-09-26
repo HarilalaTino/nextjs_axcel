@@ -56,6 +56,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/[locale]/assistance-formalisation-d-entreprise/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/assistance-formalisation-d-entreprise">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/assistance-formalisation-d-entreprise/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/[locale]/assistance-modification-de-societe/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/assistance-modification-de-societe">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/assistance-modification-de-societe/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/[locale]/assistance-procedure-licenciement/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/[locale]/assistance-procedure-licenciement">> = Specific
@@ -83,10 +101,28 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/[locale]/conseil-en-creation-de-societe/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/conseil-en-creation-de-societe">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/conseil-en-creation-de-societe/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/[locale]/conseil-juridique/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/[locale]/conseil-juridique">> = Specific
   const handler = {} as typeof import("../../src/app/[locale]/conseil-juridique/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/[locale]/consultation-strategique-pour-entrepreneurs/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/consultation-strategique-pour-entrepreneurs">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/consultation-strategique-pour-entrepreneurs/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

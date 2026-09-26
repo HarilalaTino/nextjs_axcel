@@ -78,7 +78,7 @@ export default async function CreationPage({
   return (
     <>
       <section className="page-creation-section px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-2 sm:px-4 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
+        <div className="mx-auto flex wrap flex-col gap-8 px-2 sm:px-4 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
           <div className={`${contentClassName} w-full flex-1 ${isReverseSection ? 'lg:order-2' : ''}`}>
             <p className="text-sm font-semibold uppercase tracking-wide text-secondary">{eyebrow}</p>
             <h2 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">

@@ -42,15 +42,20 @@
     "religiousCreation": "Creation association cultuelle",
     "AllOtherCertificationRecoveries": "Toutes autres récupérations et certifications",
     "legalDdepartment": "Service juridique",
-    "draftingContractLeaseServiceProvider": "Rédaction de contrats de travail, de contrats de bail et de contrats de prestation de services",
+    "draftingContractLeaseServiceProvider": "Rédaction de contrats de travail, contrats de bail et contrats de prestation de services",
     "legalConsulting": "Conseil juridique",
     "dismissalAssistance": "Assistance au procédure de licenciement",
-    "rightofWork": "Etablissement reglement intérieur, affiliation CNAPS / OSTIE, declaration IRSA",
+    "rightofWork": "Établissement du règlement intérieur, affiliation à la CNAPS / OSTIE, déclaration IRSA",
     "roomRental": "Location de salle",
     "officeRoomRental": "Salle de bureau",
     "meetingRoom": "Salle de réunion",
     "trainingRoomRental": "Salle de formation",
-    "hrTraining": "Formation ressources humaines"
+    "hrTraining": "Formation ressources humaines",
+    "more": "Plus",
+    "companyCreationConsulting": "Conseil en création de société",
+    "companyModificationAssistance": "Assistance à la modification de société",
+    "businessFormalizationAssistance": "Assistance en formalisation d'entreprise",
+    "strategicConsultingForEntrepreneurs": "Consultation stratégique pour entrepreneurs"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -69,8 +74,8 @@
     "partnersTitle": "Nos partenaires",
     "services": {
       "individual": { "title": "Création d'entreprise individuelle", "description": "Lancez votre activité en solo avec un statut simple et rapide à mettre en place." },
-      "sarl": { "title": "Création société SARL - SARLU", "description": "Structurez votre société à plusieurs associés avec une responsabilité limitée." },
-      "association": { "title": "Création ONG et association", "description": "Structurez votre projet associatif ou humanitaire avec un statut adapté à votre mission." },
+      "sarl": { "title": "Création société SARL - SARLU - SA - SAU - SCI", "description": "Structurez votre société à plusieurs associés avec une responsabilité limitée." },
+      "association": { "title": "Création ONG, association et association cultuelle", "description": "Structurez votre projet associatif ou humanitaire avec un statut adapté à votre mission." },
       "domiciliation": { "title": "Domiciliation", "description": "Domiciliez votre siège social à une adresse professionnelle reconnue." },
       "meetingRoom": { "title": "Location de salle de réunion", "description": "Réservez une salle équipée pour vos réunions et rendez-vous professionnels." },
       "recruitment": { "title": "Recrutement", "description": "Trouvez les bons profils et simplifiez votre recrutement avec un accompagnement adapté à votre besoin." },
@@ -642,6 +647,36 @@
       "eyebrow": "Formation en Ressources Humaines",
       "title": "Renforcez les compétences RH de vos équipes",
       "description": "Nous proposons des formations pratiques en gestion des ressources humaines adaptées au contexte malgache, couvrant le droit du travail, la gestion de la paie, le recrutement ou la gestion des relations sociales, pour permettre à vos équipes RH de gagner en autonomie et en conformité.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    }
+  },
+  "adviceAndAssistance": {
+    "companyCreationConsulting": {
+      "eyebrow": "Conseil en création de société",
+      "title": "Le bon choix de structure dès le départ",
+      "description": "Nous vous conseillons sur la forme juridique la plus adaptée à votre projet (SARL, SA, SAU, SCI, ONG...), en tenant compte de votre activité, de votre besoin de financement et de vos objectifs à long terme, afin de démarrer votre entreprise à Madagascar sur des bases solides et conformes à la réglementation en vigueur.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "companyModificationAssistance": {
+      "eyebrow": "Assistance à la modification de société",
+      "title": "Faites évoluer votre société en toute conformité",
+      "description": "Nous vous accompagnons dans toutes les démarches liées à la modification de votre société à Madagascar : changement de gérant ou de dirigeant, transfert de siège social, augmentation ou réduction de capital, cession de parts ou d'actions, modification de l'objet social ou de la forme juridique, jusqu'à la mise à jour de vos statuts et de votre immatriculation auprès de l'EDBM.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "businessFormalizationAssistance": {
+      "eyebrow": "Assistance en formalisation d'entreprise",
+      "title": "Passez du secteur informel à une activité reconnue et sécurisée",
+      "description": "Nous accompagnons les entrepreneurs individuels et les activités informelles dans leur transition vers une structure formelle à Madagascar : choix du statut adapté (entreprise individuelle ou société), immatriculation auprès de l'EDBM, obtention du NIF et du STAT, ouverture d'un compte bancaire professionnel, afin de sécuriser votre activité et de vous ouvrir l'accès aux financements, marchés publics et partenariats formels.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "strategicConsultingForEntrepreneurs": {
+      "eyebrow": "Consultation stratégique pour entrepreneurs",
+      "title": "Un regard extérieur pour clarifier vos décisions clés",
+      "description": "Nous accompagnons les entrepreneurs et dirigeants d'entreprise à Madagascar dans la réflexion et la structuration de leurs décisions stratégiques : positionnement, développement d'activité, choix d'organisation, recherche de financement ou gestion de la croissance, afin de vous aider à prendre des décisions éclairées et adaptées à la réalité de votre marché.",
       "contact": "Nous contacter",
       "quote": "Demander un devis"
     }

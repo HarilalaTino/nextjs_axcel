@@ -57,7 +57,7 @@ export default function ServicesSection() {
 
     return (
         <section className="w-full bg-white px-4">
-            <div className="mx-auto max-w-6xl">
+            <div className="mx-auto max-w-7xl">
                 <div className="mt-8">
                     {progressItems.map((item) => (
                         <ProgressBar key={item.label} {...item} />

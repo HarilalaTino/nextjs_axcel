@@ -64,7 +64,7 @@ export default function TeamSection() {
   const t = useTranslations('About.teamSection');
   return (
     <section className="w-full bg-white px-6 py-16">
-      <div className="mx-auto max-w-6xl text-center">
+      <div className="mx-auto max-w-7xl text-center">
         <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-500">
            {t('eyebrow')}
         </p>

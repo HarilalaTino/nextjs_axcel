@@ -51,7 +51,12 @@
     "officeRoomRental": "Office room",
     "meetingRoom": "Meeting room",
     "trainingRoomRental": "Training room",
-    "hrTraining": "Human resources training"
+    "hrTraining": "Human resources training",
+    "more": "More",
+    "companyCreationConsulting": "Company creation advice",
+    "companyModificationAssistance": "Assistance with company modification",
+    "businessFormalizationAssistance": "Assistance in business formalization",
+    "strategicConsultingForEntrepreneurs": "Strategic consultation for entrepreneurs"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -70,8 +75,8 @@
     "partnersTitle": "Our partners",
     "services": {
       "individual": { "title": "Sole proprietorship creation", "description": "Launch your solo business with a simple status that is quick to set up." },
-      "sarl": { "title": "SARL - SARLU company creation", "description": "Structure your company with several partners and limited liability." },
-      "association": { "title": "NGO and association creation", "description": "Structure your community or humanitarian project with a status suited to your mission." },
+      "sarl": { "title": "SARL - SARLU - SA - SAU - SCI company creation", "description": "Structure your company with several partners and limited liability." },
+      "association": { "title": "NGO, association and cultural association creation", "description": "Structure your community or humanitarian project with a status suited to your mission." },
       "domiciliation": { "title": "Business domiciliation", "description": "Register your head office at a recognized professional address." },
       "meetingRoom": { "title": "Meeting room rental", "description": "Book an equipped room for your meetings and professional appointments." },
       "recruitment": { "title": "Recruitment", "description": "Find the right talent and simplify your hiring process with personalized support." },
@@ -642,6 +647,37 @@
       "eyebrow": "Human Resources Training",
       "title": "Strengthen your teams' HR skills",
       "description": "We offer practical human resources management training tailored to the Malagasy context, covering labor law, payroll management, recruitment, and employee relations, helping your HR teams gain greater autonomy and stay compliant.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    }
+  },
+
+  "adviceAndAssistance": {
+    "companyCreationConsulting": {
+      "eyebrow": "Company Creation Consulting",
+      "title": "The right structure from the very start",
+      "description": "We advise you on the legal structure best suited to your project (SARL, SA, SAU, SCI, NGO, etc.), taking into account your activity, funding needs, and long-term goals, so you can launch your business in Madagascar on solid ground and in full compliance with current regulations.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
+    "companyModificationAssistance": {
+      "eyebrow": "Company Amendment Assistance",
+      "title": "Evolve your company while staying fully compliant",
+      "description": "We support you through all procedures related to amending your company in Madagascar: change of manager or director, transfer of registered office, increase or decrease of share capital, transfer of shares, change of corporate purpose or legal form, through to updating your articles of association and your registration with the EDBM.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
+    "businessFormalizationAssistance": {
+      "eyebrow": "Business Formalization Assistance",
+      "title": "Move from informal activity to a recognized, secure business",
+      "description": "We support individual entrepreneurs and informal businesses in transitioning to a formal structure in Madagascar: choosing the right status (sole proprietorship or company), registration with the EDBM, obtaining your NIF and STAT numbers, and opening a business bank account, so you can secure your activity and gain access to financing, public contracts, and formal partnerships.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
+    "strategicConsultingForEntrepreneurs": {
+      "eyebrow": "Strategic Consulting for Entrepreneurs",
+      "title": "An outside perspective to clarify your key decisions",
+      "description": "We support entrepreneurs and business owners in Madagascar in shaping and structuring their strategic decisions: positioning, business development, organizational choices, fundraising, or growth management, helping you make informed decisions suited to the realities of your market.",
       "contact": "Contact us",
       "quote": "Request a quote"
     }

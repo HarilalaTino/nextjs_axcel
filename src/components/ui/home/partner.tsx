@@ -29,7 +29,7 @@ export default function Partner() {
 
   return (
     <section className="bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto wrap px-6">
 
         {/* Header */}
         <div className="mb-12">

@@ -5,7 +5,7 @@ export default function TopMenu() {
     return (
         <div className="bg-primary w-full text-white">
             {/* Desktop version */}
-            <ul className="hidden md:flex mx-auto max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
+            <ul className="hidden md:flex mx-auto wrap items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
                 <li className="flex gap-1 items-center"><MapPin size={16} /> <small>{COMPANY_ADDRESS}</small></li>
                 <ul className="flex gap-4 items-center">
                     <li className="flex gap-1 items-center"><Phone size={16} /><a href={`tel:${PRIMARY_PHONE_NUMBER}`}><small>{PRIMARY_PHONE_NUMBER}</small></a> <a href={`tel:${SECONDARY_PHONE_NUMBER}`}><small> / {SECONDARY_PHONE_NUMBER}</small></a></li>

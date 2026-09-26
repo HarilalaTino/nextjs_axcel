@@ -156,6 +156,22 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/a\\-propos(?:/)?$"
     },
     {
+      "page": "/[locale]/assistance-formalisation-d-entreprise",
+      "regex": "^/([^/]+?)/assistance\\-formalisation\\-d\\-entreprise(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/assistance\\-formalisation\\-d\\-entreprise(?:/)?$"
+    },
+    {
+      "page": "/[locale]/assistance-modification-de-societe",
+      "regex": "^/([^/]+?)/assistance\\-modification\\-de\\-societe(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/assistance\\-modification\\-de\\-societe(?:/)?$"
+    },
+    {
       "page": "/[locale]/assistance-procedure-licenciement",
       "regex": "^/([^/]+?)/assistance\\-procedure\\-licenciement(?:/)?$",
       "routeKeys": {
@@ -180,12 +196,28 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/conseil\\-assistance(?:/)?$"
     },
     {
+      "page": "/[locale]/conseil-en-creation-de-societe",
+      "regex": "^/([^/]+?)/conseil\\-en\\-creation\\-de\\-societe(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/conseil\\-en\\-creation\\-de\\-societe(?:/)?$"
+    },
+    {
       "page": "/[locale]/conseil-juridique",
       "regex": "^/([^/]+?)/conseil\\-juridique(?:/)?$",
       "routeKeys": {
         "nxtPlocale": "nxtPlocale"
       },
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/conseil\\-juridique(?:/)?$"
+    },
+    {
+      "page": "/[locale]/consultation-strategique-pour-entrepreneurs",
+      "regex": "^/([^/]+?)/consultation\\-strategique\\-pour\\-entrepreneurs(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/consultation\\-strategique\\-pour\\-entrepreneurs(?:/)?$"
     },
     {
       "page": "/[locale]/contact",
