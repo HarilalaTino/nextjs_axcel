@@ -45,7 +45,12 @@
     "draftingContractLeaseServiceProvider": "Rédaction de contrats de travail, de contrats de bail et de contrats de prestation de services",
     "legalConsulting": "Conseil juridique",
     "dismissalAssistance": "Assistance au procédure de licenciement",
-    "rightofWork": "Etablissement reglement intérieur, affiliation CNAPS / OSTIE, declaration IRSA"
+    "rightofWork": "Etablissement reglement intérieur, affiliation CNAPS / OSTIE, declaration IRSA",
+    "roomRental": "Location de salle",
+    "officeRoomRental": "Salle de bureau",
+    "meetingRoom": "Salle de réunion",
+    "trainingRoomRental": "Salle de formation",
+    "hrTraining": "Formation ressources humaines"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -610,6 +615,36 @@
         "contact": "Nous contacter",
         "quote": "Demander un devis"
       }
+  },
+  "roomRental": {
+    "officeRoomRental": {
+      "eyebrow": "Location de salle de bureau",
+      "title": "Des espaces de travail prêts à l'emploi, sans engagement lourd",
+      "description": "Nous mettons à votre disposition des salles de bureau et espaces de réunion équipés à Madagascar, pour vos besoins ponctuels ou réguliers : réunions d'équipe, entretiens, formations ou domiciliation temporaire, sans les contraintes d'un bail classique.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "meetingRoomRental": {
+      "eyebrow": "Location de salle de réunion",
+      "title": "Un cadre professionnel pour vos réunions et présentations",
+      "description": "Nous mettons à votre disposition des salles de réunion équipées à Madagascar, adaptées à vos rencontres professionnelles, entretiens, présentations ou ateliers, avec un accès flexible à l'heure, à la demi-journée ou à la journée selon vos besoins.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "trainingRoomRental": {
+      "eyebrow": "Location de salle de formation",
+      "title": "Un espace fonctionnel pour vos sessions de formation",
+      "description": "Nous mettons à votre disposition des salles de formation équipées à Madagascar, adaptées à vos séminaires, ateliers ou sessions de renforcement de compétences, avec une configuration flexible et un accès à l'heure, à la demi-journée ou à la journée selon la durée de votre formation.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    },
+    "hrTraining": {
+      "eyebrow": "Formation en Ressources Humaines",
+      "title": "Renforcez les compétences RH de vos équipes",
+      "description": "Nous proposons des formations pratiques en gestion des ressources humaines adaptées au contexte malgache, couvrant le droit du travail, la gestion de la paie, le recrutement ou la gestion des relations sociales, pour permettre à vos équipes RH de gagner en autonomie et en conformité.",
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
+    }
   },
   "QuotePage": {
     "eyebrow": "Demande de devis",

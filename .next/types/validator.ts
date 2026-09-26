@@ -191,6 +191,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/[locale]/formation-ressources-humaines/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/formation-ressources-humaines">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/formation-ressources-humaines/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/[locale]/location-salle-reunion/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/[locale]/location-salle-reunion">> = Specific
@@ -249,6 +258,33 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/[locale]/redaction-contrat-travail-bail-prestation">> = Specific
   const handler = {} as typeof import("../../src/app/[locale]/redaction-contrat-travail-bail-prestation/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/[locale]/salle-de-bureau/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/salle-de-bureau">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/salle-de-bureau/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/[locale]/salle-de-formation/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/salle-de-formation">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/salle-de-formation/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/[locale]/salle-de-reunion/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[locale]/salle-de-reunion">> = Specific
+  const handler = {} as typeof import("../../src/app/[locale]/salle-de-reunion/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

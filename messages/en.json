@@ -46,7 +46,12 @@
     "draftingContractLeaseServiceProvider": "Drafting of employment contract - lease - service provider",
     "legalConsulting": "Legal Consulting",
     "dismissalAssistance": "Assistance with the dismissal procedure",
-    "rightofWork": "Establishment of internal regulations, CNAPS / OSTIE affiliation, IRSA declaration"
+    "rightofWork": "Establishment of internal regulations, CNAPS / OSTIE affiliation, IRSA declaration",
+    "roomRental": "Room rental",
+    "officeRoomRental": "Office room",
+    "meetingRoom": "Meeting room",
+    "trainingRoomRental": "Training room",
+    "hrTraining": "Human resources training"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -609,7 +614,39 @@
       "description": "We handle the calculation, withholding, and monthly declaration of the Income Tax on Salaries and Related Income (IRSA) for your employees, along with your annual summary filings, ensuring your tax compliance and helping you avoid late payment penalties.",
       "contact": "Contact us",
       "quote": "Request a quote"
+  },
+ 
+  "roomRental": {
+    "officeRoomRental": {
+      "eyebrow": "Office Room Rental",
+      "title": "Ready-to-use workspaces, without long-term commitment",
+      "description": "We provide fully equipped office rooms and meeting spaces in Madagascar for your occasional or recurring needs: team meetings, interviews, training sessions, or temporary business domiciliation, without the constraints of a traditional lease.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
     },
+    "meetingRoomRental": {
+      "eyebrow": "Meeting Room Rental",
+      "title": "A professional setting for your meetings and presentations",
+      "description": "We provide fully equipped meeting rooms in Madagascar, suited to your business meetings, interviews, presentations, or workshops, with flexible access by the hour, half-day, or full day depending on your needs.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
+    "trainingRoomRental": {
+      "eyebrow": "Training Room Rental",
+      "title": "A functional space for your training sessions",
+      "description": "We provide fully equipped training rooms in Madagascar, suited to your seminars, workshops, or skills development sessions, with flexible seating configurations and access by the hour, half-day, or full day depending on the length of your training.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    },
+    "hrTraining": {
+      "eyebrow": "Human Resources Training",
+      "title": "Strengthen your teams' HR skills",
+      "description": "We offer practical human resources management training tailored to the Malagasy context, covering labor law, payroll management, recruitment, and employee relations, helping your HR teams gain greater autonomy and stay compliant.",
+      "contact": "Contact us",
+      "quote": "Request a quote"
+    }
+  },
+
   "QuotePage": {
     "eyebrow": "Request a quote",
     "title": "Choose your origin then describe your need",

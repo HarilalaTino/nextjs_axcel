@@ -59,6 +59,16 @@ const NAV_ITEMS: NavItem[] = [
     minWidth: 'min-w-96'
   },
   {
+    label: 'roomRental',
+    href: '/location-salle',
+    submenu: [
+      { label: 'officeRoomRental', href: '/salle-de-bureau' },
+      { label: 'meetingRoom', href: '/salle-de-reunion' },
+      { label: 'trainingRoomRental', href: '/salle-de-formation' },
+      { label: 'hrTraining', href: '/formation-ressources-humaines' },
+    ]
+  },
+  {
     label: 'adviceAndAssistance',
     href: '/conseil-assistance'
   },

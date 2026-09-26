@@ -115,5 +115,25 @@ export const routing = defineRouting({
       fr: '/droit-du-travail',
       en: '/labor-law'
     },
+    '/location-salle': {
+      fr: '/location-salle',
+      en: '/room-rental'
+    },
+    '/salle-de-bureau': {
+      fr: '/salle-de-bureau',
+      en: '/office-room-rental'
+    },
+    '/salle-de-reunion': {
+      fr: '/salle-de-reunion',
+      en: '/meeting-room'
+    },
+    '/salle-de-formation': {
+      fr: '/salle-de-formation',
+      en: '/training-room'
+    },
+    '/formation-ressources-humaines': {
+      fr: '/formation-ressources-humaines',
+      en: '/human-resources-training'
+    },
   }
 });

@@ -276,6 +276,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/droit\\-du\\-travail(?:/)?$"
     },
     {
+      "page": "/[locale]/formation-ressources-humaines",
+      "regex": "^/([^/]+?)/formation\\-ressources\\-humaines(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/formation\\-ressources\\-humaines(?:/)?$"
+    },
+    {
       "page": "/[locale]/location-salle-reunion",
       "regex": "^/([^/]+?)/location\\-salle\\-reunion(?:/)?$",
       "routeKeys": {
@@ -322,6 +330,30 @@
         "nxtPlocale": "nxtPlocale"
       },
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/redaction\\-contrat\\-travail\\-bail\\-prestation(?:/)?$"
+    },
+    {
+      "page": "/[locale]/salle-de-bureau",
+      "regex": "^/([^/]+?)/salle\\-de\\-bureau(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/salle\\-de\\-bureau(?:/)?$"
+    },
+    {
+      "page": "/[locale]/salle-de-formation",
+      "regex": "^/([^/]+?)/salle\\-de\\-formation(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/salle\\-de\\-formation(?:/)?$"
+    },
+    {
+      "page": "/[locale]/salle-de-reunion",
+      "regex": "^/([^/]+?)/salle\\-de\\-reunion(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/salle\\-de\\-reunion(?:/)?$"
     },
     {
       "page": "/[locale]/toutes-autres-recuperations-et-certifications",
