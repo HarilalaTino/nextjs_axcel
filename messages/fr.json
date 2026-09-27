@@ -234,7 +234,9 @@
         "closure": { "title": "Cessation d'activité", "description": "Pour les entreprises souhaitant procéder à l'arrêt de l'activité économique." },
         "letter": { "title": "Rédaction lettre administrative", "description": "Nous rédigeons des lettres administratives telles que demande d'agrément, permis de construire." },
         "requests": { "title": "Diverses demandes", "description": "Nous traitons tous types de demandes (Agrément, autorisation ministérielle...)." }
-      }
+      },
+      "contact": "Nous contacter",
+      "quote": "Demander un devis"
     }
   },
   "CreationIndividual": {

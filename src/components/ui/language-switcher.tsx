@@ -3,6 +3,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useLocale } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { ChevronIcon } from '../layout/header';
@@ -29,6 +30,7 @@ export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -43,7 +45,12 @@ export default function LanguageSwitcher() {
   }, []);
 
   const handleChange = (nextLocale: string) => {
-    router.replace(pathname, { locale: nextLocale });
+    const href = {
+      pathname,
+      query: Object.fromEntries(searchParams.entries()),
+    } as Parameters<typeof router.replace>[0];
+
+    router.replace(href, { locale: nextLocale });
     setIsOpen(false);
   };
 

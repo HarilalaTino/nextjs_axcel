@@ -43,6 +43,10 @@ export const routing = defineRouting({
       fr: '/conseil-assistance',
       en: '/advice-assistance'
     },
+    '/gamme-de-services': {
+      fr: '/gamme-de-services',
+      en: '/range-of-service'
+    },
     '/service-coursier': {
       fr: '/service-coursier',
       en: '/courier-services'

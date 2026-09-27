@@ -316,6 +316,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/formation\\-ressources\\-humaines(?:/)?$"
     },
     {
+      "page": "/[locale]/gamme-de-services",
+      "regex": "^/([^/]+?)/gamme\\-de\\-services(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/gamme\\-de\\-services(?:/)?$"
+    },
+    {
       "page": "/[locale]/location-salle-reunion",
       "regex": "^/([^/]+?)/location\\-salle\\-reunion(?:/)?$",
       "routeKeys": {

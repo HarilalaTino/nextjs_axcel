@@ -235,7 +235,9 @@
         "closure": { "title": "Business closure", "description": "For businesses wishing to cease their economic activity." },
         "letter": { "title": "Administrative letter drafting", "description": "We draft administrative letters, such as approval requests and building permit applications." },
         "requests": { "title": "Various requests", "description": "We handle all types of requests, including approvals and ministerial authorizations." }
-      }
+      },
+      "contact": "Contact us", 
+      "quote": "Request a quote"
     }
   },
   "CreationIndividual": {
