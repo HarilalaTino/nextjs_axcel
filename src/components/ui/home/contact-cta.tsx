@@ -7,7 +7,7 @@ export default function ContactCTA() {
   const t = useTranslations('Home');
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-primary via-primary to-[#14315c] px-6 py-20 text-center">
+    <section className="relative overflow-hidden w-7xl mt-16 md:mt-20 rounded-[2rem] mx-auto bg-gradient-to-r from-primary via-primary to-[#14315c] px-6 py-20 text-center">
       <span className="text-3xl font-bold text-white sm:text-4xl">
         {t('contact.title')}
       </span>

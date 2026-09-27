@@ -88,7 +88,7 @@ export default function TrustedCompanies() {
   );
 
   return (
-    <section className="bg-[#f5f3ef] py-16 md:py-20">
+    <section className="bg-slate-100 py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Heading */}

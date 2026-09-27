@@ -10,7 +10,7 @@ import {
     MapPin,
     Headset,
     HeartHandshake,
-    Landmark,
+    Scale,
 } from 'lucide-react';
 import { AppPathname, Link } from '@/i18n/navigation';
 
@@ -76,11 +76,11 @@ export const SERVICES: ServiceCard[] = [
         icon: <MapPin size={20} />
     },
     {
-        titleKey: 'meetingRoom.title',
-        descriptionKey: 'meetingRoom.description',
-        ctaKey: 'book',
-        href: '/location-salle-reunion',
-        icon: <Landmark size={20} />
+        titleKey: 'legalDepartment.title',
+        descriptionKey: 'legalDepartment.description',
+        ctaKey: 'legale',
+        href: '/conseil-juridique',
+        icon: <Scale size={20} />
     },
     {
         titleKey: 'recruitment.title',

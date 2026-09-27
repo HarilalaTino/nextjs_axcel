@@ -20,8 +20,8 @@ export default function Home() {
     <WhyChooseUs />
     <Testimonials />
     <TrustedCompanies />
-    <Partner />
     <ContactCTA />
+    <Partner />
     </>
   );
 }

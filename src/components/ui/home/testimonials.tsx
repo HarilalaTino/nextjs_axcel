@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ChevronDown, Quote } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const BRAND = "#152039";
 
@@ -163,6 +164,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
 export default function Testimonials() {
   const [expanded, setExpanded] = useState(false);
+  const t = useTranslations('Home');
   const visibleTestimonials = expanded ? testimonials : testimonials.slice(0, 3);
 
   return (
@@ -170,7 +172,7 @@ export default function Testimonials() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <h2 className="text-center text-3xl font-extrabold text-primary md:text-4xl" style={{ color: BRAND }}>
-            Témoignages des clients
+            {t('testimonialsTitle')}
           </h2>
         </div>
 
@@ -188,7 +190,7 @@ export default function Testimonials() {
               className="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-primary shadow-sm transition-all duration-300 hover:border-secondary hover:text-secondary hover:shadow-md"
               aria-expanded={expanded}
             >
-              <span>{expanded ? "Afficher moins" : "Afficher plus"}</span>
+              <span>{expanded ? t('showLess') : t('showMore')}</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-300 ${expanded ? "rotate-180" : "rotate-0"}`}
                 strokeWidth={2.5}

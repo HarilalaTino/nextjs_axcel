@@ -1,5 +1,4 @@
 import NavMenu from "@/components/layout/header";
-import ContactCTA from "@/components/ui/home/contact-cta";
 import TopMenu from "@/components/ui/home/top-menu";
 import CreationPage from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
@@ -78,13 +77,11 @@ const rangeServiceDetails: Record<
 };
 
 export default async function RangeOfServicePage({
-  params,
   searchParams,
 }: {
   params: Promise<{ locale: string }>;
   searchParams?: Promise<{ service?: string | string[] }>;
 }) {
-  const { locale } = await params;
   const query = (await searchParams) ?? {};
   const selectedService = Array.isArray(query.service)
     ? query.service[0]
@@ -140,7 +137,6 @@ export default async function RangeOfServicePage({
       </div>
 
       <ElegantCardWrapper excludedSlug={selectedService} />
-      <ContactCTA />
     </>
   );
 }

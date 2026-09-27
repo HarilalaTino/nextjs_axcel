@@ -1,5 +1,4 @@
 import NavMenu from "@/components/layout/header";
-import ContactCTA from "@/components/ui/home/contact-cta";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
 import CreationPage from "@/components/ui/shared/page-creation";
@@ -35,8 +34,6 @@ export default async function CompanyModificationAssistance() {
                     aria-hidden="true"
                 />
             </div>
-            <ContactCTA />
-
         </>
     )
 }

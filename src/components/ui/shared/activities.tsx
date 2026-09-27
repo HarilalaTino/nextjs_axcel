@@ -6,6 +6,7 @@ import {
     FileText,
     Handshake,
     Landmark,
+    MessageCircle,
     type LucideIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -73,8 +74,7 @@ export default function Activities() {
                                 className="flex h-full min-h-[260px] flex-col rounded-2xl p-6"
                                 style={{ backgroundColor: `${BRAND}0D` }}
                             >
-                                <Link
-                                    href={category.href}
+                                <div
                                     className="mb-5 flex items-center gap-2 transition-opacity hover:opacity-90"
                                 >
                                     <Icon className="h-5 w-5" style={{ color: BRAND }} strokeWidth={2} />
@@ -84,7 +84,7 @@ export default function Activities() {
                                     >
                                         {category.title}
                                     </h3>
-                                </Link>
+                                </div>
 
                                 <div className="flex flex-1 flex-wrap content-start gap-2">
                                     {category.tags.map((tag) => (
@@ -100,6 +100,30 @@ export default function Activities() {
                             </div>
                         );
                     })}
+
+                    <div
+                        className="flex h-full min-h-[260px] flex-col rounded-2xl p-6"
+                        style={{ backgroundColor: `${BRAND}0D` }}
+                    >
+                        <Link
+                            href="/contact"
+                            className="mb-5 flex items-center gap-2 transition-opacity hover:opacity-90"
+                        >
+                            <MessageCircle className="h-5 w-5" style={{ color: BRAND }} strokeWidth={2} />
+                            <h3
+                                className="text-sm font-semibold tracking-wide"
+                                style={{ color: BRAND }}
+                            >
+                                {navT('contact')}
+                            </h3>
+                        </Link>
+
+                        <div className="flex flex-1 items-center">
+                            <p className="text-sm leading-relaxed text-slate-600">
+                                {homeT('contactCardText')} <Link href={"/contact"} className="text-secondary underline">{navT('contact')}</Link>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

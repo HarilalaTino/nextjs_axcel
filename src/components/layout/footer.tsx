@@ -32,21 +32,21 @@ export default function Footer() {
   const t = useTranslations('Footer');
 
   return (
-    <footer className="mt-auto bg-white text-primary border-t border-slate-200">
+    <footer className="mt-auto bg-gradient-to-r from-[#0a1a2f] via-[#0e2340] to-[#14315c] text-white">
       <div className="mx-auto grid wrap gap-10 px-6 py-14 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
         <div className="col-span-2 sm:col-span-1">
-           <Link href="/" className="shrink-0 text-primary" >
+           <Link href="/" className="shrink-0 text-white" >
           <span className="text-lg font-semibold tracking-tight">
              <Image src="/logo.png" alt="axcel" width={50} height={50} />
           </span>
         </Link>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-500">
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-200">
             {t('description')}
           </p>
         </div>
 
         <div>
-          <h2 className="text-sm font-bold uppercase tracking-wide text-primary">
+          <h2 className="text-sm font-bold uppercase tracking-wide text-white">
             {t('navigation')}
           </h2>
           <nav className="mt-4 flex flex-col items-start gap-3" aria-label={t('secondaryNavigation')}>
@@ -54,7 +54,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-slate-500 transition-colors hover:text-secondary"
+                className="text-sm text-slate-200 transition-colors hover:text-secondary"
               >
                 {t(`links.${link.label}`)}
               </Link>
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         <div  className='col-span-2'>
-          <h2 className="text-sm font-bold uppercase tracking-wide text-primary">
+          <h2 className="text-sm font-bold uppercase tracking-wide text-white">
             {t('services')}
           </h2>
           <div className="mt-4 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
@@ -73,7 +73,7 @@ export default function Footer() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm text-slate-500 transition-colors hover:text-secondary"
+                    className="text-sm text-slate-200 transition-colors hover:text-secondary"
                   >
                     {t(link.label)}
                   </Link>
@@ -84,12 +84,12 @@ export default function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-bold uppercase tracking-wide text-primary">
+          <h2 className="text-sm font-bold uppercase tracking-wide text-white">
             {t('contact')}
           </h2>
-          <div className="mt-4 space-y-3 text-sm text-slate-500">
-            <div className="group flex items-start gap-3 text-slate-500 transition-colors hover:text-secondary">
-              <Phone size={17} className="mt-0.5 shrink-0 transition-colors group-hover:text-secondary" />
+          <div className="mt-4 space-y-3 text-sm text-slate-200">
+            <div className="group flex items-start gap-3 text-slate-200 transition-colors hover:text-secondary">
+              <Phone size={17} className="mt-0.5 shrink-0 text-white transition-colors" />
               <span>
                 <a className="hover:text-secondary" href={`tel:${PRIMARY_PHONE_NUMBER}`}>
                   {PRIMARY_PHONE_NUMBER}
@@ -99,20 +99,20 @@ export default function Footer() {
                 </a>
               </span>
             </div>
-            <a href="mailto:contact@axcel.mg" className="flex items-start gap-3 transition-colors hover:text-secondary">
-              <Mail size={17} className="mt-0.5 shrink-0" />
+            <a href="mailto:contact@axcel.mg" className="flex items-start gap-3 text-slate-200 transition-colors hover:text-secondary">
+              <Mail size={17} className="mt-0.5 shrink-0 text-white" />
               <span>{EMAIL_ADDRESS}</span>
             </a>
-            <span className="flex items-start gap-3">
-              <MapPin size={17} className="mt-0.5 shrink-0" />
+            <span className="flex items-start gap-3 text-slate-200">
+              <MapPin size={17} className="mt-0.5 shrink-0 text-white" />
               <span>{COMPANY_ADDRESS}</span>
             </span>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-slate-200">
-        <div className="mx-auto flex wrap flex-col gap-2 px-6 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex wrap flex-col gap-2 px-6 py-5 text-xs text-slate-300 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} Axcel Company. {t('rights')}</p>
           <div className="flex gap-4">
             <Link href="/mentions-legales" className="transition-colors hover:text-secondary">
