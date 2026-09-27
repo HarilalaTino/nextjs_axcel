@@ -1,7 +1,7 @@
-// carousel-trigger.tsx
 'use client'
 import { useCallback, useEffect, useState, type ReactNode } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 type CarouselWithTriggerProps = {
   slides: React.ReactNode[]
@@ -61,7 +61,7 @@ export default function CarouselWithTrigger({ slides }: CarouselWithTriggerProps
                 aria-label="Précédent"
                 className="absolute left-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/90 shadow disabled:opacity-30 disabled:cursor-not-allowed"
             >
-                ←
+                <ChevronLeft />
             </button>
             <button
                 onClick={scrollNext}
@@ -69,7 +69,7 @@ export default function CarouselWithTrigger({ slides }: CarouselWithTriggerProps
                 aria-label="Suivant"
                 className="absolute right-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/90 shadow disabled:opacity-30 disabled:cursor-not-allowed"
             >
-                →
+                <ChevronRight />
             </button>
         </div>
     )
