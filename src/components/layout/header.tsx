@@ -20,7 +20,7 @@ type NavItem = {
   minWidth?: string;
 };
 
-const NAV_ITEMS: NavItem[] = [
+export const NAV_ITEMS: NavItem[] = [
   {
     label: 'creation',
     href: '/creation',

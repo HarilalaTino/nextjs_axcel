@@ -7,6 +7,7 @@ import ProfessionalServices from "@/components/ui/home/professional-services";
 import TopMenu from "@/components/ui/home/top-menu";
 import TrustedCompanies from "@/components/ui/home/trust-company";
 import WhyChooseUs from "@/components/ui/home/why-us";
+import Activities from "@/components/ui/shared/activities";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
     <NavMenu />
     <HeroServices />
     <AboutSection />
-    <ProfessionalServices />
+    {/* <ProfessionalServices /> */}
+    <Activities />
     <WhyChooseUs />
     <TrustedCompanies />
     <Partner />
