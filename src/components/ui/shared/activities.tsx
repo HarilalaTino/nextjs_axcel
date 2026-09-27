@@ -51,7 +51,7 @@ export default function Activities() {
     }));
 
     return (
-        <div className="bg-slate-50 py-20">
+        <div className="bg-slate-50 py-16 md:py-20">
             <div className="w-full  max-w-7xl mx-auto ">
                 <div className="mx-auto mb-12 max-w-2xl text-center">
                     <span className="text-sm font-semibold uppercase tracking-wide text-secondary">
