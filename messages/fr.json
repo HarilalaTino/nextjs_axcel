@@ -155,12 +155,13 @@
     }
   },
   "Footer": {
-    "description": "Société dédiée à fournir des services professionnels aux entreprises : création, modification, conseil et assistance administrative.",
+    "description": "Société dédiée à fournir des services professionnels aux entreprises : création, modification, coursier, conseil et assistance administrative.",
     "navigation": "Navigation",
     "secondaryNavigation": "Navigation secondaire",
     "services": "Services",
     "contact": "Nous contacter",
     "home": "Accueil",
+    "network": "Réseaux sociaux",
     "individualCreation": "Création d'entreprise individuelle",
     "companyCreation": "Création de société SARL - SARLU",
     "associationCreation": "Création ONG et association",
@@ -171,7 +172,8 @@
     "recruitment": "Recrutement",
     "rights": "Tous droits réservés.",
     "legalNotice": "Mentions légales",
-    "links": { "home": "Accueil", "about": "À propos de nous", "quote": "Demander un devis", "contact": "Contact" }
+    "links": { "home": "Accueil", "about": "À propos de nous", "quote": "Demander un devis", "contact": "Contact" },
+    "companySlogan": "Vos dossiers, aux mains des experts !"
   },
   "ContactPage": {
     "title": "Parlons de votre projet",

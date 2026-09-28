@@ -56,3 +56,4 @@ export function getActivityByValue(value: string) {
   return activityOptions.find((a) => a.value === value);
 }
 
+export const FACEBOOK_PAGE_URL = 'https://web.facebook.com/Axcel24l/';

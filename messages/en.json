@@ -156,12 +156,13 @@
     }
   },
   "Footer": {
-    "description": "A company dedicated to providing professional business services: creation, modification, advice and administrative assistance.",
+    "description": "A company dedicated to providing professional business services: creation, modification, courier, advice and administrative assistance.",
     "navigation": "Navigation",
     "secondaryNavigation": "Secondary navigation",
     "services": "Services",
     "contact": "Contact us",
     "home": "Home",
+    "network": "Social Media",
     "individualCreation": "Sole proprietorship creation",
     "companyCreation": "SARL - SARLU company creation",
     "associationCreation": "NGO and association creation",
@@ -172,7 +173,8 @@
     "recruitment": "Recruitment",
     "rights": "All rights reserved.",
     "legalNotice": "Legal notice",
-    "links": { "home": "Home", "about": "About us", "quote": "Request a quote", "contact": "Contact" }
+    "links": { "home": "Home", "about": "About us", "quote": "Request a quote", "contact": "Contact" },
+    "companySlogan": "Your files, in the hands of experts!"
   },
   "ContactPage": {
     "title": "Let's talk about your project",
