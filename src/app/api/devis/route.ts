@@ -1,28 +1,55 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+const ORIGIN_LABELS: Record<string, string> = {
+  malgache: 'Malgache',
+  etranger: 'Étranger',
+  'non-specifie': 'Non spécifiée',
+};
+
+const escapeHtml = (value: unknown): string =>
+  String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+// Empêche l'injection de retours à la ligne dans l'objet de l'email
+const toSingleLine = (value: unknown): string => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { nom, phone, whatsapp, email, demande, message, origin, domicilierAxcel, captchaToken } = body ?? {};
 
+    // Champs réellement obligatoires côté formulaire : nom, téléphone, type de demande.
+    // L'email est optionnel, et l'origine vaut 'non-specifie' quand elle n'est pas demandée.
+    if (!nom || !phone || !demande || !origin) {
+      return NextResponse.json({ error: 'Champs requis manquants.' }, { status: 400 });
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(ORIGIN_LABELS, String(origin))) {
+      return NextResponse.json({ error: 'Origine invalide.' }, { status: 400 });
+    }
+
+    if (!captchaToken) {
+      return NextResponse.json({ error: 'Vérification captcha requise.' }, { status: 400 });
+    }
+
     const verifyRes = await fetch('https://www.google.com/recaptcha/api/siteverify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+      body: new URLSearchParams({
+        secret: process.env.RECAPTCHA_SECRET_KEY ?? '',
+        response: String(captchaToken),
+      }).toString(),
     });
 
     const verifyData = await verifyRes.json();
 
     if (!verifyData.success) {
-      return Response.json({ error: 'Vérification captcha échouée' }, { status: 400 });
-    }
-
-    if (!nom || !phone || !email || !demande || !origin) {
-      return NextResponse.json(
-        { error: 'Champs requis manquants.' },
-        { status: 400 },
-      );
+      return NextResponse.json({ error: 'Vérification captcha échouée' }, { status: 400 });
     }
 
     const smtpHost = process.env.SMTP_HOST;
@@ -53,38 +80,32 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    const subject = `Nouvelle demande de devis - ${origin === 'malgache' ? 'Malgache' : 'Étranger'}`;
+    const originLabel = ORIGIN_LABELS[String(origin)];
+
+    // `demande` arrive déjà traduit dans la langue du site (libellé du bouton choisi)
+    const demandeLabel = toSingleLine(demande);
+    const subject = `Nouvelle demande de devis - ${demandeLabel} (${originLabel})`;
+
     const senderAddress = process.env.SMTP_FROM || 'devis@axcel.mg';
     const recipientAddress = process.env.DEVIS_TO || 'contact@axcel.mg';
-
     const copiedIn = process.env.DEVIS_CC?.split(',').map((item) => item.trim()).filter(Boolean) ?? ['crm@axcel.mg'];
 
-
-    const requestLabels: Record<string, string> = {
-      'creation-individuelle': "Création d'entreprise individuelle",
-      'creation-sarl-sarlu': 'Création société SARL / SARLU',
-      'creation-ong-association': 'Création ONG et Association',
-      domiciliation: 'Domiciliation',
-      'location-salle-reunion': 'Location de salle de réunion',
-      recrutement: 'Recrutement',
-      'service-coursier': 'Service de coursier',
-      'conseil-assistance': 'Conseil et assistance',
-      other: 'Autres',
-    };
-    const formattedDemande = requestLabels[String(demande)] || String(demande);
+    const safeMessage = message
+      ? escapeHtml(String(message).slice(0, 2000)).replace(/\r?\n/g, '<br />')
+      : 'Aucun message fourni';
 
     const html = `
       <div style="font-family: Arial, sans-serif; line-height: 1.7; color: #152039;">
         <h2 style="margin-bottom: 12px;">Nouvelle demande de devis</h2>
-        <p><strong>Nom :</strong> ${String(nom)}</p>
-        <p><strong>Téléphone :</strong> ${String(phone)}</p>
-        ${whatsapp ? `<p><strong>WhatsApp :</strong> ${String(whatsapp)}</p>` : ''}
-        <p><strong>Email :</strong> ${String(email)}</p>
-        <p><strong>Origine :</strong> ${origin === 'malgache' ? 'Malgache' : 'Étranger'}</p>
-        <p><strong>Type de demande :</strong> ${formattedDemande}</p>
+        <p><strong>Nom :</strong> ${escapeHtml(nom)}</p>
+        <p><strong>Téléphone :</strong> ${escapeHtml(phone)}</p>
+        ${whatsapp ? `<p><strong>WhatsApp :</strong> ${escapeHtml(whatsapp)}</p>` : ''}
+        ${email ? `<p><strong>Email :</strong> ${escapeHtml(email)}</p>` : ''}
+        <p><strong>Origine :</strong> ${escapeHtml(originLabel)}</p>
+        <p><strong>Type de demande :</strong> ${escapeHtml(demandeLabel)}</p>
         <p><strong>Domicilier chez Axcel Company :</strong> ${domicilierAxcel ? 'Oui' : 'Non'}</p>
         <p><strong>Message :</strong></p>
-        <p>${String(message || 'Aucun message fourni')}</p>
+        <p>${safeMessage}</p>
       </div>
     `;
 
@@ -92,7 +113,7 @@ export async function POST(request: NextRequest) {
       from: `Axcel Company <${senderAddress}>`,
       to: recipientAddress,
       cc: copiedIn.length > 0 ? copiedIn : undefined,
-      replyTo: String(email),
+      replyTo: email ? toSingleLine(email) : undefined,
       subject,
       html,
     });

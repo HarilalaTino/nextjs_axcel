@@ -195,9 +195,8 @@ export default function QuotePage() {
   : REQUEST_CATALOG;
 
     // Hidden original cards: with a valid `selected`, or with a type without rate
-  const hasRate = getOriginFromRate(requestedRate) !== null;
-  const hasType = Boolean(requestedType);
-  const showOrigin = !specialActive && (hasRate || !hasType);
+    // Cartes d'origine masquées uniquement avec un `selected` valide
+  const showOrigin = !specialActive;
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(initialQuery.categoryKey);
   const originOptions: Array<{ value: SelectableOrigin; label: string; description: string }> = [
