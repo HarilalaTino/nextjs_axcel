@@ -706,6 +706,7 @@
       "roomRental": "Location de salle",
       "adviceAndAssistance": "Conseils et Assistance"
     },
+    "otherDemand": "Autre",
     "requestOptions": {
       "forProfitAssociation": "Association à but lucratif",
       "nonProfitAssociation": "Association à but non lucratif",
@@ -746,7 +747,8 @@
       "headOfficechanded": "Changement siège social",
       "businessClosure": "Cessation d'activité",
       "administrativeLetter": "Rédaction lettre administrative",
-      "variousRequests": "Diverses demandes"
+      "variousRequests": "Diverses demandes",
+      "otherDemand": "Autre"
     },
     "form": {
       "fullName": "Nom et prénom",

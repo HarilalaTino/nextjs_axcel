@@ -701,6 +701,7 @@
       "localClient": "Local client",
       "internationalClient": "International client"
     },
+    "otherDemand": "Other",
     "requestCategories": {
       "creation": "Creation",
       "courier": "Courier Service",
@@ -748,7 +749,8 @@
       "headOfficechanded": "Change head office", 
       "businessClosure": "Cessation of activity", 
       "administrativeLetter": "Administrative letter writing", 
-      "variousRequests": "Various requests"
+      "variousRequests": "Various requests",
+      "otherDemand": "Other"
     },
 
     "form": {

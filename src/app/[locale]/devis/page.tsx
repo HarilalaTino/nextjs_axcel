@@ -105,6 +105,11 @@ const REQUEST_CATALOG: RequestCategory[] = [
       { slug: 'strategic-consulting-for-entrepreneurs', labelKey: 'requestOptions.strategicConsultingForEntrepreneurs' },
     ],
   },
+  {
+    key: 'otherDemand',
+    labelKey: 'otherDemand',
+    options: []
+  }
 ];
 
 /* --------------------------------------------------------------------------- */ 
