@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Mail, MessageSquareText, Phone, UserRound, AlertCircle } from 'lucide-react';
 import TopMenu from '@/components/ui/home/top-menu';
-import NavMenu from '@/components/layout/header';
+import NavMenu, { NAV_ITEMS } from '@/components/layout/header';
 
 type Origin = 'malgache' | 'etranger';
 
@@ -56,10 +56,30 @@ function getInitialDemande(type: string | null): string {
   return matchingOption ? matchingOption.value : defaultValue;
 }
 
+const getRequestValueFromHref = (href: string): string => {
+  const mapping: Record<string, string> = {
+    '/creation-entreprise-individuelle': 'sole-proprietorship-creation',
+    '/creation-societe-sarl-sarlu': 'sarl-creation',
+    '/creation-sa-sau-sci': 'sarlu-creation',
+    '/creation-ong-association': 'ngo-creation',
+    '/creation-association-cultuelle': 'association-creation',
+    '/domiciliation': 'domiciliation',
+    '/salle-de-reunion': 'meeting-room',
+    '/recrutement': 'recruitment',
+    '/recuperation-diplome-releves': 'courier-diploma-retrieval',
+    '/recuperation-traduction-document': 'courier-translation-retrieval',
+    '/certificat-consommabilite-et-mise-en-commerce': 'courier-certificates-retrieval',
+    '/toutes-autres-recuperations-et-certifications': 'autres',
+  };
+
+  return mapping[href] ?? 'autres';
+};
+
 type FieldErrors = Partial<Record<'nom' | 'phone' | 'demande', string>>;
 
 export default function QuotePage() {
   const t = useTranslations('QuotePage');
+  const navT = useTranslations('Nav');
   const searchParams = useSearchParams();
   const requestedType = searchParams.get('type');
   const requestOptions: Array<{ value: string; label: string }> = [
@@ -77,6 +97,47 @@ export default function QuotePage() {
     { value: 'courier-automobile-procedure', label: t('requestOptions.courierAutomobileProcedure') },
     { value: 'autres', label: t('requestOptions.autres') },
   ];
+
+  const requestGroups = NAV_ITEMS.filter(
+    (item) => item.href !== '/a-propos' && item.href !== '/contact',
+  ).map((item) => ({
+    key: item.label,
+    label: navT(item.label),
+    options: (item.submenu?.length
+      ? item.submenu.map((subItem) => ({
+          id: `${item.label}-${subItem.href}`,
+          label: navT(subItem.label),
+          value: getRequestValueFromHref(subItem.href),
+          href: subItem.href,
+        }))
+      : [{
+          id: `${item.label}-${item.href}`,
+          label: navT(item.label),
+          value: getRequestValueFromHref(item.href),
+          href: item.href,
+        }]
+    ).filter((option) => option.value && requestOptions.some((request) => request.value === option.value)),
+  }));
+
+  // Liste à plat de toutes les options, avec leur groupe
+  const allOptions = requestGroups.flatMap((group) =>
+    group.options.map((option) => ({
+      ...option,
+      groupKey: group.key,
+      groupLabel: group.label,
+    })),
+  );
+
+  const getInitialSelection = (value: string) =>
+    allOptions.find((option) => option.value === value) ?? allOptions[0];
+
+  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(
+    () => getInitialSelection(getInitialDemande(requestedType))?.id ?? null,
+  );
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    () => getInitialSelection(getInitialDemande(requestedType))?.groupKey ?? null,
+  );
+
   const originOptions: Array<{ value: Origin; label: string; description: string }> = [
     {
       value: 'malgache',
@@ -156,6 +217,12 @@ export default function QuotePage() {
     setError(null);
   };
 
+  // Sélection d'une option par son id unique (et non par sa value, qui peut être partagée)
+  const handleSelectOption = (option: { id: string; value: string }) => {
+    setSelectedOptionId(option.id);
+    handleInputChange('demande', option.value);
+  };
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -176,9 +243,15 @@ export default function QuotePage() {
     }
     setCaptchaError(null);
 
+    // Pour les options qui partagent la valeur 'autres', on précise le sous-service choisi
+    const selectedOption = allOptions.find((option) => option.id === selectedOptionId);
+
     const payload = {
       ...form,
-      demande: getFrenchRequestLabel(form.demande),
+      demande:
+        selectedOption && selectedOption.value === 'autres'
+          ? `${selectedOption.groupLabel} - ${selectedOption.label}`
+          : getFrenchRequestLabel(form.demande),
       origin,
       captchaToken,
     };
@@ -203,6 +276,9 @@ export default function QuotePage() {
 
       setSubmitted(true);
       setForm(getInitialForm(requestedType));
+      const initial = getInitialSelection(getInitialDemande(requestedType));
+      setSelectedOptionId(initial?.id ?? null);
+      setSelectedCategory(initial?.groupKey ?? null);
       setOrigin(null);
       recaptchaRef.current?.reset();
     } catch (submitError) {
@@ -331,25 +407,63 @@ export default function QuotePage() {
                     />
                   </label>
 
-                  <label className="block md:col-span-2">
-                    <span className="mb-2 text-sm font-semibold text-primary">{t('form.requestType')} <span className='text-red-500'>*</span></span>
-                    <select
-                      value={form.demande}
-                      onChange={(event) => handleInputChange('demande', event.target.value)}
-                      aria-invalid={Boolean(fieldErrors.demande)}
-                      className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${fieldErrors.demande
-                          ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-                          : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
-                        }`}
-                    >
-                      {requestOptions.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
-                    {fieldErrors.demande && <p className="mt-1 text-xs text-red-600">{fieldErrors.demande}</p>}
-                  </label>
+                  <div className="block md:col-span-2">
+                    <span className="mb-3 block text-sm font-semibold text-primary">
+                      {t('form.requestType')} <span className='text-red-500'>*</span>
+                    </span>
+
+                    <div className="flex flex-wrap gap-2.5">
+                      {requestGroups.map((group) => {
+                        const isSelected = selectedCategory === group.key;
+
+                        return (
+                          <button
+                            key={group.key}
+                            type="button"
+                            onClick={() => {
+                              setSelectedCategory(group.key);
+                              const first = group.options[0];
+                              if (first) handleSelectOption(first);
+                            }}
+                            className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                              isSelected
+                                ? 'border-secondary bg-secondary text-white shadow-sm'
+                                : 'border-slate-200 bg-white text-primary hover:border-secondary/60 hover:text-secondary'
+                            }`}
+                          >
+                            {group.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {selectedCategory && (
+                      <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                        {requestGroups
+                          .find((group) => group.key === selectedCategory)
+                          ?.options.map((option) => {
+                            const isOptionSelected = selectedOptionId === option.id;
+
+                            return (
+                              <button
+                                key={option.id}
+                                type="button"
+                                onClick={() => handleSelectOption(option)}
+                                className={`rounded-xl border px-3 py-2.5 text-left text-sm transition-all duration-200 ${
+                                  isOptionSelected
+                                    ? 'border-secondary bg-secondary/5 text-primary shadow-sm'
+                                    : 'border-slate-200 bg-white text-slate-700 hover:border-secondary/60 hover:text-secondary'
+                                }`}
+                              >
+                                {option.label}
+                              </button>
+                            );
+                          })}
+                      </div>
+                    )}
+
+                    {fieldErrors.demande && <p className="mt-2 text-xs text-red-600">{fieldErrors.demande}</p>}
+                  </div>
 
                   <div className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white px-4 py-3 md:col-span-2">
                     <span className="text-sm font-semibold text-primary">
