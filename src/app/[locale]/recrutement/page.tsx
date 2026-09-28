@@ -1,4 +1,5 @@
 import NavMenu from "@/components/layout/header";
+import ContactCTA from "@/components/ui/home/contact-cta";
 import TopMenu from "@/components/ui/home/top-menu";
 import ImageLightboxCarousel from "@/components/ui/shared/image-light-box";
 import { getTranslations } from "next-intl/server";
@@ -19,8 +20,9 @@ export default async function Recruitment() {
                     {t('title')}
                 </h2>
                 <div className="mt-4 h-1 w-16 bg-secondary"></div>
-                <p className="mt-5 mb-14 text-lg leading-8 text-slate-600">{t('description')}</p>
+                <p className="mt-5 mb-14 mt-6 text-sm text-primary/70 sm:text-base">{t('description')}</p>
                 <ImageLightboxCarousel images={images} />
+                <ContactCTA />
             </div>
         </>
     )

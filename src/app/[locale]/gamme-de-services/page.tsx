@@ -113,6 +113,7 @@ export default async function RangeOfServicePage({
 
         <CreationPage
           creationType={selectedService}
+          overideQueryparams="selected"
           eyebrow={creationPages("additionalServices.label")}
           title={serviceTitle}
           description={

@@ -63,6 +63,7 @@ export default async function TranslationRetrieval() {
                         </>
                     }
                     imageSrc="/images/courier/courier-2.jpg"
+                    ctasDisplay
                     t={translationRetrieval}
                 />
                 <ElegantCardWrapper />

@@ -29,7 +29,7 @@ export default async function certificateRetrieval() {
           {nav("courierServiceTitle")}
         </h1>
         <CreationPage
-          creationType="courier-diploma-retrieval"
+          creationType="other-administrative-certificate"
           eyebrow={certificateRetrieval("eyebrow")}
           title={certificateRetrieval("title")}
           description={
@@ -64,10 +64,11 @@ export default async function certificateRetrieval() {
             </>
           }
           imageSrc="/images/courier/courier-3.jpg"
+          ctasDisplay
           t={certificateRetrieval}
         />
         <CreationPage
-          creationType="courier-diploma-retrieval"
+          creationType="Administrative-procedures-for-automobiles"
           eyebrow={automobileProcedure("eyebrow")}
           title={automobileProcedure("title")}
           description={
@@ -91,6 +92,7 @@ export default async function certificateRetrieval() {
           }
           imageSrc="/images/courier/courier-4.jpg"
           isReverseSection
+          ctasDisplay
           t={automobileProcedure}
         />
         <ElegantCardWrapper />

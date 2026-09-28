@@ -1,0 +1,52 @@
+category : creation
+type=sole-proprietorship-creation&rate=citizen
+type=sole-proprietorship-creation&rate=stranger
+type=sarl-creation&rate=citizen
+type=sarl-creation&rate=stranger
+type=sarlu-creation&rate=citizen
+type=sarlu-creation&rate=stranger
+type=for-profit-association
+type=non-profit-association
+type=establishment-of-religious-association
+type=society-creation-sa
+type=society-creation-sau
+type=society-creation-sci
+type=travel-agency-creation
+type=wholesale-design
+type=domiciliation
+
+category :  courier
+type=courier-diploma-retrieval
+type=courier-translation-retrieval
+type=certificate-of-market-authorization
+type=other-administrative-certificate
+type=Administrative-procedures-for-automobiles
+
+category: legalDdepartment
+type=employment-contract
+type=lease-contract
+type=service-provider-contract
+type=legal-consulting
+type=dismissal-assistance
+type=internal-regulations
+type=cnaps-ostie-affiliation
+type=irsa-declaration
+
+category: roomRental
+type=office-room-rental
+type=meeting-room-rental
+type=training-room-rental
+type=hr-training
+
+category: adviceAndAssistance
+type=company-creation-consulting
+type=company-modification-assistance
+type=business-formalization-assistance
+type=strategic-consulting-for-entrepreneurs
+
+selected=taxCard / Renouvellement carte fiscale
+selected=activity / Changement, rajout d'activité
+selected=headOffice / Changement siège social
+selected=closure / Cessation d'activité
+selected=letter / Rédaction lettre administrative
+selected=requests / Diverses demandes

@@ -19,7 +19,8 @@ type CreationPageProps = {
   overidecta?: ReactNode;
   tiers?: Tier[];
   basicDisplayPrice?: BasicPrice;
-  ctasDisplay?: boolean
+  ctasDisplay?: boolean;
+  overideQueryparams?: string;
 };
 
 export interface Tier {
@@ -49,7 +50,8 @@ export default async function CreationPage({
   hideContact,
   overidecta,
   basicDisplayPrice,
-  ctasDisplay
+  ctasDisplay,
+  overideQueryparams
 }: CreationPageProps) {
   const contactHref = '/contact' as const;
   const quoteHref = '/devis' as const;
@@ -59,9 +61,13 @@ export default async function CreationPage({
   const contactUrl = {
     pathname: contactHref
   } as const;
+  const queryType = overideQueryparams
+  ? { [overideQueryparams]: creationType }
+  : { type: creationType };
+
   const quoteUrl = {
     pathname: quoteHref,
-    query: { type: creationType }
+    query: queryType
   } as const;
 
   const contentClassName = isReverseSection

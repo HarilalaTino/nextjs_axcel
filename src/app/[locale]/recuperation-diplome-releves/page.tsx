@@ -63,6 +63,7 @@ export default async function CourierDiplomaRetrieval() {
             </>
           }
           imageSrc="/images/courier/courier-1.jpg"
+          ctasDisplay
           t={diplomaTranscription}
         />
         <ElegantCardWrapper />
