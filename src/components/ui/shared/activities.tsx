@@ -54,18 +54,18 @@ export default function Activities() {
     return (
         <div className="bg-slate-50 py-16 md:py-20">
             <div className="w-full  max-w-7xl mx-auto ">
-                <div className="mx-auto mb-12 max-w-2xl text-center">
+                <div className="mx-auto mb-12 max-w-2xl px-8 xl:px-0 text-center">
                     <span className="text-sm font-semibold uppercase tracking-wide text-secondary">
                         {homeT('servicesLabel')}
                     </span>
-                    <h2 className="mt-3 text-3xl font-extrabold text-primary sm:text-4xl">
+                    <h2 className="block mt-4 text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
                         {homeT('servicesTitle')}
                     </h2>
                     <p className="mt-4 text-base leading-relaxed text-slate-500">
                         {homeT('servicesDescription')}
                     </p>
                 </div>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr items-stretch">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 px-8 xl:px-0 lg:grid-cols-3 auto-rows-fr items-stretch">
                     {categories.map((category) => {
                         const Icon = category.icon;
                         return (

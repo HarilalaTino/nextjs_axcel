@@ -1,53 +1,56 @@
-'use client';
+"use client";
 
+import { useState } from "react";
 import {
-  COMPANY_ADDRESS,
-  EMAIL_ADDRESS,
-  FACEBOOK_COMPANY,
-  LOCALISATION,
-  PRIMARY_PHONE_NUMBER,
-} from '@/utils/constants';
-import { removeSpaces } from '@/utils/hooks';
-import { useTranslations } from 'next-intl';
-
-const phoneParsed = removeSpaces(PRIMARY_PHONE_NUMBER);
+  ArrowUpRight,
+  Check,
+  Copy,
+  Mail,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
+import { COMPANY_ADDRESS, FACEBOOK_COMPANY, LOCALISATION } from "@/utils/constants";
+import { useTranslations } from "next-intl";
 
 const CONTACT = {
-  phone: { display: PRIMARY_PHONE_NUMBER, href: `tel:${phoneParsed}` },
-  email: { display: EMAIL_ADDRESS, href: `mailto:${EMAIL_ADDRESS}` },
-  whatsapp: { display: PRIMARY_PHONE_NUMBER, href: `https://wa.me/${phoneParsed}` },
-  facebook: { display: 'Axel Company', href: FACEBOOK_COMPANY },
+  phones: [
+    { number: "+261 38 77 777 76", label: "main" },
+    { number: "+261 34 11 918 40", label: "manager" },
+    { number: "+261 38 77 770 06", label: "commercial" },
+  ] as { number: string; label?: string }[],
+  whatsapp: "+261 34 11 918 40",
+  email: "contact@axcel.mg",
+  facebookLabel: "Axel Company",
+  facebookHref: FACEBOOK_COMPANY,
   address: COMPANY_ADDRESS,
-  mapEmbedSrc: LOCALISATION,
+  mapEmbed: LOCALISATION,
 };
 
-function PhoneIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6.6 10.8c1.3 2.6 3.4 4.7 6 6l2-2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1v3.4c0 .6-.4 1-1 1C10.9 20.5 3.5 13.1 3.5 4.5c0-.6.4-1 1-1H8c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2 2Z"
-      />
-    </svg>
-  );
-}
+const digits = (n: string) => n.replace(/\D/g, "");
+const telHref = (n: string) => `tel:+${digits(n)}`;
+const whatsappHref = (n: string) => `https://wa.me/${digits(n)}`;
 
-function MailIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.5 6.5h17v11h-17v-11Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 7l8 6 8-6" />
-    </svg>
-  );
-}
+function CopyButton({ value, label }: { value: string; label: string }) {
+  const [copied, setCopied] = useState(false);
 
-function WhatsappIcon() {
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+    }
+  }
+
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-      <path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2.1-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3Z" />
-      <path d="M12 2.5c-5.2 0-9.5 4.2-9.5 9.5 0 1.7.4 3.3 1.3 4.7L2.5 21.5l4.9-1.3c1.3.7 2.9 1.1 4.6 1.1 5.2 0 9.5-4.2 9.5-9.5S17.2 2.5 12 2.5Zm0 17.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-2.9.8.8-2.8-.2-.3C4.3 14.8 3.8 13.4 3.8 12c0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2Z" />
-    </svg>
+    <button
+      type="button"
+      onClick={copy}
+      aria-label={copied ? "Copié" : `Copier ${label}`}
+      className="grid size-9 shrink-0 place-items-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+    >
+      {copied ? <Check className="size-4 text-emerald-600" /> : <Copy className="size-4" />}
+    </button>
   );
 }
 
@@ -59,95 +62,154 @@ function FacebookIcon() {
   );
 }
 
-function PinIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21Z" />
-      <circle cx="12" cy="9.5" r="2.3" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-type ContactRowProps = {
-  icon: React.ReactNode;
-  label: string;
+function Row({
+  icon: Icon,
+  title,
+  value,
+  href,
+  copyValue,
+  external,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
   value: string;
-  href?: string;
-};
-
-function ContactRow({ icon, label, value, href }: ContactRowProps) {
+  href: string;
+  copyValue?: string;
+  external?: boolean;
+}) {
+  const t = useTranslations('ContactPage');
   return (
-    <a
-      href={href}
-      target={href?.startsWith('http') ? '_blank' : undefined}
-      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className="group flex items-center gap-4 border-l-2 border-[#ff6341]/40 py-3 pl-5 transition-all hover:border-[#ff6341] hover:pl-7"
-    >
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#152039] text-white transition-colors group-hover:bg-[#ff6341]">
-        {icon}
-      </span>
-      <span className="flex flex-col">
-        <span className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</span>
-        <span className="font-medium text-[#152039] group-hover:text-[#ff6341]">{value}</span>
-      </span>
-    </a>
+    <div className="group flex items-center gap-2 rounded-2xl border border-slate-200 bg-white p-2 pr-3 transition hover:border-slate-300 hover:shadow-sm">
+      <a
+        href={href}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="flex min-w-0 flex-1 items-center gap-4 rounded-xl p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
+      >
+        <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-slate-100 text-slate-700 transition group-hover:bg-orange-500 group-hover:text-white">
+          <Icon className="size-5" />
+        </span>
+        <span className="min-w-0">
+          <span className="block text-sm text-slate-500">{title}</span>
+          <span className="block truncate font-semibold text-slate-900">{value}</span>
+        </span>
+      </a>
+      {copyValue ? (
+        <CopyButton value={copyValue} label={title.toLowerCase()} />
+      ) : (
+        <ArrowUpRight className="mr-2 size-4 shrink-0 text-slate-400 transition group-hover:text-slate-900" />
+      )}
+    </div>
   );
 }
 
-export default function InfoContact() {
+function PhoneCard({ phones }: { phones: { number: string; label?: string }[] }) {
+  const multiple = phones.length > 1;
   const t = useTranslations('ContactPage');
-
   return (
-    <main>
-      <section className="mx-auto wrap px-6 py-20 md:px-12 md:py-12">
-        <div className="grid gap-16 lg:grid-cols-[1fr_1.15fr] lg:items-start">
-          <div>
-            <h1 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
-              {t('title')}
-            </h1>
-            <div className="mt-4 h-1 w-16 bg-secondary"></div>
-            <p className="mt-6 mb-10 text-sm text-primary/70 sm:text-base">{t('subtitle')}</p>
-
-            <div className="mt-10 flex flex-col gap-1">
-              <ContactRow icon={<PhoneIcon />} label={t('phone')} value={CONTACT.phone.display} href={CONTACT.phone.href} />
-              <ContactRow icon={<MailIcon />} label={t('email')} value={CONTACT.email.display} href={CONTACT.email.href} />
-              <ContactRow icon={<WhatsappIcon />} label={t('whatsapp')} value={CONTACT.whatsapp.display} href={CONTACT.whatsapp.href} />
-              <ContactRow icon={<FacebookIcon />} label={t('facebook')} value={CONTACT.facebook.display} href={CONTACT.facebook.href} />
-              <ContactRow icon={<PinIcon />} label={t('address')} value={CONTACT.address} />
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-sm border border-[#152039]/10 bg-white">
-            <div className="overflow-hidden rounded-sm border border-[#152039]/10 bg-white">
-              <iframe
-                title={t('mapTitle')}
-                src={CONTACT.mapEmbedSrc}
-                width="100%"
-                height="100%"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="aspect-[4/3] w-full lg:aspect-auto lg:h-[520px]"
-              />
-            </div>
-          </div>
+    <div className="rounded-2xl border border-slate-200 bg-white p-2 pr-3 transition hover:border-slate-300 hover:shadow-sm">
+      <div className="flex items-start gap-4 p-2">
+        <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-slate-100 text-slate-700">
+          <Phone className="size-5" />
+        </span>
+        <div className="min-w-0 flex-1">
+          <span className="block text-sm text-slate-500">
+            {multiple ? "Téléphones" : "Téléphone"}
+          </span>
+          <ul className="mt-0.5 divide-y divide-slate-100">
+            {phones.map((p) => (
+              <li key={p.number} className="flex items-center justify-between gap-2 py-1.5 first:pt-0 last:pb-0">
+                <a
+                  href={telHref(p.number)}
+                  className="min-w-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500"
+                >
+                  <span className="block truncate font-semibold text-slate-900 hover:text-orange-600">
+                    {p.number}
+                  </span>
+                  {p.label && <span className="block text-xs text-slate-500">{t(p.label)}</span>}
+                </a>
+                <CopyButton value={p.number} label={p.number} />
+              </li>
+            ))}
+          </ul>
         </div>
-      </section>
+      </div>
+    </div>
+  );
+}
 
-      <section className="bg-slate-50">
-        <div className="mx-auto flex wrap flex-col items-start justify-center gap-10 px-6 py-10 md:flex-row md:items-center md:px-12">
-          <p className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl ">{t('ctaTitle')}</p>
+export default function ContactSection() {
+  const contactTranslate =  useTranslations('ContactPage');
+  return (
+    <section className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-8">
+      <div className="max-w-xl">
+        <h2 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
+          {contactTranslate('title')}
+        </h2>
+        <p className="mt-4 text-sm text-primary/70 sm:text-base">
+          {contactTranslate('subtitle')}
+        </p>
+      </div>
 
+      <div className="mt-12 grid gap-6 lg:grid-cols-5">
+        {/* Colonne canaux */}
+        <div className="flex flex-col gap-3 lg:col-span-2">
+          {/* Canal principal */}
           <a
-            href={CONTACT.whatsapp.href}
+            href={whatsappHref(CONTACT.whatsapp)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-medium text-white transition-colors hover:bg-[#20BD5A]"
+            className="group relative overflow-hidden rounded-3xl bg-emerald-500 p-6 text-white transition hover:bg-emerald-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
           >
-            <WhatsappIcon />
-            {t('ctaButton')}
+            <MessageCircle
+              aria-hidden
+              className="absolute -right-6 -top-6 size-36 rotate-12 text-white/15"
+              strokeWidth={1.5}
+            />
+            <div className="relative">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-white opacity-75 motion-reduce:hidden" />
+                  <span className="relative inline-flex size-2 rounded-full bg-white" />
+                </span>
+                {contactTranslate('whatsupEyebrown')}
+              </span>
+              <p className="mt-5 text-2xl font-bold">{contactTranslate('ctaButton')}</p>
+              <p className="mt-1 text-emerald-50">{CONTACT.whatsapp}</p>
+              <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-emerald-700 transition group-hover:gap-3">
+                  {contactTranslate("startConversation")}
+                <ArrowUpRight className="size-4" />
+              </span>
+            </div>
           </a>
+
+          <PhoneCard phones={CONTACT.phones} />
+          <Row
+            icon={Mail}
+            title="Email"
+            value={CONTACT.email}
+            href={`mailto:${CONTACT.email}`}
+            copyValue={CONTACT.email}
+          />
+          <Row
+            icon={FacebookIcon}
+            title="Facebook"
+            value={CONTACT.facebookLabel}
+            href={CONTACT.facebookHref}
+            external
+          />
         </div>
-      </section>
-    </main>
+
+        {/* Carte */}
+        <div className="relative min-h-[420px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 lg:col-span-3">
+          <iframe
+            title="Localisation Axcel Company"
+            src={CONTACT.mapEmbed}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 size-full border-0 grayscale-[35%] transition hover:grayscale-0"
+          />
+        </div>
+      </div>
+    </section>
   );
 }

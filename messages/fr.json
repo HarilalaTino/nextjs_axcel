@@ -185,7 +185,12 @@
     "address": "Adresse",
     "mapTitle": "Localisation",
     "ctaTitle": "Besoin d'une réponse rapide ?",
-    "ctaButton": "Discuter sur WhatsApp"
+    "ctaButton": "Discuter sur WhatsApp",
+    "whatsupEyebrown": "Réponse la plus rapide",
+    "startConversation": "Démarrer la conversation",
+    "commercial": "Commercial",
+    "main": "Principal",
+    "manager": "Manager"
   },
   "LegalNotice": {
     "eyebrow": "Informations légales",

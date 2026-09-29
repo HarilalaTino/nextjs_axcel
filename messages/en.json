@@ -186,7 +186,12 @@
     "address": "Address",
     "mapTitle": "Location",
     "ctaTitle": "Need a quick answer?",
-    "ctaButton": "Chat on WhatsApp"
+    "ctaButton": "Chat on WhatsApp",
+    "whatsupEyebrown": "Réponse la plus rapide",
+    "startConversation": "Démarrer la conversation",
+    "commercial": "Commercial",
+    "main": "Principal",
+    "manager": "Manager"
   },
   "LegalNotice": {
     "eyebrow": "Legal information",
