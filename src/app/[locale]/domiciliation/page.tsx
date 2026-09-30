@@ -40,7 +40,7 @@ export default async function CreationDomiciliationPage() {
                             </ul>
                         </>
                     }
-                    imageSrc="/images/domiciliation/domiciliation.jpg"
+                    imageSrc="/images/creations/domiciliation.jpg"
                     basicDisplayPrice={basicPrice}
                     t={t}
                 />

@@ -24,7 +24,7 @@ export default async function MeetingRoomRental() {
                     eyebrow={meetingRoomRental("eyebrow")}
                     title={meetingRoomRental("title")}
                     description={<p>{meetingRoomRental("description")}</p>}
-                    imageSrc="/images/association/meetingRoomRental.jpg"
+                    imageSrc="/images/venue-rental/meeting-room-rental.jpg"
                     ctasDisplay
                     t={meetingRoomRental}
                 />

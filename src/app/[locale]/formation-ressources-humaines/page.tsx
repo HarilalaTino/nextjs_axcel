@@ -24,7 +24,7 @@ export default async function HrTraining() {
                     eyebrow={hrTraining("eyebrow")}
                     title={hrTraining("title")}
                     description={<p>{hrTraining("description")}</p>}
-                    imageSrc="/images/association/hrTraining.jpg"
+                    imageSrc="/images/venue-rental/hr-Training.jpg"
                     ctasDisplay
                     t={hrTraining}
                 />

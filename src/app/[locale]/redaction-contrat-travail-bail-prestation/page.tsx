@@ -59,7 +59,7 @@ export default async function DraftingContractLeaseServiceProvider() {
                             </ul>
                         </>
                     }
-                    imageSrc="/images/association/employmentContract.jpg"
+                    imageSrc="/images/legal-department/employment-contract.jpg"
                     ctasDisplay
                     t={employmentContract}
                 />
@@ -84,7 +84,7 @@ export default async function DraftingContractLeaseServiceProvider() {
                             </ul>
                         </>
                     }
-                    imageSrc="/images/association/leaseContract.jpg"
+                    imageSrc="/images/legal-department/lease-agreement.jpg"
                     isReverseSection
                     ctasDisplay
                     t={leaseContract}
@@ -111,7 +111,7 @@ export default async function DraftingContractLeaseServiceProvider() {
                         </>
                     }
                     ctasDisplay
-                    imageSrc="/images/association/serviceProviderContract.jpg"
+                    imageSrc="/images/legal-department/provider-contract.jpg"
                     t={serviceProviderContract}
                 />
                 <ElegantCardWrapper />

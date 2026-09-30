@@ -47,7 +47,7 @@ export default async function ProprietorshipCreationPage() {
                             </div>
                         </>
                     }
-                    imageSrc="/images/company/individual.jpg"
+                    imageSrc="/images/creations/individual.jpg"
                     tiers={tiers}
                     t={t}
                 />

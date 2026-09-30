@@ -40,7 +40,7 @@ export default async function NgoAssociationCreation() {
                         </>
                     }
                     basicDisplayPrice={basicPrice}
-                    imageSrc="/images/association/forProfit.jpg"
+                    imageSrc="/images/creations/forProfit.jpg"
                     t={forProfit}
                 />
                 <CreationPage
@@ -52,7 +52,7 @@ export default async function NgoAssociationCreation() {
                             <p>{nonProfit("description")}</p>
                         </>
                     }
-                    imageSrc="/images/association/nonProfit.jpg"
+                    imageSrc="/images/creations/nonProfit.jpg"
                     t={nonProfit}
                     basicDisplayPrice={basicPrice}
                     isReverseSection
@@ -66,7 +66,7 @@ export default async function NgoAssociationCreation() {
                             <p>{t("description")}</p>
                         </>
                     }
-                    imageSrc="/images/company/travel.jpg"
+                    imageSrc="/images/creations/religious.jpg"
                     basicDisplayPrice={basicReligiousPrice}
                     t={t}
                 />

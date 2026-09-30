@@ -26,7 +26,7 @@ export default async function InternalRegulationsCnapsIrsa() {
                     eyebrow={internalRegulations("eyebrow")}
                     title={internalRegulations("title")}
                     description={<p>{internalRegulations("description")}</p>}
-                    imageSrc="/images/association/internalRegulations.jpg"
+                    imageSrc="/images/legal-department/internal-regulations.jpg"
                     ctasDisplay
                     t={internalRegulations}
                 />
@@ -35,7 +35,7 @@ export default async function InternalRegulationsCnapsIrsa() {
                     eyebrow={cnapsOstieAffiliation("eyebrow")}
                     title={cnapsOstieAffiliation("title")}
                     description={<p>{cnapsOstieAffiliation("description")}</p>}
-                    imageSrc="/images/association/cnapsOstieAffiliation.jpg"
+                    imageSrc="/images/legal-department/cnaps-ostie-affiliation.jpg"
                     isReverseSection
                     ctasDisplay
                     t={cnapsOstieAffiliation}
@@ -46,7 +46,7 @@ export default async function InternalRegulationsCnapsIrsa() {
                     title={irsaDeclaration("title")}
                     description={<p>{irsaDeclaration("description")}</p>}
                     ctasDisplay
-                    imageSrc="/images/association/irsaDeclaration.jpg"
+                    imageSrc="/images/legal-department/irsa-declaration.jpg"
                     t={irsaDeclaration}
                 />
                 <ElegantCardWrapper />

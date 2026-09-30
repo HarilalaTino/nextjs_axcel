@@ -12,82 +12,15 @@ const FADE_MS = 350;
 
 interface Testimonial {
   name: string;
-  role: string;
-  quote: string;
+  role?: string;
+  description: string;
   image: string;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    name: "Aaron en parle",
-    role: "Créateur de vidéos",
-    quote:
-      "L'équipe a pris en charge notre back-office avec beaucoup de sérieux. Un vrai gain de temps au quotidien.",
-    image: "/images/testimonials/testimonials-1.jpeg",
-  },
-  {
-    name: "Marc Lefèvre",
-    role: "Fondateur, agence digitale",
-    quote:
-      "Réactifs, organisés et toujours de bon conseil. Notre service client n'a jamais été aussi fluide.",
-    image: "/images/testimonials/testimonials-2.jpeg",
-  },
-  {
-    name: "Sofia Andrianina",
-    role: "Responsable RH",
-    quote:
-      "Un accompagnement sur-mesure et une équipe qui comprend vraiment nos besoins.",
-    image: "/images/testimonials/testimonials-3.jpeg",
-  },
-  {
-    name: "Claire Dubois1",
-    role: "Directrice des opérations",
-    quote:
-      "L'équipe a pris en charge notre back-office avec beaucoup de sérieux. Un vrai gain de temps au quotidien.",
-    image: "/images/testimonials/testimonials-4.jpeg",
-  },
-  {
-    name: "Marc Lefèvre1",
-    role: "Fondateur, agence digitale",
-    quote:
-      "Réactifs, organisés et toujours de bon conseil. Notre service client n'a jamais été aussi fluide.",
-    image: "/images/testimonials/testimonials-5.jpeg",
-  },
-  {
-    name: "Sofia Andrianina1",
-    role: "Responsable RH",
-    quote:
-      "Un accompagnement sur-mesure et une équipe qui comprend vraiment nos besoins.",
-    image: "/images/testimonials/testimonials-6.jpeg",
-  },
-  {
-    name: "Claire Dubois2",
-    role: "Directrice des opérations",
-    quote:
-      "L'équipe a pris en charge notre back-office avec beaucoup de sérieux. Un vrai gain de temps au quotidien.",
-    image: "/images/testimonials/testimonials-7.jpeg",
-  },
-  {
-    name: "Marc Lefèvre2",
-    role: "Fondateur, agence digitale",
-    quote:
-      "Réactifs, organisés et toujours de bon conseil. Notre service client n'a jamais été aussi fluide.",
-    image: "/images/testimonials/testimonials-8.jpeg",
-  },
-  {
-    name: "Sofia Andrianina2",
-    role: "Responsable RH",
-    quote:
-      "Un accompagnement sur-mesure et une équipe qui comprend vraiment nos besoins.",
-    image: "/images/testimonials/testimonials-9.jpeg",
-  },
-];
 
-/**
- * La photo reste toujours visible : au survol (ou au tap / focus clavier),
- * un panneau monte depuis le bas et révèle la citation.
- */
-function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+function TestimonialCard({ testimonial }: {
+  testimonial: Testimonial
+}) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -99,25 +32,28 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       {/* Photo */}
       <Image
         src={testimonial.image}
-        alt={`${testimonial.name}, ${testimonial.role}`}
+        alt={`${testimonial.name}`}
         fill
         sizes="(max-width: 768px) 100vw, 33vw"
-        className={`object-cover object-top transition-transform duration-700 ease-out motion-reduce:transition-none ${
-          open ? "scale-105" : "scale-100"
-        }`}
+        className={`object-cover object-top transition-transform duration-700 ease-out motion-reduce:transition-none ${open ? "scale-105" : "scale-100"
+          }`}
       />
 
-      {/* Voile sombre léger pour assurer la lisibilité */}
       <div
-        className={`absolute inset-0 transition-opacity duration-500 motion-reduce:transition-none ${
-          open ? "opacity-100" : "opacity-60"
-        }`}
+        className={`absolute inset-0 transition-opacity duration-500 motion-reduce:transition-none ${open ? "opacity-100" : "opacity-60"
+          }`}
         style={{
-          background: `linear-gradient(to top, ${BRAND}F2 0%, ${BRAND}80 35%, transparent 65%)`,
+          background: `linear-gradient(
+          to top,
+            ${BRAND}F2 0%,
+            ${BRAND}B8 45%,
+            ${BRAND}B8 75%,
+            ${BRAND}66 100%
+        )`,
         }}
       />
 
-      {/* Bouton guillemets : indique que la carte est interactive (utile sur mobile) */}
+
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -139,16 +75,14 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         />
       </button>
 
-      {/* Panneau du bas : nom + rôle toujours visibles, citation qui se déplie */}
       <div className="absolute inset-x-0 bottom-0 px-6 pb-5 pt-6 text-white">
         <div
-          className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out motion-reduce:transition-none ${
-            open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-          }`}
+          className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out motion-reduce:transition-none ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+            }`}
         >
           <div className="overflow-hidden">
             <p className="pb-4 text-[15px] leading-relaxed text-white/95">
-              {testimonial.quote}
+              {testimonial.description}
             </p>
           </div>
         </div>
@@ -156,16 +90,17 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         <div className="flex items-center gap-3">
           <span
             aria-hidden
-            className={`block w-1 self-stretch rounded-full transition-all duration-500 motion-reduce:transition-none ${
-              open ? "opacity-100" : "opacity-70"
-            }`}
+            className={`block w-1 self-stretch rounded-full transition-all duration-500 motion-reduce:transition-none ${open ? "opacity-100" : "opacity-70"
+              }`}
             style={{ backgroundColor: ACCENT }}
           />
           <div>
             <p className="text-base font-semibold leading-tight">
               {testimonial.name}
             </p>
-            <p className="text-xs text-white/70">{testimonial.role}</p>
+            {testimonial.role && (
+              <p className="text-xs text-white/70">{testimonial.role}</p>
+            )}
           </div>
         </div>
       </div>
@@ -177,11 +112,12 @@ export default function Testimonials() {
   const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(true);
   const t = useTranslations("Home");
+  const ct = useTranslations("customerTestimonial");
+  const clients = ct.raw("clients") as Testimonial[];
 
-  const pageCount = Math.ceil(testimonials.length / PER_PAGE);
-  const items = testimonials.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE);
+  const pageCount = Math.ceil(clients.length / PER_PAGE);
+  const items = clients.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE);
 
-  // Fade out -> changement de page -> fade in
   const goTo = (next: number) => {
     if (!visible || next === page || next < 0 || next >= pageCount) return;
     setVisible(false);
@@ -212,11 +148,9 @@ export default function Testimonials() {
         </div>
 
         <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-10">
-          {/* Cartes : fade out / fade in au changement de page */}
           <div
-            className={`grid flex-1 grid-cols-1 gap-8 transition-opacity ease-in-out motion-reduce:transition-none md:grid-cols-3 md:pb-10 ${
-              visible ? "opacity-100" : "opacity-0"
-            }`}
+            className={`grid flex-1 grid-cols-1 gap-8 transition-opacity ease-in-out motion-reduce:transition-none md:grid-cols-3 md:pb-10 ${visible ? "opacity-100" : "opacity-0"
+              }`}
             style={{ transitionDuration: `${FADE_MS}ms` }}
             aria-live="polite"
           >
@@ -230,7 +164,6 @@ export default function Testimonials() {
             ))}
           </div>
 
-          {/* Navigation : verticale à droite sur desktop, horizontale sous les cartes sur mobile */}
           <nav
             aria-label="Navigation des témoignages"
             className="flex items-center justify-center gap-4 md:w-11 md:flex-col md:justify-center md:pb-10"

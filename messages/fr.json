@@ -233,6 +233,55 @@
     "contactButton": "Nous contacter",
     "homeButton": "Retour à l'accueil"
   },
+  "customerTestimonial": {
+    "clients": [
+      {
+        "name": " Tatiana Raharinirina",
+        "role": "Fondatrice du société ATARA",
+        "image": "/images/testimonials/tatiana-raharinirina.jpeg",
+        "description": "Cela rassure de travailler avec une société qui a déjà de l'expérience et une clientèle.Vous êtes une société de confiance. Travailler avec une entreprise expérimentée, c'est vraiment différent. Le service est rapide, clair et précis. L'accueil est agréable, et toute l'équipe l'est aussi."
+      },
+      {
+        "name": "Fyh Tahina Ramaroson",
+        "image": "/images/testimonials/fyh-tahina-ramaroson.jpeg",
+        "role": "Gérante Agence de voyage Zero Stress Travel",
+        "description": "Zero Stress Travel est une agence de voyage et un tour-opérateur. J'ai connu Axcel Company grâce à mes collègues. Beaucoup y ont fait traiter leurs papiers. Chez Axcel, tout est fait très vite. Le service est agréable et sûr. La relation avec l'équipe est très bonne. Si vous voulez créer une entreprise, adressez-vous à Axcel Company. Le prix est correct et accessible à tous."
+      },
+      {
+        "name": "Antso Bomaka",
+        "image": "/images/testimonials/antso-bomaka.jpeg",
+        "description": "Axcel Company s'est occupée de tous mes papiers pour la mise en vente de mes saucisses. Le service est bon et rapide, et l'équipe est très accueillante. Si vous voulez créer une entreprise mais que vous ne maîtrisez pas les démarches, vous pouvez vous adresser à eux."
+      },
+      {
+        "name": "D & S Family",
+        "image": "/images/testimonials/ds-family.jpeg",
+        "description": "Axcel m'a beaucoup aidé. J'ai pu créer ma société avec un dossier complet en moins de 5 jours. Il n'y a aucun doute ni aucune crainte, car tout est en règle. Pendant la préparation du dossier, Axcel Company m'a informé en temps réel de son avancement. L'accueil est bon et le tarif est justifié. Le service client est au top"
+      },
+      {
+        "name": "Mr Elfrido",
+        "role": "Gérant Agence de voyage Bleu Island Madagascar",
+        "image": "/images/testimonials/Elfrido.jpeg",
+        "description": "Je suis satisfait à 100 %. L'accueil est agréable et le dossier a été traité rapidement. Ils m'ont beaucoup aidé, notamment avec une facilité de paiement pour l'ouverture de ma société. Je les remercie infiniment de m'avoir aidé à réaliser mon rêve."
+      },
+      {
+        "name": "Mr Gilbert",
+        "role": "Président de l'association Mamoron'ala",
+        "image": "/images/testimonials/gilbert.jpeg",
+        "description": "Axcel Company m'a beaucoup aidé à mener mon dossier en toute légalité, étape par étape. Grâce à eux, j'ai obtenu mon NIF et mon STAT. J'encourage chacun à se mettre en règle. Pour toutes les démarches administratives, adressez-vous à Axcel Company."
+      },
+      {
+        "name": "Huang Hui",
+        "role": "Gérante Hong Wei Beauty",
+        "image": "/images/testimonials/Huang-Hui.jpeg",
+        "description": "Axcel Company a préparé mon dossier complet en 3 jours, et j'ai obtenu mon NIF et mon STAT. L'accueil est bon et la démarche est sérieuse. Je vous encourage à faire appel à eux. Ils facilitent la vie de ceux qui n'ont pas le temps de courir d'une administration à l'autre."
+      },
+      {
+        "name": "Tolotra Quincaillerie",
+        "image": "/images/testimonials/tolotra.jpeg",
+        "description": "Les papiers et les démarches légales me faisaient peur au moment de créer mon entreprise. Axcel Company s'est occupée de tout cela avec dynamisme. Je peux maintenant me concentrer entièrement sur mes ventes."
+      }
+    ]
+  },
   "CreationPages": {
     "additionalServices": {
       "label": "Nous proposons aussi d'autres services",

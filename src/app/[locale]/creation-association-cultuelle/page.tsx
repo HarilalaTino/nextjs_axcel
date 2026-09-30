@@ -4,7 +4,7 @@ import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
 import CreationPage, { BasicPrice } from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
 
-export default async function TravelAgencyCreation() {
+export default async function ReligiousAssociation() {
     const t = await getTranslations("religious");
     const nav = await getTranslations("Nav");
     const basicPrice: BasicPrice = {
@@ -33,7 +33,7 @@ export default async function TravelAgencyCreation() {
                             <p>{t("description")}</p>
                         </>
                     }
-                    imageSrc="/images/company/travel.jpg"
+                    imageSrc="/images/creations/religious.jpg"
                     basicDisplayPrice={basicPrice}
                     t={t}
                 />

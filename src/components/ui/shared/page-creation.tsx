@@ -98,7 +98,7 @@ export default async function CreationPage({
 
             {tiers && tiers.length > 0 && (
               <div className="w-full max-w-xl rounded-2xl border border-stone-200 shadow-sm overflow-hidden mt-10">
-                <div className="grid grid-cols-2 divide-x divide-stone-200">
+                <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-stone-200">
                   {tiers.map((tier) => (
                     <div key={tier.label} className="px-6 py-6 text-center">
                       <span className="text-xl text-stone-500">

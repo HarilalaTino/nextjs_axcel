@@ -35,7 +35,7 @@ export default async function WholesaleDesignCreation() {
                             <p>{t("description")}</p>
                         </>
                     }
-                    imageSrc="/images/company/wholesale.jpg"
+                    imageSrc="/images/creations/wholesaler.jpg"
                     basicDisplayPrice={basicPrice}
                     t={t}
                 />

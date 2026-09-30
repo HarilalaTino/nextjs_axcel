@@ -51,10 +51,10 @@ export default async function ElegantCardWrapper({
         <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
           {creationPages('additionalServices.label')}
         </p>
-        <h2 className="mt-3 text-3xl font-bold text-primary sm:text-4xl">
+        <h2 className="text-2xl mt-3 font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
           {creationPages('additionalServices.title')}
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-primary/60">
+        <p className="mt-6 text-sm text-primary/70 sm:text-base">
           {creationPages('additionalServices.description')}
         </p>
         <div className="mx-auto mt-6 h-1 w-16 bg-secondary" />

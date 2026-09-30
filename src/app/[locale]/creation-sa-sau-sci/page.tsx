@@ -61,7 +61,7 @@ export default async function SocietyCreationSAorSAUorSCAI() {
 
                         </>
                     }
-                    imageSrc="/images/association/sa.jpg"
+                    imageSrc="/images/creations/sa.jpg"
                     ctasDisplay
                     t={sa}
                 />
@@ -88,7 +88,7 @@ export default async function SocietyCreationSAorSAUorSCAI() {
 
                         </>
                     }
-                    imageSrc="/images/association/sau.jpg"
+                    imageSrc="/images/creations/sau.jpg"
                     isReverseSection
                     ctasDisplay
                     t={sau}
@@ -116,7 +116,7 @@ export default async function SocietyCreationSAorSAUorSCAI() {
 
                         </>
                     }
-                    imageSrc="/images/association/sci.jpg"
+                    imageSrc="/images/creations/sci.jpg"
                     ctasDisplay
                     t={sci}
                 />

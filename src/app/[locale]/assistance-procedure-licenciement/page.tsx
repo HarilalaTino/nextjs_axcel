@@ -28,7 +28,7 @@ export default async function DismissalAssistance() {
                             <p>{dismissalAssistance("description")}</p>
                         </>
                     }
-                    imageSrc="/images/association/dismissal-assistance.jpg"
+                    imageSrc="/images/legal-department/dismissal-assistance.jpg"
                     ctasDisplay
                     t={dismissalAssistance}
                 />

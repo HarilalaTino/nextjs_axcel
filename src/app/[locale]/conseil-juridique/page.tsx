@@ -28,7 +28,7 @@ export default async function LegalConsulting() {
                             <p>{legalConsulting("description")}</p>
                         </>
                     }
-                    imageSrc="/images/association/legalConsulting.jpg"
+                    imageSrc="/images/legal-department/legal-consulting.jpg"
                     ctasDisplay
                     t={legalConsulting}
                 />

@@ -33,7 +33,7 @@ export default async function TravelAgencyCreation() {
                             <p>{t("description")}</p>
                         </>
                     }
-                    imageSrc="/images/company/travel.jpg"
+                    imageSrc="/images/creations/travel-agency.jpg"
                     basicDisplayPrice={basicPrice}
                     t={t}
                 />
