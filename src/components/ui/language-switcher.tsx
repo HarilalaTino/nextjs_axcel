@@ -58,6 +58,8 @@ export default function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setIsOpen((prev) => !prev)}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
         className="flex items-center gap-2 rounded-md px-2 py-1 text-sm text-primary transition-colors"
       >
         <Flag code={LOCALE_DATA[locale].flagCode} />
@@ -68,20 +70,21 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-full mt-3 w-40 lg:min-w-[200px] rounded-xl bg-white py-1 shadow-xl z-50">
-          <span className="absolute -top-2 left-6 h-4 w-4 rotate-45 bg-white" />
-          {routing.locales.map((loc, index) => (
-            <div key={loc}>
-              {index > 0 && <div className="mx-3 border-t border-gray-100" />}
-              <button
-                onClick={() => handleChange(loc)}
-                className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-gray-800 transition-colors hover:bg-gray-50"
-              >
-                <Flag code={LOCALE_DATA[loc].flagCode} />
-                <span>{LOCALE_DATA[loc].label}</span>
-              </button>
-            </div>
-          ))}
+        <div className="absolute right-0 top-full z-50 mt-3  w-32 max-w-[calc(100vw-1.5rem)] rounded-xl py-1 shadow-xl border border-slate-200 bg-white/95 shadow-[0_20px_45px_-10px_rgba(15,23,42,0.18)] ring-1 ring-slate-100 backdrop-blur-sm">
+          {routing.locales
+            .filter((loc) => loc !== locale)
+            .map((loc, index) => (
+              <div key={loc}>
+                {index > 0 && <div className="mx-3 border-t border-gray-100" />}
+                <button
+                  onClick={() => handleChange(loc)}
+                  className="flex w-full items-center gap-3 pr-6 py-3 justify-end text-sm text-gray-800 transition-colors hover:bg-gray-50"
+                >
+                  <Flag code={LOCALE_DATA[loc].flagCode} />
+                  <span>{LOCALE_DATA[loc].label}</span>
+                </button>
+              </div>
+            ))}
         </div>
       )}
     </div>
