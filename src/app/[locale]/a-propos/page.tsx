@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 import StatsSection from "./stats-section";
 import ServicesSection from "./service-section";
 import Link from "next/link";
-import TeamSection from "./team-secton";
+import TeamSection from "./team-section";
 
 export default async function AboutPage() {
     const t = await getTranslations("About.creationPage");

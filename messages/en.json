@@ -152,7 +152,12 @@
     },
     "teamSection": {
       "eyebrow": "Management team member",
-      "title": "Our high-performing and ambitious team"
+      "title": "Our high-performing and ambitious team",
+      "members": {
+        "stephane": { "name": "Stephane A", "role": "Chief Executive Officer" },
+        "carol": { "name": "Carol R.", "role": "Manager" },
+        "steven": { "name": "Steven R.", "role": "Courier Manager" }
+      }
     }
   },
   "Footer": {

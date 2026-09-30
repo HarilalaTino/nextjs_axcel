@@ -151,7 +151,12 @@
     },
     "teamSection": {
       "eyebrow": "Membre d'équipe dirigeante",
-      "title": "Notre équipe performante et ambitieuse"
+      "title": "Notre équipe performante et ambitieuse",
+      "members": {
+        "stephane": { "name": "Stephane A", "role": "Directeur général" },
+        "carol": { "name": "Carol R.", "role": "Manager" },
+        "steven": { "name": "Steven R.", "role": "Responsable coursier" }
+      }
     }
   },
   "Footer": {
