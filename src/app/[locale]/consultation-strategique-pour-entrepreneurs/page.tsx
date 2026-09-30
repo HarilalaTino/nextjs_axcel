@@ -17,7 +17,7 @@ export default async function StrategicConsultingForEntrepreneurs() {
                     aria-hidden="true"
                 />
                 <h1 className="text-xs font-normal text-transparent absolute -z-10">
-                    {nav("creationNogAndAssociation")}
+                    {nav("strategicConsultingForEntrepreneurs")}
                 </h1>
                 <CreationPage
                     creationType="strategic-consulting-for-entrepreneurs"

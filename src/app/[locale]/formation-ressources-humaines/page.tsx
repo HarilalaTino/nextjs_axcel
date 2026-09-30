@@ -17,7 +17,7 @@ export default async function HrTraining() {
                     aria-hidden="true"
                 />
                 <h1 className="text-xs font-normal text-transparent absolute -z-10">
-                    {nav("creationNogAndAssociation")}
+                    {nav("hrTraining")}
                 </h1>
                 <CreationPage
                     creationType="hr-training"

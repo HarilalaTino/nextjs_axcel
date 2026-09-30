@@ -17,7 +17,7 @@ export default async function MeetingRoomRental() {
                     aria-hidden="true"
                 />
                 <h1 className="text-xs font-normal text-transparent absolute -z-10">
-                    {nav("creationNogAndAssociation")}
+                    {nav("meetingRoom")}
                 </h1>
                 <CreationPage
                     creationType="meeting-room-rental"

@@ -36,7 +36,7 @@ export default async function DraftingContractLeaseServiceProvider() {
                     aria-hidden="true"
                 />
                 <h1 className="text-xs font-normal text-transparent absolute -z-10">
-                    {nav("creationNogAndAssociation")}
+                    {nav("draftingContractLeaseServiceProvider")}
                 </h1>
                 <CreationPage
                     creationType="employment-contract"

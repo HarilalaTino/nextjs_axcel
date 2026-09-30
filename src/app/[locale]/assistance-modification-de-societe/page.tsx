@@ -17,7 +17,7 @@ export default async function CompanyModificationAssistance() {
                     aria-hidden="true"
                 />
                 <h1 className="text-xs font-normal text-transparent absolute -z-10">
-                    {nav("creationNogAndAssociation")}
+                    {nav("companyModificationAssistance")}
                 </h1>
                 <CreationPage
                     creationType="company-modification-assistance"
