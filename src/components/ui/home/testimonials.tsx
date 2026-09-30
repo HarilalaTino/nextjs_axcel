@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronDown, ChevronUp, Quote } from "lucide-react";
-import { useState } from "react";
+import { ChevronDown, ChevronUp, Play, Quote, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
 const BRAND = "#152039";
 const ACCENT = "#ff6341";
+const FB_BLUE = "#1877F2";
 const PER_PAGE = 3;
 const FADE_MS = 350;
 
@@ -15,13 +16,20 @@ interface Testimonial {
   role?: string;
   description: string;
   image: string;
+  fbVideoUrl?: string;
+  fbEmbedWidth?: number;
+  fbEmbedHeight?: number;
 }
 
-
-function TestimonialCard({ testimonial }: {
-  testimonial: Testimonial
+function TestimonialCard({
+  testimonial,
+  onPlay,
+}: {
+  testimonial: Testimonial;
+  onPlay: (t: Testimonial) => void;
 }) {
   const [open, setOpen] = useState(false);
+  const hasVideo = Boolean(testimonial.fbVideoUrl);
 
   return (
     <article
@@ -53,6 +61,29 @@ function TestimonialCard({ testimonial }: {
         }}
       />
 
+      {/* Bouton play Facebook : en haut à gauche, symétrique au bouton citation, visible au survol */}
+      {hasVideo && (
+        <button
+          type="button"
+          onClick={() => onPlay(testimonial)}
+          aria-label={`Regarder le témoignage vidéo de ${testimonial.name} sur Facebook`}
+          className={`absolute cursor-pointer left-4 top-4 flex h-10 items-center overflow-hidden rounded-full shadow-md transition-all duration-500 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none ${open
+              ? "w-auto scale-100 pr-4 opacity-100"
+              : "w-10 scale-75 pr-0 opacity-0 md:pointer-events-none"
+            }`}
+          style={{ backgroundColor: FB_BLUE }}
+        >
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center">
+            <Play className="ml-0.5 h-4 w-4" strokeWidth={0} fill="#fff" />
+          </span>
+          <span
+            className={`overflow-hidden whitespace-nowrap text-sm font-medium text-white transition-all duration-500 ease-out ${open ? "max-w-[140px]" : "max-w-0"
+              }`}
+          >
+            Regarder la vidéo
+          </span>
+        </button>
+      )}
 
       <button
         type="button"
@@ -108,9 +139,92 @@ function TestimonialCard({ testimonial }: {
   );
 }
 
+function VideoModal({
+  testimonial,
+  onClose,
+}: {
+  testimonial: Testimonial;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [onClose]);
+
+
+  const baseWidth = testimonial.fbEmbedWidth ?? 560;
+  const baseHeight =
+    testimonial.fbEmbedHeight ?? Math.round((baseWidth * 314) / 560);
+  const ratio = baseWidth / baseHeight;
+  const isPortrait = ratio < 1;
+
+  
+  const EMBED_WIDTH = isPortrait ? 420 : 720;
+  const EMBED_HEIGHT = Math.round(EMBED_WIDTH / ratio);
+
+  const embedSrc = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
+    testimonial.fbVideoUrl!
+  )}&show_text=false&autoplay=true&width=${EMBED_WIDTH}&height=${EMBED_HEIGHT}`;
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Vidéo de ${testimonial.name}`}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+    >
+      <div
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        onClick={onClose}
+        aria-hidden
+      />
+
+      <div
+        className="relative z-10 w-full"
+        style={{
+          maxWidth: `min(92vw, calc(85vh * ${ratio}), ${EMBED_WIDTH}px)`,
+        }}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Fermer la vidéo"
+          className="absolute -right-3 -top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          <X className="h-4 w-4" strokeWidth={2.5} style={{ color: BRAND }} />
+        </button>
+
+        <div
+          className="w-full overflow-hidden rounded-2xl bg-black shadow-2xl"
+          style={{ aspectRatio: `${ratio}` }}
+        >
+          <iframe
+            key={testimonial.fbVideoUrl}
+            src={embedSrc}
+            scrolling="no"
+            title={`Vidéo Facebook - ${testimonial.name}`}
+            className="h-full w-full border-0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Testimonials() {
   const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [activeVideo, setActiveVideo] = useState<Testimonial | null>(null);
   const t = useTranslations("Home");
   const ct = useTranslations("customerTestimonial");
   const clients = ct.raw("clients") as Testimonial[];
@@ -159,7 +273,7 @@ export default function Testimonials() {
                 key={item.name}
                 className="md:[&:nth-child(3n+2)]:translate-y-10"
               >
-                <TestimonialCard testimonial={item} />
+                <TestimonialCard testimonial={item} onPlay={setActiveVideo} />
               </div>
             ))}
           </div>
@@ -207,6 +321,10 @@ export default function Testimonials() {
           </nav>
         </div>
       </div>
+
+      {activeVideo && (
+        <VideoModal testimonial={activeVideo} onClose={() => setActiveVideo(null)} />
+      )}
     </section>
   );
 }
