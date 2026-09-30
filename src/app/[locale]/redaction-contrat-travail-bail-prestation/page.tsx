@@ -111,7 +111,7 @@ export default async function DraftingContractLeaseServiceProvider() {
                         </>
                     }
                     ctasDisplay
-                    imageSrc="/images/legal-department/provider-contract.jpg"
+                    imageSrc="/images/legal-department/provider-contract.jpeg"
                     t={serviceProviderContract}
                 />
                 <ElegantCardWrapper />

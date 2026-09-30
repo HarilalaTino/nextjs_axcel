@@ -24,7 +24,7 @@ export default async function BusinessFormalizationAssistance() {
                     eyebrow={businessFormalizationAssistance("eyebrow")}
                     title={businessFormalizationAssistance("title")}
                     description={<p>{businessFormalizationAssistance("description")}</p>}
-                    imageSrc="/images/association/businessFormalizationAssistance.jpg"
+                    imageSrc="/images/advice/business-formalization-assistance.jpeg"
                     ctasDisplay
                     t={businessFormalizationAssistance}
                 />

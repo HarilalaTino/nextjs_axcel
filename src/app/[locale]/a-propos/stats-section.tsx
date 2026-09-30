@@ -91,7 +91,7 @@ export default function StatsSection() {
 
     return (
         <div className="bg-slate-50 py-20 mt-10">
-            <div className="mx-auto wrap px-4 sm:px-6">
+            <div className="mx-auto wrap px-6 lg:px-8">
                 <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-500">
                     {t("eyebrow")}
                 </p>

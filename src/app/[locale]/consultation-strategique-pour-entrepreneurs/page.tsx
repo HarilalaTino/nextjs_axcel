@@ -24,7 +24,7 @@ export default async function StrategicConsultingForEntrepreneurs() {
                     eyebrow={strategicConsultingForEntrepreneurs("eyebrow")}
                     title={strategicConsultingForEntrepreneurs("title")}
                     description={<p>{strategicConsultingForEntrepreneurs("description")}</p>}
-                    imageSrc="/images/association/strategicConsultingForEntrepreneurs.jpg"
+                    imageSrc="/images/advice/strategic-consulting-for-entrepreneurs.jpg"
                     ctasDisplay
                     t={strategicConsultingForEntrepreneurs}
                 />

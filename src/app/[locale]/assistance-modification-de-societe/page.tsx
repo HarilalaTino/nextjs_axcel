@@ -24,7 +24,7 @@ export default async function CompanyModificationAssistance() {
                     eyebrow={companyModificationAssistance("eyebrow")}
                     title={companyModificationAssistance("title")}
                     description={<p>{companyModificationAssistance("description")}</p>}
-                    imageSrc="/images/association/companyModificationAssistance.jpg"
+                    imageSrc="/images/advice/company-modification-assistance.jpg"
                     ctasDisplay
                     t={companyModificationAssistance}
                 />

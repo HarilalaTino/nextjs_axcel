@@ -237,49 +237,57 @@
   "customerTestimonial": {
     "clients": [
       {
-        "name": "Tatiana Raharinirina",
-        "role": "Founder of ATARA",
-        "image": "/images/testimonials/tatiana-raharinirina.jpeg",
-        "description": "It is reassuring to work with a company that already has experience and a client base. You are a trustworthy company. Working with an experienced business is truly different. The service is fast, clear and precise. The welcome is pleasant, and so is the whole team."
+        "name": "Aron en parle",
+        "role": "Nofy Gasy Production",
+        "image": "/images/testimonials/aron.jpeg",
+        "description": "Starting a business used to scare me. With Axcel Company, everything went smoothly. In about 7 days, the company was established. The welcome was warm and the process was clear. It was fast and well done. Doing things properly makes a real difference. With Axcel Company, everything went smoothly. We didn't have to run around from one place to another: they handled everything for us."
       },
       {
-        "name": "Fyh Tahina Ramaroson",
-        "image": "/images/testimonials/fyh-tahina-ramaroson.jpeg",
-        "role": "Manager, Zero Stress Travel Agency",
-        "description": "Zero Stress Travel is a travel agency and tour operator. I got to know Axcel Company through my colleagues. Many of them have had their paperwork handled there. At Axcel, everything is done very quickly. The service is pleasant and reliable. The relationship with the team is excellent. If you want to start a business, go to Axcel Company. The price is fair and affordable for everyone."
+        "name": "Tatiana Raharinirina",
+        "role": "Business ATARA",
+        "image": "/images/testimonials/tatiana-raharinirina.jpeg",
+        "description": "It is reassuring to work with a company that already has experience and an established client base. You are a company we can trust. Working with an experienced company really makes a difference. The service is fast, clear, and precise. The welcome is pleasant, and so is the entire team."
       },
       {
         "name": "Antso Bomaka",
         "image": "/images/testimonials/antso-bomaka.jpeg",
-        "description": "Axcel Company took care of all my paperwork so I could put my sausages on the market. The service is good and fast, and the team is very welcoming. If you want to start a business but don't know how to handle the procedures, you can turn to them."
+        "role": "Food Products Trading Company",
+        "description": "Axcel Company took care of all the paperwork required to put my sausages on the market. The service is good and fast, and the team is very welcoming. If you want to start a business but are not familiar with the administrative procedures, you can turn to them."
+      },
+      {
+        "name": "Fyh Tahina Ramaroson",
+        "image": "/images/testimonials/fyh-tahina-ramaroson.jpeg",
+        "role": "Zero Stress Travel Agency",
+        "description": "Zero Stress Travel is a travel agency and tour operator. I learned about Axcel Company through my colleagues. Many of them had their paperwork handled by Axcel. At Axcel, everything is done very quickly. The service is friendly and reliable. The relationship with the team is excellent. If you want to start a business, contact Axcel Company. The price is fair and affordable for everyone."
       },
       {
         "name": "D & S Family",
         "image": "/images/testimonials/ds-family.jpeg",
-        "description": "Axcel helped me a great deal. I was able to set up my company with a complete file in less than 5 days. There is no doubt and no worry, because everything is in order. While my file was being prepared, Axcel Company kept me informed of its progress in real time. The welcome is warm and the pricing is justified. The customer service is top-notch."
-      },
-      {
-        "name": "Mr Elfrido",
-        "role": "Manager, Bleu Island Madagascar Travel Agency",
-        "image": "/images/testimonials/Elfrido.jpeg",
-        "description": "I am 100% satisfied. The welcome is pleasant and my file was processed quickly. They helped me a lot, notably by offering flexible payment terms for the opening of my company. I thank them endlessly for helping me achieve my dream."
-      },
-      {
-        "name": "Mr Gilbert",
-        "role": "President of the Mamoron'ala Association",
-        "image": "/images/testimonials/gilbert.jpeg",
-        "description": "Axcel Company helped me a great deal in handling my file fully legally, step by step. Thanks to them, I obtained my NIF and my STAT. I encourage everyone to get their affairs in order. For all administrative procedures, go to Axcel Company."
+        "description": "Axcel helped me a lot. I was able to set up my company with a complete application in less than 5 days. There is no doubt or worry because everything is done properly and legally. During the preparation of my application, Axcel Company kept me informed of its progress in real time. The welcome was good and the price was justified. The customer service is top-notch."
       },
       {
         "name": "Huang Hui",
-        "role": "Manager, Hong Wei Beauty",
+        "role": "Hong Wei Beauty",
         "image": "/images/testimonials/Huang-Hui.jpeg",
-        "description": "Axcel Company prepared my complete file in 3 days, and I obtained my NIF and my STAT. The welcome is good and the process is professional. I encourage you to use their services. They make life easier for those who don't have time to run from one administration to another."
+        "description": "Axcel Company prepared my complete application in 3 days, and I obtained my NIF and STAT. The welcome was good and the process was professional. I encourage you to work with them. They make life easier for people who don't have time to go from one government office to another."
       },
       {
-        "name": "Tolotra Quincaillerie",
+        "name": "Mr Elfrido",
+        "role": "Bleu Island Madagascar Travel Agency",
+        "image": "/images/testimonials/Elfrido.jpeg",
+        "description": "I am 100% satisfied. The welcome was pleasant and my application was processed quickly. They helped me a lot, especially by offering a flexible payment option for setting up my company. I am extremely grateful to them for helping me make my dream come true."
+      },
+      {
+        "name": "Mr Gilbert",
+        "role": "Mamoron'ala Association",
+        "image": "/images/testimonials/gilbert.jpeg",
+        "description": "Axcel Company helped me a lot in handling my application legally, step by step. Thanks to them, I obtained my NIF and STAT. I encourage everyone to make sure their business is legally compliant. For all administrative procedures, contact Axcel Company."
+      },
+      {
+        "name": "Tolotra",
+        "role": "Hardware Store",
         "image": "/images/testimonials/tolotra.jpeg",
-        "description": "Paperwork and legal procedures scared me when I was setting up my business. Axcel Company took care of all of it with energy and efficiency. I can now focus entirely on my sales."
+        "description": "The paperwork and legal procedures scared me when I was starting my business. Axcel Company handled everything efficiently and proactively. I can now focus entirely on my sales."
       }
     ]
   },

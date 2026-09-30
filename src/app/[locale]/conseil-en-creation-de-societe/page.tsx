@@ -24,7 +24,7 @@ export default async function CompanyCreationConsulting() {
                     eyebrow={companyCreationConsulting("eyebrow")}
                     title={companyCreationConsulting("title")}
                     description={<p>{companyCreationConsulting("description")}</p>}
-                    imageSrc="/images/association/companyCreationConsulting.jpg"
+                    imageSrc="/images/advice/company-creation-consulting.jpg"
                     ctasDisplay
                     t={companyCreationConsulting}
                 />

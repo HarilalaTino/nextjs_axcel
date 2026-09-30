@@ -311,7 +311,7 @@ export default function NavMenu() {
         {/* Logo */}
         <Link href="/" className="shrink-0 text-primary">
           <span className="text-lg font-semibold tracking-tight">
-            <Image src="/logo.png" alt="axcel" width={50} height={50} />
+            <Image src="/logo.png" alt="axcel" width={55} height={55} />
           </span>
         </Link>
 

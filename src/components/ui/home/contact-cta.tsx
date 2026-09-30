@@ -7,7 +7,7 @@ export default function ContactCTA() {
   const t = useTranslations('Home');
 
   return (
-    <section className="relative mx-auto mt-12 2xl:w-[85%] 2xl:max-w-7xl overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-primary to-[#14315c] px-4 py-12 text-center sm:mt-16 sm:rounded-[1.5rem] sm:px-6 sm:py-16 md:mt-20 md:rounded-[2rem] md:px-10 md:py-20 lg:px-16
+    <section className="relative mx-auto mt-12 w-2/3 2xl:w-[85%] 2xl:max-w-7xl overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-primary to-[#14315c] px-4 py-12 text-center sm:mt-16 sm:rounded-[1.5rem] sm:px-6 sm:py-16 md:mt-20 md:rounded-[2rem] md:px-10 md:py-20 lg:px-16
 ">
       <span className="text-3xl font-bold text-white sm:text-4xl">
         {t('contact.title')}
