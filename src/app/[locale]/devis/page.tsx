@@ -18,28 +18,28 @@ type FormState = {
   phone: string;
   whatsapp: string;
   email: string;
-  demande: string; 
+  demande: string;
   message: string;
   domicilierAxcel: boolean;
 };
 
 type RequestOption = {
   slug: string;
-  labelKey: string; 
+  labelKey: string;
 };
 
 type RequestCategory = {
   key: string;
   labelKey: string;
   options: RequestOption[];
-  standalone?: boolean; 
+  standalone?: boolean;
 };
 
 type SpecialCategory = RequestCategory & { selectedKey: string };
 
-/* --------------------------------------------------------------------------- */ 
-/* Request catalog (categories -> subcategories) */ 
-/* Each slug is unique: the selection is always done by slug. */ 
+/* --------------------------------------------------------------------------- */
+/* Request catalog (categories -> subcategories) */
+/* Each slug is unique: the selection is always done by slug. */
 /* --------------------------------------------------------------------------- */
 const REQUEST_CATALOG: RequestCategory[] = [
   {
@@ -112,13 +112,13 @@ const REQUEST_CATALOG: RequestCategory[] = [
   }
 ];
 
-/* --------------------------------------------------------------------------- */ 
-/* Special categories: ?selected=<selectedKey> */ 
-/* - Without subcategories (standalone). */ 
-/* - Hidden in normal use. */ 
-/* - When the URL contains a valid `selected`, these are the ONLY categories */ 
-/* displayed, and the one corresponding to the URL is active. */ 
-/* selectedKey in lowercase: the comparison ignores case. */ 
+/* --------------------------------------------------------------------------- */
+/* Special categories: ?selected=<selectedKey> */
+/* - Without subcategories (standalone). */
+/* - Hidden in normal use. */
+/* - When the URL contains a valid `selected`, these are the ONLY categories */
+/* displayed, and the one corresponding to the URL is active. */
+/* selectedKey in lowercase: the comparison ignores case. */
 /* --------------------------------------------------------------------------- */
 const SPECIAL_CATEGORIES: SpecialCategory[] = [
   { key: 'taxCard', selectedKey: 'taxcard', labelKey: 'requestOptions.taxCardRenewal', standalone: true, options: [{ slug: 'tax-card-renewal', labelKey: 'requestOptions.taxCardRenewal' }] },
@@ -181,6 +181,14 @@ const getInitialForm = (slug: string): FormState => ({
 
 type FieldErrors = Partial<Record<'nom' | 'phone' | 'demande', string>>;
 
+/* -------------------------------------------------------------------------- */
+/*  Shared input classes (mobile < 425px first, then min-[425px]: and up)      */
+/* -------------------------------------------------------------------------- */
+const INPUT_BASE =
+  'w-full min-w-0 rounded-xl border bg-white px-3 py-2.5 text-sm outline-none transition focus:ring-2 min-[425px]:px-4 min-[425px]:py-3';
+const INPUT_OK = 'border-slate-200 focus:border-secondary focus:ring-secondary/20';
+const INPUT_ERROR = 'border-red-300 focus:border-red-500 focus:ring-red-100';
+
 export default function QuotePage() {
   const t = useTranslations('QuotePage');
   const searchParams = useSearchParams();
@@ -196,11 +204,11 @@ export default function QuotePage() {
   // With a valid `selected`, only special categories are offered
   const specialActive = getSpecialCategory(requestedSelected) !== null;
   const visibleCategories: RequestCategory[] = specialActive
-  ? SPECIAL_CATEGORIES.filter((category) => category.key === initialQuery.categoryKey)
-  : REQUEST_CATALOG;
+    ? SPECIAL_CATEGORIES.filter((category) => category.key === initialQuery.categoryKey)
+    : REQUEST_CATALOG;
 
-    // Hidden original cards: with a valid `selected`, or with a type without rate
-    // Cartes d'origine masquées uniquement avec un `selected` valide
+  // Hidden original cards: with a valid `selected`, or with a type without rate
+  // Cartes d'origine masquées uniquement avec un `selected` valide
   const showOrigin = !specialActive;
 
   const [selectedCategory, setSelectedCategory] = useState<string | null>(initialQuery.categoryKey);
@@ -227,8 +235,8 @@ export default function QuotePage() {
   const [captchaError, setCaptchaError] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  // Resynchronize the selection when the query params change 
-// (state adjustment during rendering, without useEffect)
+  // Resynchronize the selection when the query params change
+  // (state adjustment during rendering, without useEffect)
   const queryKey = `${requestedType}|${requestedRate}|${requestedSelected}`;
   const [prevQueryKey, setPrevQueryKey] = useState(queryKey);
 
@@ -373,15 +381,16 @@ export default function QuotePage() {
       <TopMenu />
       <NavMenu />
 
-      <main className="bg-slate-50 px-4 py-12 sm:px-6 lg:px-8">
+      {/* pb-24 on mobile: keeps the floating scroll-to-top button from hiding the submit button */}
+      <main className="overflow-x-hidden bg-slate-50 px-2 pb-24 pt-6 min-[425px]:px-4 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(21,32,57,0.08)] sm:p-8 lg:p-12">
+          <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_20px_60px_rgba(21,32,57,0.08)] min-[425px]:rounded-[2rem] min-[425px]:p-6 sm:p-8 lg:p-12">
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+              <h1 className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary min-[425px]:text-sm">
                 {t('eyebrow')}
               </h1>
-              <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-                 {t(titleKey)}
+              <h2 className="mt-3 text-2xl font-black text-primary min-[425px]:text-3xl sm:text-4xl">
+                {t(titleKey)}
               </h2>
               <p className="mt-3 text-sm text-slate-600 sm:text-base">
                 {t('subtitle')}
@@ -389,7 +398,7 @@ export default function QuotePage() {
             </div>
 
             {showOrigin && (
-              <div className="mt-10 grid gap-4 md:grid-cols-2">
+              <div className="mt-6 grid grid-cols-1 gap-3 min-[425px]:mt-10 min-[425px]:gap-4 md:grid-cols-2">
                 {originOptions.map((option) => {
                   const selected = origin === option.value;
 
@@ -401,32 +410,36 @@ export default function QuotePage() {
                         setOrigin(option.value);
                         setSubmitted(false);
                       }}
-                      className={`rounded-2xl border p-5 text-left transition-all duration-200 ${selected
-                          ? 'border-secondary bg-secondary/5 shadow-md shadow-secondary/10'
-                          : 'border-slate-200 bg-white hover:border-secondary/60 hover:bg-slate-50'
+                      className={`min-w-0 rounded-2xl border p-4 text-left transition-all duration-200 min-[425px]:p-5 ${selected
+                        ? 'border-secondary bg-secondary/5 shadow-md shadow-secondary/10'
+                        : 'border-slate-200 bg-white hover:border-secondary/60 hover:bg-slate-50'
                         }`}
                     >
-                      <div className="flex items-center justify-between gap-4">
-                        <span className="text-lg font-bold text-primary">{option.label}</span>
+                      <div className="flex items-center justify-between gap-3 min-[425px]:gap-4">
+                        <span className="min-w-0 text-base font-bold text-primary min-[425px]:text-lg">{option.label}</span>
                         <span
-                          className={`flex h-5 w-5 items-center justify-center rounded-full border-2 ${selected ? 'border-secondary bg-secondary' : 'border-slate-300 bg-white'
+                          className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 ${selected ? 'border-secondary bg-secondary' : 'border-slate-300 bg-white'
                             }`}
                         >
                           {selected && <span className="h-2 w-2 rounded-full bg-white" />}
                         </span>
                       </div>
-                      <p className="mt-3 text-sm text-slate-600">{option.description}</p>
+                      <p className="mt-2 text-sm text-slate-600 min-[425px]:mt-3">{option.description}</p>
                     </button>
                   );
                 })}
               </div>
             )}
 
-            <form onSubmit={handleSubmit} noValidate className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
-              <div className="grid gap-5 md:grid-cols-2">
-                <label className="block">
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-3 min-[425px]:mt-10 min-[425px]:rounded-3xl min-[425px]:p-5 sm:p-6"
+            >
+              <div className="grid grid-cols-1 gap-4 min-[425px]:gap-5 md:grid-cols-2">
+                <label className="block min-w-0">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
-                    <UserRound className="h-4 w-4 text-secondary" />
+                    <UserRound className="h-4 w-4 shrink-0 text-secondary" />
                     {t('form.fullName')}<span className='text-red-500'>*</span>
                   </span>
                   <input
@@ -434,17 +447,14 @@ export default function QuotePage() {
                     value={form.nom}
                     onChange={(event) => handleInputChange('nom', event.target.value)}
                     aria-invalid={Boolean(fieldErrors.nom)}
-                    className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${fieldErrors.nom
-                        ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-                        : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
-                      }`}
+                    className={`${INPUT_BASE} ${fieldErrors.nom ? INPUT_ERROR : INPUT_OK}`}
                   />
                   {fieldErrors.nom && <p className="mt-1 text-xs text-red-600">{fieldErrors.nom}</p>}
                 </label>
 
-                <label className="block">
+                <label className="block min-w-0">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
-                    <Phone className="h-4 w-4 text-secondary" />
+                    <Phone className="h-4 w-4 shrink-0 text-secondary" />
                     {t('form.phone')}<span className='text-red-500'>*</span>
                   </span>
                   <input
@@ -452,30 +462,27 @@ export default function QuotePage() {
                     value={form.phone}
                     onChange={(event) => handleInputChange('phone', event.target.value)}
                     aria-invalid={Boolean(fieldErrors.phone)}
-                    className={`w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-secondary/20 ${fieldErrors.phone
-                        ? 'border-red-300 focus:border-red-500 focus:ring-red-100'
-                        : 'border-slate-200 focus:border-secondary focus:ring-secondary/20'
-                      }`}
+                    className={`${INPUT_BASE} ${fieldErrors.phone ? INPUT_ERROR : INPUT_OK}`}
                   />
                   {fieldErrors.phone && <p className="mt-1 text-xs text-red-600">{fieldErrors.phone}</p>}
                 </label>
 
-                <label className="block">
+                <label className="block min-w-0">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
-                    <Phone className="h-4 w-4 text-secondary" />
+                    <Phone className="h-4 w-4 shrink-0 text-secondary" />
                     WhatsApp
                   </span>
                   <input
                     type="tel"
                     value={form.whatsapp}
                     onChange={(event) => handleInputChange('whatsapp', event.target.value)}
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                    className={`${INPUT_BASE} ${INPUT_OK}`}
                   />
                 </label>
 
-                <label className="block">
+                <label className="block min-w-0">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
-                    <Mail className="h-4 w-4 text-secondary" />
+                    <Mail className="h-4 w-4 shrink-0 text-secondary" />
                     {t('form.email')}
                   </span>
                   <input
@@ -483,16 +490,16 @@ export default function QuotePage() {
                     value={form.email}
                     onChange={(event) => handleInputChange('email', event.target.value)}
                     placeholder={t('form.emailPlaceholder')}
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                    className={`${INPUT_BASE} ${INPUT_OK}`}
                   />
                 </label>
 
-                <div className="block md:col-span-2">
+                <div className="block min-w-0 md:col-span-2">
                   <span className="mb-3 block text-sm font-semibold text-primary">
                     {t('form.requestType')} <span className='text-red-500'>*</span>
                   </span>
 
-                  <div className="flex flex-wrap gap-2.5">
+                  <div className="flex flex-wrap gap-2 min-[425px]:gap-2.5">
                     {visibleCategories.map((category) => {
                       const isSelected = selectedCategory === category.key;
 
@@ -505,11 +512,10 @@ export default function QuotePage() {
                             const first = category.options[0];
                             if (first) handleSelectOption(first);
                           }}
-                          className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                            isSelected
-                              ? 'border-secondary bg-secondary text-white shadow-sm'
-                              : 'border-slate-200 bg-white text-primary hover:border-secondary/60 hover:text-secondary'
-                          }`}
+                          className={`max-w-full break-words rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-200 min-[425px]:px-4 min-[425px]:py-2 min-[425px]:text-sm ${isSelected
+                            ? 'border-secondary bg-secondary text-white shadow-sm'
+                            : 'border-slate-200 bg-white text-primary hover:border-secondary/60 hover:text-secondary'
+                            }`}
                         >
                           {label(category.labelKey)}
                         </button>
@@ -519,7 +525,7 @@ export default function QuotePage() {
 
                   {/* Standalone categories have no subcategories */}
                   {currentCategory && !currentCategory.standalone && (
-                    <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                    <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                       {currentCategory.options.map((option) => {
                         const isOptionSelected = form.demande === option.slug;
 
@@ -528,11 +534,10 @@ export default function QuotePage() {
                             key={option.slug}
                             type="button"
                             onClick={() => handleSelectOption(option)}
-                            className={`rounded-xl border px-3 py-2.5 text-left text-sm transition-all duration-200 ${
-                              isOptionSelected
-                                ? 'border-secondary bg-secondary/5 text-primary shadow-sm'
-                                : 'border-slate-200 bg-white text-slate-700 hover:border-secondary/60 hover:text-secondary'
-                            }`}
+                            className={`min-w-0 break-words rounded-xl border px-3 py-2 text-left text-xs transition-all duration-200 min-[425px]:py-2.5 min-[425px]:text-sm ${isOptionSelected
+                              ? 'border-secondary bg-secondary/5 text-primary shadow-sm'
+                              : 'border-slate-200 bg-white text-slate-700 hover:border-secondary/60 hover:text-secondary'
+                              }`}
                           >
                             {label(option.labelKey)}
                           </button>
@@ -544,8 +549,8 @@ export default function QuotePage() {
                   {fieldErrors.demande && <p className="mt-2 text-xs text-red-600">{fieldErrors.demande}</p>}
                 </div>
 
-                <div className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white px-4 py-3 md:col-span-2">
-                  <span className="text-sm font-semibold text-primary">
+                <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 min-[425px]:gap-4 min-[425px]:px-4 md:col-span-2">
+                  <span className="min-w-0 text-sm font-semibold text-primary">
                     {t('form.RegisteredOffice')}
                   </span>
                   <button
@@ -563,28 +568,32 @@ export default function QuotePage() {
                   </button>
                 </div>
 
-                <label className="block md:col-span-2">
+                <label className="block min-w-0 md:col-span-2">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
-                    <MessageSquareText className="h-4 w-4 text-secondary" />
+                    <MessageSquareText className="h-4 w-4 shrink-0 text-secondary" />
                     {t('form.message')}
                   </span>
                   <textarea
                     value={form.message}
                     onChange={(event) => handleInputChange('message', event.target.value)}
-                    rows={8}
+                    rows={6}
                     maxLength={1200}
                     placeholder={t('form.messagePlaceholder')}
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                    className={`${INPUT_BASE} ${INPUT_OK} min-[425px]:min-h-[12rem]`}
                   />
                 </label>
 
-                {/*reCAPTCHA*/}
-                <div className="md:col-span-2">
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                    onChange={() => setCaptchaError(null)}
-                  />
+                {/* reCAPTCHA: fixed 304px width -> scaled down on very small screens */}
+                <div className="min-w-0 md:col-span-2">
+                  <div className="max-w-full overflow-hidden">
+                    <div className="origin-top-left scale-[0.84] min-[375px]:scale-100">
+                      <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                        onChange={() => setCaptchaError(null)}
+                      />
+                    </div>
+                  </div>
                   {captchaError && <p className="mt-2 text-xs text-red-600">{captchaError}</p>}
                 </div>
               </div>
@@ -596,7 +605,7 @@ export default function QuotePage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white transition hover:bg-secondary/90 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                 >
                   {isSubmitting ? t('form.submitting') : t('form.submit')}
                   {!isSubmitting && <ArrowRight className="h-4 w-4" />}
@@ -605,19 +614,19 @@ export default function QuotePage() {
             </form>
 
             {error && (
-              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-4 text-red-700">
+              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-3 text-red-700 min-[425px]:p-4">
                 <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
-                <div>
+                <div className="min-w-0">
                   <p className="font-semibold">{t('errors.title')}</p>
-                  <p className="text-sm">{error}</p>
+                  <p className="break-words text-sm">{error}</p>
                 </div>
               </div>
             )}
 
             {submitted && (
-              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-emerald-800">
+              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-3 text-emerald-800 min-[425px]:p-4">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
-                <div>
+                <div className="min-w-0">
                   <p className="font-semibold">{t('success.title')}</p>
                   <p className="text-sm">
                     {t('success.description')}
