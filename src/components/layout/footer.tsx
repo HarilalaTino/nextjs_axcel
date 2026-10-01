@@ -88,11 +88,10 @@ export default function Footer() {
           <div className="group block rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur transition hover:border-white/30 hover:bg-white/10">
             <div className="flex items-center gap-3">
               <Image
-                src="/logo.png"
+                src="/logo-white.png"
                 alt=""
-                width={44}
-                height={44}
-                className="rounded-full bg-white"
+                width={60}
+                height={60}
               />
               <div>
                 <p className="text-sm font-semibold text-white">Axcel Company</p>
