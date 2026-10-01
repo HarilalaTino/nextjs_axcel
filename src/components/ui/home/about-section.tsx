@@ -60,9 +60,9 @@ export default function AboutSection() {
                     </div>
 
                     {/* badge flottant */}
-                    <div className="absolute -bottom-6 -right-6 flex max-w-[300px] items-center gap-3 rounded-2xl bg-white px-8 py-4 shadow-md shadow-primary/15 ring-1 ring-slate-100 sm:-right-8 sm:-bottom-8">
+                    <div className="absolute -bottom-6 -right-6 flex max-w-40 xs:max-w-60 sm:max-w-[300px] items-center gap-3 rounded-2xl bg-white px-8 py-4 shadow-md shadow-primary/15 ring-1 ring-slate-100 sm:-right-8 sm:-bottom-8">
                         <div className="min-w-0">
-                            <p className="text-4xl font-extrabold leading-none text-primary">
+                            <p className="text-2xl xs:text-4xl font-extrabold leading-none text-primary">
                                 +<AnimatedCounter target={2800} />
                             </p>
 

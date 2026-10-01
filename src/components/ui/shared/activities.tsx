@@ -65,13 +65,13 @@ export default function Activities() {
                         {homeT('servicesDescription')}
                     </p>
                 </div>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 px-8 xl:px-0 lg:grid-cols-3 auto-rows-fr items-stretch">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 px-4 xs:px-8 xl:px-0 lg:grid-cols-3 auto-rows-fr items-stretch">
                     {categories.map((category) => {
                         const Icon = category.icon;
                         return (
                             <div
                                 key={category.title}
-                                className="flex h-full min-h-[260px] flex-col rounded-2xl p-6"
+                                className="flex h-full min-h-[260px] flex-col rounded-2xl p-4 sm:p-6"
                                 style={{ backgroundColor: `${BRAND}0D` }}
                             >
                                 <div
@@ -102,7 +102,7 @@ export default function Activities() {
                     })}
 
                     <div
-                        className="flex h-full min-h-[260px] flex-col rounded-2xl p-6"
+                        className="flex h-full min-h-[260px] flex-col rounded-2xl p-4 sm:p-6"
                         style={{ backgroundColor: `${BRAND}0D` }}
                     >
                         <Link

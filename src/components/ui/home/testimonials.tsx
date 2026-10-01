@@ -255,7 +255,7 @@ export default function Testimonials() {
     "flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-sm transition-all duration-300 hover:border-secondary hover:text-secondary hover:shadow-md disabled:pointer-events-none disabled:opacity-35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 max-md:-rotate-90";
 
   return (
-    <section className="w-full bg-slate-50 px-8 py-16 md:px-10 md:py-24">
+    <section className="w-full bg-slate-50 px-4 xs:px-8 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 text-center">
           <h2

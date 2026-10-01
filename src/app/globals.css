@@ -8,6 +8,8 @@
 @theme {
   --color-primary: #152039;
   --color-secondary: #ff6341;
+  --breakpoint-xs: 375px;
+
 }
 
 

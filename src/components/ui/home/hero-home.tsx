@@ -216,7 +216,7 @@ export default function HeroServices() {
                 <div className="absolute block inset-x-0 top-0 z-20 px-6 pt-8 sm:pt-14 md:hidden lg:px-8 lg:pt-20">
                     <div className="mx-auto max-w-7xl">
                         <div className="max-w-2xl">
-                            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                            <h1 className="text-2xl xs:text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
                                 {t('heroTitle')}
                             </h1>
                             <p className="mt-4 max-w-xl text-base text-white/80 sm:text-lg">
