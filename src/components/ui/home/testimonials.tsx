@@ -71,7 +71,7 @@ function TestimonialCard({
           type="button"
           onClick={() => onPlay(testimonial)}
           aria-label={`Regarder le témoignage vidéo de ${testimonial.name} sur Facebook`}
-          className={`absolute z-10 cursor-pointer left-4 top-4 flex h-10 items-center overflow-hidden rounded-full shadow-md transition-all duration-500 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none ${
+          className={`absolute cursor-pointer z-40  left-4 top-4 flex h-10 items-center overflow-hidden rounded-full shadow-md transition-all duration-500 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none ${
             open
               ? "w-auto scale-100 pr-4 opacity-100"
               : "w-10 scale-75 pr-0 opacity-0 pointer-events-none"
