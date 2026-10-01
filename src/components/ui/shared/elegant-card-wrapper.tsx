@@ -11,31 +11,37 @@ export default async function ElegantCardWrapper({
   const elms = [
     {
       slug: 'taxCard',
+      icon: Home,
       title: creationPages('additionalServices.items.taxCard.title'),
       description: creationPages('additionalServices.items.taxCard.description')
     },
     {
       slug: 'activity',
+      icon: Building2,
       title: creationPages('additionalServices.items.activity.title'),
       description: creationPages('additionalServices.items.activity.description')
     },
     {
       slug: 'headOffice',
+      icon: RefreshCcwDot,
       title: creationPages('additionalServices.items.headOffice.title'),
       description: creationPages('additionalServices.items.headOffice.description')
     },
     {
       slug: 'closure',
+      icon: Ban,
       title: creationPages('additionalServices.items.closure.title'),
       description: creationPages('additionalServices.items.closure.description')
     },
     {
       slug: 'letter',
+      icon: FileText,
       title: creationPages('additionalServices.items.letter.title'),
       description: creationPages('additionalServices.items.letter.description')
     },
     {
       slug: 'requests',
+      icon: MessageSquareMore,
       title: creationPages('additionalServices.items.requests.title'),
       description: creationPages('additionalServices.items.requests.description')
     },
@@ -60,10 +66,10 @@ export default async function ElegantCardWrapper({
         <div className="mx-auto mt-6 h-1 w-16 bg-secondary" />
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {visibleElms.map((service, index) => (
+          {visibleElms.map((service) => (
             <ElegantCard
               key={service.slug}
-              icon={[Home, Building2, RefreshCcwDot, Ban, FileText, MessageSquareMore][index % 6]}
+              icon={service.icon}
               title={service.title}
               description={service.description}
               href={{

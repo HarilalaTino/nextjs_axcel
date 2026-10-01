@@ -15,7 +15,6 @@ const escapeHtml = (value: unknown): string =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
-// Empêche l'injection de retours à la ligne dans l'objet de l'email
 const toSingleLine = (value: unknown): string => String(value ?? '').replace(/[\r\n]+/g, ' ').trim();
 
 export async function POST(request: NextRequest) {
@@ -23,8 +22,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { nom, phone, whatsapp, email, demande, message, origin, domicilierAxcel, captchaToken } = body ?? {};
 
-    // Champs réellement obligatoires côté formulaire : nom, téléphone, type de demande.
-    // L'email est optionnel, et l'origine vaut 'non-specifie' quand elle n'est pas demandée.
     if (!nom || !phone || !demande || !origin) {
       return NextResponse.json({ error: 'Champs requis manquants.' }, { status: 400 });
     }

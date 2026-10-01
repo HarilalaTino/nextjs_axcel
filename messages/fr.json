@@ -239,6 +239,7 @@
     "homeButton": "Retour à l'accueil"
   },
   "customerTestimonial": {
+    "WatchVideo": "Regarder la vidéo",
     "clients": [
       {
         "name": " Aron en parle",
@@ -325,12 +326,36 @@
       "title": "Une gamme de services complets pour des clients variés",
       "description": "Notre objectif est de simplifier les processus administratifs et de garantir la conformité avec la réglementation en vigueur.",
       "items": {
-        "taxCard": { "title": "Renouvellement carte fiscale", "description": "Renouveler annuellement la carte fiscale pour se conformer aux exigences de l'État." },
-        "activity": { "title": "Changement, rajout d'activité", "description": "Décision de changements, mise à jour des statuts, formalité à respecter." },
-        "headOffice": { "title": "Changement siège social", "description": "Modifier son siège principal nécessite une série de démarches juridiques et administratives." },
-        "closure": { "title": "Cessation d'activité", "description": "Pour les entreprises souhaitant procéder à l'arrêt de l'activité économique." },
-        "letter": { "title": "Rédaction lettre administrative", "description": "Nous rédigeons des lettres administratives telles que demande d'agrément, permis de construire." },
-        "requests": { "title": "Diverses demandes", "description": "Nous traitons tous types de demandes (Agrément, autorisation ministérielle...)." }
+        "taxCard": {
+          "title": "Renouvellement carte fiscale",
+          "description": "Renouveler annuellement la carte fiscale pour se conformer aux exigences de l'État.",
+          "details": ["Vérification des obligations fiscales", "Préparation du dossier de renouvellement", "Suivi administratif jusqu'à validation"]
+        },
+        "activity": {
+          "title": "Changement, rajout d'activité",
+          "description": "Décision de changements, mise à jour des statuts, formalité à respecter.",
+          "details": ["Analyse de la nouvelle activité", "Mise à jour des statuts et documents", "Assistance lors des démarches institutionnelles"]
+        },
+        "headOffice": {
+          "title": "Changement siège social",
+          "description": "Modifier son siège principal nécessite une série de démarches juridiques et administratives.",
+          "details": ["Contrôle du dossier de changement", "Coordination des formalités administratives", "Accompagnement sur les notifications requises"]
+        },
+        "closure": {
+          "title": "Cessation d'activité",
+          "description": "Pour les entreprises souhaitant procéder à l'arrêt de l'activité économique.",
+          "details": ["Évaluation des obligations de clôture", "Préparation du dossier de cessation", "Suivi jusqu'à la finalisation"]
+        },
+        "letter": {
+          "title": "Rédaction lettre administrative",
+          "description": "Nous rédigeons des lettres administratives telles que demande d'agrément, permis de construire.",
+          "details": ["Rédaction sur mesure", "Formulation conforme aux exigences", "Transmission de documents prêts à l'usage"]
+        },
+        "requests": {
+          "title": "Diverses demandes",
+          "description": "Nous traitons tous types de demandes (Agrément, autorisation ministérielle...).",
+          "details": ["Évaluation du type de demande", "Préparation complète du dossier", "Suivi jusqu'au résultat attendu"]
+        }
       },
       "contact": "Nous contacter",
       "quote": "Demander un devis"
@@ -781,6 +806,7 @@
     }
   },
   "QuotePage": {
+    "noCardsTitle": "Parlez-nous de votre projet",
     "eyebrow": "Demande de devis",
     "title": "Choisissez votre origine puis décrivez votre besoin",
     "subtitle": "Sélectionnez votre profil pour recevoir une réponse adaptée à votre situation.",

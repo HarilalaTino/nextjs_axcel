@@ -240,6 +240,7 @@
     "homeButton": "Back to home"
   },
   "customerTestimonial": {
+    "WatchVideo": "Watch the video",
     "clients": [
       {
         "name": "Aron en parle",
@@ -326,12 +327,36 @@
       "title": "A complete range of services for a wide range of clients",
       "description": "Our goal is to simplify administrative processes and ensure compliance with current regulations.",
       "items": {
-        "taxCard": { "title": "Tax card renewal", "description": "Renew your tax card annually to comply with government requirements." },
-        "activity": { "title": "Change or add a business activity", "description": "Changes to your business, updates to your articles of association and required formalities." },
-        "headOffice": { "title": "Registered office change", "description": "Moving your registered office requires a series of legal and administrative procedures." },
-        "closure": { "title": "Business closure", "description": "For businesses wishing to cease their economic activity." },
-        "letter": { "title": "Administrative letter drafting", "description": "We draft administrative letters, such as approval requests and building permit applications." },
-        "requests": { "title": "Various requests", "description": "We handle all types of requests, including approvals and ministerial authorizations." }
+        "taxCard": {
+          "title": "Tax card renewal",
+          "description": "Renew your tax card annually to comply with government requirements.",
+          "details": ["Review of tax obligations", "Preparation of the renewal application", "Administrative follow-up through approval"]
+        },
+        "activity": {
+          "title": "Change or add a business activity",
+          "description": "Changes to your business, updates to your articles of association and required formalities.",
+          "details": ["Review of the new activity", "Updates to articles of association and documents", "Assistance with institutional procedures"]
+        },
+        "headOffice": {
+          "title": "Registered office change",
+          "description": "Moving your registered office requires a series of legal and administrative procedures.",
+          "details": ["Review of the change application", "Coordination of administrative formalities", "Assistance with required notifications"]
+        },
+        "closure": {
+          "title": "Business closure",
+          "description": "For businesses wishing to cease their economic activity.",
+          "details": ["Review of closure obligations", "Preparation of the closure application", "Follow-up through completion"]
+        },
+        "letter": {
+          "title": "Administrative letter drafting",
+          "description": "We draft administrative letters, such as approval requests and building permit applications.",
+          "details": ["Tailored drafting", "Wording that meets applicable requirements", "Delivery of ready-to-use documents"]
+        },
+        "requests": {
+          "title": "Various requests",
+          "description": "We handle all types of requests, including approvals and ministerial authorizations.",
+          "details": ["Assessment of the request type", "Complete preparation of the application", "Follow-up through the expected outcome"]
+        }
       },
       "contact": "Contact us", 
       "quote": "Request a quote"
@@ -783,6 +808,7 @@
   },
 
   "QuotePage": {
+    "noCardsTitle": "Tell us about your project",
     "eyebrow": "Request a quote",
     "title": "Choose your origin then describe your need",
     "subtitle": "Select your profile to receive a response tailored to your situation.",

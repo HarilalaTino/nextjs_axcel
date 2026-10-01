@@ -30,6 +30,7 @@ function TestimonialCard({
 }) {
   const [open, setOpen] = useState(false);
   const hasVideo = Boolean(testimonial.fbVideoUrl);
+  const ct = useTranslations("customerTestimonial");
 
   return (
     <article
@@ -61,7 +62,6 @@ function TestimonialCard({
         }}
       />
 
-      {/* Bouton play Facebook : en haut à gauche, symétrique au bouton citation, visible au survol */}
       {hasVideo && (
         <button
           type="button"
@@ -80,7 +80,7 @@ function TestimonialCard({
             className={`overflow-hidden whitespace-nowrap text-sm font-medium text-white transition-all duration-500 ease-out ${open ? "max-w-[140px]" : "max-w-0"
               }`}
           >
-            Regarder la vidéo
+            {ct("WatchVideo")}
           </span>
         </button>
       )}

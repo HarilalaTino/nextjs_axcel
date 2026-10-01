@@ -123,7 +123,7 @@ const REQUEST_CATALOG: RequestCategory[] = [
 const SPECIAL_CATEGORIES: SpecialCategory[] = [
   { key: 'taxCard', selectedKey: 'taxcard', labelKey: 'requestOptions.taxCardRenewal', standalone: true, options: [{ slug: 'tax-card-renewal', labelKey: 'requestOptions.taxCardRenewal' }] },
   { key: 'activity', selectedKey: 'activity', labelKey: 'requestOptions.activityChange', standalone: true, options: [{ slug: 'activity-change', labelKey: 'requestOptions.activityChange' }] },
-  { key: 'headOffice', selectedKey: 'headoffice', labelKey: 'requestOptions.headOffice', standalone: true, options: [{ slug: 'head-office-change', labelKey: 'requestOptions.headOfficechanded' }] },
+  { key: 'headOffice', selectedKey: 'headoffice', labelKey: 'requestOptions.headOfficechanded', standalone: true, options: [{ slug: 'head-office-change', labelKey: 'requestOptions.headOfficechanded' }] },
   { key: 'closure', selectedKey: 'closure', labelKey: 'requestOptions.businessClosure', standalone: true, options: [{ slug: 'business-closure', labelKey: 'requestOptions.businessClosure' }] },
   { key: 'letter', selectedKey: 'letter', labelKey: 'requestOptions.administrativeLetter', standalone: true, options: [{ slug: 'administrative-letter', labelKey: 'requestOptions.administrativeLetter' }] },
   { key: 'requests', selectedKey: 'requests', labelKey: 'requestOptions.variousRequests', standalone: true, options: [{ slug: 'various-requests', labelKey: 'requestOptions.variousRequests' }] },
@@ -366,6 +366,7 @@ export default function QuotePage() {
   };
 
   const currentCategory = visibleCategories.find((category) => category.key === selectedCategory);
+  const titleKey = showOrigin ? 'title' : 'noCardsTitle';
 
   return (
     <>
@@ -380,7 +381,7 @@ export default function QuotePage() {
                 {t('eyebrow')}
               </h1>
               <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-                {t('title')}
+                 {t(titleKey)}
               </h2>
               <p className="mt-3 text-sm text-slate-600 sm:text-base">
                 {t('subtitle')}
