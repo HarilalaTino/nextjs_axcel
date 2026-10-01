@@ -35,14 +35,24 @@ export const metadata: Metadata = {
     "conseil entreprise",
     "assistance administrative",
   ],
+  icons: {
+    icon: [
+      { url: "/icon-light.png", sizes: "48x48", type: "image/png" },
+      {
+        url: "/icon-light.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
   authors: [{ name: "Axcel Company" }],
   creator: "Axcel Company",
   publisher: "Axcel Company",
-  icons: {
-    icon: [{ url: "/logo.png", type: "image/png" }],
-    shortcut: ["/logo.png"],
-    apple: [{ url: "/logo.png", type: "image/png" }],
-  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -50,21 +60,14 @@ export const metadata: Metadata = {
     title: "Axcel Company | Services professionnels aux entreprises",
     description:
       "Création d'entreprise, domiciliation, conseil et assistance pour les entrepreneurs à Madagascar.",
-    images: [
-      {
-        url: "/images/home/hero-bg-1.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Axcel Company, services professionnels aux entreprises",
-      },
-    ],
+     images: [{ url: "/images/og/og-default.jpg", width: 860, height: 484, alt: "Axcel Company" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Axcel Company | Services professionnels aux entreprises",
     description:
       "Création d'entreprise, domiciliation, conseil et assistance à Madagascar.",
-    images: ["/images/home/hero-bg-1.jpg"],
+    images: ["/images/og/og-default.jpg"],
   },
   robots: {
     index: process.env.NEXT_PUBLIC_SITE_URL === "https://axcel.mg",
@@ -94,7 +97,7 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-         <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages}>
           {children}
           <ScrollToTop />
           <Footer />
