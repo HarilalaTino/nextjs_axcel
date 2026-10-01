@@ -21,7 +21,6 @@ export default async function CertificateOfSuitabilityForMarketPlacement() {
         "healthCertificate",
         "commerceAuthorization",
         "registration",
-        "establishmentRegistration",
     ];
     return (
         <>
@@ -39,7 +38,7 @@ export default async function CertificateOfSuitabilityForMarketPlacement() {
                     description={
                         <>
                             <p>{consumabilityCertification("description")}</p>
-                            <ul className="list-disc pl-5 space-y-2">
+                            <ul className="list-disc pl-5 mt-4 space-y-2">
                                 {consummability.map((point) => (
                                     <li
                                         key={point}

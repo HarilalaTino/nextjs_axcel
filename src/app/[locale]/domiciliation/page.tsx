@@ -32,12 +32,6 @@ export default async function CreationDomiciliationPage() {
                     description={
                         <>
                             <p>{t("description")}</p>
-                            <ul className="mt-4 list-disc list-inside space-y-1 pl-4">
-                                <li>{t("why.first")}</li>
-                                <li>{t("why.second")}</li>
-                                <li>{t("why.third")}</li>
-                                <li>{t("why.fourth")}</li>
-                            </ul>
                         </>
                     }
                     imageSrc="/images/creations/domiciliation.jpg"

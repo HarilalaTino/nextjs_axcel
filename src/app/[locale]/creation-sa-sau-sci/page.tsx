@@ -45,8 +45,7 @@ export default async function SocietyCreationSAorSAUorSCAI() {
                     description={
                         <>
                             <p>{sa("description")}</p>
-                            <p className="mt-3">{sa("keyPoints.title")}</p>
-                            <ul className="list-disc pl-5 space-y-2">
+                            <ul className="list-disc pl-5 mt-4 space-y-2">
                                 {saPoints.map((point) => (
                                     <li
                                         key={point}
@@ -72,8 +71,7 @@ export default async function SocietyCreationSAorSAUorSCAI() {
                     description={
                         <>
                             <p>{sau("description")}</p>
-                            <p className="mt-3">{sau("keyPoints.title")}</p>
-                            <ul className="list-disc pl-5 space-y-2">
+                            <ul className="list-disc pl-5 mt-4 space-y-2">
                                 {sauPoints.map((point) => (
                                     <li
                                         key={point}
@@ -100,8 +98,7 @@ export default async function SocietyCreationSAorSAUorSCAI() {
                     description={
                         <>
                             <p>{sci("description")}</p>
-                            <p className="mt-3">{sci("keyPoints.title")}</p>
-                            <ul className="list-disc pl-5 space-y-2">
+                            <ul className="list-disc pl-5 mt-4 space-y-2">
                                 {sciPoints.map((point) => (
                                     <li
                                         key={point}

@@ -34,8 +34,8 @@ export type BasicPrice = {
   title?: string;
   originalPrice: string;
   euroEquivalence: string;
-  annotation?: ReactNode
-}
+  annotation?: ReactNode;
+};
 
 export default async function CreationPage({
   eyebrow,
@@ -51,7 +51,7 @@ export default async function CreationPage({
   overidecta,
   basicDisplayPrice,
   ctasDisplay,
-  overideQueryparams
+  overideQueryparams,
 }: CreationPageProps) {
   const contactHref = '/contact' as const;
   const quoteHref = '/devis' as const;
@@ -59,15 +59,16 @@ export default async function CreationPage({
   const quoteLabel = t ? t('quote') : 'Demander un devis';
 
   const contactUrl = {
-    pathname: contactHref
+    pathname: contactHref,
   } as const;
+
   const queryType = overideQueryparams
-  ? { [overideQueryparams]: creationType }
-  : { type: creationType };
+    ? { [overideQueryparams]: creationType }
+    : { type: creationType };
 
   const quoteUrl = {
     pathname: quoteHref,
-    query: queryType
+    query: queryType,
   } as const;
 
   const contentClassName = isReverseSection
@@ -80,34 +81,47 @@ export default async function CreationPage({
 
   const globalTranslation = await getTranslations('Global');
 
-
   return (
     <>
-      <section className="page-creation-section py-8 px-6 lg:px-8 lg:py-12">
-        <div className="mx-auto flex wrap flex-col gap-8 sm:px-4 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
-          <div className={`${contentClassName} w-full flex-1 ${isReverseSection ? 'lg:order-2' : ''}`}>
-            <p className="text-sm font-semibold uppercase tracking-wide text-secondary">{eyebrow}</p>
+      <section className="page-creation-section px-6 py-8 lg:px-8 lg:py-12">
+        <div
+          className={`mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:px-4 lg:items-stretch lg:gap-12 lg:px-8 ${isReverseSection
+            ? 'lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]'
+            : 'lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]'
+            }`}
+        >
+          {/* TEXTE */}
+          <div
+            className={`${contentClassName} flex w-full flex-col justify-center ${isReverseSection ? 'lg:order-2' : ''
+              }`}
+          >
+            <p className="text-sm font-semibold uppercase tracking-wide text-secondary">
+              {eyebrow}
+            </p>
             <h2 className="text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">
               {title}
             </h2>
             <div className="mt-4 h-1 w-16 bg-secondary" />
 
-            <div className="mt-6 text-sm text-primary/70 sm:text-base">
+            <div className="mt-6 max-w-prose text-sm text-primary/70 sm:text-base">
               {description}
             </div>
 
             {tiers && tiers.length > 0 && (
-              <div className="w-full max-w-xl rounded-2xl border border-stone-200 shadow-sm overflow-hidden mt-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-stone-200">
+              <div className="mt-10 w-full max-w-xl overflow-hidden rounded-2xl border border-stone-200 shadow-sm">
+                <div className="grid grid-cols-1 divide-x divide-stone-200 md:grid-cols-2">
                   {tiers.map((tier) => (
                     <div key={tier.label} className="px-6 py-6 text-center">
                       <span className="text-xl text-stone-500">
                         {globalTranslation(tier.label)}
                       </span>
-                      <div className="mt-4 text-2xl gap-2 font-bold flex items-end justify-center">
-                        {tier.amount}{" "}
+                      <div className="mt-4 flex flex-wrap items-end justify-center gap-x-2 text-2xl font-bold">
+                        <span className="whitespace-nowrap">{tier.amount}</span>
                         {tier.alt && (
-                          <> <span className="text-base font-base"><EqualApproximately /></span>  <span className="mt-2 text-2xl font-bold">{tier.alt}</span></>
+                          <>
+                            <span className="text-base font-normal"><EqualApproximately /></span>
+                            <span className="whitespace-nowrap">{tier.alt}</span>
+                          </>
                         )}
                       </div>
 
@@ -121,33 +135,36 @@ export default async function CreationPage({
                         }}
                         className="mt-6 inline-block rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
                       >
-                        {globalTranslation("quoteLabel")}
+                        {globalTranslation('quoteLabel')}
                       </Link>
-
                     </div>
                   ))}
                 </div>
-                <div className="px-6 py-3 bg-stone-50 border-t border-stone-200">
-                  <p className="text-xs text-stone-500 text-center">{globalTranslation("priceNote")}</p>
+                <div className="border-t border-stone-200 bg-stone-50 px-6 py-3">
+                  <p className="text-center text-xs text-stone-500">
+                    {globalTranslation('priceNote')}
+                  </p>
                 </div>
               </div>
             )}
 
             {basicDisplayPrice && (
               <>
-                <div className="page-creation-price mt-8 rounded-2xl border border-primary/7 bg-white px-4 py-3 shadow-xs sm:inline-block sm:px-7">
+                <div className="page-creation-price mt-8 w-fit max-w-full rounded-2xl border border-primary/7 bg-white px-4 py-3 shadow-xs sm:max-w-[500px] sm:px-7">
                   <div className="flex items-center justify-between gap-4 sm:gap-6">
                     <div>
-                      <span className='text-primary/70'>{basicDisplayPrice.title}</span>
-                      <p className="mt-1 text-3xl font-bold flex items-end justify-center gap-2 text-primary sm:text-4xl">
-                        {basicDisplayPrice.originalPrice} Ar <span className="text-base font-base"><EqualApproximately /></span>  {basicDisplayPrice.euroEquivalence} €
+                      <span className="text-primary/70">{basicDisplayPrice.title}</span>
+                      <p className="mt-1 flex items-end justify-center gap-2 text-3xl font-bold text-primary sm:text-4xl">
+                        {basicDisplayPrice.originalPrice} Ar{' '}
+                        <span className="font-base text-base">
+                          <EqualApproximately />
+                        </span>{' '}
+                        {basicDisplayPrice.euroEquivalence} €
                       </p>
-                      {basicDisplayPrice.annotation && (
-                        basicDisplayPrice.annotation
-                      )}
+                      {basicDisplayPrice.annotation && basicDisplayPrice.annotation}
                       {!basicDisplayPrice.annotation && (
                         <small className="text-xs text-primary/60 sm:text-sm">
-                          {globalTranslation("priceNote")}
+                          {globalTranslation('priceNote')}
                         </small>
                       )}
                     </div>
@@ -157,6 +174,7 @@ export default async function CreationPage({
                     </div>
                   </div>
                 </div>
+
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   {!hideContact && (
                     <Link
@@ -180,31 +198,37 @@ export default async function CreationPage({
                 </div>
               </>
             )}
+
             {ctasDisplay && (
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <Link
-                    href={contactUrl}
-                    className="rounded-md bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-primary/90 sm:w-auto"
-                  >
-                    {contactLabel}
-                  </Link>
+                <Link
+                  href={contactUrl}
+                  className="rounded-md bg-primary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-primary/90 sm:w-auto"
+                >
+                  {contactLabel}
+                </Link>
 
-                  <Link
-                    href={quoteUrl}
-                    className="rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
-                  >
-                    {quoteLabel}
-                  </Link>
+                <Link
+                  href={quoteUrl}
+                  className="rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
+                >
+                  {quoteLabel}
+                </Link>
               </div>
             )}
           </div>
 
-          <div className={`${mediaClassName} group relative aspect-square w-full overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg sm:max-w-md lg:max-w-md ${isReverseSection ? 'lg:order-1' : ''}`}>
+          {/* IMAGE */}
+          <div
+            className={`${mediaClassName} group relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] bg-gray-100 shadow-lg lg:aspect-auto lg:max-h-[640px] lg:min-h-[360px] ${isReverseSection ? 'lg:order-1' : ''
+              }`}
+          >
             <Image
               src={imageSrc}
               alt={title}
-              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
               fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
             />
           </div>
         </div>
