@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ChevronDown, ChevronUp, Play, Quote, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 const BRAND = "#152039";
@@ -29,16 +29,35 @@ function TestimonialCard({
   onPlay: (t: Testimonial) => void;
 }) {
   const [open, setOpen] = useState(false);
+  // Type du dernier pointeur utilisé sur la carte : "mouse" | "touch" | "pen"
+  const pointerType = useRef<string>("mouse");
+  // Vrai seulement si l'ouverture vient d'un focus clavier
+  const keyboardFocus = useRef(false);
   const hasVideo = Boolean(testimonial.fbVideoUrl);
   const ct = useTranslations("customerTestimonial");
 
   return (
     <article
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      // Mobile : la carte grandit avec son contenu (flex-col + justify-end)
-      // md+ : retour au ratio 4/5 fixe avec texte en absolute
-      className="relative flex min-h-[420px] w-full flex-col justify-end overflow-hidden rounded-3xl bg-slate-200 shadow-[0_18px_40px_-20px_rgba(21,32,57,0.45)] md:block md:aspect-[4/5] md:min-h-0"
+      onPointerDown={(e) => {
+        pointerType.current = e.pointerType;
+      }}
+      // Hover réservé à la souris (les événements souris émulés sur tactile sont ignorés)
+      onPointerEnter={(e) => {
+        if (e.pointerType === "mouse") setOpen(true);
+      }}
+      onPointerLeave={(e) => {
+        if (e.pointerType === "mouse") setOpen(false);
+      }}
+      // Tactile : un tap ouvre/ferme la carte.
+      // Souris : un clic force l'ouverture (utile si le hover a été perdu,
+      // par exemple après la fermeture de la modale vidéo).
+      onClick={() => {
+        if (pointerType.current === "mouse") setOpen(true);
+        else setOpen((v) => !v);
+      }}
+      // < md et >= lg : la carte grandit avec son contenu (flex-col + justify-end).
+      // md à lg (tablette) : ratio 4/5 fixe, texte en absolute avec scroll interne.
+      className="relative cursor-pointer flex h-full min-h-[460px] w-full flex-col justify-end overflow-hidden rounded-3xl bg-slate-200 shadow-[0_18px_40px_-20px_rgba(21,32,57,0.45)] md:max-lg:block md:max-lg:aspect-[4/5] md:max-lg:h-auto md:max-lg:min-h-0"
     >
       {/* Photo */}
       <Image
@@ -69,7 +88,10 @@ function TestimonialCard({
       {hasVideo && (
         <button
           type="button"
-          onClick={() => onPlay(testimonial)}
+          onClick={(e) => {
+            e.stopPropagation();
+            onPlay(testimonial);
+          }}
           aria-label={`Regarder le témoignage vidéo de ${testimonial.name} sur Facebook`}
           className={`absolute cursor-pointer z-40  left-4 top-4 flex h-10 items-center overflow-hidden rounded-full shadow-md transition-all duration-500 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none ${
             open
@@ -93,9 +115,23 @@ function TestimonialCard({
 
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setOpen(false)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpen((v) => !v);
+        }}
+        // Focus clavier uniquement : sur tactile, onFocus ouvrait puis onClick refermait aussitôt
+        onFocus={(e) => {
+          if (e.currentTarget.matches(":focus-visible")) {
+            keyboardFocus.current = true;
+            setOpen(true);
+          }
+        }}
+        onBlur={() => {
+          if (keyboardFocus.current) {
+            keyboardFocus.current = false;
+            setOpen(false);
+          }
+        }}
         aria-expanded={open}
         aria-label={`Lire le témoignage de ${testimonial.name}`}
         className="absolute z-10 right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md backdrop-blur transition-all duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
@@ -112,9 +148,10 @@ function TestimonialCard({
         />
       </button>
 
-      {/* Mobile : dans le flux normal (pt-20 réserve la place des boutons du haut)
-          md+ : absolute en bas comme avant */}
-      <div className="relative z-10 px-6 pb-5 pt-20 text-white md:absolute md:inset-x-0 md:bottom-0 md:pt-6">
+      {/* Mobile (< md) et desktop (>= lg) : dans le flux, la carte grandit avec son contenu
+          (pt-20 réserve la place des boutons du haut).
+          Tablette (md à lg) : absolute en bas, avec scroll interne sur la description. */}
+      <div className="relative z-10 px-6 pb-5 pt-20 text-white md:max-lg:absolute md:max-lg:inset-x-0 md:max-lg:bottom-0 md:max-lg:pt-6">
         <div
           className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out motion-reduce:transition-none ${
             open
@@ -123,7 +160,7 @@ function TestimonialCard({
           }`}
         >
           <div className="overflow-hidden">
-            <p className="pb-4 text-[15px] leading-relaxed text-white/95">
+            <p className="pb-4 text-sm leading-relaxed text-white/95 md:max-lg:max-h-[110px] md:max-lg:overflow-y-auto md:max-lg:pr-2 md:max-lg:[scrollbar-color:rgba(255,255,255,0.5)_transparent] md:max-lg:[scrollbar-width:thin] min-[900px]:max-lg:max-h-[160px] lg:text-[15px]">
               {testimonial.description}
             </p>
           </div>
@@ -271,9 +308,9 @@ export default function Testimonials() {
           />
         </div>
 
-        <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-10">
+        <div className="flex flex-col gap-4 md:flex-row md:items-stretch lg:gap-10">
           <div
-            className={`grid flex-1 grid-cols-1 gap-8 transition-opacity ease-in-out motion-reduce:transition-none md:grid-cols-3 md:pb-10 ${
+            className={`grid flex-1 grid-cols-1 gap-4 lg:gap-8 transition-opacity ease-in-out motion-reduce:transition-none md:grid-cols-3 md:pb-10 ${
               visible ? "opacity-100" : "opacity-0"
             }`}
             style={{ transitionDuration: `${FADE_MS}ms` }}
@@ -282,7 +319,8 @@ export default function Testimonials() {
             {items.map((item) => (
               <div
                 key={item.name}
-                className="md:[&:nth-child(3n+2)]:translate-y-10"
+                // md+ : h-full => les 3 cartes ont la même hauteur
+                className="md:h-full md:[&:nth-child(3n+2)]:translate-y-10"
               >
                 <TestimonialCard testimonial={item} onPlay={setActiveVideo} />
               </div>
