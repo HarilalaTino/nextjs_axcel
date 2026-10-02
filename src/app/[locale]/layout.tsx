@@ -18,62 +18,94 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ),
-  title: {
-    default: "Axcel Company | Services professionnels aux entreprises",
-    template: "%s | Axcel Company",
-  },
-  description:
-    "Axcel Company accompagne les entrepreneurs avec des services de création d'entreprise, domiciliation, conseil et assistance à Madagascar.",
-  keywords: [
-    "Axcel Company",
-    "création entreprise Madagascar",
-    "domiciliation entreprise",
-    "conseil entreprise",
-    "assistance administrative",
-  ],
-  icons: {
-    icon: [
-      { url: "/icon-light.png", sizes: "48x48", type: "image/png" },
-      {
-        url: "/icon-light.png",
-        type: "image/png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark.png",
-        type: "image/png",
-        media: "(prefers-color-scheme: dark)",
-      },
-    ],
-  },
-  authors: [{ name: "Axcel Company" }],
-  creator: "Axcel Company",
-  publisher: "Axcel Company",
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    siteName: "Axcel Company",
-    title: "Axcel Company | Services professionnels aux entreprises",
-    description:
-      "Création d'entreprise, domiciliation, conseil et assistance pour les entrepreneurs à Madagascar.",
-     images: [{ url: "/images/og/og-default.jpg", width: 860, height: 484, alt: "Axcel Company" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Axcel Company | Services professionnels aux entreprises",
-    description:
-      "Création d'entreprise, domiciliation, conseil et assistance à Madagascar.",
-    images: ["/images/og/og-default.jpg"],
-  },
-  robots: {
-    index: process.env.NEXT_PUBLIC_SITE_URL === "https://axcel.mg",
-    follow: process.env.NEXT_PUBLIC_SITE_URL === "https://axcel.mg",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isEnglish = locale === "en";
+  const title = isEnglish
+    ? "Axcel Company | Professional Business Services"
+    : "Axcel Company | Services professionnels aux entreprises";
+  const description = isEnglish
+    ? "Axcel Company supports entrepreneurs with business creation, domiciliation, consulting, and administrative assistance in Madagascar."
+    : "Axcel Company accompagne les entrepreneurs avec des services de création d'entreprise, domiciliation, conseil et assistance à Madagascar.";
+  const socialDescription = isEnglish
+    ? "Business creation, domiciliation, consulting, and support for entrepreneurs in Madagascar."
+    : "Création d'entreprise, domiciliation, conseil et assistance pour les entrepreneurs à Madagascar.";
+
+  return {
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    ),
+    title: {
+      default: title,
+      template: "%s | Axcel Company",
+    },
+    description,
+    keywords: isEnglish
+      ? [
+          "Axcel Company",
+          "business creation Madagascar",
+          "business domiciliation",
+          "business consulting",
+          "administrative assistance",
+        ]
+      : [
+          "Axcel Company",
+          "création entreprise Madagascar",
+          "domiciliation entreprise",
+          "conseil entreprise",
+          "assistance administrative",
+        ],
+    icons: {
+      icon: [
+        { url: "/icon-light.png", sizes: "48x48", type: "image/png" },
+        {
+          url: "/icon-light.png",
+          type: "image/png",
+          media: "(prefers-color-scheme: light)",
+        },
+        {
+          url: "/icon-dark.png",
+          type: "image/png",
+          media: "(prefers-color-scheme: dark)",
+        },
+      ],
+    },
+    authors: [{ name: "Axcel Company" }],
+    creator: "Axcel Company",
+    publisher: "Axcel Company",
+    openGraph: {
+      type: "website",
+      locale: isEnglish ? "en_US" : "fr_FR",
+      siteName: "Axcel Company",
+      title,
+      description: socialDescription,
+      images: [
+        {
+          url: "/images/og/og-default.jpg",
+          width: 860,
+          height: 484,
+          alt: "Axcel Company",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: isEnglish
+        ? "Business creation, domiciliation, consulting, and assistance in Madagascar."
+        : "Création d'entreprise, domiciliation, conseil et assistance à Madagascar.",
+      images: ["/images/og/og-default.jpg"],
+    },
+    robots: {
+      index: process.env.NEXT_PUBLIC_SITE_URL === "https://axcel.mg",
+      follow: process.env.NEXT_PUBLIC_SITE_URL === "https://axcel.mg",
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
