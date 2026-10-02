@@ -60,7 +60,7 @@ export default async function SocietyCreationSAorSAUorSCAI() {
 
                         </>
                     }
-                    imageSrc="/images/creations/sa.jpg"
+                    imageSrc="/images/creations/sa.jpeg"
                     ctasDisplay
                     t={sa}
                 />

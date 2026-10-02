@@ -4,21 +4,43 @@ import { routing } from '@/i18n/routing';
 const ROUTES = [
   '/',
   '/a-propos',
+  '/assistance-formalisation-d-entreprise',
+  '/assistance-modification-de-societe',
+  '/assistance-procedure-licenciement',
+  '/certificat-consommabilite-et-mise-en-commerce',
+  '/conseil-assistance',
+  '/conseil-en-creation-de-societe',
+  '/conseil-juridique',
+  '/consultation-strategique-pour-entrepreneurs',
   '/contact',
   '/devis',
+  '/creation-agence-de-voyage',
+  '/creation-association-cultuelle',
   '/creation-entreprise-individuelle',
+  '/creation-grossiste',
   '/creation-societe-sarl-sarlu',
   '/creation-ong-association',
-  '/location-salle-reunion',
-  '/conseil-assistance',
-  '/service-coursier',
+  '/creation-sa-sau-sci',
   '/domiciliation',
+  '/droit-du-travail',
+  '/formation-ressources-humaines',
+  '/gamme-de-services',
+  '/location-salle-reunion',
   '/mentions-legales',
+  '/recuperation-diplome-releves',
+  '/recuperation-traduction-document',
+  '/redaction-contrat-travail-bail-prestation',
   '/recrutement',
+  '/salle-de-bureau',
+  '/salle-de-formation',
+  '/salle-de-reunion',
+  '/toutes-autres-recuperations-et-certifications',
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+  const siteUrl = new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+  ).origin;
 
   return routing.locales.flatMap((locale) =>
     ROUTES.map((route) => ({
