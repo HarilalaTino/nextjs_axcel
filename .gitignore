@@ -16,7 +16,11 @@
 # next.js
 .next/cache/
 # /.next/
+/.next/
 /out/
+*.zip
+*.tar.gz
+
 
 # production
 /build
