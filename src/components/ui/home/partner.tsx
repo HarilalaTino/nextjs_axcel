@@ -20,7 +20,7 @@ const companies = [
   },
   {
     name: "Tumbu",
-    logo: "/images/home/partner/tumbu.png",
+    logo: "/images/home/partner/tumbu-image.png",
   },
 ];
 
