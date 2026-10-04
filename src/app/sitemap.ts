@@ -27,6 +27,7 @@ const ROUTES = [
   '/gamme-de-services',
   '/location-salle-reunion',
   '/mentions-legales',
+  '/nos-packs',
   '/recuperation-diplome-releves',
   '/recuperation-traduction-document',
   '/redaction-contrat-travail-bail-prestation',

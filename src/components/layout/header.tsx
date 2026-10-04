@@ -33,6 +33,7 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'wholesaleDesignCreation', href: '/creation-grossiste' },
       { label: 'religiousCreation', href: '/creation-association-cultuelle' },
       { label: 'creationDomiciliation', href: '/domiciliation' },
+      { label: 'ourPacks', href: '/nos-packs' },
     ],
   },
   {

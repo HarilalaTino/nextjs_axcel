@@ -5,6 +5,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Mail, MessageSquareText, Phone, UserRound, AlertCircle } from 'lucide-react';
+import frenchMessages from '../../../../messages/fr.json';
 import TopMenu from '@/components/ui/home/top-menu';
 import NavMenu from '@/components/layout/header';
 
@@ -179,6 +180,12 @@ const getInitialForm = (slug: string): FormState => ({
   domicilierAxcel: false,
 });
 
+const getFrenchOptionLabel = (labelKey: string): string => {
+  const optionKey = labelKey.startsWith('requestOptions.') ? labelKey.slice('requestOptions.'.length) : '';
+  const frenchLabels = frenchMessages.QuotePage.requestOptions as Record<string, string>;
+  return frenchLabels[optionKey] ?? labelKey;
+};
+
 type FieldErrors = Partial<Record<'nom' | 'phone' | 'demande', string>>;
 
 /* -------------------------------------------------------------------------- */
@@ -336,7 +343,7 @@ export default function QuotePage() {
 
     const payload = {
       ...form,
-      demande: selectedOption ? label(selectedOption.labelKey) : form.demande,
+      demande: selectedOption ? getFrenchOptionLabel(selectedOption.labelKey) : form.demande,
       origin,
       captchaToken,
     };

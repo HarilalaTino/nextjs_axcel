@@ -77,7 +77,6 @@ function Row({
   copyValue?: string;
   external?: boolean;
 }) {
-  const t = useTranslations('ContactPage');
   return (
     <div className="group flex items-center gap-2 rounded-2xl border border-slate-200 bg-white p-2 pr-3 transition hover:border-slate-300 hover:shadow-sm">
       <a

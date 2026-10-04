@@ -340,6 +340,14 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/mentions\\-legales(?:/)?$"
     },
     {
+      "page": "/[locale]/nos-packs",
+      "regex": "^/([^/]+?)/nos\\-packs(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/nos\\-packs(?:/)?$"
+    },
+    {
       "page": "/[locale]/recrutement",
       "regex": "^/([^/]+?)/recrutement(?:/)?$",
       "routeKeys": {

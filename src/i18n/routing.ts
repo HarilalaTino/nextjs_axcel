@@ -155,5 +155,9 @@ export const routing = defineRouting({
       fr: '/consultation-strategique-pour-entrepreneurs',
       en: '/strategic-consultation-for-entrepreneurs'
     },
+    '/nos-packs': {
+      fr: '/nos-packs',
+      en: '/our-packs'
+    },
   }
 });

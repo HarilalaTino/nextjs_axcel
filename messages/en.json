@@ -56,7 +56,8 @@
     "companyCreationConsulting": "Company creation advice",
     "companyModificationAssistance": "Assistance with company modification",
     "businessFormalizationAssistance": "Assistance in business formalization",
-    "strategicConsultingForEntrepreneurs": "Strategic consultation for entrepreneurs"
+    "strategicConsultingForEntrepreneurs": "Strategic consultation for entrepreneurs",
+    "ourPacks": "Our Packs"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -626,6 +627,13 @@
     "description": "We support businesses in Madagascar in identifying and selecting the best talent, combining targeted sourcing, application screening, and preliminary interviews. Our approach allows us to put forward qualified candidates who align with your company culture and business requirements, helping you reduce recruitment timelines and make more confident hiring decisions.",
     "contact": "Contact us",
     "quote": "Request a quote"
+  },
+  "OurPacks": {
+    "eyebrow": "Our Packs",
+    "title": "Solutions Tailored to Your Needs",
+    "description": "Discover our packs designed to meet the different needs of businesses in Madagascar. Whether you need occasional support or a complete solution, we offer flexible packages tailored to your goals, with services designed to save you time, optimize your resources, and deliver tangible results.",
+    "contact": "Contact Us",
+    "quote": "Request a Quote"
   },
   "AdviceAndAssistance": {
     "eyebrow": "Since 2022",

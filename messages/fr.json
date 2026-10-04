@@ -55,7 +55,8 @@
     "companyCreationConsulting": "Conseil en création de société",
     "companyModificationAssistance": "Assistance à la modification de société",
     "businessFormalizationAssistance": "Assistance en formalisation d'entreprise",
-    "strategicConsultingForEntrepreneurs": "Consultation stratégique pour entrepreneurs"
+    "strategicConsultingForEntrepreneurs": "Consultation stratégique pour entrepreneurs",
+    "ourPacks": "Nos packs"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -625,6 +626,13 @@
       "description": "Nous accompagnons les entreprises à Madagascar dans l'identification et la sélection des meilleurs profils, en combinant sourcing ciblé, analyse des candidatures et entretiens de présélection. Notre approche nous permet de vous proposer des candidats qualifiés, alignés avec votre culture d'entreprise et vos exigences métier, afin de réduire vos délais de recrutement et de sécuriser vos décisions d'embauche.",
       "contact": "Nous contacter",
       "quote": "Demander un devis"
+  },
+  "OurPacks": {
+    "eyebrow": "Nos packs",
+    "title": "Des solutions adaptées à vos besoins",
+    "description": "Découvrez nos packs conçus pour répondre aux différents besoins des entreprises à Madagascar. Que vous recherchiez un accompagnement ponctuel ou une solution complète, nous vous proposons des offres flexibles et adaptées à vos objectifs, avec des services pensés pour vous faire gagner du temps, optimiser vos ressources et obtenir des résultats concrets.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis"
   },
   "AdviceAndAssistance": {
     "eyebrow": "Depuis 2022",
