@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:staging": "cross-env NEXT_PUBLIC_SITE_URL=https://staging.axcel.mg next build",
+    "build:prod": "cross-env NEXT_PUBLIC_SITE_URL=https://axcel.mg next build"
   },
   "dependencies": {
     "@types/nodemailer": "^8.0.1",
@@ -27,6 +29,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-google-recaptcha": "^2.1.9",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.3",
     "tailwindcss": "^4",
