@@ -12,7 +12,7 @@ const companies = [
   },
   {
     name: "Manitra+",
-    logo: "/images/home/partner/manitra+.png",
+    logo: "/images/home/partner/manitra.png",
   },
   {
     name: "Next food Africa",

@@ -44,7 +44,7 @@ export default async function CreationSocieteSarlSarluPage() {
                             <p>{t("description")}</p>
                         </>
                     }
-                    imageSrc="/images/creations/SARL.jpg"
+                    imageSrc="/images/creations/sarl.jpg"
                     tiers={tiers}
                     t={t}
                 />
@@ -57,7 +57,7 @@ export default async function CreationSocieteSarlSarluPage() {
                             <p>{tSarlu("description")}</p>
                         </>
                     }
-                    imageSrc="/images/creations/SARLU.jpg"
+                    imageSrc="/images/creations/sarlu.jpg"
                     tiers={tiers}
                     t={tSarlu}
                     isReverseSection
