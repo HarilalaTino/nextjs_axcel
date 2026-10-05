@@ -253,13 +253,13 @@
         "description": "Starting a business used to scare me. With Axcel Company, everything went smoothly. In about 7 days, the company was established. The welcome was warm and the process was clear. It was fast and well done. Doing things properly makes a real difference. With Axcel Company, everything went smoothly. We didn't have to run around from one place to another: they handled everything for us."
       },
       {
-        "name": "Tatiana Raharinirina",
-        "role": "Business ATARA",
-        "fbVideoUrl": "https://web.facebook.com/reel/1716723616364346/",
+        "name": "Huang Hui",
+        "role": "Hong Wei Beauty",
+        "image": "/images/testimonials/Huang-Hui.jpeg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1287624923281809/",
         "fbEmbedWidth": 267,
         "fbEmbedHeight": 476,
-        "image": "/images/testimonials/tatiana-raharinirina.jpeg",
-        "description": "It is reassuring to work with a company that already has experience and an established client base. You are a company we can trust. Working with an experienced company really makes a difference. The service is fast, clear, and precise. The welcome is pleasant, and so is the entire team."
+        "description": "Axcel Company a préparé mon dossier complet en 3 jours, et j'ai obtenu mon NIF et mon STAT. L'accueil est bon et la démarche est sérieuse. Je vous encourage à faire appel à eux. Ils facilitent la vie de ceux qui n'ont pas le temps de courir d'une administration à l'autre."
       },
       {
         "name": "Antso Bomaka",
@@ -297,6 +297,15 @@
         "description": "Axcel Company prepared my complete application in 3 days, and I obtained my NIF and STAT. The welcome was good and the process was professional. I encourage you to work with them. They make life easier for people who don't have time to go from one government office to another."
       },
       {
+        "name": "Tatiana Raharinirina",
+        "role": "Business ATARA",
+        "fbVideoUrl": "https://web.facebook.com/reel/1716723616364346/",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "image": "/images/testimonials/tatiana-raharinirina.jpeg",
+        "description": "It is reassuring to work with a company that already has experience and an established client base. You are a company we can trust. Working with an experienced company really makes a difference. The service is fast, clear, and precise. The welcome is pleasant, and so is the entire team."
+      },
+      {
         "name": "Mr Elfrido",
         "role": "Bleu Island Madagascar Travel Agency",
         "image": "/images/testimonials/elfrido-image.jpeg",
@@ -315,10 +324,80 @@
         "description": "Axcel Company helped me a lot in handling my application legally, step by step. Thanks to them, I obtained my NIF and STAT. I encourage everyone to make sure their business is legally compliant. For all administrative procedures, contact Axcel Company."
       },
       {
-        "name": "Tolotra",
-        "role": "Hardware Store",
-        "image": "/images/testimonials/tolotra.jpeg",
-        "description": "The paperwork and legal procedures scared me when I was starting my business. Axcel Company handled everything efficiently and proactively. I can now focus entirely on my sales."
+        "name": "Mr Jean Pascal",
+        "role": "Eco Well.fitness",
+        "image": "/images/testimonials/jean-pascal.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1019594097709755",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "Above all, the price is really affordable compared to the service provided, and the work is very fast. I didn't expect to get my papers in just 2 days."
+      },
+      {
+        "name": "Mr Toky",
+        "image": "/images/testimonials/toky.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/948550237940252",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "I am really satisfied with the service provided by Axcel Company. Doing administrative procedures in Madagascar is time-consuming, expensive, and very stressful. Here, you just need to provide the file, and then you can stay comfortably at home. I recommend it to everyone, if you don't want to lose money or time, contact Axcel Company."
+      },
+      {
+        "name": "Mr Raphael",
+        "image": "/images/testimonials/raphael.jpg",
+        "role": "Founder Explor'il",
+        "fbVideoUrl": "https://web.facebook.com/reel/1301048918406849",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "I got to know Axcel Company through friends who had already set up their businesses with you. They were satisfied and said it was great, because the team was there for them from the beginning until the company was fully established. For young people like us who want to start a project, we can go to Axcel Company, as the service runs very smoothly."
+      },
+      {
+        "name": "Mr Rabe",
+        "image": "/images/testimonials/rabe.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1527788206060079",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "We are really satisfied with the service Axcel provided: all the paperwork has been completed. If we have any other documents to process, we will come back to Axcel. We were warmly welcomed at Axcel, they helped us and took care of everything, and there were no difficulties at all during the process."
+      },
+      {
+        "name": "Satisfied Customer",
+        "image": "/images/testimonials/anonyme.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1218511656272458",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "Beyond professionalism, what struck us most about Axcel is the human quality of the team. Always available, attentive and committed, they supported us through all of our export procedures. We felt supported and well advised at every step. Thanks to Axcel, our project was completed under very good conditions. We consider Axcel a reliable and strategic partner for the development of our international activities."
+      },
+      {
+        "name": "Satisfied Customer",
+        "image": "/images/testimonials/anonyme2.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/855816224032140",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "I'm launching my new business here in Madagascar with Axcel Company. Why Axcel? If you ask anyone here which one to choose, everyone would say Axcel, because they are very well known, and not just because they do good marketing, but because of the service behind it. We love working with you. The service has been excellent so far and I'm looking forward to growing my business here."
+      },
+      {
+        "name": "Miss Princia",
+        "image": "/images/testimonials/princia.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/825985543602916",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "We saw your post on Facebook, then looked at some client reviews and came to you. You are both professional and experienced, and your team members are pleasant. For the paperwork, there was no need for us to travel at all: they came to us and collected all the documents. They handled the signatures smoothly, and all deadlines were met. Once the company creation was completed, they called us."
+      },
+      {
+        "name": "Mr Roland",
+        "role": "Hay BTP",
+        "image": "/images/testimonials/roland.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1318431293650468",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "I heard about you from a friend who had already done business with you, and that is why I came to you. The service is pleasant, the approach is serious, and the benefit is that you end up satisfied and without any hassle. That is what I appreciated about you."
+      },
+      {
+        "name": "Madame Faniry",
+        "role": "Pâtisserie",
+        "image": "/images/testimonials/faniry.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1466213374570738",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "When I opened this pastry shop, I had no time at all to handle the paperwork. So I put my trust in Axcel Company to take care of the NIF, the STAT, and all the related documents. Thank you, Axcel Company."
       }
     ]
   },

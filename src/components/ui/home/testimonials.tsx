@@ -29,9 +29,7 @@ function TestimonialCard({
   onPlay: (t: Testimonial) => void;
 }) {
   const [open, setOpen] = useState(false);
-  // Type du dernier pointeur utilisé sur la carte : "mouse" | "touch" | "pen"
   const pointerType = useRef<string>("mouse");
-  // Vrai seulement si l'ouverture vient d'un focus clavier
   const keyboardFocus = useRef(false);
   const hasVideo = Boolean(testimonial.fbVideoUrl);
   const ct = useTranslations("customerTestimonial");
@@ -41,22 +39,16 @@ function TestimonialCard({
       onPointerDown={(e) => {
         pointerType.current = e.pointerType;
       }}
-      // Hover réservé à la souris (les événements souris émulés sur tactile sont ignorés)
       onPointerEnter={(e) => {
         if (e.pointerType === "mouse") setOpen(true);
       }}
       onPointerLeave={(e) => {
         if (e.pointerType === "mouse") setOpen(false);
       }}
-      // Tactile : un tap ouvre/ferme la carte.
-      // Souris : un clic force l'ouverture (utile si le hover a été perdu,
-      // par exemple après la fermeture de la modale vidéo).
       onClick={() => {
         if (pointerType.current === "mouse") setOpen(true);
         else setOpen((v) => !v);
       }}
-      // < md et >= lg : la carte grandit avec son contenu (flex-col + justify-end).
-      // md à lg (tablette) : ratio 4/5 fixe, texte en absolute avec scroll interne.
       className="relative cursor-pointer flex h-full min-h-[460px] w-full flex-col justify-end overflow-hidden rounded-3xl bg-slate-200 shadow-[0_18px_40px_-20px_rgba(21,32,57,0.45)] md:max-lg:block md:max-lg:aspect-[4/5] md:max-lg:h-auto md:max-lg:min-h-0"
     >
       {/* Photo */}
@@ -119,7 +111,6 @@ function TestimonialCard({
           e.stopPropagation();
           setOpen((v) => !v);
         }}
-        // Focus clavier uniquement : sur tactile, onFocus ouvrait puis onClick refermait aussitôt
         onFocus={(e) => {
           if (e.currentTarget.matches(":focus-visible")) {
             keyboardFocus.current = true;
@@ -148,9 +139,6 @@ function TestimonialCard({
         />
       </button>
 
-      {/* Mobile (< md) et desktop (>= lg) : dans le flux, la carte grandit avec son contenu
-          (pt-20 réserve la place des boutons du haut).
-          Tablette (md à lg) : absolute en bas, avec scroll interne sur la description. */}
       <div className="relative z-10 px-6 pb-5 pt-20 text-white md:max-lg:absolute md:max-lg:inset-x-0 md:max-lg:bottom-0 md:max-lg:pt-6">
         <div
           className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out motion-reduce:transition-none ${
@@ -319,7 +307,6 @@ export default function Testimonials() {
             {items.map((item) => (
               <div
                 key={item.name}
-                // md+ : h-full => les 3 cartes ont la même hauteur
                 className="md:h-full md:[&:nth-child(3n+2)]:translate-y-10"
               >
                 <TestimonialCard testimonial={item} onPlay={setActiveVideo} />
