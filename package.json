@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "build:staging": "cross-env NEXT_PUBLIC_SITE_URL=https://staging.axcel.mg next build",
-    "build:prod": "cross-env NEXT_PUBLIC_SITE_URL=https://axcel.mg NEXT_PUBLIC_RECAPTCHA_SITE_KEY=6Lds5cYtAAAAAHPQfhDtjzr9omW-uEJ2573i_JrA next build && shx cp -r public .next/standalone/public && shx mkdir -p .next/standalone/.next && shx cp -r .next/static .next/standalone/.next/static"
+    "build:prod": "cross-env NEXT_PUBLIC_SITE_URL=https://axcel.mg NEXT_PUBLIC_RECAPTCHA_SITE_KEY=6Lf6FuAtAAAAAN-7kZgaWTrdqCOPV8I-_ZmWJ_GB next build && shx cp -r public .next/standalone/public && shx mkdir -p .next/standalone/.next && shx cp -r .next/static .next/standalone/.next/static"
   },
   "dependencies": {
     "@types/nodemailer": "^8.0.1",

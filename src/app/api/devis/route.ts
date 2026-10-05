@@ -46,7 +46,11 @@ export async function POST(request: NextRequest) {
     const verifyData = await verifyRes.json();
 
     if (!verifyData.success) {
-      return NextResponse.json({ error: 'Vérification captcha échouée' }, { status: 400 });
+      console.error('recaptcha error:', verifyData);
+      return NextResponse.json(
+        { error: 'Vérification captcha échouée', codes: verifyData['error-codes'] },
+        { status: 400 },
+      );
     }
 
     const smtpHost = process.env.SMTP_HOST;
