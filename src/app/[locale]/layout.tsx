@@ -46,34 +46,19 @@ export async function generateMetadata({
     description,
     keywords: isEnglish
       ? [
-          "Axcel Company",
-          "business creation Madagascar",
-          "business domiciliation",
-          "business consulting",
-          "administrative assistance",
-        ]
+        "Axcel Company",
+        "business creation Madagascar",
+        "business domiciliation",
+        "business consulting",
+        "administrative assistance",
+      ]
       : [
-          "Axcel Company",
-          "création entreprise Madagascar",
-          "domiciliation entreprise",
-          "conseil entreprise",
-          "assistance administrative",
-        ],
-    icons: {
-      icon: [
-        { url: "/icon-light.png", sizes: "48x48", type: "image/png" },
-        {
-          url: "/icon-light.png",
-          type: "image/png",
-          media: "(prefers-color-scheme: light)",
-        },
-        {
-          url: "/icon-dark.png",
-          type: "image/png",
-          media: "(prefers-color-scheme: dark)",
-        },
+        "Axcel Company",
+        "création entreprise Madagascar",
+        "domiciliation entreprise",
+        "conseil entreprise",
+        "assistance administrative",
       ],
-    },
     authors: [{ name: "Axcel Company" }],
     creator: "Axcel Company",
     publisher: "Axcel Company",
