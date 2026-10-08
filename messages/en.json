@@ -503,7 +503,7 @@
       },
       "Master": {
         "label": "Master's degree",
-        "price": "300 000 Ar"
+        "price": "200 000 Ar"
       }
     },
     "translationRetrieval": {
@@ -958,6 +958,10 @@
       "courierDiplomaRetrieval": "Diploma retrieval, transcript, equivalence", 
       "courierTranslationRetrieval": "Retrieval and translation of administrative documents", 
       "courierAutomobileProcedure": "Administrative procedures for automobiles",
+      "diplomeMaster": "Recovery of Master's degree",
+      "licence": "Recovery of Licentiate degree",
+      "baccTranscript": "Recovery of BACC transcript",
+      "achievementCertificate": "Recovery of Achievement certificate",
       "taxCardRenewal": "Tax card renewal", 
       "activityChange": "Change, add activity", 
       "headOfficechanded": "Change head office", 

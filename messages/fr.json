@@ -493,7 +493,7 @@
       },
       "Master": {
         "label": "Diplôme Master",
-        "price": "300 000 Ar"
+        "price": "200 000 Ar"
       }
     },
     "translationRetrieval": {
@@ -947,6 +947,10 @@
       "courierDiplomaRetrieval": "Récupération diplôme, relevé de note, équivalence",
       "courierTranslationRetrieval": "Récupération et traduction de documents administratifs",
       "courierAutomobileProcedure": "Procédures administratives pour l'automobile",
+      "diplomeMaster": "Récupération diplôme Master",
+      "licence": "Récupération diplôme de Licence",
+      "baccTranscript": "Récupération relevé de notes BACC",
+      "achievementCertificate": "Récupération attestation de réussite",
       "taxCardRenewal": "Renouvellement carte fiscale",
       "activityChange": "Changement, rajout d'activité",
       "headOfficechanded": "Changement siège social",

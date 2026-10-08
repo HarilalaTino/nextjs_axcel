@@ -1,8 +1,8 @@
 import NavMenu from "@/components/layout/header";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
+import CourierDiplomaSelection from "@/components/ui/shared/courier-diploma-selection";
 import CreationPage from "@/components/ui/shared/page-creation";
-import { CheckCircle2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 
@@ -34,32 +34,30 @@ export default async function CourierDiplomaRetrieval() {
           description={
             <>
               <p className="mb-4">{diplomaTranscription("description")}</p>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{diplomaTranscription("bacc.label")} : {diplomaTranscription("bacc.price")}</span>
-                </li>
-                <li className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{diplomaTranscription("achievementCertificate.label")} : {diplomaTranscription("achievementCertificate.price")}</span>
-                </li>
-                <li className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{diplomaTranscription("Licence.label")} : {diplomaTranscription("Licence.price")}</span>
-                </li>
-                <li className="flex items-start gap-3.5 ">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{diplomaTranscription("Master.label")} : {diplomaTranscription("Master.price")}</span>
-                </li>
-              </ul>
+              <CourierDiplomaSelection
+                options={[
+                  {
+                    slug: "releve-de-notes-bacc",
+                    label: diplomaTranscription("bacc.label"),
+                    price: diplomaTranscription("bacc.price"),
+                  },
+                  {
+                    slug: "attestation-de-reussite",
+                    label: diplomaTranscription("achievementCertificate.label"),
+                    price: diplomaTranscription("achievementCertificate.price"),
+                  },
+                  {
+                    slug: "licence",
+                    label: diplomaTranscription("Licence.label"),
+                    price: diplomaTranscription("Licence.price"),
+                  },
+                  {
+                    slug: "diplome-master",
+                    label: diplomaTranscription("Master.label"),
+                    price: diplomaTranscription("Master.price"),
+                  },
+                ]}
+              />
             </>
           }
           imageSrc="/images/courier/courier-1.jpg"

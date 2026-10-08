@@ -82,6 +82,10 @@ const REQUEST_CATALOG: RequestCategory[] = [
       { slug: 'certificate-of-market-authorization', labelKey: 'requestOptions.certificateOfMarketAuthorization' },
       { slug: 'other-administrative-certificate', labelKey: 'requestOptions.otherAdministrativeCertificate' },
       { slug: 'administrative-procedures-for-automobiles', labelKey: 'requestOptions.courierAutomobileProcedure' },
+      { slug: 'diplome-master', labelKey: 'requestOptions.diplomeMaster' },
+      { slug: 'licence', labelKey: 'requestOptions.licence' },
+      { slug: 'releve-de-notes-bacc', labelKey: 'requestOptions.baccTranscript' },
+      { slug: 'attestation-de-reussite', labelKey: 'requestOptions.achievementCertificate' },
     ],
   },
   {

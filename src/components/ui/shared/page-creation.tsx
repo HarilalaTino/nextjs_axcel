@@ -3,6 +3,7 @@ import { EqualApproximately, Tag } from 'lucide-react';
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
+import QueryAwareLink from './query-aware-link';
 
 export type TranslationFn = (key: string) => string;
 
@@ -125,18 +126,17 @@ export default async function CreationPage({
                         )}
                       </div>
 
-                      <Link
-                        href={{
-                          pathname: '/devis',
-                          query: {
-                            type: creationType,
-                            rate: tier.quoteUrl,
-                          },
+                      <QueryAwareLink
+                        pathname="/devis"
+                        query={{
+                          type: creationType,
+                          rate: tier.quoteUrl,
                         }}
+                        preserveQueryParams
                         className="mt-6 inline-block rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
                       >
                         {globalTranslation('quoteLabel')}
-                      </Link>
+                      </QueryAwareLink>
                     </div>
                   ))}
                 </div>
@@ -186,12 +186,14 @@ export default async function CreationPage({
                   )}
 
                   {!hideDevis && (
-                    <Link
-                      href={quoteUrl}
+                    <QueryAwareLink
+                      pathname={quoteUrl.pathname}
+                      query={quoteUrl.query}
+                      preserveQueryParams
                       className="rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
                     >
                       {quoteLabel}
-                    </Link>
+                    </QueryAwareLink>
                   )}
 
                   {overidecta && <div className="w-full sm:w-auto">{overidecta}</div>}
@@ -208,12 +210,14 @@ export default async function CreationPage({
                   {contactLabel}
                 </Link>
 
-                <Link
-                  href={quoteUrl}
+                <QueryAwareLink
+                  pathname={quoteUrl.pathname}
+                  query={quoteUrl.query}
+                  preserveQueryParams
                   className="rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
                 >
                   {quoteLabel}
-                </Link>
+                </QueryAwareLink>
               </div>
             )}
           </div>
