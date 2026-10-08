@@ -477,6 +477,8 @@
       "eyebrow": "Service de coursier",
       "title": "Récupération diplôme, relevé de note, équivalence",
       "description": "Axcel Company vous propose un service rapide et fiable pour récupérer vos documents officiels en toute sécurité.",
+      "pleaseSelect": "Veuillez sélectionner le type de document que vous souhaitez récupérer :",
+      "selectionRequired": "Sélectionnez au moins une option avant de demander un devis.",
       "contact": "Nous contacter",
       "quote": "Demander un devis",
       "bacc" : {

@@ -12,6 +12,7 @@ type CourierDiplomaOption = {
 
 type CourierDiplomaSelectionProps = {
   options: CourierDiplomaOption[];
+  requiredMessage?: string;
 };
 
 const getSelectedSlugs = (value: string | null) =>
@@ -20,7 +21,10 @@ const getSelectedSlugs = (value: string | null) =>
     .map((slug) => slug.trim())
     .filter(Boolean);
 
-export default function CourierDiplomaSelection({ options }: CourierDiplomaSelectionProps) {
+export default function CourierDiplomaSelection({
+  options,
+  requiredMessage,
+}: CourierDiplomaSelectionProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -53,11 +57,12 @@ export default function CourierDiplomaSelection({ options }: CourierDiplomaSelec
   };
 
   return (
-    <ul className="mt-8 space-y-3" aria-label="Options de documents">
-      {options.map((option) => {
-        const selected = selectedSlugs.includes(option.slug);
+    <>
+      <ul className="mt-4 space-y-3" aria-label="Options de documents">
+        {options.map((option) => {
+          const selected = selectedSlugs.includes(option.slug);
 
-        return (
+          return (
           <li key={option.slug} className="flex items-start gap-3.5">
             <label className="flex min-w-0 cursor-pointer items-start gap-3.5">
               <input
@@ -81,7 +86,16 @@ export default function CourierDiplomaSelection({ options }: CourierDiplomaSelec
             </label>
           </li>
         );
-      })}
-    </ul>
+        })}
+      </ul>
+      {requiredMessage && selectedSlugs.length === 0 && (
+        <p
+          className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800"
+          role="status"
+        >
+          {requiredMessage}
+        </p>
+      )}
+    </>
   );
 }

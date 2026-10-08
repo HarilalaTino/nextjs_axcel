@@ -35,6 +35,7 @@ export default async function CourierDiplomaRetrieval() {
             <>
               <p className="mb-4">{diplomaTranscription("description")}</p>
               <CourierDiplomaSelection
+                requiredMessage={diplomaTranscription("selectionRequired")}
                 options={[
                   {
                     slug: "releve-de-notes-bacc",
@@ -62,6 +63,7 @@ export default async function CourierDiplomaRetrieval() {
           }
           imageSrc="/images/courier/courier-1.jpg"
           ctasDisplay
+          requiredSelectionType="courier-diploma-retrieval"
           t={diplomaTranscription}
         />
         <ElegantCardWrapper />

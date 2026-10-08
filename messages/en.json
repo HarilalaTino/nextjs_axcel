@@ -487,6 +487,8 @@
       "eyebrow": "Courier Service",
       "title": "Diploma collection, transcript of records, equivalency",
       "description": "Axcel Company offers a fast and reliable service to retrieve your official documents securely.",
+      "pleaseSelect": "Please select the type of document you wish to retrieve :",
+      "selectionRequired": "Select at least one option before requesting a quote.",
       "contact": "Contact us",
       "quote": "Request a quote",
       "bacc" : {
