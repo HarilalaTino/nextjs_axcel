@@ -4,7 +4,16 @@ import { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
-import { ArrowRight, CheckCircle2, Mail, MessageSquareText, Phone, UserRound, AlertCircle } from 'lucide-react';
+import {
+  AlertCircle,
+  ArrowRight,
+  Check,
+  CheckCircle2,
+  Mail,
+  MessageSquareText,
+  Phone,
+  UserRound,
+} from 'lucide-react';
 import frenchMessages from '../../../../messages/fr.json';
 import TopMenu from '@/components/ui/home/top-menu';
 import NavMenu from '@/components/layout/header';
@@ -19,10 +28,12 @@ type FormState = {
   phone: string;
   whatsapp: string;
   email: string;
-  demande: string;
+  demandes: string[]; // slugs sélectionnés (multi-sélection)
   message: string;
   isRegister: boolean;
 };
+
+type TextField = 'nom' | 'phone' | 'whatsapp' | 'email' | 'message';
 
 type RequestOption = {
   slug: string;
@@ -33,14 +44,15 @@ type RequestCategory = {
   key: string;
   labelKey: string;
   options: RequestOption[];
+  /** Catégorie sans sous-catégories : le clic sélectionne directement son unique option. */
   standalone?: boolean;
 };
 
 type SpecialCategory = RequestCategory & { selectedKey: string };
 
 /* --------------------------------------------------------------------------- */
-/* Request catalog (categories -> subcategories) */
-/* Each slug is unique: the selection is always done by slug. */
+/* Catalogue des demandes (catégories -> sous-catégories)                      */
+/* Chaque slug est unique : la sélection se fait toujours par slug.            */
 /* --------------------------------------------------------------------------- */
 const REQUEST_CATALOG: RequestCategory[] = [
   {
@@ -106,21 +118,12 @@ const REQUEST_CATALOG: RequestCategory[] = [
       { slug: 'strategic-consulting-for-entrepreneurs', labelKey: 'requestOptions.strategicConsultingForEntrepreneurs' },
     ],
   },
-  {
-    key: 'otherDemand',
+  { key: 'otherDemand',
     labelKey: 'otherDemand',
-    options: []
-  }
+    standalone: true,
+    options: [{ slug: 'other-demand', labelKey: 'otherDemand' }],
+  },
 ];
-
-/* --------------------------------------------------------------------------- */
-/* Special categories: ?selected=<selectedKey> */
-/* - Without subcategories (standalone). */
-/* - Hidden in normal use. */
-/* - When the URL contains a valid `selected`, these are the ONLY categories */
-/* displayed, and the one corresponding to the URL is active. */
-/* selectedKey in lowercase: the comparison ignores case. */
-/* --------------------------------------------------------------------------- */
 const SPECIAL_CATEGORIES: SpecialCategory[] = [
   { key: 'taxCard', selectedKey: 'taxcard', labelKey: 'requestOptions.taxCardRenewal', standalone: true, options: [{ slug: 'tax-card-renewal', labelKey: 'requestOptions.taxCardRenewal' }] },
   { key: 'activity', selectedKey: 'activity', labelKey: 'requestOptions.activityChange', standalone: true, options: [{ slug: 'activity-change', labelKey: 'requestOptions.activityChange' }] },
@@ -163,39 +166,53 @@ const isRegisteredOfficeAvailable = (slug: string): boolean =>
 const getSpecialCategory = (selected: string | null): SpecialCategory | null =>
   selected ? SPECIAL_CATEGORIES.find((category) => category.selectedKey === selected.toLowerCase()) ?? null : null;
 
-/** Determines the option and category to select according to the query params. */
-function resolveQuery(type: string | null, selected: string | null) {
+/** 
+* Determines the pre-selection from the query params. 
+* - ?selected=<key> -> special category (only one option) 
+* - ?type=slug1,slug2,... -> several pre-checked options (unknown slugs ignored) 
+* - otherwise -> no option checked 
+* The URL is only read on arrival: it is not updated with each click. 
+*/
+function resolveQuery(type: string | null, selected: string | null): { slugs: string[]; categoryKey: string | null } {
   const special = getSpecialCategory(selected);
   if (special) {
-    return { slug: special.options[0].slug, categoryKey: special.key };
+    return { slugs: [special.options[0].slug], categoryKey: special.key };
   }
 
-  const normalized = type?.toLowerCase() ?? null;
-  if (normalized) {
-    for (const category of REQUEST_CATALOG) {
-      const match = category.options.find((option) => option.slug === normalized);
-      if (match) return { slug: match.slug, categoryKey: category.key };
-    }
+  const requested = (type?.toLowerCase().split(',') ?? []).map((value) => value.trim()).filter(Boolean);
+  const matches = ALL_OPTIONS.filter(
+    (option) => requested.includes(option.slug) && REQUEST_CATALOG.some((category) => category.key === option.categoryKey),
+  );
+  const slugs = Array.from(new Set(matches.map((option) => option.slug)));
+
+  if (slugs.length > 0) {
+    return { slugs, categoryKey: matches[0].categoryKey };
   }
 
-  const first = REQUEST_CATALOG[0];
-  return { slug: first.options[0].slug, categoryKey: first.key };
+  return { slugs: [], categoryKey: REQUEST_CATALOG[0].key };
 }
 
-const getInitialForm = (slug: string): FormState => ({
+const getInitialForm = (slugs: string[]): FormState => ({
   nom: '',
   phone: '',
   whatsapp: '',
   email: '',
-  demande: slug,
+  demandes: slugs,
   message: '',
   isRegister: false,
 });
 
 const getFrenchOptionLabel = (labelKey: string): string => {
-  const optionKey = labelKey.startsWith('requestOptions.') ? labelKey.slice('requestOptions.'.length) : '';
-  const frenchLabels = frenchMessages.QuotePage.requestOptions as Record<string, string>;
-  return frenchLabels[optionKey] ?? labelKey;
+  const quotePage = frenchMessages.QuotePage as unknown as Record<string, unknown>;
+  const prefix = 'requestOptions.';
+
+  if (labelKey.startsWith(prefix)) {
+    const options = quotePage.requestOptions as Record<string, string>;
+    return options[labelKey.slice(prefix.length)] ?? labelKey;
+  }
+
+  const value = quotePage[labelKey];
+  return typeof value === 'string' ? value : labelKey;
 };
 
 type FieldErrors = Partial<Record<'nom' | 'phone' | 'demande', string>>;
@@ -220,17 +237,14 @@ export default function QuotePage() {
 
   const initialQuery = resolveQuery(requestedType, requestedSelected);
 
-  // With a valid `selected`, only special categories are offered
   const specialActive = getSpecialCategory(requestedSelected) !== null;
   const visibleCategories: RequestCategory[] = specialActive
     ? SPECIAL_CATEGORIES.filter((category) => category.key === initialQuery.categoryKey)
     : REQUEST_CATALOG;
 
-  // Hidden original cards: with a valid `selected`, or with a type without rate
-  // Cartes d'origine masquées uniquement avec un `selected` valide
   const showOrigin = !specialActive;
 
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialQuery.categoryKey);
+  const [openCategory, setOpenCategory] = useState<string | null>(initialQuery.categoryKey);
   const originOptions: Array<{ value: SelectableOrigin; label: string; description: string }> = [
     {
       value: 'malgache',
@@ -246,7 +260,7 @@ export default function QuotePage() {
   const [origin, setOrigin] = useState<Origin>(
     () => getOriginFromRate(requestedRate) ?? ORIGIN_UNSPECIFIED,
   );
-  const [form, setForm] = useState<FormState>(() => getInitialForm(initialQuery.slug));
+  const [form, setForm] = useState<FormState>(() => getInitialForm(initialQuery.slugs));
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -254,8 +268,6 @@ export default function QuotePage() {
   const [captchaError, setCaptchaError] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  // Resynchronize the selection when the query params change
-  // (state adjustment during rendering, without useEffect)
   const queryKey = `${requestedType}|${requestedRate}|${requestedSelected}`;
   const [prevQueryKey, setPrevQueryKey] = useState(queryKey);
 
@@ -263,84 +275,83 @@ export default function QuotePage() {
     setPrevQueryKey(queryKey);
 
     const query = resolveQuery(requestedType, requestedSelected);
-    setForm((prev) => ({ ...prev, demande: query.slug }));
-    setSelectedCategory(query.categoryKey);
+    setForm((prev) => ({
+      ...prev,
+      demandes: query.slugs,
+      isRegister: query.slugs.some(isRegisteredOfficeAvailable) ? prev.isRegister : false,
+    }));
+    setOpenCategory(query.categoryKey);
     setOrigin(getOriginFromRate(requestedRate) ?? ORIGIN_UNSPECIFIED);
   }
 
-  const validateField = (field: keyof FormState, value: string): string | null => {
+  const validateText = (field: 'nom' | 'phone', value: string): string | null => {
+    const trimmed = value.trim();
+
     if (field === 'nom') {
-      const trimmed = value.trim();
       if (!trimmed) return t('errors.fullNameRequired');
       if (trimmed.length < 2) return t('errors.fullNameMinLength');
       return null;
     }
 
-    if (field === 'phone') {
-      const trimmed = value.trim();
-      if (!trimmed) return t('errors.phoneRequired');
-      if (!/^(?:\+?[0-9\s().-]{8,20})$/.test(trimmed)) return t('errors.phoneInvalid');
-      return null;
-    }
-
-    if (field === 'demande') {
-      if (!value || !ALL_OPTIONS.some((option) => option.slug === value)) {
-        return t('errors.requestTypeRequired');
-      }
-      return null;
-    }
-
+    if (!trimmed) return t('errors.phoneRequired');
+    if (!/^(?:\+?[0-9\s().-]{8,20})$/.test(trimmed)) return t('errors.phoneInvalid');
     return null;
+  };
+
+  const validateDemandes = (slugs: string[]): string | null => {
+    const hasValid = slugs.some((slug) => ALL_OPTIONS.some((option) => option.slug === slug));
+    return hasValid ? null : t('errors.requestTypeRequired');
   };
 
   const validateForm = (): boolean => {
     const nextErrors: FieldErrors = {
-      nom: validateField('nom', form.nom) ?? undefined,
-      phone: validateField('phone', form.phone) ?? undefined,
-      demande: validateField('demande', form.demande) ?? undefined,
+      nom: validateText('nom', form.nom) ?? undefined,
+      phone: validateText('phone', form.phone) ?? undefined,
+      demande: validateDemandes(form.demandes) ?? undefined,
     };
 
     setFieldErrors(nextErrors);
     return !Object.values(nextErrors).some((message) => Boolean(message));
   };
 
-  const handleInputChange = (
-    field: keyof FormState,
-    value: string,
-  ) => {
+  const handleInputChange = (field: TextField, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
-    if (field === 'nom' || field === 'phone' || field === 'demande') {
-      const errorMessage = validateField(field, value);
-      setFieldErrors((prev) => ({
-        ...prev,
-        [field]: errorMessage ?? undefined,
-      }));
+    if (field === 'nom' || field === 'phone') {
+      setFieldErrors((prev) => ({ ...prev, [field]: validateText(field, value) ?? undefined }));
     }
     setSubmitted(false);
     setError(null);
   };
 
-  const handleToggleChange = (field: keyof FormState, value: boolean) => {
-    setForm((prev) => ({ ...prev, [field]: value }));
+  const handleToggleRegister = (value: boolean) => {
+    setForm((prev) => ({ ...prev, isRegister: value }));
     setSubmitted(false);
     setError(null);
   };
 
-  const handleSelectOption = (option: RequestOption) => {
+  const handleToggleOption = (option: RequestOption) => {
+    const exists = form.demandes.includes(option.slug);
+    const demandes = exists
+      ? form.demandes.filter((slug) => slug !== option.slug)
+      : [...form.demandes, option.slug];
+
     setForm((prev) => ({
       ...prev,
-      demande: option.slug,
-      isRegister: isRegisteredOfficeAvailable(option.slug) ? prev.isRegister : false,
+      demandes,
+      isRegister: demandes.some(isRegisteredOfficeAvailable) ? prev.isRegister : false,
     }));
-    if (option.slug === form.demande) return;
-
-    const errorMessage = validateField('demande', option.slug);
-    setFieldErrors((prev) => ({
-      ...prev,
-      demande: errorMessage ?? undefined,
-    }));
+    setFieldErrors((prev) => ({ ...prev, demande: validateDemandes(demandes) ?? undefined }));
     setSubmitted(false);
     setError(null);
+  };
+
+  const handleCategoryClick = (category: RequestCategory) => {
+    if (category.standalone) {
+      setOpenCategory(category.key);
+      handleToggleOption(category.options[0]);
+      return;
+    }
+    setOpenCategory((prev) => (prev === category.key ? null : category.key));
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -363,15 +374,19 @@ export default function QuotePage() {
     }
     setCaptchaError(null);
 
-    // Wording of the request translated into the current language of the site
-    const selectedOption = ALL_OPTIONS.find((option) => option.slug === form.demande);
+    const selectedLabels = ALL_OPTIONS.filter((option) => form.demandes.includes(option.slug)).map((option) =>
+      getFrenchOptionLabel(option.labelKey),
+    );
 
+    const { demandes, ...rest } = form;
     const payload = {
-      ...form,
-      demande: selectedOption ? getFrenchOptionLabel(selectedOption.labelKey) : form.demande,
+      ...rest,
+      demande: selectedLabels.join(', '),
+      demandes: selectedLabels,
       origin,
       captchaToken,
     };
+    void demandes;
 
     setIsSubmitting(true);
     setError(null);
@@ -393,8 +408,8 @@ export default function QuotePage() {
 
       setSubmitted(true);
       const initial = resolveQuery(requestedType, requestedSelected);
-      setForm(getInitialForm(initial.slug));
-      setSelectedCategory(initial.categoryKey);
+      setForm(getInitialForm(initial.slugs));
+      setOpenCategory(initial.categoryKey);
       setOrigin(getOriginFromRate(requestedRate) ?? ORIGIN_UNSPECIFIED);
       recaptchaRef.current?.reset();
     } catch (submitError) {
@@ -405,8 +420,9 @@ export default function QuotePage() {
     }
   };
 
-  const currentCategory = visibleCategories.find((category) => category.key === selectedCategory);
+  const currentCategory = visibleCategories.find((category) => category.key === openCategory);
   const titleKey = showOrigin ? 'title' : 'noCardsTitle';
+  const showRegisteredOffice = form.demandes.some(isRegisteredOfficeAvailable);
 
   return (
     <>
@@ -430,7 +446,10 @@ export default function QuotePage() {
             </div>
 
             {showOrigin && (
-              <div className="mt-6 grid grid-cols-1 gap-3 min-[425px]:mt-10 min-[425px]:gap-4 md:grid-cols-2">
+              <div
+                role="radiogroup"
+                className="mt-6 grid grid-cols-1 gap-3 min-[425px]:mt-10 min-[425px]:gap-4 md:grid-cols-2"
+              >
                 {originOptions.map((option) => {
                   const selected = origin === option.value;
 
@@ -438,6 +457,8 @@ export default function QuotePage() {
                     <button
                       key={option.value}
                       type="button"
+                      role="radio"
+                      aria-checked={selected}
                       onClick={() => {
                         setOrigin(option.value);
                         setSubmitted(false);
@@ -472,7 +493,7 @@ export default function QuotePage() {
                 <label className="block min-w-0">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                     <UserRound className="h-4 w-4 shrink-0 text-secondary" />
-                    {t('form.fullName')}<span className='text-red-500'>*</span>
+                    {t('form.fullName')}<span className="text-red-500">*</span>
                   </span>
                   <input
                     type="text"
@@ -487,7 +508,7 @@ export default function QuotePage() {
                 <label className="block min-w-0">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                     <Phone className="h-4 w-4 shrink-0 text-secondary" />
-                    {t('form.phone')}<span className='text-red-500'>*</span>
+                    {t('form.phone')}<span className="text-red-500">*</span>
                   </span>
                   <input
                     type="tel"
@@ -526,62 +547,103 @@ export default function QuotePage() {
                   />
                 </label>
 
-                <div className="block min-w-0 md:col-span-2">
-                  <span className="mb-3 block text-sm font-semibold text-primary">
-                    {t('form.requestType')} <span className='text-red-500'>*</span>
-                  </span>
+                <fieldset className="block min-w-0 md:col-span-2">
+                  <legend className="mb-3 block text-sm font-semibold text-primary">
+                    {t('form.requestType')} <span className="text-red-500">*</span>
+                  </legend>
 
+                  {/* Catégories : ouvrent un panneau, ou basculent directement l'option si standalone */}
                   <div className="flex flex-wrap gap-2 min-[425px]:gap-2.5">
                     {visibleCategories.map((category) => {
-                      const isSelected = selectedCategory === category.key;
+                      const selectedCount = category.options.filter((option) =>
+                        form.demandes.includes(option.slug),
+                      ).length;
+                      const isOpen = openCategory === category.key;
+                      const isActive = category.standalone ? selectedCount > 0 : isOpen;
 
                       return (
                         <button
                           key={category.key}
                           type="button"
-                          onClick={() => {
-                            setSelectedCategory(category.key);
-                            const first = category.options[0];
-                            if (first) handleSelectOption(first);
-                          }}
-                          className={`max-w-full break-words rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-200 min-[425px]:px-4 min-[425px]:py-2 min-[425px]:text-sm ${isSelected
+                          {...(category.standalone
+                            ? { 'aria-pressed': isActive }
+                            : { 'aria-expanded': isOpen })}
+                          onClick={() => handleCategoryClick(category)}
+                          className={`inline-flex max-w-full items-center gap-2 break-words rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-200 min-[425px]:px-4 min-[425px]:py-2 min-[425px]:text-sm ${isActive
                             ? 'border-secondary bg-secondary text-white shadow-sm'
                             : 'border-slate-200 bg-white text-primary hover:border-secondary/60 hover:text-secondary'
                             }`}
                         >
+                          {category.standalone && selectedCount > 0 && <Check className="h-3.5 w-3.5 shrink-0" />}
                           {label(category.labelKey)}
+                          {!category.standalone && selectedCount > 0 && (
+                            <span
+                              className={`flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] font-bold ${isActive ? 'bg-white text-secondary' : 'bg-secondary text-white'
+                                }`}
+                            >
+                              {selectedCount}
+                            </span>
+                          )}
                         </button>
                       );
                     })}
                   </div>
 
-                  {/* Standalone categories have no subcategories */}
                   {currentCategory && !currentCategory.standalone && (
                     <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                       {currentCategory.options.map((option) => {
-                        const isOptionSelected = form.demande === option.slug;
+                        const isOptionSelected = form.demandes.includes(option.slug);
 
                         return (
-                          <button
-                            key={option.slug}
-                            type="button"
-                            onClick={() => handleSelectOption(option)}
-                            className={`min-w-0 break-words rounded-xl border px-3 py-2 text-left text-xs transition-all duration-200 min-[425px]:py-2.5 min-[425px]:text-sm ${isOptionSelected
-                              ? 'border-secondary bg-secondary/5 text-primary shadow-sm'
-                              : 'border-slate-200 bg-white text-slate-700 hover:border-secondary/60 hover:text-secondary'
-                              }`}
-                          >
-                            {label(option.labelKey)}
-                          </button>
+                          <label key={option.slug} className="block min-w-0 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={isOptionSelected}
+                              onChange={() => handleToggleOption(option)}
+                              className="peer sr-only"
+                            />
+                            <span
+                              className={`flex min-w-0 items-center justify-between gap-2 break-words rounded-xl border px-3 py-2 text-left text-xs transition-all duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-secondary/40 min-[425px]:py-2.5 min-[425px]:text-sm ${isOptionSelected
+                                ? 'border-secondary bg-secondary/5 text-primary shadow-sm'
+                                : 'border-slate-200 bg-white text-slate-700 hover:border-secondary/60 hover:text-secondary'
+                                }`}
+                            >
+                              <span className="min-w-0">{label(option.labelKey)}</span>
+                              <span
+                                aria-hidden="true"
+                                className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 transition-colors ${isOptionSelected
+                                  ? 'border-secondary bg-secondary text-white'
+                                  : 'border-slate-300 bg-white text-transparent'
+                                  }`}
+                              >
+                                <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                              </span>
+                            </span>
+                          </label>
                         );
                       })}
                     </div>
                   )}
 
-                  {fieldErrors.demande && <p className="mt-2 text-xs text-red-600">{fieldErrors.demande}</p>}
-                </div>
+                  {/* Récapitulatif des demandes cochées (toutes catégories confondues) */}
+                  {form.demandes.length > 0 && (
+                    <ul className="mt-4 flex flex-wrap gap-2" aria-label={t('form.requestType')}>
+                      {ALL_OPTIONS.filter((option) => form.demandes.includes(option.slug)).map((option) => (
+                        <li
+                          key={option.slug}
+                          className="inline-flex items-center gap-1.5 rounded-full border border-secondary/30 bg-secondary/5 px-3 py-1 text-xs text-primary"
+                        >
+                          <Check className="h-3 w-3 text-secondary" />
+                          {label(option.labelKey)}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
-                {isRegisteredOfficeAvailable(form.demande) && (
+                  {fieldErrors.demande && <p className="mt-2 text-xs text-red-600">{fieldErrors.demande}</p>}
+                </fieldset>
+
+                {showRegisteredOffice && (
                   <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 min-[425px]:gap-4 min-[425px]:px-4 md:col-span-2">
                     <span className="min-w-0 text-sm font-semibold text-primary">
                       {t('form.RegisteredOffice')}
@@ -590,7 +652,7 @@ export default function QuotePage() {
                       type="button"
                       role="switch"
                       aria-checked={form.isRegister}
-                      onClick={() => handleToggleChange('isRegister', !form.isRegister)}
+                      onClick={() => handleToggleRegister(!form.isRegister)}
                       className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 ${form.isRegister ? 'bg-secondary' : 'bg-slate-300'
                         }`}
                     >
@@ -633,8 +695,7 @@ export default function QuotePage() {
               </div>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                </div>
+                <div />
 
                 <button
                   type="submit"
@@ -648,7 +709,10 @@ export default function QuotePage() {
             </form>
 
             {error && (
-              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-3 text-red-700 min-[425px]:p-4">
+              <div
+                role="alert"
+                className="mt-6 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-3 text-red-700 min-[425px]:p-4"
+              >
                 <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
                 <div className="min-w-0">
                   <p className="font-semibold">{t('errors.title')}</p>
@@ -658,7 +722,10 @@ export default function QuotePage() {
             )}
 
             {submitted && (
-              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-3 text-emerald-800 min-[425px]:p-4">
+              <div
+                role="status"
+                className="mt-6 flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-3 text-emerald-800 min-[425px]:p-4"
+              >
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
                 <div className="min-w-0">
                   <p className="font-semibold">{t('success.title')}</p>
