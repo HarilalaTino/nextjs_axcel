@@ -21,7 +21,7 @@ type FormState = {
   email: string;
   demande: string;
   message: string;
-  domicilierAxcel: boolean;
+  isRegister: boolean;
 };
 
 type RequestOption = {
@@ -148,6 +148,18 @@ const ALL_OPTIONS: Array<RequestOption & { categoryKey: string }> = [...REQUEST_
   (category) => category.options.map((option) => ({ ...option, categoryKey: category.key })),
 );
 
+const REGISTERED_OFFICE_SLUGS = [
+  'sarl-creation',
+  'sarlu-creation',
+  'society-creation-sa',
+  'society-creation-sau',
+  'society-creation-sci',
+  'sole-proprietorship-creation',
+] as const;
+
+const isRegisteredOfficeAvailable = (slug: string): boolean =>
+  REGISTERED_OFFICE_SLUGS.includes(slug as (typeof REGISTERED_OFFICE_SLUGS)[number]);
+
 const getSpecialCategory = (selected: string | null): SpecialCategory | null =>
   selected ? SPECIAL_CATEGORIES.find((category) => category.selectedKey === selected.toLowerCase()) ?? null : null;
 
@@ -177,7 +189,7 @@ const getInitialForm = (slug: string): FormState => ({
   email: '',
   demande: slug,
   message: '',
-  domicilierAxcel: false,
+  isRegister: false,
 });
 
 const getFrenchOptionLabel = (labelKey: string): string => {
@@ -315,7 +327,20 @@ export default function QuotePage() {
   };
 
   const handleSelectOption = (option: RequestOption) => {
-    handleInputChange('demande', option.slug);
+    setForm((prev) => ({
+      ...prev,
+      demande: option.slug,
+      isRegister: isRegisteredOfficeAvailable(option.slug) ? prev.isRegister : false,
+    }));
+    if (option.slug === form.demande) return;
+
+    const errorMessage = validateField('demande', option.slug);
+    setFieldErrors((prev) => ({
+      ...prev,
+      demande: errorMessage ?? undefined,
+    }));
+    setSubmitted(false);
+    setError(null);
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -556,24 +581,26 @@ export default function QuotePage() {
                   {fieldErrors.demande && <p className="mt-2 text-xs text-red-600">{fieldErrors.demande}</p>}
                 </div>
 
-                <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 min-[425px]:gap-4 min-[425px]:px-4 md:col-span-2">
-                  <span className="min-w-0 text-sm font-semibold text-primary">
-                    {t('form.RegisteredOffice')}
-                  </span>
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked={form.domicilierAxcel}
-                    onClick={() => handleToggleChange('domicilierAxcel', !form.domicilierAxcel)}
-                    className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 ${form.domicilierAxcel ? 'bg-secondary' : 'bg-slate-300'
-                      }`}
-                  >
-                    <span
-                      className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${form.domicilierAxcel ? 'translate-x-6' : 'translate-x-1'
+                {isRegisteredOfficeAvailable(form.demande) && (
+                  <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 min-[425px]:gap-4 min-[425px]:px-4 md:col-span-2">
+                    <span className="min-w-0 text-sm font-semibold text-primary">
+                      {t('form.RegisteredOffice')}
+                    </span>
+                    <button
+                      type="button"
+                      role="switch"
+                      aria-checked={form.isRegister}
+                      onClick={() => handleToggleChange('isRegister', !form.isRegister)}
+                      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 ${form.isRegister ? 'bg-secondary' : 'bg-slate-300'
                         }`}
-                    />
-                  </button>
-                </div>
+                    >
+                      <span
+                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${form.isRegister ? 'translate-x-6' : 'translate-x-1'
+                          }`}
+                      />
+                    </button>
+                  </div>
+                )}
 
                 <label className="block min-w-0 md:col-span-2">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">

@@ -83,7 +83,6 @@ export async function POST(request: NextRequest) {
 
     const originLabel = ORIGIN_LABELS[String(origin)];
 
-    // `demande` arrive déjà avec son libellé français.
     const demandeLabel = toSingleLine(demande);
     const subject = `Nouvelle demande de devis - ${demandeLabel} (${originLabel})`;
 
