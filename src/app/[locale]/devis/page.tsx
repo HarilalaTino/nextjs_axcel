@@ -29,6 +29,7 @@ type FormState = {
   whatsapp: string;
   email: string;
   demandes: string[]; // slugs sélectionnés (multi-sélection)
+  quantites: Record<string, number>;
   message: string;
   isRegister: boolean;
 };
@@ -38,6 +39,9 @@ type TextField = 'nom' | 'phone' | 'whatsapp' | 'email' | 'message';
 type RequestOption = {
   slug: string;
   labelKey: string;
+  quantityAware?: boolean;
+  unitPriceAr?: number;
+  pricesByQuantity?: Record<number, number>;
 };
 
 type RequestCategory = {
@@ -77,15 +81,21 @@ const REQUEST_CATALOG: RequestCategory[] = [
     key: 'courier',
     labelKey: 'requestCategories.courier',
     options: [
-      { slug: 'courier-diploma-retrieval', labelKey: 'requestOptions.courierDiplomaRetrieval' },
-      { slug: 'courier-translation-retrieval', labelKey: 'requestOptions.courierTranslationRetrieval' },
-      { slug: 'certificate-of-market-authorization', labelKey: 'requestOptions.certificateOfMarketAuthorization' },
-      { slug: 'other-administrative-certificate', labelKey: 'requestOptions.otherAdministrativeCertificate' },
-      { slug: 'administrative-procedures-for-automobiles', labelKey: 'requestOptions.courierAutomobileProcedure' },
-      { slug: 'diplome-master', labelKey: 'requestOptions.diplomeMaster' },
-      { slug: 'licence', labelKey: 'requestOptions.licence' },
-      { slug: 'releve-de-notes-bacc', labelKey: 'requestOptions.baccTranscript' },
-      { slug: 'attestation-de-reussite', labelKey: 'requestOptions.achievementCertificate' },
+      { slug: 'certificate-of-market-authorization', labelKey: 'requestOptions.certificateOfMarketAuthorization', quantityAware: true },
+      { slug: 'administrative-procedures-for-automobiles', labelKey: 'requestOptions.courierAutomobileProcedure', quantityAware: true },
+      { slug: 'diplome-master', labelKey: 'requestOptions.diplomeMaster', quantityAware: true },
+      { slug: 'licence', labelKey: 'requestOptions.licence', quantityAware: true },
+      { slug: 'releve-de-notes-bacc', labelKey: 'requestOptions.baccTranscript', quantityAware: true },
+      { slug: 'attestation-de-reussite', labelKey: 'requestOptions.achievementCertificate', quantityAware: true },
+      { slug: 'copie-acte-de-naissance', labelKey: 'requestOptions.birthCertificateCopy', quantityAware: true, unitPriceAr: 30000 },
+      { slug: 'acte-de-mariage', labelKey: 'requestOptions.marriageCertificate', quantityAware: true },
+      { slug: 'bulletin-n3', labelKey: 'requestOptions.bulletin3', quantityAware: true, pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 } },
+      { slug: 'traduction-acte-de-mariage', labelKey: 'requestOptions.marriageCertificateTranslation', quantityAware: true },
+      { slug: 'traduction-acte-de-naissance', labelKey: 'requestOptions.birthCertificateTranslation', quantityAware: true, unitPriceAr: 50000 },
+      { slug: 'certification-cin', labelKey: 'requestOptions.cinCertification', quantityAware: true, unitPriceAr: 30000 },
+      { slug: 'recuperation-certificat-nationalite', labelKey: 'requestOptions.nationalityCertificateRetrieval', quantityAware: true, unitPriceAr: 50000 },
+      { slug: 'recuperation-rcs-moins-de-3-mois', labelKey: 'requestOptions.rcsRetrieval', quantityAware: true },
+      { slug: 'recuperation-acte-et-document-administratif', labelKey: 'requestOptions.administrativeDocumentRetrieval', quantityAware: true },
     ],
   },
   {
@@ -202,6 +212,7 @@ const getInitialForm = (slugs: string[]): FormState => ({
   whatsapp: '',
   email: '',
   demandes: slugs,
+  quantites: Object.fromEntries(slugs.map((slug) => [slug, 1])),
   message: '',
   isRegister: false,
 });
@@ -217,6 +228,18 @@ const getFrenchOptionLabel = (labelKey: string): string => {
 
   const value = quotePage[labelKey];
   return typeof value === 'string' ? value : labelKey;
+};
+
+const getOptionPrice = (option: RequestOption, quantity: number): string | null => {
+  if (option.pricesByQuantity) {
+    return option.pricesByQuantity[quantity] ? `${option.pricesByQuantity[quantity].toLocaleString('fr-FR')} Ar` : null;
+  }
+
+  if (option.unitPriceAr) {
+    return `${(option.unitPriceAr * quantity).toLocaleString('fr-FR')} Ar`;
+  }
+
+  return null;
 };
 
 type FieldErrors = Partial<Record<'nom' | 'phone' | 'demande', string>>;
@@ -342,11 +365,23 @@ export default function QuotePage() {
     setForm((prev) => ({
       ...prev,
       demandes,
+      quantites: {
+        ...prev.quantites,
+        [option.slug]: exists ? prev.quantites[option.slug] ?? 1 : 1,
+      },
       isRegister: demandes.some(isRegisteredOfficeAvailable) ? prev.isRegister : false,
     }));
     setFieldErrors((prev) => ({ ...prev, demande: validateDemandes(demandes) ?? undefined }));
     setSubmitted(false);
     setError(null);
+  };
+
+  const handleQuantityChange = (slug: string, value: number) => {
+    const quantity = Math.max(1, Number.isFinite(value) ? Math.round(value) : 1);
+    setForm((prev) => ({
+      ...prev,
+      quantites: { ...prev.quantites, [slug]: quantity },
+    }));
   };
 
   const handleCategoryClick = (category: RequestCategory) => {
@@ -378,11 +413,16 @@ export default function QuotePage() {
     }
     setCaptchaError(null);
 
-    const selectedLabels = ALL_OPTIONS.filter((option) => form.demandes.includes(option.slug)).map((option) =>
-      getFrenchOptionLabel(option.labelKey),
-    );
+    const selectedLabels = ALL_OPTIONS
+      .filter((option) => form.demandes.includes(option.slug))
+      .map((option) => {
+        const quantity = form.quantites[option.slug] ?? 1;
+        const label = getFrenchOptionLabel(option.labelKey);
+        const price = getOptionPrice(option, quantity);
+        return price ? `${label} : ${price}` : `${label} (x${quantity})`;
+      });
 
-    const { demandes, ...rest } = form;
+    const { demandes, quantites, ...rest } = form;
     const payload = {
       ...rest,
       demande: selectedLabels.join(', '),
@@ -391,6 +431,7 @@ export default function QuotePage() {
       captchaToken,
     };
     void demandes;
+    void quantites;
 
     setIsSubmitting(true);
     setError(null);
@@ -597,6 +638,7 @@ export default function QuotePage() {
                     <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                       {currentCategory.options.map((option) => {
                         const isOptionSelected = form.demandes.includes(option.slug);
+                        const quantity = form.quantites[option.slug] ?? 1;
 
                         return (
                           <label key={option.slug} className="block min-w-0 cursor-pointer">
@@ -612,15 +654,36 @@ export default function QuotePage() {
                                 : 'border-slate-200 bg-white text-slate-700 hover:border-secondary/60 hover:text-secondary'
                                 }`}
                             >
-                              <span className="min-w-0">{label(option.labelKey)}</span>
-                              <span
-                                aria-hidden="true"
-                                className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 transition-colors ${isOptionSelected
-                                  ? 'border-secondary bg-secondary text-white'
-                                  : 'border-slate-300 bg-white text-transparent'
-                                  }`}
-                              >
-                                <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                              <span className="min-w-0">
+                                <span className="block">{label(option.labelKey)}</span>
+                                {option.quantityAware && (
+                                  <span className="mt-1 block text-[11px] text-slate-500">
+                                    {t('form.quantity')}: {quantity}
+                                  </span>
+                                )}
+                              </span>
+                              <span className="flex shrink-0 items-center gap-2">
+                                {option.quantityAware && (
+                                  <input
+                                    type="number"
+                                    min={1}
+                                    max={option.pricesByQuantity ? 3 : 100}
+                                    value={quantity}
+                                    onChange={(event) => handleQuantityChange(option.slug, Number(event.target.value))}
+                                    onClick={(event) => event.preventDefault()}
+                                    aria-label={`${label(option.labelKey)} ${t('form.quantity')}`}
+                                    className="w-16 rounded-lg border border-slate-200 bg-white px-2 py-1 text-center text-xs text-primary outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                                  />
+                                )}
+                                <span
+                                  aria-hidden="true"
+                                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 transition-colors ${isOptionSelected
+                                    ? 'border-secondary bg-secondary text-white'
+                                    : 'border-slate-300 bg-white text-transparent'
+                                    }`}
+                                >
+                                  <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                                </span>
                               </span>
                             </span>
                           </label>
@@ -632,15 +695,22 @@ export default function QuotePage() {
                   {/* Récapitulatif des demandes cochées (toutes catégories confondues) */}
                   {form.demandes.length > 0 && (
                     <ul className="mt-4 flex flex-wrap gap-2" aria-label={t('form.requestType')}>
-                      {ALL_OPTIONS.filter((option) => form.demandes.includes(option.slug)).map((option) => (
-                        <li
-                          key={option.slug}
-                          className="inline-flex items-center gap-1.5 rounded-full border border-secondary/30 bg-secondary/5 px-3 py-1 text-xs text-primary"
-                        >
-                          <Check className="h-3 w-3 text-secondary" />
-                          {label(option.labelKey)}
-                        </li>
-                      ))}
+                      {ALL_OPTIONS.filter((option) => form.demandes.includes(option.slug)).map((option) => {
+                        const quantity = form.quantites[option.slug] ?? 1;
+                        const price = getOptionPrice(option, quantity);
+
+                        return (
+                          <li
+                            key={option.slug}
+                            className="inline-flex items-center gap-1.5 rounded-full border border-secondary/30 bg-secondary/5 px-3 py-1 text-xs text-primary"
+                          >
+                            <Check className="h-3 w-3 text-secondary" />
+                            {label(option.labelKey)}
+                            {price && <span className="font-semibold">{price}</span>}
+                            <span className="text-slate-500">×{quantity}</span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
 

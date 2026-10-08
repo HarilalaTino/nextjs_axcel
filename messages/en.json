@@ -512,8 +512,11 @@
       "eyebrow": "Courier Service",
       "title": "Collection and translation of administrative documents.",
       "description": "We offer packages for retrieval and translation of administrative documents :",
+      "pleaseSelect": "Please select at least one option before requesting a quote :",
+      "selectionRequired": "Select at least one option before requesting a quote.",
       "contact": "Contact us",
       "quote": "Request a quote",
+      "quantity": "Quantity",
       "cinRectification": {
         "label": "CIN correction",
         "price": "300 000 Ar"
@@ -529,6 +532,30 @@
       "birthCertificateCopy": {
         "label": "Retrieval of Birth Certificate Copy",
         "price": "30 000 Ar"
+      },
+      "marriageCertificate": {
+        "label": "Marriage certificate",
+        "price": ""
+      },
+      "marriageCertificateTranslation": {
+        "label": "Marriage certificate translation",
+        "price": ""
+      },
+      "cinCertification": {
+        "label": "CIN certification",
+        "price": "30 000 Ar"
+      },
+      "nationalityCertificateRetrieval": {
+        "label": "Nationality certificate retrieval",
+        "price": "50 000 Ar"
+      },
+      "rcsRetrieval": {
+        "label": "RCS retrieval under 3 months",
+        "price": ""
+      },
+      "administrativeDocumentRetrieval": {
+        "label": "Administrative act and document retrieval",
+        "price": ""
       }
     },
     "allOtherCertificationRecoveries": {
@@ -959,6 +986,15 @@
       "domiciliation": "Domiciliation",
       "courierDiplomaRetrieval": "Diploma retrieval, transcript, equivalence", 
       "courierTranslationRetrieval": "Retrieval and translation of administrative documents", 
+      "birthCertificateCopy": "Retrieval of Birth Certificate Copy",
+      "marriageCertificate": "Marriage certificate",
+      "bulletin3": "Bulletin n°3",
+      "marriageCertificateTranslation": "Marriage certificate translation",
+      "birthCertificateTranslation": "Translation of Birth Certificate",
+      "cinCertification": "CIN certification",
+      "nationalityCertificateRetrieval": "Nationality certificate retrieval",
+      "rcsRetrieval": "RCS retrieval under 3 months",
+      "administrativeDocumentRetrieval": "Administrative act and document retrieval",
       "courierAutomobileProcedure": "Administrative procedures for automobiles",
       "diplomeMaster": "Recovery of Master's degree",
       "licence": "Recovery of Licentiate degree",
@@ -981,6 +1017,7 @@
       "email": "Email",
       "emailPlaceholder": "Example: name@email.com",
       "requestType": "Request type",
+      "quantity": "Quantity",
       "message": "Message",
       "messagePlaceholder": "Describe your need, your goals or the procedures to carry out...",
       "submit": "Send the request",

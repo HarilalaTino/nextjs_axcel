@@ -1,8 +1,8 @@
 import NavMenu from "@/components/layout/header";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
+import CourierDiplomaSelection from "@/components/ui/shared/courier-diploma-selection";
 import CreationPage from "@/components/ui/shared/page-creation";
-import { CheckCircle2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 
@@ -34,36 +34,63 @@ export default async function TranslationRetrieval() {
                     description={
                         <>
                             <p className="mb-4">{translationRetrieval("description")}</p>
-                            <ul className="mt-8 space-y-3">
-                                <li className="flex items-start gap-3.5">
-                                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                                        <CheckCircle2 size={14} strokeWidth={2.5} />
-                                    </span>
-                                    <span className="text-slate-600">{translationRetrieval("cinRectification.label")} : {translationRetrieval("cinRectification.price")}</span>
-                                </li>
-                                <li className="flex items-start gap-3.5">
-                                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                                        <CheckCircle2 size={14} strokeWidth={2.5} />
-                                    </span>
-                                    <span className="text-slate-600">{translationRetrieval("bulletin3.label")} : {translationRetrieval("bulletin3.price")}</span>
-                                </li>
-                                <li className="flex items-start gap-3.5">
-                                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                                        <CheckCircle2 size={14} strokeWidth={2.5} />
-                                    </span>
-                                    <span className="text-slate-600">{translationRetrieval("birthCertificateTranslation.label")} : {translationRetrieval("birthCertificateTranslation.price")}</span>
-                                </li>
-                                <li className="flex items-start gap-3.5 ">
-                                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                                        <CheckCircle2 size={14} strokeWidth={2.5} />
-                                    </span>
-                                    <span className="text-slate-600">{translationRetrieval("birthCertificateCopy.label")} : {translationRetrieval("birthCertificateCopy.price")}</span>
-                                </li>
-                            </ul>
+                            <CourierDiplomaSelection
+                                requiredMessage={translationRetrieval("selectionRequired")}
+                                quantityLabel={translationRetrieval("quantity")}
+                                options={[
+                                    {
+                                        slug: "copie-acte-de-naissance",
+                                        label: translationRetrieval("birthCertificateCopy.label"),
+                                        quantityAware: true,
+                                        unitPriceAr: 30000,
+                                    },
+                                    {
+                                        slug: "acte-de-mariage",
+                                        label: translationRetrieval("marriageCertificate.label"),
+                                    },
+                                    {
+                                        slug: "bulletin-n3",
+                                        label: translationRetrieval("bulletin3.label"),
+                                        quantityAware: true,
+                                        pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 },
+                                    },
+                                    {
+                                        slug: "traduction-acte-de-mariage",
+                                        label: translationRetrieval("marriageCertificateTranslation.label"),
+                                    },
+                                    {
+                                        slug: "traduction-acte-de-naissance",
+                                        label: translationRetrieval("birthCertificateTranslation.label"),
+                                        quantityAware: true,
+                                        unitPriceAr: 50000,
+                                    },
+                                    {
+                                        slug: "certification-cin",
+                                        label: translationRetrieval("cinCertification.label"),
+                                        quantityAware: true,
+                                        unitPriceAr: 30000,
+                                    },
+                                    {
+                                        slug: "recuperation-certificat-nationalite",
+                                        label: translationRetrieval("nationalityCertificateRetrieval.label"),
+                                        quantityAware: true,
+                                        unitPriceAr: 50000,
+                                    },
+                                    {
+                                        slug: "recuperation-rcs-moins-de-3-mois",
+                                        label: translationRetrieval("rcsRetrieval.label"),
+                                    },
+                                    {
+                                        slug: "recuperation-acte-et-document-administratif",
+                                        label: translationRetrieval("administrativeDocumentRetrieval.label"),
+                                    },
+                                ]}
+                            />
                         </>
                     }
                     imageSrc="/images/courier/courier-2.jpg"
                     ctasDisplay
+                    requiredSelectionType="courier-translation-retrieval"
                     t={translationRetrieval}
                 />
                 <ElegantCardWrapper />

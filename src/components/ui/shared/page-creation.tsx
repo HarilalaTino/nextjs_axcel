@@ -67,7 +67,9 @@ export default async function CreationPage({
 
   const queryType = overideQueryparams
     ? { [overideQueryparams]: creationType }
-    : { type: creationType };
+    : requiredSelectionType
+      ? {}
+      : { type: creationType };
 
   const quoteUrl = {
     pathname: quoteHref,

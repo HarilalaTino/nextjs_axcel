@@ -502,8 +502,11 @@
       "eyebrow": "Service de coursier",
       "title": "Récupération et traduction de documents administratifs",
       "description": "Nous proposons des offres de récupération et de traduction de documents administratifs :",
+      "pleaseSelect": "Veuillez sélectionner au moins une option avant de demander un devis :",
+      "selectionRequired": "Sélectionnez au moins une option avant de demander un devis.",
       "contact": "Nous contacter",
       "quote": "Demander un devis",
+      "quantity": "Quantité",
       "cinRectification": {
         "label": "Rectification CIN",
         "price": "300 000 Ar"
@@ -519,6 +522,30 @@
       "birthCertificateCopy": {
         "label": "Récupération copie de naissance",
         "price": "30 000 Ar"
+      },
+      "marriageCertificate": {
+        "label": "Acte de mariage",
+        "price": ""
+      },
+      "marriageCertificateTranslation": {
+        "label": "Traduction acte de mariage",
+        "price": ""
+      },
+      "cinCertification": {
+        "label": "Cértification CIN",
+        "price": "30 000 Ar"
+      },
+      "nationalityCertificateRetrieval": {
+        "label": "Récupération certificat de nationalité",
+        "price": "50 000 Ar"
+      },
+      "rcsRetrieval": {
+        "label": "Récupération RCS moins de 3 mois",
+        "price": ""
+      },
+      "administrativeDocumentRetrieval": {
+        "label": "Récupération acte et document administratif",
+        "price": ""
       }
     },
     "allOtherCertificationRecoveries": {
@@ -948,6 +975,15 @@
       "domiciliation": "Domiciliation",
       "courierDiplomaRetrieval": "Récupération diplôme, relevé de note, équivalence",
       "courierTranslationRetrieval": "Récupération et traduction de documents administratifs",
+      "birthCertificateCopy": "Récupération copie de naissance",
+      "marriageCertificate": "Acte de mariage",
+      "bulletin3": "Bulletin n°3",
+      "marriageCertificateTranslation": "Traduction acte de mariage",
+      "birthCertificateTranslation": "Traduction acte de naissance",
+      "cinCertification": "Cértification CIN",
+      "nationalityCertificateRetrieval": "Récupération certificat de nationalité",
+      "rcsRetrieval": "Récupération RCS moins de 3 mois",
+      "administrativeDocumentRetrieval": "Récupération acte et document administratif",
       "courierAutomobileProcedure": "Procédures administratives pour l'automobile",
       "diplomeMaster": "Récupération diplôme Master",
       "licence": "Récupération diplôme de Licence",
@@ -969,6 +1005,7 @@
       "email": "Email",
       "emailPlaceholder": "Ex : nom@email.com",
       "requestType": "Type de demande",
+      "quantity": "Quantité",
       "message": "Message",
       "messagePlaceholder": "Décrivez votre besoin, vos objectifs ou les démarches à réaliser...",
       "submit": "Envoyer la demande",
