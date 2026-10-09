@@ -28,7 +28,7 @@ export const coursierRecuperationDiplome: Menu = {
     "Retrait de diplômes, relevés de notes, attestations et équivalences auprès des établissements et institutions.",
   sousMenus: [
     {
-      slug: "diplome-master",
+      slug: "masters-degree",
       titre: "Diplôme Master",
       resume: "Retrait du diplôme original auprès de l'université.",
       lignes: [
@@ -42,7 +42,7 @@ export const coursierRecuperationDiplome: Menu = {
       ],
     },
     {
-      slug: "licence",
+      slug: "licence-degree",
       titre: "Licence",
       resume: "Retrait du diplôme de licence.",
       lignes: [
@@ -56,7 +56,7 @@ export const coursierRecuperationDiplome: Menu = {
       ],
     },
     {
-      slug: "releve-de-notes-bacc",
+      slug: "baccalaureate-transcript",
       titre: "Relevé de notes BACC",
       resume: "Récupération du relevé de notes du Baccalauréat.",
       lignes: [
@@ -70,7 +70,7 @@ export const coursierRecuperationDiplome: Menu = {
       ],
     },
     {
-      slug: "attestation-de-reussite",
+      slug: "certificate-of-achievement",
       titre: "Attestation de réussite",
       resume: "Délivrance de l'attestation de réussite.",
       lignes: [
@@ -85,11 +85,11 @@ export const coursierRecuperationDiplome: Menu = {
     },
     {
       slug: "equivalence-fop",
-      titre: "Équivalence FOP",
+      titre: "Récupération équivalence FOP",
       resume: "Dossier d'équivalence de diplôme (FOP).",
       lignes: [
         {
-          intitule: "Équivalence FOP",
+          intitule: "Récupération équivalence FOP",
           honoraires: "100 000 Ar",
           fraisAdministratifs: "10 000 Ar",
           total: "110 000 Ar",
@@ -131,7 +131,7 @@ export const coursierRecuperationTraduction: Menu = {
     "Retrait de copies d'actes d'état civil et traduction officielle auprès des services concernés.",
   sousMenus: [
     {
-      slug: "traduction-acte-de-naissance",
+      slug: "birth-certificate-translation",
       titre: "Traduction acte de naissance",
       resume: "Traduction officielle d'un acte de naissance.",
       lignes: [
@@ -145,7 +145,7 @@ export const coursierRecuperationTraduction: Menu = {
       ],
     },
     {
-      slug: "copie-acte-de-naissance",
+      slug: "birth-certificate-copy",
       titre: "Récupération copie de naissance",
       resume: "Retrait d'une copie d'acte de naissance, Tana ou faritra.",
       lignes: [
@@ -164,7 +164,7 @@ export const coursierRecuperationTraduction: Menu = {
       ],
     },
     {
-      slug: "acte-de-mariage",
+      slug: "marriage-certificate",
       titre: "Acte de mariage",
       resume: "Retrait / traduction d'un acte de mariage.",
       lignes: [

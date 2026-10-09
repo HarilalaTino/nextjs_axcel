@@ -112,30 +112,8 @@ export default function CourierDiplomaSelection({
                   <Check className="h-3.5 w-3.5" strokeWidth={3} />
                 </span>
                 <span className="min-w-0 flex-1 text-slate-600">
-                  <span className="block">{displayLabel}</span>
-                  {price && (
-                    <span className="mt-1 block text-xs font-semibold text-secondary">
-                      {price}
-                    </span>
-                  )}
+                  <span className="block">{displayLabel} {price ? `: ${price} ` : ''}</span>
                 </span>
-                {option.quantityAware && (
-                  <span className="flex shrink-0 items-center gap-2">
-                    <span className="text-xs text-slate-500">
-                      {quantityLabel}: {quantity}
-                    </span>
-                    <input
-                      type="number"
-                      min={1}
-                      max={option.pricesByQuantity ? 3 : 100}
-                      value={quantity}
-                      onChange={(event) => updateQuantity(option.slug, Number(event.target.value))}
-                      onClick={(event) => event.preventDefault()}
-                      aria-label={`${displayLabel} ${quantityLabel}`}
-                      className="w-16 rounded-lg border border-slate-200 bg-white px-2 py-1 text-center text-xs text-primary outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-                    />
-                  </span>
-                )}
               </label>
             </li>
           );

@@ -1,6 +1,7 @@
 import NavMenu from "@/components/layout/header";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
+import CourierDiplomaSelection from "@/components/ui/shared/courier-diploma-selection";
 import CreationPage from "@/components/ui/shared/page-creation";
 import { CheckCircle2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -35,36 +36,31 @@ export default async function certificateRetrieval() {
           description={
             <>
               <p className="mb-4">{certificateRetrieval("description")}</p>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{certificateRetrieval("payslip.label")} : {certificateRetrieval("payslip.price")}</span>
-                </li>
-                <li className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{certificateRetrieval("bankAccountCreation.label")} : {certificateRetrieval("bankAccountCreation.price")}</span>
-                </li>
-                <li className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{certificateRetrieval("simCardCreation.label")} : {certificateRetrieval("simCardCreation.price")}</span>
-                </li>
-                <li className="flex items-start gap-3.5 ">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{certificateRetrieval("fopEquivalence.label")} : {certificateRetrieval("fopEquivalence.price")}</span>
-                </li>
-              </ul>
+              <CourierDiplomaSelection
+                requiredMessage={certificateRetrieval("selectionRequired")}
+                options={[
+                  {
+                    slug: "bank-account-creation",
+                    label: certificateRetrieval("bankAccountCreation.label"),
+                    unitPriceAr: 100000,
+                  },
+                  {
+                    slug: "sim-card-creation",
+                    label: certificateRetrieval("simCardCreation.label"),
+                    unitPriceAr: 100000,
+                  },
+                  {
+                    slug: "fop-equivalence-retrieval",
+                    label: certificateRetrieval("fopEquivalence.label"),
+                    unitPriceAr: 100000,
+                  },
+                ]}
+              />
             </>
           }
           imageSrc="/images/courier/courier-3.jpg"
           ctasDisplay
+          requiredSelectionType="other-administrative-certificate"
           t={certificateRetrieval}
         />
         <CreationPage
@@ -93,6 +89,7 @@ export default async function certificateRetrieval() {
           imageSrc="/images/courier/courier-4.jpg"
           isReverseSection
           ctasDisplay
+          preserveQueryParams={false}
           t={automobileProcedure}
         />
         <ElegantCardWrapper />

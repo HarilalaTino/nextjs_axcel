@@ -23,6 +23,7 @@ type CreationPageProps = {
   ctasDisplay?: boolean;
   overideQueryparams?: string;
   requiredSelectionType?: string;
+  preserveQueryParams?: boolean;
 };
 
 export interface Tier {
@@ -55,6 +56,7 @@ export default async function CreationPage({
   ctasDisplay,
   overideQueryparams,
   requiredSelectionType,
+  preserveQueryParams = true,
 }: CreationPageProps) {
   const contactHref = '/contact' as const;
   const quoteHref = '/devis' as const;
@@ -136,7 +138,7 @@ export default async function CreationPage({
                           type: creationType,
                           rate: tier.quoteUrl,
                         }}
-                        preserveQueryParams
+                        preserveQueryParams={preserveQueryParams}
                         requiredSelectionType={requiredSelectionType}
                         className="mt-6 inline-block rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
                       >
@@ -194,7 +196,7 @@ export default async function CreationPage({
                     <QueryAwareLink
                       pathname={quoteUrl.pathname}
                       query={quoteUrl.query}
-                      preserveQueryParams
+                      preserveQueryParams={preserveQueryParams}
                       requiredSelectionType={requiredSelectionType}
                       className="rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
                     >
@@ -219,7 +221,7 @@ export default async function CreationPage({
                 <QueryAwareLink
                   pathname={quoteUrl.pathname}
                   query={quoteUrl.query}
-                  preserveQueryParams
+                  preserveQueryParams={preserveQueryParams}
                   requiredSelectionType={requiredSelectionType}
                   className="rounded-md bg-secondary px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-secondary/90 sm:w-auto"
                 >

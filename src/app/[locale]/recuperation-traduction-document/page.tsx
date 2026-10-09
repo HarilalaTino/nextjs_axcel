@@ -39,45 +39,45 @@ export default async function TranslationRetrieval() {
                                 quantityLabel={translationRetrieval("quantity")}
                                 options={[
                                     {
-                                        slug: "copie-acte-de-naissance",
+                                        slug: "birth-certificate-copy",
                                         label: translationRetrieval("birthCertificateCopy.label"),
                                         quantityAware: true,
                                         unitPriceAr: 30000,
                                     },
                                     {
-                                        slug: "acte-de-mariage",
+                                        slug: "marriage-certificate",
                                         label: translationRetrieval("marriageCertificate.label"),
                                     },
                                     {
-                                        slug: "bulletin-n3",
+                                        slug: "criminal-record-certificate",
                                         label: translationRetrieval("bulletin3.label"),
                                         quantityAware: true,
                                         pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 },
                                     },
                                     {
-                                        slug: "traduction-acte-de-mariage",
+                                        slug: "marriage-certificate-translation",
                                         label: translationRetrieval("marriageCertificateTranslation.label"),
                                     },
                                     {
-                                        slug: "traduction-acte-de-naissance",
+                                        slug: "birth-certificate-translation",
                                         label: translationRetrieval("birthCertificateTranslation.label"),
                                         quantityAware: true,
                                         unitPriceAr: 50000,
                                     },
                                     {
-                                        slug: "certification-cin",
+                                        slug: "national-id-certification",
                                         label: translationRetrieval("cinCertification.label"),
                                         quantityAware: true,
                                         unitPriceAr: 30000,
                                     },
                                     {
-                                        slug: "recuperation-certificat-nationalite",
+                                        slug: "nationality-certificate-retrieval",
                                         label: translationRetrieval("nationalityCertificateRetrieval.label"),
                                         quantityAware: true,
                                         unitPriceAr: 50000,
                                     },
                                     {
-                                        slug: "recuperation-rcs-moins-de-3-mois",
+                                        slug: "recent-commercial-register-extract",
                                         label: translationRetrieval("rcsRetrieval.label"),
                                     },
                                     {

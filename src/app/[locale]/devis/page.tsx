@@ -9,6 +9,7 @@ import {
   ArrowRight,
   Check,
   CheckCircle2,
+  Info,
   Mail,
   MessageSquareText,
   Phone,
@@ -28,7 +29,7 @@ type FormState = {
   phone: string;
   whatsapp: string;
   email: string;
-  demandes: string[]; // slugs sélectionnés (multi-sélection)
+  demandes: string[];
   quantites: Record<string, number>;
   message: string;
   isRegister: boolean;
@@ -48,15 +49,14 @@ type RequestCategory = {
   key: string;
   labelKey: string;
   options: RequestOption[];
-  /** Catégorie sans sous-catégories : le clic sélectionne directement son unique option. */
   standalone?: boolean;
 };
 
 type SpecialCategory = RequestCategory & { selectedKey: string };
 
 /* --------------------------------------------------------------------------- */
-/* Catalogue des demandes (catégories -> sous-catégories)                      */
-/* Chaque slug est unique : la sélection se fait toujours par slug.            */
+/* Request catalog (categories -> subcategories) */
+/* Each slug is unique: the selection is always done by slug. */
 /* --------------------------------------------------------------------------- */
 const REQUEST_CATALOG: RequestCategory[] = [
   {
@@ -81,20 +81,23 @@ const REQUEST_CATALOG: RequestCategory[] = [
     key: 'courier',
     labelKey: 'requestCategories.courier',
     options: [
-      { slug: 'diplome-master', labelKey: 'requestOptions.diplomeMaster', quantityAware: true },
-      { slug: 'licence', labelKey: 'requestOptions.licence', quantityAware: true },
-      { slug: 'attestation-de-reussite', labelKey: 'requestOptions.achievementCertificate', quantityAware: true },
-      { slug: 'certificate-of-market-authorization', labelKey: 'requestOptions.certificateOfMarketAuthorization', quantityAware: true },
+      { slug: 'masters-degree', labelKey: 'requestOptions.diplomeMaster', quantityAware: true, unitPriceAr: 200000 },
+      { slug: 'licence-degree', labelKey: 'requestOptions.licence', quantityAware: true, unitPriceAr: 200000 },
+      { slug: 'certificate-of-achievement', labelKey: 'requestOptions.achievementCertificate', quantityAware: true, unitPriceAr: 100000 },
+      { slug: 'certificate-of-market-authorization', labelKey: 'requestOptions.certificateOfMarketAuthorization', quantityAware: true, unitPriceAr: 300000 },
       { slug: 'administrative-procedures-for-automobiles', labelKey: 'requestOptions.courierAutomobileProcedure', quantityAware: true },
-      { slug: 'releve-de-notes-bacc', labelKey: 'requestOptions.baccTranscript', quantityAware: true },
-      { slug: 'copie-acte-de-naissance', labelKey: 'requestOptions.birthCertificateCopy', quantityAware: true, unitPriceAr: 30000 },
-      { slug: 'acte-de-mariage', labelKey: 'requestOptions.marriageCertificate', quantityAware: true },
-      { slug: 'traduction-acte-de-naissance', labelKey: 'requestOptions.birthCertificateTranslation', quantityAware: true, unitPriceAr: 50000 },
-      { slug: 'traduction-acte-de-mariage', labelKey: 'requestOptions.marriageCertificateTranslation', quantityAware: true },
-      { slug: 'bulletin-n3', labelKey: 'requestOptions.bulletin3', quantityAware: true, pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 } },
-      { slug: 'certification-cin', labelKey: 'requestOptions.cinCertification', quantityAware: true, unitPriceAr: 30000 },
-      { slug: 'recuperation-certificat-nationalite', labelKey: 'requestOptions.nationalityCertificateRetrieval', quantityAware: true, unitPriceAr: 50000 },
-      { slug: 'recuperation-rcs-moins-de-3-mois', labelKey: 'requestOptions.rcsRetrieval', quantityAware: true },
+      { slug: 'bank-account-creation', labelKey: 'requestOptions.bankAccountCreation', unitPriceAr: 100000 },
+      { slug: 'sim-card-creation', labelKey: 'requestOptions.simCardCreation', unitPriceAr: 100000 },
+      { slug: 'fop-equivalence-retrieval', labelKey: 'requestOptions.fopEquivalence', unitPriceAr: 100000 },
+      { slug: 'baccalaureate-transcript', labelKey: 'requestOptions.baccTranscript', quantityAware: true },
+      { slug: 'birth-certificate-copy', labelKey: 'requestOptions.birthCertificateCopy', quantityAware: true, unitPriceAr: 30000 },
+      { slug: 'marriage-certificate', labelKey: 'requestOptions.marriageCertificate', quantityAware: true },
+      { slug: 'birth-certificate-translation', labelKey: 'requestOptions.birthCertificateTranslation', quantityAware: true, unitPriceAr: 50000 },
+      { slug: 'marriage-certificate-translation', labelKey: 'requestOptions.marriageCertificateTranslation', quantityAware: true },
+      { slug: 'criminal-record-certificate', labelKey: 'requestOptions.bulletin3', quantityAware: true, pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 } },
+      { slug: 'national-id-certification', labelKey: 'requestOptions.cinCertification', quantityAware: true, unitPriceAr: 30000 },
+      { slug: 'nationality-certificate-retrieval', labelKey: 'requestOptions.nationalityCertificateRetrieval', quantityAware: true, unitPriceAr: 50000 },
+      { slug: 'recent-commercial-register-extract', labelKey: 'requestOptions.rcsRetrieval', quantityAware: true },
     ],
   },
   {
@@ -131,7 +134,8 @@ const REQUEST_CATALOG: RequestCategory[] = [
       { slug: 'strategic-consulting-for-entrepreneurs', labelKey: 'requestOptions.strategicConsultingForEntrepreneurs' },
     ],
   },
-  { key: 'otherDemand',
+  {
+    key: 'otherDemand',
     labelKey: 'otherDemand',
     standalone: true,
     options: [{ slug: 'other-demand', labelKey: 'otherDemand' }],
@@ -253,6 +257,7 @@ const INPUT_ERROR = 'border-red-300 focus:border-red-500 focus:ring-red-100';
 
 export default function QuotePage() {
   const t = useTranslations('QuotePage');
+  const globalTranslation = useTranslations('Global');
   const searchParams = useSearchParams();
   const requestedType = searchParams.get('type');
   const requestedRate = searchParams.get('rate');
@@ -691,7 +696,7 @@ export default function QuotePage() {
                     </div>
                   )}
 
-                  {/* Récapitulatif des demandes cochées (toutes catégories confondues) */}
+                  {/* Summary of checked requests (all categories combined) */}
                   {form.demandes.length > 0 && (
                     <ul className="mt-4 flex flex-wrap gap-2" aria-label={t('form.requestType')}>
                       {ALL_OPTIONS.filter((option) => form.demandes.includes(option.slug)).map((option) => {
@@ -710,6 +715,8 @@ export default function QuotePage() {
                           </li>
                         );
                       })}
+                      <span className="text-sm text-slate-500 mt-4 flex gap-4 p-4 bg-blue-50 rounded-sm"><Info /> {globalTranslation('priceInfo')}</span>
+
                     </ul>
                   )}
 
@@ -717,25 +724,28 @@ export default function QuotePage() {
                 </fieldset>
 
                 {showRegisteredOffice && (
-                  <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 min-[425px]:gap-4 min-[425px]:px-4 md:col-span-2">
-                    <span className="min-w-0 text-sm font-semibold text-primary">
-                      {t('form.RegisteredOffice')}
-                    </span>
-                    <button
-                      type="button"
-                      role="switch"
-                      aria-checked={form.isRegister}
-                      onClick={() => handleToggleRegister(!form.isRegister)}
-                      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 ${form.isRegister ? 'bg-secondary' : 'bg-slate-300'
-                        }`}
-                    >
-                      <span
-                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${form.isRegister ? 'translate-x-6' : 'translate-x-1'
+                  <>
+                    <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 min-[425px]:gap-4 min-[425px]:px-4 md:col-span-2">
+                      <span className="min-w-0 text-sm font-semibold text-primary">
+                        {t('form.RegisteredOffice')}
+                      </span>
+                      <button
+                        type="button"
+                        role="switch"
+                        aria-checked={form.isRegister}
+                        onClick={() => handleToggleRegister(!form.isRegister)}
+                        className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 ${form.isRegister ? 'bg-secondary' : 'bg-slate-300'
                           }`}
-                      />
-                    </button>
-                  </div>
+                      >
+                        <span
+                          className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${form.isRegister ? 'translate-x-6' : 'translate-x-1'
+                            }`}
+                        />
+                      </button>
+                    </div>
+                  </>
                 )}
+
 
                 <label className="block min-w-0 md:col-span-2">
                   <span className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">

@@ -4,7 +4,8 @@
     "priceNote": "Hors frais administratifs",
     "Malgaches": "Malgaches",
     "Strangers": "Étrangers",
-    "or": "ou"
+    "or": "ou",
+    "priceInfo": "Le prix indiqué est le coût de nos services, hors frais administratifs. Les frais administratifs sont à la charge du client et varient selon le type de service demandé."
   },
   "Nav": {
     "adviceAndAssistance": "Conseils et Assistance",
@@ -555,6 +556,7 @@
         "description": "Nous mettons à votre disposition un ensemble de services dédiés à la récupération de vos démarches administratives et bancaires. Consultez la liste de nos prestations ci-dessous",
         "contact": "Nous contacter",
         "quote": "Demander un devis",
+        "selectionRequired": "Sélectionnez au moins une option avant de demander un devis.",
         "payslip": {
           "label": "Fiche de paie",
           "price": "50 000 Ar / fiche"
@@ -568,7 +570,7 @@
           "price": "100 000 Ar"
         },
         "fopEquivalence": {
-          "label": "Équivalence FOP",
+          "label": "Récupération équivalence FOP",
           "price": "100 000 Ar"
         }
       },
@@ -985,6 +987,9 @@
       "rcsRetrieval": "Récupération RCS moins de 3 mois",
       "administrativeDocumentRetrieval": "Récupération acte et document administratif",
       "courierAutomobileProcedure": "Procédures administratives pour l'automobile",
+      "bankAccountCreation": "Création compte bancaire",
+      "simCardCreation": "Création Puce",
+      "fopEquivalence": "Récupération équivalence FOP",
       "diplomeMaster": "Récupération diplôme Master",
       "licence": "Récupération diplôme de Licence",
       "baccTranscript": "Récupération relevé de notes BACC",

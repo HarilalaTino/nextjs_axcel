@@ -4,7 +4,8 @@
     "priceNote": "Excluding administrative fees",
     "Malgaches": "Malagasy",
     "Strangers": "Strangers",
-    "or": "or"
+    "or": "or",
+    "priceInfo": "The price indicated is the cost of our services, excluding administrative costs. Administrative costs are the responsibility of the customer and vary depending on the type of service requested."
   },
   "Nav": {
     "adviceAndAssistance": "Advice and assistance",
@@ -565,6 +566,7 @@
         "description": "We provide you with a range of services dedicated to retrieving your administrative and banking procedures. See our list of services below.",
         "contact": "Contact us",
         "quote": "Request a quote",
+        "selectionRequired": "Select at least one option before requesting a quote.",
         "payslip": {
           "label": "Payslip",
           "price": "50 000 Ar / slip"
@@ -996,6 +998,9 @@
       "rcsRetrieval": "RCS retrieval under 3 months",
       "administrativeDocumentRetrieval": "Administrative act and document retrieval",
       "courierAutomobileProcedure": "Administrative procedures for automobiles",
+      "bankAccountCreation": "Bank account opening",
+      "simCardCreation": "SIM card creation",
+      "fopEquivalence": "FOP equivalence retrieval",
       "diplomeMaster": "Recovery of Master's degree",
       "licence": "Recovery of Licentiate degree",
       "baccTranscript": "Recovery of BACC transcript",

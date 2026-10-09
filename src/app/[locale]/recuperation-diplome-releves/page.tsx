@@ -38,22 +38,22 @@ export default async function CourierDiplomaRetrieval() {
                 requiredMessage={diplomaTranscription("selectionRequired")}
                 options={[
                   {
-                    slug: "releve-de-notes-bacc",
+                    slug: "baccalaureate-transcript",
                     label: diplomaTranscription("bacc.label"),
                     price: diplomaTranscription("bacc.price"),
                   },
                   {
-                    slug: "attestation-de-reussite",
+                    slug: "certificate-of-achievement",
                     label: diplomaTranscription("achievementCertificate.label"),
                     price: diplomaTranscription("achievementCertificate.price"),
                   },
                   {
-                    slug: "licence",
+                    slug: "licence-degree",
                     label: diplomaTranscription("Licence.label"),
                     price: diplomaTranscription("Licence.price"),
                   },
                   {
-                    slug: "diplome-master",
+                    slug: "masters-degree",
                     label: diplomaTranscription("Master.label"),
                     price: diplomaTranscription("Master.price"),
                   },
