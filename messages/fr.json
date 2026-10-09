@@ -580,6 +580,7 @@
         "description": "Nous proposons des services de récupération et de traitement des documents administratifs liés à l'automobile :",
         "contact": "Nous contacter",
         "quote": "Demander un devis",
+        "selectionRequired": "Sélectionnez au moins une option avant de demander un devis.",
         "vehicleMutation": {
           "label": "Mutation",
           "price": "100 000 Ar"
@@ -990,6 +991,8 @@
       "bankAccountCreation": "Création compte bancaire",
       "simCardCreation": "Création Puce",
       "fopEquivalence": "Récupération équivalence FOP",
+      "vehicleMutation": "Mutation de véhicule",
+      "vehicleRegistrationCardChange": "Changement de carte rose en carte grise",
       "diplomeMaster": "Récupération diplôme Master",
       "licence": "Récupération diplôme de Licence",
       "baccTranscript": "Récupération relevé de notes BACC",

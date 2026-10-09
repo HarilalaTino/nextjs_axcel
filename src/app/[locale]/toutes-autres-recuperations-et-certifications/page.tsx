@@ -3,7 +3,6 @@ import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
 import CourierDiplomaSelection from "@/components/ui/shared/courier-diploma-selection";
 import CreationPage from "@/components/ui/shared/page-creation";
-import { CheckCircle2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 
@@ -70,26 +69,27 @@ export default async function certificateRetrieval() {
           description={
             <>
               <p className="mb-4">{automobileProcedure("description")}</p>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{automobileProcedure("vehicleMutation.label")} : {automobileProcedure("vehicleMutation.price")}</span>
-                </li>
-                <li className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
-                    <CheckCircle2 size={14} strokeWidth={2.5} />
-                  </span>
-                  <span className="text-slate-600">{automobileProcedure("carteGrise.label")} : {automobileProcedure("carteGrise.price")}</span>
-                </li>
-              </ul>
+              <CourierDiplomaSelection
+                requiredMessage={automobileProcedure("selectionRequired")}
+                options={[
+                  {
+                    slug: "vehicle-mutation",
+                    label: automobileProcedure("vehicleMutation.label"),
+                    unitPriceAr: 100000,
+                  },
+                  {
+                    slug: "vehicle-registration-card-change",
+                    label: automobileProcedure("carteGrise.label"),
+                    unitPriceAr: 100000,
+                  },
+                ]}
+              />
             </>
           }
           imageSrc="/images/courier/courier-4.jpg"
           isReverseSection
           ctasDisplay
-          preserveQueryParams={false}
+          requiredSelectionType="Administrative-procedures-for-automobiles"
           t={automobileProcedure}
         />
         <ElegantCardWrapper />

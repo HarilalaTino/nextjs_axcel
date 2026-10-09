@@ -590,6 +590,7 @@
         "description": "We offer document retrieval and processing services for vehicle-related administrative procedures:",
         "contact": "Contact Us",
         "quote": "Request a Quote",
+        "selectionRequired": "Select at least one option before requesting a quote.",
         "vehicleMutation": {
           "label": "Vehicle Transfer",
           "price": "100 000 Ar"
@@ -1001,6 +1002,8 @@
       "bankAccountCreation": "Bank account opening",
       "simCardCreation": "SIM card creation",
       "fopEquivalence": "FOP equivalence retrieval",
+      "vehicleMutation": "Vehicle transfer",
+      "vehicleRegistrationCardChange": "Change from a pink card to a gray card",
       "diplomeMaster": "Recovery of Master's degree",
       "licence": "Recovery of Licentiate degree",
       "baccTranscript": "Recovery of BACC transcript",
