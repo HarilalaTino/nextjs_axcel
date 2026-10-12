@@ -18,6 +18,7 @@ import {
 import frenchMessages from '../../../../messages/fr.json';
 import TopMenu from '@/components/ui/home/top-menu';
 import NavMenu from '@/components/layout/header';
+import { formaterNombre } from '@/utils/hooks';
 
 type Origin = 'malgache' | 'etranger' | 'non-specifie';
 type SelectableOrigin = Exclude<Origin, 'non-specifie'>;
@@ -42,6 +43,7 @@ type RequestOption = {
   labelKey: string;
   quantityAware?: boolean;
   unitPriceAr?: number;
+  pricesByOrigin?: Partial<Record<SelectableOrigin, number>>;
   pricesByQuantity?: Record<number, number>;
 };
 
@@ -63,18 +65,18 @@ const REQUEST_CATALOG: RequestCategory[] = [
     key: 'creation',
     labelKey: 'requestCategories.creation',
     options: [
-      { slug: 'sole-proprietorship-creation', labelKey: 'requestOptions.soleProprietorshipCreation' },
-      { slug: 'sarl-creation', labelKey: 'requestOptions.sarlCreation' },
-      { slug: 'sarlu-creation', labelKey: 'requestOptions.sarluCreation' },
-      { slug: 'for-profit-association', labelKey: 'requestOptions.forProfitAssociation' },
-      { slug: 'non-profit-association', labelKey: 'requestOptions.nonProfitAssociation' },
-      { slug: 'establishment-of-religious-association', labelKey: 'requestOptions.establishmentOfReligiousAssociation' },
+      { slug: 'sole-proprietorship-creation', labelKey: 'requestOptions.soleProprietorshipCreation', pricesByOrigin: { malgache: 240000, etranger: 400000 } },
+      { slug: 'sarl-creation', labelKey: 'requestOptions.sarlCreation', pricesByOrigin: { malgache: 400000, etranger: 500000 } },
+      { slug: 'sarlu-creation', labelKey: 'requestOptions.sarluCreation', pricesByOrigin: { malgache: 400000, etranger: 500000 } },
+      { slug: 'for-profit-association', labelKey: 'requestOptions.forProfitAssociation', unitPriceAr: 400000 },
+      { slug: 'non-profit-association', labelKey: 'requestOptions.nonProfitAssociation', unitPriceAr: 400000 },
+      { slug: 'establishment-of-religious-association', labelKey: 'requestOptions.establishmentOfReligiousAssociation', unitPriceAr: 2000000 },
       { slug: 'society-creation-sa', labelKey: 'requestOptions.societyCreationSa' },
       { slug: 'society-creation-sau', labelKey: 'requestOptions.societyCreationSau' },
       { slug: 'society-creation-sci', labelKey: 'requestOptions.societyCreationSci' },
-      { slug: 'travel-agency-creation', labelKey: 'requestOptions.travelAgencyCreation' },
-      { slug: 'wholesale-design', labelKey: 'requestOptions.wholesaleDesign' },
-      { slug: 'domiciliation', labelKey: 'requestOptions.domiciliation' },
+      { slug: 'travel-agency-creation', labelKey: 'requestOptions.travelAgencyCreation', unitPriceAr: 2000000 },
+      { slug: 'wholesale-design', labelKey: 'requestOptions.wholesaleDesign', unitPriceAr: 2280000 },
+      { slug: 'domiciliation', labelKey: 'requestOptions.domiciliation', unitPriceAr: 100000 },
     ],
   },
   {
@@ -85,12 +87,7 @@ const REQUEST_CATALOG: RequestCategory[] = [
       { slug: 'licence-degree', labelKey: 'requestOptions.licence', quantityAware: true, unitPriceAr: 200000 },
       { slug: 'certificate-of-achievement', labelKey: 'requestOptions.achievementCertificate', quantityAware: true, unitPriceAr: 100000 },
       { slug: 'certificate-of-market-authorization', labelKey: 'requestOptions.certificateOfMarketAuthorization', quantityAware: true, unitPriceAr: 300000 },
-      { slug: 'administrative-procedures-for-automobiles', labelKey: 'requestOptions.courierAutomobileProcedure', quantityAware: true },
-      { slug: 'vehicle-mutation', labelKey: 'requestOptions.vehicleMutation', unitPriceAr: 100000 },
-      { slug: 'vehicle-registration-card-change', labelKey: 'requestOptions.vehicleRegistrationCardChange', unitPriceAr: 100000 },
-      { slug: 'bank-account-creation', labelKey: 'requestOptions.bankAccountCreation', unitPriceAr: 100000 },
       { slug: 'sim-card-creation', labelKey: 'requestOptions.simCardCreation', unitPriceAr: 100000, quantityAware: true },
-      { slug: 'fop-equivalence-retrieval', labelKey: 'requestOptions.fopEquivalence', unitPriceAr: 100000 },
       { slug: 'baccalaureate-transcript', labelKey: 'requestOptions.baccTranscript', quantityAware: true },
       { slug: 'birth-certificate-copy', labelKey: 'requestOptions.birthCertificateCopy', quantityAware: true, unitPriceAr: 30000 },
       { slug: 'marriage-certificate', labelKey: 'requestOptions.marriageCertificate', quantityAware: true },
@@ -99,7 +96,12 @@ const REQUEST_CATALOG: RequestCategory[] = [
       { slug: 'criminal-record-certificate', labelKey: 'requestOptions.bulletin3', quantityAware: true, pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 } },
       { slug: 'national-id-certification', labelKey: 'requestOptions.cinCertification', quantityAware: true, unitPriceAr: 30000 },
       { slug: 'nationality-certificate-retrieval', labelKey: 'requestOptions.nationalityCertificateRetrieval', quantityAware: true, unitPriceAr: 50000 },
+      { slug: 'administrative-procedures-for-automobiles', labelKey: 'requestOptions.courierAutomobileProcedure', quantityAware: true },
       { slug: 'recent-commercial-register-extract', labelKey: 'requestOptions.rcsRetrieval', quantityAware: true },
+      { slug: 'vehicle-registration-card-change', labelKey: 'requestOptions.vehicleRegistrationCardChange', unitPriceAr: 100000 },
+      { slug: 'fop-equivalence-retrieval', labelKey: 'requestOptions.fopEquivalence', unitPriceAr: 100000, quantityAware: true },
+      { slug: 'bank-account-creation', labelKey: 'requestOptions.bankAccountCreation', unitPriceAr: 100000 },
+      { slug: 'vehicle-mutation', labelKey: 'requestOptions.vehicleMutation', unitPriceAr: 100000 },
     ],
   },
   {
@@ -235,9 +237,14 @@ const getFrenchOptionLabel = (labelKey: string): string => {
   return typeof value === 'string' ? value : labelKey;
 };
 
-const getOptionPrice = (option: RequestOption, quantity: number): string | null => {
+const getOptionPrice = (option: RequestOption, quantity: number, origin: Origin): string | null => {
   if (option.pricesByQuantity) {
     return option.pricesByQuantity[quantity] ? `${option.pricesByQuantity[quantity].toLocaleString('fr-FR')} Ar` : null;
+  }
+
+  if (option.pricesByOrigin) {
+    const originPrice = origin === ORIGIN_UNSPECIFIED ? undefined : option.pricesByOrigin[origin];
+    return originPrice ? `${(originPrice * quantity).toLocaleString('fr-FR')} Ar` : null;
   }
 
   if (option.unitPriceAr) {
@@ -424,7 +431,7 @@ export default function QuotePage() {
       .map((option) => {
         const quantity = form.quantites[option.slug] ?? 1;
         const label = getFrenchOptionLabel(option.labelKey);
-        const price = getOptionPrice(option, quantity);
+        const price = getOptionPrice(option, quantity, origin);
         return price ? `${label} : ${price}` : `${label} (x${quantity})`;
       });
 
@@ -661,12 +668,7 @@ export default function QuotePage() {
                                 }`}
                             >
                               <span className="min-w-0">
-                                <span className="block">{label(option.labelKey)}</span>
-                                {option.quantityAware && (
-                                  <span className="mt-1 block text-[11px] text-slate-500">
-                                    {t('form.quantity')}: {quantity}
-                                  </span>
-                                )}
+                                <span className="block">{label(option.labelKey)}  {option.unitPriceAr ? `: ${formaterNombre(option.unitPriceAr)} Ar` : ''}</span>
                               </span>
                               <span className="flex shrink-0 items-center gap-2">
                                 {option.quantityAware && (
@@ -678,7 +680,7 @@ export default function QuotePage() {
                                     onChange={(event) => handleQuantityChange(option.slug, Number(event.target.value))}
                                     onClick={(event) => event.preventDefault()}
                                     aria-label={`${label(option.labelKey)} ${t('form.quantity')}`}
-                                    className="w-16 rounded-lg border border-slate-200 bg-white px-2 py-1 text-center text-xs text-primary outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                                    className="w-14 rounded-lg border border-slate-200 bg-white pl-4 pr-2 py-1 text-center text-xs text-primary outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                                   />
                                 )}
                                 <span
@@ -703,7 +705,7 @@ export default function QuotePage() {
                     <ul className="mt-4 flex flex-wrap gap-2" aria-label={t('form.requestType')}>
                       {ALL_OPTIONS.filter((option) => form.demandes.includes(option.slug)).map((option) => {
                         const quantity = form.quantites[option.slug] ?? 1;
-                        const price = getOptionPrice(option, quantity);
+                        const price = getOptionPrice(option, quantity, origin);
 
                         return (
                           <li
