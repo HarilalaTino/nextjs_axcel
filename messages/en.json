@@ -942,7 +942,9 @@
     "origin": {
       "malgache": "Malagasy",
       "malgacheDescription": "You live or are based in Madagascar.",
+      "malgacheRate": "Malagasy rate",
       "etranger": "Foreign",
+      "etrangerRate": "Foreign rate",
       "etrangerDescription": "You are an international client or resident abroad.",
       "localClient": "Local client",
       "internationalClient": "International client"

@@ -75,7 +75,7 @@ const REQUEST_CATALOG: RequestCategory[] = [
       { slug: 'society-creation-sau', labelKey: 'requestOptions.societyCreationSau' },
       { slug: 'society-creation-sci', labelKey: 'requestOptions.societyCreationSci' },
       { slug: 'travel-agency-creation', labelKey: 'requestOptions.travelAgencyCreation', unitPriceAr: 2000000 },
-      { slug: 'wholesale-design', labelKey: 'requestOptions.wholesaleDesign', unitPriceAr: 2280000 },
+      { slug: 'wholesale-design', labelKey: 'requestOptions.wholesaleDesign', unitPriceAr: 1300000 },
       { slug: 'domiciliation', labelKey: 'requestOptions.domiciliation', unitPriceAr: 100000 },
     ],
   },
@@ -88,11 +88,11 @@ const REQUEST_CATALOG: RequestCategory[] = [
       { slug: 'certificate-of-achievement', labelKey: 'requestOptions.achievementCertificate', quantityAware: true, unitPriceAr: 100000 },
       { slug: 'certificate-of-market-authorization', labelKey: 'requestOptions.certificateOfMarketAuthorization', quantityAware: true, unitPriceAr: 300000 },
       { slug: 'sim-card-creation', labelKey: 'requestOptions.simCardCreation', unitPriceAr: 100000, quantityAware: true },
-      { slug: 'baccalaureate-transcript', labelKey: 'requestOptions.baccTranscript', quantityAware: true },
+      { slug: 'baccalaureate-transcript', labelKey: 'requestOptions.baccTranscript', quantityAware: true, unitPriceAr: 100000 },
       { slug: 'birth-certificate-copy', labelKey: 'requestOptions.birthCertificateCopy', quantityAware: true, unitPriceAr: 30000 },
-      { slug: 'marriage-certificate', labelKey: 'requestOptions.marriageCertificate', quantityAware: true },
+      { slug: 'marriage-certificate', labelKey: 'requestOptions.marriageCertificate', quantityAware: true, unitPriceAr: 30000 },
       { slug: 'birth-certificate-translation', labelKey: 'requestOptions.birthCertificateTranslation', quantityAware: true, unitPriceAr: 50000 },
-      { slug: 'marriage-certificate-translation', labelKey: 'requestOptions.marriageCertificateTranslation', quantityAware: true },
+      { slug: 'marriage-certificate-translation', labelKey: 'requestOptions.marriageCertificateTranslation', quantityAware: true, unitPriceAr: 50000 },
       { slug: 'criminal-record-certificate', labelKey: 'requestOptions.bulletin3', quantityAware: true, pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 } },
       { slug: 'national-id-certification', labelKey: 'requestOptions.cinCertification', quantityAware: true, unitPriceAr: 30000 },
       { slug: 'nationality-certificate-retrieval', labelKey: 'requestOptions.nationalityCertificateRetrieval', quantityAware: true, unitPriceAr: 50000 },
@@ -652,6 +652,14 @@ export default function QuotePage() {
                       {currentCategory.options.map((option) => {
                         const isOptionSelected = form.demandes.includes(option.slug);
                         const quantity = form.quantites[option.slug] ?? 1;
+                        const displayedOrigin: SelectableOrigin = origin === 'etranger' ? 'etranger' : 'malgache';
+                        const displayedUnitPrice = option.pricesByQuantity?.[quantity]
+                          ?? option.pricesByQuantity?.[1]
+                          ?? option.pricesByOrigin?.[displayedOrigin]
+                          ?? option.unitPriceAr;
+                        const originRateLabel = displayedOrigin === 'malgache'
+                          ? 'origin.malgacheRate'
+                          : 'origin.etrangerRate';
 
                         return (
                           <label key={option.slug} className="block min-w-0 cursor-pointer">
@@ -668,7 +676,14 @@ export default function QuotePage() {
                                 }`}
                             >
                               <span className="min-w-0">
-                                <span className="block">{label(option.labelKey)}  {option.unitPriceAr ? `: ${formaterNombre(option.unitPriceAr)} Ar` : ''}</span>
+                                  <span className="block">
+                                    {label(option.labelKey)}{displayedUnitPrice ? ` : ${formaterNombre(displayedUnitPrice)} Ar` : ''}
+                                    {option.pricesByOrigin && (
+                                      <span className="ml-1 inline-block text-[10px] font-medium text-secondary">
+                                        ({t(originRateLabel)})
+                                      </span>
+                                    )}
+                                  </span>
                               </span>
                               <span className="flex shrink-0 items-center gap-2">
                                 {option.quantityAware && (

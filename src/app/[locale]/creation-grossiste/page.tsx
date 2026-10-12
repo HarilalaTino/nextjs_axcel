@@ -8,10 +8,8 @@ export default async function WholesaleDesignCreation() {
     const t = await getTranslations("wholesaleCreation");
     const nav = await getTranslations("Nav");
     const basicPrice: BasicPrice = {
-        title: 'Prix total',
-        originalPrice: '2 280 000',
-        euroEquivalence: '455',
-        annotation: ' '
+        originalPrice: '1 300 000',
+        euroEquivalence: '260',
     }
     return (
         <div>

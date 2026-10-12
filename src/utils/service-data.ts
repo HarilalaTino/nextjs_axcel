@@ -165,11 +165,11 @@ export const coursierRecuperationTraduction: Menu = {
     },
     {
       slug: "marriage-certificate",
-      titre: "Acte de mariage",
+      titre: "Récupération acte de mariage",
       resume: "Retrait / traduction d'un acte de mariage.",
       lignes: [
         {
-          intitule: "Acte de mariage",
+          intitule: "Récupération acte de mariage",
           honoraires: "Sur devis",
         },
       ],

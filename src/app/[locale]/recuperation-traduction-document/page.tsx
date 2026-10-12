@@ -47,22 +47,26 @@ export default async function TranslationRetrieval() {
                                     {
                                         slug: "marriage-certificate",
                                         label: translationRetrieval("marriageCertificate.label"),
-                                    },
-                                    {
-                                        slug: "criminal-record-certificate",
-                                        label: translationRetrieval("bulletin3.label"),
                                         quantityAware: true,
-                                        pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 },
+                                        unitPriceAr: 30000,
                                     },
                                     {
                                         slug: "marriage-certificate-translation",
                                         label: translationRetrieval("marriageCertificateTranslation.label"),
+                                        quantityAware: true,
+                                        unitPriceAr: 50000,
                                     },
                                     {
                                         slug: "birth-certificate-translation",
                                         label: translationRetrieval("birthCertificateTranslation.label"),
                                         quantityAware: true,
                                         unitPriceAr: 50000,
+                                    },
+                                    {
+                                        slug: "criminal-record-certificate",
+                                        label: translationRetrieval("bulletin3.label"),
+                                        quantityAware: true,
+                                        pricesByQuantity: { 1: 38000, 2: 46000, 3: 54000 },
                                     },
                                     {
                                         slug: "national-id-certification",
@@ -79,6 +83,7 @@ export default async function TranslationRetrieval() {
                                     {
                                         slug: "recent-commercial-register-extract",
                                         label: translationRetrieval("rcsRetrieval.label"),
+                                        quantityAware: true,
                                     },
                                     {
                                         slug: "recuperation-acte-et-document-administratif",

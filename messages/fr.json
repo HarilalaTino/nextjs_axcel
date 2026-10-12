@@ -513,7 +513,7 @@
         "price": "300 000 Ar"
       },
       "bulletin3": {
-        "label": "Bulletin n°3",
+        "label": "Récupération bulletin n°3",
         "price": "38 000 Ar (1 bulettin) / 46 000Ar (2 bulletins) / 54 000 Ar (3 bulletins)"
       },
       "birthCertificateTranslation": {
@@ -525,7 +525,7 @@
         "price": "30 000 Ar"
       },
       "marriageCertificate": {
-        "label": "Acte de mariage",
+        "label": "Récupération acte de mariage",
         "price": ""
       },
       "marriageCertificateTranslation": {
@@ -931,7 +931,9 @@
     "origin": {
       "malgache": "Malgache",
       "malgacheDescription": "Vous résidez ou êtes basé à Madagascar.",
+      "malgacheRate": "Tarif malgache",
       "etranger": "Étranger",
+      "etrangerRate": "Tarif étranger",
       "etrangerDescription": "Vous êtes un client international ou résident à l’étranger.",
       "localClient": "Client local",
       "internationalClient": "Client international"
@@ -953,7 +955,7 @@
       "societyCreationSci": "Société Civile Immobilière (SCI)",
       "travelAgencyCreation": "Agence de voyage",
       "wholesaleDesign": "Grossiste",
-      "certificateOfMarketAuthorization": "Certificat de mise en commerce",
+      "certificateOfMarketAuthorization": "Certificat de consommabilité et mise en commerce",
       "otherAdministrativeCertificate": "Autres certificats administratifs",
       "employmentContract": "Contrat de travail",
       "leaseContract": "Contrat de bail",
@@ -979,8 +981,8 @@
       "courierDiplomaRetrieval": "Récupération diplôme, relevé de note, équivalence",
       "courierTranslationRetrieval": "Récupération et traduction de documents administratifs",
       "birthCertificateCopy": "Récupération copie de naissance",
-      "marriageCertificate": "Acte de mariage",
-      "bulletin3": "Bulletin n°3",
+      "marriageCertificate": "Récupération acte de mariage",
+      "bulletin3": "Récupération bulletin n°3",
       "marriageCertificateTranslation": "Traduction acte de mariage",
       "birthCertificateTranslation": "Traduction acte de naissance",
       "cinCertification": "Cértification CIN",
