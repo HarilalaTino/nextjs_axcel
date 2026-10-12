@@ -5,9 +5,7 @@ import CreationPage from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
 
 export default async function InternalRegulationsCnapsIrsa() {
-    const internalRegulations = await getTranslations('rightofWork.internalRegulations');
     const cnapsOstieAffiliation = await getTranslations('rightofWork.cnapsOstieAffiliation');
-    const irsaDeclaration = await getTranslations('rightofWork.irsaDeclaration');
     const nav = await getTranslations("Nav");
     return (
         <>
@@ -22,32 +20,13 @@ export default async function InternalRegulationsCnapsIrsa() {
                     {nav("rightofWork")}
                 </h1>
                 <CreationPage
-                    creationType="internal-regulations"
-                    eyebrow={internalRegulations("eyebrow")}
-                    title={internalRegulations("title")}
-                    description={<p>{internalRegulations("description")}</p>}
-                    imageSrc="/images/legal-department/internal-regulations.jpg"
-                    ctasDisplay
-                    t={internalRegulations}
-                />
-                <CreationPage
                     creationType="cnaps-ostie-affiliation"
                     eyebrow={cnapsOstieAffiliation("eyebrow")}
                     title={cnapsOstieAffiliation("title")}
                     description={<p>{cnapsOstieAffiliation("description")}</p>}
                     imageSrc="/images/legal-department/cnaps-ostie-affiliation.jpg"
-                    isReverseSection
                     ctasDisplay
                     t={cnapsOstieAffiliation}
-                />
-                <CreationPage
-                    creationType="irsa-declaration"
-                    eyebrow={irsaDeclaration("eyebrow")}
-                    title={irsaDeclaration("title")}
-                    description={<p>{irsaDeclaration("description")}</p>}
-                    ctasDisplay
-                    imageSrc="/images/legal-department/irsa-declaration.jpg"
-                    t={irsaDeclaration}
                 />
                 <ElegantCardWrapper />
                 <div

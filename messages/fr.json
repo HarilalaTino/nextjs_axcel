@@ -2,6 +2,7 @@
   "Global": {
     "quoteLabel": "Demander un devis",
     "priceNote": "Hors frais administratifs",
+    "isRegistered": "Des frais supplémentaires de 600 000 Ar s’appliquent si vous choisissez la domiciliation de votre société chez Axcel Company pour une durée de 6 mois.",
     "Malgaches": "Malgaches",
     "Strangers": "Étrangers",
     "or": "ou",
@@ -43,10 +44,12 @@
     "religiousCreation": "Création association cultuelle",
     "AllOtherCertificationRecoveries": "Toutes autres récupérations et certifications",
     "legalDdepartment": "Service juridique",
+    "internalRegulations": "Établissement du règlement intérieur",
+    "irsaDeclaration": "Déclaration IRSA",
     "draftingContractLeaseServiceProvider": "Rédaction de contrats de travail, contrats de bail et contrats de prestation de services",
     "legalConsulting": "Conseil juridique",
     "dismissalAssistance": "Assistance au procédure de licenciement",
-    "rightofWork": "Établissement du règlement intérieur, affiliation à la CNAPS / OSTIE, déclaration IRSA",
+    "rightofWork": "Affiliation à la CNAPS / OSTIE",
     "roomRental": "Location de salle",
     "officeRoomRental": "Salle de bureau",
     "meetingRoom": "Salle de réunion",
@@ -262,6 +265,14 @@
         "description": "Axcel Company a préparé mon dossier complet en 3 jours, et j'ai obtenu mon NIF et mon STAT. L'accueil est bon et la démarche est sérieuse. Je vous encourage à faire appel à eux. Ils facilitent la vie de ceux qui n'ont pas le temps de courir d'une administration à l'autre."
       },
       {
+        "name": "Cliente satisfaite",
+        "image": "/images/testimonials/anonyme2.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/855816224032140",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "Je lance ma nouvelle entreprise ici à Madagascar avec la société Axcel Company. Pourquoi Axcel ? Si vous demandez à n'importe qui ici lequel choisir, tout le monde dirait Axcel, parce qu'ils sont très connus, et pas simplement parce qu'ils font du bon marketing : c'est grâce au service derrière. Nous adorons travailler avec vous. Le service a été excellent jusqu'à présent et j'ai hâte de développer mon activité ici."
+      },
+      {
         "name": "Antso Bomaka",
         "image": "/images/testimonials/antso-bomaka.jpeg",
         "role": "Entreprise commerce de produits",
@@ -363,14 +374,6 @@
         "fbEmbedWidth": 267,
         "fbEmbedHeight": 476,
         "description": "Au-delà du professionnalisme, ce qui nous a marqués chez Axcel, c'est la qualité humaine de l'équipe. Toujours disponible, à l'écoute et engagée, elle nous a accompagnés dans toutes nos démarches d'exportation. Nous nous sommes sentis soutenus et conseillés à chaque étape. Grâce à Axcel, notre projet a pu aboutir dans de très bonnes conditions. Nous considérons Axcel comme un partenaire fiable et stratégique pour le développement de nos activités à l'international."
-      },
-      {
-        "name": "Cliente satisfaite",
-        "image": "/images/testimonials/anonyme2.jpg",
-        "fbVideoUrl": "https://web.facebook.com/reel/855816224032140",
-        "fbEmbedWidth": 267,
-        "fbEmbedHeight": 476,
-        "description": "Je lance ma nouvelle entreprise ici à Madagascar avec la société Axcel Company. Pourquoi Axcel ? Si vous demandez à n'importe qui ici lequel choisir, tout le monde dirait Axcel, parce qu'ils sont très connus, et pas simplement parce qu'ils font du bon marketing : c'est grâce au service derrière. Nous adorons travailler avec vous. Le service a été excellent jusqu'à présent et j'ai hâte de développer mon activité ici."
       },
       {
         "name": "Mlle Princia",
@@ -482,6 +485,10 @@
       "selectionRequired": "Sélectionnez au moins une option avant de demander un devis.",
       "contact": "Nous contacter",
       "quote": "Demander un devis",
+      "baccDegree" : {
+        "label": "Diplôme BACC",
+        "price": "200 000 Ar"
+      },
       "bacc" : {
         "label": "Relevé de notes BACC",
         "price": "100 000 Ar"
@@ -948,6 +955,7 @@
     "otherDemand": "Autre",
     "requestOptions": {
       "forProfitAssociation": "Association à but lucratif",
+      "baccDegree": "Diplôme BACC",
       "nonProfitAssociation": "Association à but non lucratif",
       "establishmentOfReligiousAssociation": "Association cultuelle",
       "societyCreationSa": "Société Anonyme (SA)",
@@ -1020,7 +1028,7 @@
       "messagePlaceholder": "Décrivez votre besoin, vos objectifs ou les démarches à réaliser...",
       "submit": "Envoyer la demande",
       "submitting": "Envoi en cours...",
-      "RegisteredOffice": "Domiciliez chez Axcel Company",
+      "RegisteredOffice": "Domiciliez chez Axcel Company 600 000 Ar pour 6 mois",
       "optional": "Facultatif"
     },
     "errors": {

@@ -2,6 +2,7 @@
   "Global": {
     "quoteLabel": "Request a quote",
     "priceNote": "Excluding administrative fees",
+    "isRegistered": "Additional fees of 600,000 Ar apply if you choose to domiciliate your company with Axcel Company for a period of 6 months.",
     "Malgaches": "Malagasy",
     "Strangers": "Strangers",
     "or": "or",
@@ -44,11 +45,13 @@
     "religiousCreation": "Establishment of a religious association",
     "AllOtherCertificationRecoveries": "All other recoveries and certifications",
     "legalDdepartment": "Legal department",
+    "internalRegulations": "Internal Regulations",
     "draftingContractLeaseServiceProvider": "Drafting of employment contract - lease - service provider",
     "legalConsulting": "Legal Consulting",
     "dismissalAssistance": "Assistance with the dismissal procedure",
-    "rightofWork": "Establishment of internal regulations, CNAPS / OSTIE affiliation, IRSA declaration",
+    "rightofWork": "CNAPS / OSTIE affiliation",
     "roomRental": "Room rental",
+    "irsaDeclaration": "IRSA Declaration",
     "officeRoomRental": "Office room",
     "meetingRoom": "Meeting room",
     "trainingRoomRental": "Training room",
@@ -263,6 +266,14 @@
         "description": "Axcel Company a préparé mon dossier complet en 3 jours, et j'ai obtenu mon NIF et mon STAT. L'accueil est bon et la démarche est sérieuse. Je vous encourage à faire appel à eux. Ils facilitent la vie de ceux qui n'ont pas le temps de courir d'une administration à l'autre."
       },
       {
+        "name": "Satisfied Customer",
+        "image": "/images/testimonials/anonyme2.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/855816224032140",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "I'm launching my new business here in Madagascar with Axcel Company. Why Axcel? If you ask anyone here which one to choose, everyone would say Axcel, because they are very well known, and not just because they do good marketing, but because of the service behind it. We love working with you. The service has been excellent so far and I'm looking forward to growing my business here."
+      },
+      {
         "name": "Antso Bomaka",
         "image": "/images/testimonials/antso-bomaka.jpeg",
         "fbVideoUrl": "https://web.facebook.com/reel/1235480308550386/",
@@ -375,14 +386,6 @@
         "description": "Beyond professionalism, what struck us most about Axcel is the human quality of the team. Always available, attentive and committed, they supported us through all of our export procedures. We felt supported and well advised at every step. Thanks to Axcel, our project was completed under very good conditions. We consider Axcel a reliable and strategic partner for the development of our international activities."
       },
       {
-        "name": "Satisfied Customer",
-        "image": "/images/testimonials/anonyme2.jpg",
-        "fbVideoUrl": "https://web.facebook.com/reel/855816224032140",
-        "fbEmbedWidth": 267,
-        "fbEmbedHeight": 476,
-        "description": "I'm launching my new business here in Madagascar with Axcel Company. Why Axcel? If you ask anyone here which one to choose, everyone would say Axcel, because they are very well known, and not just because they do good marketing, but because of the service behind it. We love working with you. The service has been excellent so far and I'm looking forward to growing my business here."
-      },
-      {
         "name": "Miss Princia",
         "image": "/images/testimonials/princia.jpg",
         "fbVideoUrl": "https://web.facebook.com/reel/825985543602916",
@@ -492,6 +495,10 @@
       "selectionRequired": "Select at least one option before requesting a quote.",
       "contact": "Contact us",
       "quote": "Request a quote",
+      "baccDegree" : {
+        "label": "BACC Degree",
+        "price": "200 000 Ar"
+      },
       "bacc" : {
         "label": "BACC Transcript",
         "price": "100 000 Ar"
@@ -959,6 +966,7 @@
     },
     "requestOptions": {
       "forProfitAssociation": "For-Profit Association",
+      "baccDegree": "BACC Degree",
       "nonProfitAssociation": "Non-Profit Association",
       "establishmentOfReligiousAssociation": "Establishment of a Religious Association",
       "societyCreationSa": "Public Limited Company (SA)",

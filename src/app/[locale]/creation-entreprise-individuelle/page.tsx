@@ -48,6 +48,7 @@ export default async function ProprietorshipCreationPage() {
                         </>
                     }
                     imageSrc="/images/creations/individual.jpg"
+                    isRegistered
                     tiers={tiers}
                     t={t}
                 />

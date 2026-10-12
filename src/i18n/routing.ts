@@ -111,6 +111,14 @@ export const routing = defineRouting({
       fr: '/conseil-juridique',
       en: '/legal-consulting'
     },
+    '/etablissement-reglement-interieur': {
+      fr: '/etablissement-reglement-interieur',
+      en: '/internal-regulations'
+    },
+    '/irsa-declaration': {
+      fr: '/irsa-declaration',
+      en: '/irsa-declaration'
+    },
     '/assistance-procedure-licenciement': {
       fr: '/assistance-procedure-licenciement',
       en: '/dismissal-assistance'

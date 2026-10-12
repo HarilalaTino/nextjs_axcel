@@ -23,6 +23,7 @@ type CreationPageProps = {
   ctasDisplay?: boolean;
   overideQueryparams?: string;
   requiredSelectionType?: string;
+  isRegistered?: boolean;
 };
 
 export interface Tier {
@@ -55,6 +56,7 @@ export default async function CreationPage({
   ctasDisplay,
   overideQueryparams,
   requiredSelectionType,
+  isRegistered
 }: CreationPageProps) {
   const contactHref = '/contact' as const;
   const quoteHref = '/devis' as const;
@@ -111,6 +113,8 @@ export default async function CreationPage({
             <div className="mt-6 max-w-prose text-sm text-primary/70 sm:text-base">
               {description}
             </div>
+
+            
 
             {tiers && tiers.length > 0 && (
               <div className="mt-10 w-full max-w-xl overflow-hidden rounded-2xl border border-stone-200 shadow-sm">
@@ -226,6 +230,12 @@ export default async function CreationPage({
                   {quoteLabel}
                 </QueryAwareLink>
               </div>
+            )}
+
+            {isRegistered && (
+              <small className="text-xs text-primary/60 pt-4 sm:text-sm">
+                * {globalTranslation('isRegistered')}
+              </small>
             )}
           </div>
 

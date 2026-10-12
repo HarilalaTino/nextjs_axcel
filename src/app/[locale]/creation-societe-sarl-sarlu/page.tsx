@@ -45,6 +45,7 @@ export default async function CreationSocieteSarlSarluPage() {
                         </>
                     }
                     imageSrc="/images/creations/sarl.jpg"
+                    isRegistered={true}
                     tiers={tiers}
                     t={t}
                 />
@@ -60,6 +61,7 @@ export default async function CreationSocieteSarlSarluPage() {
                     imageSrc="/images/creations/sarlu.jpg"
                     tiers={tiers}
                     t={tSarlu}
+                    isRegistered={true}
                     isReverseSection
                 />
                 <ElegantCardWrapper />

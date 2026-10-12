@@ -50,11 +50,13 @@ export const NAV_ITEMS: NavItem[] = [
     label: 'legalDdepartment',
     href: '/service-juridique',
     submenu: [
-      { label: 'draftingContractLeaseServiceProvider', href: '/redaction-contrat-travail-bail-prestation' },
       { label: 'legalConsulting', href: '/conseil-juridique' },
+      { label: 'draftingContractLeaseServiceProvider', href: '/redaction-contrat-travail-bail-prestation' },
       { label: 'dismissalAssistance', href: '/assistance-procedure-licenciement' },
       { label: 'recruitment', href: '/recrutement' },
+      { label: 'internalRegulations', href: '/etablissement-reglement-interieur' },
       { label: 'rightofWork', href: '/droit-du-travail' },
+      { label: 'irsaDeclaration', href: '/irsa-declaration' },
     ],
     minWidth: 'min-w-96'
   },

@@ -38,6 +38,11 @@ export default async function CourierDiplomaRetrieval() {
                 requiredMessage={diplomaTranscription("selectionRequired")}
                 options={[
                   {
+                    slug: "baccalaureate-degree",
+                    label: diplomaTranscription("baccDegree.label"),
+                    price: diplomaTranscription("baccDegree.price"),
+                  },
+                  {
                     slug: "baccalaureate-transcript",
                     label: diplomaTranscription("bacc.label"),
                     price: diplomaTranscription("bacc.price"),

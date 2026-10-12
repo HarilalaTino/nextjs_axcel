@@ -70,14 +70,12 @@ export default async function RangeOfServicePage({
           ctasDisplay
           t={t}
         />
-
+        <ElegantCardWrapper excludedSlug={selectedService} />
         <div
           className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
           aria-hidden="true"
         />
       </div>
-
-      <ElegantCardWrapper excludedSlug={selectedService} />
     </>
   );
 }
