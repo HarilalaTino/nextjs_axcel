@@ -87,9 +87,21 @@ export const routing = defineRouting({
       fr: '/creation-agence-de-voyage',
       en: '/travel-agency-creation'
     },
+    '/demande-agrement-vanille-girofle': {
+      fr: '/demande-agrement-vanille-girofle',
+      en: '/request-for-vanilla-and-clove-approval'
+    },
+    '/creation-hotel-restaurant': {
+      fr: '/creation-hotel-restaurant',
+      en: '/hotel-and-restaurant-creation'
+    },
     '/creation-grossiste': {
       fr: '/creation-grossiste',
       en: '/wholesale-design'
+    },
+    '/attestation-declaration-de-mine': {
+      fr: '/attestation-declaration-de-mine',
+      en: '/mine-declaration-certificate'
     },
     '/creation-association-cultuelle': {
       fr: '/creation-association-cultuelle',

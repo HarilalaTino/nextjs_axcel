@@ -40,7 +40,7 @@
     "aboutTitle": "The Team Behind Your Projects in Madagascar",   
     "certificateOfMarketabilityAndCommercialization": "Retrieval of consumability certificates and market release",
     "creationSA&SAU&SCI": "Creation SA - SAU - SCI",
-    "travelAgencyCreation": "Travel Agency Creation",
+    "travelAgencyCreation": "Travel Agency Creation and tour operator",
     "wholesaleDesignCreation": "Wholesale design",
     "religiousCreation": "Establishment of a religious association",
     "AllOtherCertificationRecoveries": "All other recoveries and certifications",
@@ -61,7 +61,10 @@
     "companyModificationAssistance": "Assistance with company modification",
     "businessFormalizationAssistance": "Assistance in business formalization",
     "strategicConsultingForEntrepreneurs": "Strategic consultation for entrepreneurs",
-    "ourPacks": "Our Packs"
+    "ourPacks": "Our Packs",
+    "requestForVanillaAndCloveApproval": "Request for Vanilla and Clove Approval",
+    "mineDeclarationCertificate": "Mine Declaration Certificate",
+    "hotelAndRestaurantCreation": "Hotel and Restaurant Creation"
 },
   "Home": {
     "learnMore": "Learn more",
@@ -283,23 +286,6 @@
         "description": "Axcel Company took care of all the paperwork required to put my sausages on the market. The service is good and fast, and the team is very welcoming. If you want to start a business but are not familiar with the administrative procedures, you can turn to them."
       },
       {
-        "name": "Satisfied Client",
-        "image": "/images/testimonials/anonyme3.jpg",
-        "fbVideoUrl": "https://web.facebook.com/reel/2706255943106621",
-        "fbEmbedWidth": 267,
-        "fbEmbedHeight": 476,
-        "description": "A big thank you to Axcel Company for handling everything. My birth certificate and criminal record certificate reached me very quickly here in Quebec, Canada: everything arrived in just 10 days. The staff are very kind. Special thanks to Axcel Company."
-      },
-      {
-        "name": "Fyh Tahina Ramaroson",
-        "image": "/images/testimonials/fyh-tahina-ramaroson.jpeg",
-        "role": "Zero Stress Travel Agency",
-        "fbVideoUrl": "https://web.facebook.com/reel/4399785596905212/",
-        "fbEmbedWidth": 267,
-        "fbEmbedHeight": 476,
-        "description": "Zero Stress Travel is a travel agency and tour operator. I learned about Axcel Company through my colleagues. Many of them had their paperwork handled by Axcel. At Axcel, everything is done very quickly. The service is friendly and reliable. The relationship with the team is excellent. If you want to start a business, contact Axcel Company. The price is fair and affordable for everyone."
-      },
-      {
         "name": "D & S Family",
         "image": "/images/testimonials/ds-family.jpeg",
         "fbVideoUrl": "https://web.facebook.com/reel/4339540796284574/",
@@ -307,14 +293,13 @@
         "fbEmbedHeight": 476,
         "description": "Axcel helped me a lot. I was able to set up my company with a complete application in less than 5 days. There is no doubt or worry because everything is done properly and legally. During the preparation of my application, Axcel Company kept me informed of its progress in real time. The welcome was good and the price was justified. The customer service is top-notch."
       },
-      {
-        "name": "Huang Hui",
-        "role": "Hong Wei Beauty",
-        "fbVideoUrl": "https://web.facebook.com/reel/1287624923281809/",
+       {
+        "name": "Satisfied Customer",
+        "image": "/images/testimonials/anonyme.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1218511656272458",
         "fbEmbedWidth": 267,
         "fbEmbedHeight": 476,
-        "image": "/images/testimonials/Huang-Hui.jpeg",
-        "description": "Axcel Company prepared my complete application in 3 days, and I obtained my NIF and STAT. The welcome was good and the process was professional. I encourage you to work with them. They make life easier for people who don't have time to go from one government office to another."
+        "description": "Beyond professionalism, what struck us most about Axcel is the human quality of the team. Always available, attentive and committed, they supported us through all of our export procedures. We felt supported and well advised at every step. Thanks to Axcel, our project was completed under very good conditions. We consider Axcel a reliable and strategic partner for the development of our international activities."
       },
       {
         "name": "Tatiana Raharinirina",
@@ -325,14 +310,22 @@
         "image": "/images/testimonials/tatiana-raharinirina.jpeg",
         "description": "It is reassuring to work with a company that already has experience and an established client base. You are a company we can trust. Working with an experienced company really makes a difference. The service is fast, clear, and precise. The welcome is pleasant, and so is the entire team."
       },
-      {
-        "name": "Mr Elfrido",
-        "role": "Bleu Island Madagascar Travel Agency",
-        "image": "/images/testimonials/elfrido-image.jpeg",
-        "fbVideoUrl": "https://web.facebook.com/reel/1220857393595534/",
+        {
+        "name": "Fyh Tahina Ramaroson",
+        "image": "/images/testimonials/fyh-tahina-ramaroson.jpeg",
+        "role": "Zero Stress Travel Agency",
+        "fbVideoUrl": "https://web.facebook.com/reel/4399785596905212/",
         "fbEmbedWidth": 267,
         "fbEmbedHeight": 476,
-        "description": "I am 100% satisfied. The welcome was pleasant and my application was processed quickly. They helped me a lot, especially by offering a flexible payment option for setting up my company. I am extremely grateful to them for helping me make my dream come true."
+        "description": "Zero Stress Travel is a travel agency and tour operator. I learned about Axcel Company through my colleagues. Many of them had their paperwork handled by Axcel. At Axcel, everything is done very quickly. The service is friendly and reliable. The relationship with the team is excellent. If you want to start a business, contact Axcel Company. The price is fair and affordable for everyone."
+      },
+      {
+        "name": "Satisfied Client",
+        "image": "/images/testimonials/anonyme3.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/2706255943106621",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "A big thank you to Axcel Company for handling everything. My birth certificate and criminal record certificate reached me very quickly here in Quebec, Canada: everything arrived in just 10 days. The staff are very kind. Special thanks to Axcel Company."
       },
       {
         "name": "Mr Gilbert",
@@ -378,14 +371,6 @@
         "description": "We are really satisfied with the service Axcel provided: all the paperwork has been completed. If we have any other documents to process, we will come back to Axcel. We were warmly welcomed at Axcel, they helped us and took care of everything, and there were no difficulties at all during the process."
       },
       {
-        "name": "Satisfied Customer",
-        "image": "/images/testimonials/anonyme.jpg",
-        "fbVideoUrl": "https://web.facebook.com/reel/1218511656272458",
-        "fbEmbedWidth": 267,
-        "fbEmbedHeight": 476,
-        "description": "Beyond professionalism, what struck us most about Axcel is the human quality of the team. Always available, attentive and committed, they supported us through all of our export procedures. We felt supported and well advised at every step. Thanks to Axcel, our project was completed under very good conditions. We consider Axcel a reliable and strategic partner for the development of our international activities."
-      },
-      {
         "name": "Miss Princia",
         "image": "/images/testimonials/princia.jpg",
         "fbVideoUrl": "https://web.facebook.com/reel/825985543602916",
@@ -410,6 +395,15 @@
         "fbEmbedWidth": 267,
         "fbEmbedHeight": 476,
         "description": "When I opened this pastry shop, I had no time at all to handle the paperwork. So I put my trust in Axcel Company to take care of the NIF, the STAT, and all the related documents. Thank you, Axcel Company."
+      },
+      {
+        "name": "Mr Elfrido",
+        "role": "Bleu Island Madagascar Travel Agency",
+        "image": "/images/testimonials/elfrido-image.jpeg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1220857393595534/",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "I am 100% satisfied. The welcome was pleasant and my application was processed quickly. They helped me a lot, especially by offering a flexible payment option for setting up my company. I am extremely grateful to them for helping me make my dream come true."
       }
     ]
   },
@@ -453,6 +447,27 @@
       "contact": "Contact us", 
       "quote": "Request a quote"
     }
+  },
+  "requestForVanillaAndCloveApproval": {
+    "eyebrow": "Approval request",
+    "title": "Approval request for vanilla and clove",
+    "description": "In Madagascar, vanilla and cloves are regulated sectors. Anyone who wishes to collect, store, process or export these products must obtain an approval from the Ministry of Trade and Consumer Affairs. This approval is valid for one campaign only: it must be requested again every year, within the deadlines set by official notices. Axcel Company supports you in setting up or creating your business and getting compliant: preparing your application, handling administrative procedures and following up until your approval is granted.",
+    "contact": "Contact us",
+    "quote": "Request a quote"
+  },
+  "mineDeclarationCertificate": {
+    "eyebrow": "Mine declaration certificate",
+    "title": "Mine declaration certificate",
+    "description": "Mining activities are regulated by the Ministry of Mines and the Mining Cadastre Office of Madagascar (BCMM). Any individual or company operating, or planning to operate, a mine must declare it to the competent authorities and hold the documents proving that their activity is compliant. Axcel Company supports you in setting up or creating your business and getting compliant: preparing your application, handling administrative procedures and following up until your certificate is issued.",
+    "contact": "Contact us",
+    "quote": "Request a quote"
+  },
+  "hotelAndRestaurantCreation": {
+    "eyebrow": "Hotel and restaurant approval",
+    "title": "Approval and compliance for hotels and restaurants",
+    "description": "Opening and running a hotel or a restaurant requires authorizations issued by the competent authorities. These cover the approval of the establishment, its classification, compliance with hygiene, safety and hospitality standards, as well as the administrative and tax obligations of the business. These procedures must be completed before opening, then renewed or updated according to the rules in force. Axcel Company supports you in setting up or creating your business and getting compliant: preparing your application, handling administrative procedures and following up until your approval is granted.",
+    "contact": "Contact us",
+    "quote": "Request a quote"
   },
   "CreationIndividual": {
     "eyebrow": "Sole proprietorship creation",
@@ -973,6 +988,9 @@
       "societyCreationSau": "Single-Member Public Limited Company (SAU)",
       "societyCreationSci": "Real Estate Civil Company (SCI)",
       "travelAgencyCreation": "Travel Agency Formation",
+      "hotelAndRestaurantCreation": "Hotel and restaurant approval",
+      "requestForVanillaAndCloveApproval": "Vanilla and clove approval request",
+      "mineDeclarationCertificate": "Mine declaration certificate",
       "wholesaleDesign": "Wholesale Business Formation",
       "certificateOfMarketAuthorization": "Certificate of Authorization to Market",
       "otherAdministrativeCertificate": "Other Administrative Certificates",

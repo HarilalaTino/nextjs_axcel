@@ -39,7 +39,7 @@
     "aboutTitle": "L'équipe qui accompagne vos projets à Madagascar",
     "certificateOfMarketabilityAndCommercialization": "Récupération des certificats de consommabilité et mise en commerce",
     "creationSA&SAU&SCI": "Création SA - SAU - SCI",
-    "travelAgencyCreation": "Création agence de voyage",
+    "travelAgencyCreation": "Création agence de voyage et tour opérateur",
     "wholesaleDesignCreation": "Création grossiste",
     "religiousCreation": "Création association cultuelle",
     "AllOtherCertificationRecoveries": "Toutes autres récupérations et certifications",
@@ -60,7 +60,10 @@
     "companyModificationAssistance": "Assistance à la modification de société",
     "businessFormalizationAssistance": "Assistance en formalisation d'entreprise",
     "strategicConsultingForEntrepreneurs": "Consultation stratégique pour entrepreneurs",
-    "ourPacks": "Nos packs"
+    "ourPacks": "Nos packs",
+    "requestForVanillaAndCloveApproval": "Demande d'agrément pour la vanille et le girofle",
+    "mineDeclarationCertificate": "Attestation de déclaration de mine",
+    "hotelAndRestaurantCreation": "Création d'hôtel et de restaurant"
   },
   "Home": {
     "learnMore": "En savoir plus",
@@ -282,29 +285,20 @@
         "description": "Axcel Company s'est occupée de tous mes papiers pour la mise en vente de mes saucisses. Le service est bon et rapide, et l'équipe est très accueillante. Si vous voulez créer une entreprise mais que vous ne maîtrisez pas les démarches, vous pouvez vous adresser à eux."
       },
       {
-        "name": "Client satisfait",
-        "image": "/images/testimonials/anonyme3.jpg",
-        "fbVideoUrl": "https://web.facebook.com/reel/2706255943106621",
-        "fbEmbedWidth": 267,
-        "fbEmbedHeight": 476,
-        "description": "Un grand merci à Axcel Company pour toutes les démarches. Mon acte de naissance et mon casier judiciaire me sont parvenus très rapidement ici au Canada, au Québec : en 10 jours seulement, tout est arrivé. Les gens sont très gentils. Un immense merci à Axcel Company."
-      },
-      {
-        "name": "Fyh Tahina Ramaroson",
-        "image": "/images/testimonials/fyh-tahina-ramaroson.jpeg",
-        "role": "Agence de voyage Zero Stress Travel",
-        "fbVideoUrl": "https://web.facebook.com/reel/4399785596905212/",
-        "fbEmbedWidth": 267,
-        "fbEmbedHeight": 476,
-        "description": "Zero Stress Travel est une agence de voyage et un tour-opérateur. J'ai connu Axcel Company grâce à mes collègues. Beaucoup y ont fait traiter leurs papiers. Chez Axcel, tout est fait très vite. Le service est agréable et sûr. La relation avec l'équipe est très bonne. Si vous voulez créer une entreprise, adressez-vous à Axcel Company. Le prix est correct et accessible à tous."
-      },
-      {
         "name": "D & S Family",
         "image": "/images/testimonials/ds-family.jpeg",
         "fbVideoUrl": "https://web.facebook.com/reel/4339540796284574/",
         "fbEmbedWidth": 267,
         "fbEmbedHeight": 476,
         "description": "Axcel m'a beaucoup aidé. J'ai pu créer ma société avec un dossier complet en moins de 5 jours. Il n'y a aucun doute ni aucune crainte, car tout est en règle. Pendant la préparation du dossier, Axcel Company m'a informé en temps réel de son avancement. L'accueil est bon et le tarif est justifié. Le service client est au top"
+      },
+      {
+        "name": "Client satisfait",
+        "image": "/images/testimonials/anonyme.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1218511656272458",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "Au-delà du professionnalisme, ce qui nous a marqués chez Axcel, c'est la qualité humaine de l'équipe. Toujours disponible, à l'écoute et engagée, elle nous a accompagnés dans toutes nos démarches d'exportation. Nous nous sommes sentis soutenus et conseillés à chaque étape. Grâce à Axcel, notre projet a pu aboutir dans de très bonnes conditions. Nous considérons Axcel comme un partenaire fiable et stratégique pour le développement de nos activités à l'international."
       },
       {
         "name": " Tatiana Raharinirina",
@@ -316,14 +310,23 @@
         "description": "Cela rassure de travailler avec une société qui a déjà de l'expérience et une clientèle.Vous êtes une société de confiance. Travailler avec une entreprise expérimentée, c'est vraiment différent. Le service est rapide, clair et précis. L'accueil est agréable, et toute l'équipe l'est aussi."
       },
       {
-        "name": "Mr Elfrido",
-        "role": "Agence de voyage Bleu Island Madagascar",
-        "image": "/images/testimonials/elfrido-image.jpeg",
-        "fbVideoUrl": "https://web.facebook.com/reel/1220857393595534/",
+        "name": "Fyh Tahina Ramaroson",
+        "image": "/images/testimonials/fyh-tahina-ramaroson.jpeg",
+        "role": "Agence de voyage Zero Stress Travel",
+        "fbVideoUrl": "https://web.facebook.com/reel/4399785596905212/",
         "fbEmbedWidth": 267,
         "fbEmbedHeight": 476,
-        "description": "Je suis satisfait à 100 %. L'accueil est agréable et le dossier a été traité rapidement. Ils m'ont beaucoup aidé, notamment avec une facilité de paiement pour l'ouverture de ma société. Je les remercie infiniment de m'avoir aidé à réaliser mon rêve."
+        "description": "Zero Stress Travel est une agence de voyage et un tour-opérateur. J'ai connu Axcel Company grâce à mes collègues. Beaucoup y ont fait traiter leurs papiers. Chez Axcel, tout est fait très vite. Le service est agréable et sûr. La relation avec l'équipe est très bonne. Si vous voulez créer une entreprise, adressez-vous à Axcel Company. Le prix est correct et accessible à tous."
       },
+       {
+        "name": "Client satisfait",
+        "image": "/images/testimonials/anonyme3.jpg",
+        "fbVideoUrl": "https://web.facebook.com/reel/2706255943106621",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "Un grand merci à Axcel Company pour toutes les démarches. Mon acte de naissance et mon casier judiciaire me sont parvenus très rapidement ici au Canada, au Québec : en 10 jours seulement, tout est arrivé. Les gens sont très gentils. Un immense merci à Axcel Company."
+      },
+      
       {
         "name": "Mr Gilbert",
         "role": "Association Mamoron'ala",
@@ -368,14 +371,6 @@
         "description": "Nous sommes vraiment satisfaits du service d'Axcel : toutes les démarches administratives ont été réglées. Si nous avons d'autres papiers à faire traiter, nous reviendrons chez Axcel. Nous avons été bien accueillis chez Axcel, ils nous ont aidés et se sont occupés de tout, et il n'y a eu aucune difficulté dans le traitement du dossier."
       },
       {
-        "name": "Client satisfait",
-        "image": "/images/testimonials/anonyme.jpg",
-        "fbVideoUrl": "https://web.facebook.com/reel/1218511656272458",
-        "fbEmbedWidth": 267,
-        "fbEmbedHeight": 476,
-        "description": "Au-delà du professionnalisme, ce qui nous a marqués chez Axcel, c'est la qualité humaine de l'équipe. Toujours disponible, à l'écoute et engagée, elle nous a accompagnés dans toutes nos démarches d'exportation. Nous nous sommes sentis soutenus et conseillés à chaque étape. Grâce à Axcel, notre projet a pu aboutir dans de très bonnes conditions. Nous considérons Axcel comme un partenaire fiable et stratégique pour le développement de nos activités à l'international."
-      },
-      {
         "name": "Mlle Princia",
         "image": "/images/testimonials/princia.jpg",
         "fbVideoUrl": "https://web.facebook.com/reel/825985543602916",
@@ -400,6 +395,15 @@
         "fbEmbedWidth": 267,
         "fbEmbedHeight": 476,
         "description": "Lorsque j'ai ouvert cette pâtisserie, je n'avais pas du tout le temps de m'occuper des papiers. J'ai donc fait confiance à Axcel Company pour s'occuper du NIF, du STAT et de toutes les formalités qui s'y rapportent. Merci à Axcel Company."
+      },
+      {
+        "name": "Mr Elfrido",
+        "role": "Agence de voyage Bleu Island Madagascar",
+        "image": "/images/testimonials/elfrido-image.jpeg",
+        "fbVideoUrl": "https://web.facebook.com/reel/1220857393595534/",
+        "fbEmbedWidth": 267,
+        "fbEmbedHeight": 476,
+        "description": "Je suis satisfait à 100 %. L'accueil est agréable et le dossier a été traité rapidement. Ils m'ont beaucoup aidé, notamment avec une facilité de paiement pour l'ouverture de ma société. Je les remercie infiniment de m'avoir aidé à réaliser mon rêve."
       }
     ]
   },
@@ -475,6 +479,27 @@
     "quote": "Demander un devis",
     "price": "400 000 Ar",
     "priceNote": "Hors frais administratifs"
+  },
+  "requestForVanillaAndCloveApproval": {
+    "eyebrow": "Demande d'agrément",
+    "title": "Demande d'agrément pour la vanille et le clou de girofle",
+    "description" : "À Madagascar, la vanille et le girofle sont des filières réglementées. Toute personne qui souhaite collecter, stocker, préparer ou exporter ces produits doit obtenir un agrément auprès du Ministère du Commerce et de la Consommation. Cet agrément n'est valable que pour une campagne : il doit être demandé à nouveau chaque année, dans les délais fixés par les avis officiels. Axcel Company vous accompagne pour mettre en place votre activité ou la créer, et pour vous mettre en règle : préparation du dossier, démarches administratives et suivi jusqu'à l'obtention de votre agrément.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis"
+  },
+  "mineDeclarationCertificate": {
+    "eyebrow": "Attestation de déclaration de mine",
+    "title": "Attestation de déclaration de mine",
+    "description": "Les activités minières sont encadrées par le Ministère des Mines et le Bureau du Cadastre Minier de Madagascar (BCMM). Toute personne ou entreprise qui exploite ou souhaite exploiter une mine doit se déclarer auprès des autorités compétentes et disposer des documents qui prouvent que son activité est en règle. Axcel Company vous accompagne pour mettre en place votre activité ou la créer, et pour vous mettre en règle : préparation du dossier, démarches administratives et suivi jusqu'à l'obtention de votre attestation.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis"
+  },
+  "hotelAndRestaurantCreation": {
+    "eyebrow": "Agrément hôtel et restaurant",
+    "title": "Agrément et mise en conformité pour hôtel et restaurant",
+    "description": "L'ouverture et l'exploitation d'un hôtel ou d'un restaurant sont soumises à des autorisations délivrées par les autorités compétentes. Elles portent notamment sur l'agrément de l'établissement, son classement, le respect des normes d'hygiène, de sécurité et d'accueil, ainsi que sur les obligations administratives et fiscales de l'activité. Ces démarches sont à effectuer avant l'ouverture, puis à renouveler ou à mettre à jour selon les règles en vigueur. Axcel Company vous accompagne pour mettre en place votre activité ou la créer, et pour vous mettre en règle : préparation du dossier, démarches administratives et suivi jusqu'à l'obtention de votre agrément.",
+    "contact": "Nous contacter",
+    "quote": "Demander un devis"
   },
   "CourierService": {
     "courierDiplomaRetrieval" : {
@@ -962,6 +987,9 @@
       "societyCreationSau": "Société par Actions Unipersonnelle (SAU)",
       "societyCreationSci": "Société Civile Immobilière (SCI)",
       "travelAgencyCreation": "Agence de voyage",
+      "hotelAndRestaurantCreation": "Agrément hôtel et restaurant",
+      "requestForVanillaAndCloveApproval": "Demande d'agrément pour la vanille et le girofle",
+      "mineDeclarationCertificate": "Attestation de déclaration de mine",
       "wholesaleDesign": "Grossiste",
       "certificateOfMarketAuthorization": "Certificat de consommabilité et mise en commerce",
       "otherAdministrativeCertificate": "Autres certificats administratifs",
