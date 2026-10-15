@@ -1,6 +1,7 @@
 import NavMenu from "@/components/layout/header";
 import TopMenu from "@/components/ui/home/top-menu";
 import ElegantCardWrapper from "@/components/ui/shared/elegant-card-wrapper";
+import ImageLightboxCarousel from "@/components/ui/shared/image-light-box";
 import CreationPage, { BasicPrice } from "@/components/ui/shared/page-creation";
 import { getTranslations } from "next-intl/server";
 
@@ -11,6 +12,10 @@ export default async function TravelAgencyCreation() {
         originalPrice: '2 000 000',
         euroEquivalence: '400'
     }
+    const images = Array.from({ length: 11 }, (_, index) => ({
+        src: `/images/creations/our-creations/creation-${index + 1}.jpeg`,
+        alt: `creation ${index + 1}`,
+    }))
     return (
         <div>
             <TopMenu />
@@ -37,6 +42,12 @@ export default async function TravelAgencyCreation() {
                     basicDisplayPrice={basicPrice}
                     t={t}
                 />
+                <div className="max-w-7xl m-auto mt-10 sm:px-4 lg:px-8">
+                    <h2 className="text-center text-2xl font-extrabold leading-tight text-primary sm:text-3xl xl:text-4xl">{t("ourCreations")}</h2>
+                    <div className="mt-4 h-1 m-auto w-16 bg-secondary" />
+
+                    <ImageLightboxCarousel images={images} />
+                </div>
                 <ElegantCardWrapper />
                 <div
                     className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-secondary/5"
