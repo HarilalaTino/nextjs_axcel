@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
+import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import {
   AlertCircle,
   ArrowRight,
@@ -30,8 +31,8 @@ type FormState = {
   phone: string;
   whatsapp: string;
   email: string;
-  demandes: string[];
-  quantites: Record<string, number>;
+  requestSlugs: string[];
+  quantities: Record<string, number>;
   message: string;
   isRegister: boolean;
 };
@@ -234,13 +235,13 @@ function resolveQuery(type: string | null, selected: string | null): { slugs: st
   return { slugs: [], categoryKey: REQUEST_CATALOG[0].key };
 }
 
-const getInitialForm = (slugs: string[]): FormState => ({
+const getInitialForm = (requestSlugs: string[]): FormState => ({
   nom: '',
   phone: '',
   whatsapp: '',
   email: '',
-  demandes: slugs,
-  quantites: Object.fromEntries(slugs.map((slug) => [slug, 1])),
+  requestSlugs,
+  quantities: Object.fromEntries(requestSlugs.map((slug) => [slug, 1])),
   message: '',
   isRegister: false,
 });
@@ -275,7 +276,7 @@ const getOptionPrice = (option: RequestOption, quantity: number, origin: Origin)
   return null;
 };
 
-type FieldErrors = Partial<Record<'nom' | 'phone' | 'demande', string>>;
+type FieldErrors = Partial<Record<'nom' | 'phone' | 'requestType', string>>;
 
 /* -------------------------------------------------------------------------- */
 /*  Shared input classes (mobile < 425px first, then min-[425px]: and up)      */
@@ -288,6 +289,8 @@ const INPUT_ERROR = 'border-red-300 focus:border-red-500 focus:ring-red-100';
 export default function QuotePage() {
   const t = useTranslations('QuotePage');
   const globalTranslation = useTranslations('Global');
+  const pathname = usePathname();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const requestedType = searchParams.get('type');
   const requestedRate = searchParams.get('rate');
@@ -338,7 +341,7 @@ export default function QuotePage() {
     const query = resolveQuery(requestedType, requestedSelected);
     setForm((prev) => ({
       ...prev,
-      demandes: query.slugs,
+      requestSlugs: query.slugs,
       isRegister: query.slugs.some(isRegisteredOfficeAvailable) ? prev.isRegister : false,
     }));
     setOpenCategory(query.categoryKey);
@@ -359,8 +362,8 @@ export default function QuotePage() {
     return null;
   };
 
-  const validateDemandes = (slugs: string[]): string | null => {
-    const hasValid = slugs.some((slug) => ALL_OPTIONS.some((option) => option.slug === slug));
+  const validateRequests = (requestSlugs: string[]): string | null => {
+    const hasValid = requestSlugs.some((slug) => ALL_OPTIONS.some((option) => option.slug === slug));
     return hasValid ? null : t('errors.requestTypeRequired');
   };
 
@@ -368,7 +371,7 @@ export default function QuotePage() {
     const nextErrors: FieldErrors = {
       nom: validateText('nom', form.nom) ?? undefined,
       phone: validateText('phone', form.phone) ?? undefined,
-      demande: validateDemandes(form.demandes) ?? undefined,
+      requestType: validateRequests(form.requestSlugs) ?? undefined,
     };
 
     setFieldErrors(nextErrors);
@@ -391,21 +394,21 @@ export default function QuotePage() {
   };
 
   const handleToggleOption = (option: RequestOption) => {
-    const exists = form.demandes.includes(option.slug);
-    const demandes = exists
-      ? form.demandes.filter((slug) => slug !== option.slug)
-      : [...form.demandes, option.slug];
+    const exists = form.requestSlugs.includes(option.slug);
+    const requestSlugs = exists
+      ? form.requestSlugs.filter((slug) => slug !== option.slug)
+      : [...form.requestSlugs, option.slug];
 
     setForm((prev) => ({
       ...prev,
-      demandes,
-      quantites: {
-        ...prev.quantites,
-        [option.slug]: exists ? prev.quantites[option.slug] ?? 1 : 1,
+      requestSlugs,
+      quantities: {
+        ...prev.quantities,
+        [option.slug]: exists ? prev.quantities[option.slug] ?? 1 : 1,
       },
-      isRegister: demandes.some(isRegisteredOfficeAvailable) ? prev.isRegister : false,
+      isRegister: requestSlugs.some(isRegisteredOfficeAvailable) ? prev.isRegister : false,
     }));
-    setFieldErrors((prev) => ({ ...prev, demande: validateDemandes(demandes) ?? undefined }));
+    setFieldErrors((prev) => ({ ...prev, requestType: validateRequests(requestSlugs) ?? undefined }));
     setSubmitted(false);
     setError(null);
   };
@@ -414,7 +417,7 @@ export default function QuotePage() {
     const quantity = Math.max(1, Number.isFinite(value) ? Math.round(value) : 1);
     setForm((prev) => ({
       ...prev,
-      quantites: { ...prev.quantites, [slug]: quantity },
+      quantities: { ...prev.quantities, [slug]: quantity },
     }));
   };
 
@@ -447,29 +450,29 @@ export default function QuotePage() {
     }
     setCaptchaError(null);
 
-    const selectedLabels = ALL_OPTIONS
-      .filter((option) => form.demandes.includes(option.slug))
+    const { requestSlugs: selectedSlugs, quantities: selectedQuantities, ...formFields } = form;
+    const selectedRequests = ALL_OPTIONS
+      .filter((option) => selectedSlugs.includes(option.slug))
       .map((option) => {
-        const quantity = form.quantites[option.slug] ?? 1;
+        const quantity = selectedQuantities[option.slug] ?? 1;
         const label = getFrenchOptionLabel(option.labelKey);
         const price = getOptionPrice(option, quantity, origin);
-        return price ? `${label} : ${price}` : `${label} (x${quantity})`;
+        return { slug: option.slug, label, quantity, price };
       });
+    const selectedRequestLabels = selectedRequests.map(({ label, quantity, price }) =>
+      `${label} (x${quantity})${price ? ` : ${price}` : ''}`,
+    );
 
-    const { demandes, quantites, ...rest } = form;
     const payload = {
-      ...rest,
-      demande: selectedLabels.join(', '),
-      demandes: selectedLabels,
+      ...formFields,
+      demande: selectedRequestLabels.join(', '),
       origin,
       captchaToken,
     };
-    void demandes;
-    void quantites;
 
     setIsSubmitting(true);
     setError(null);
-
+    
     try {
       const response = await fetch('/api/devis', {
         method: 'POST',
@@ -486,11 +489,11 @@ export default function QuotePage() {
       }
 
       setSubmitted(true);
-      const initial = resolveQuery(requestedType, requestedSelected);
-      setForm(getInitialForm(initial.slugs));
-      setOpenCategory(initial.categoryKey);
-      setOrigin(getOriginFromRate(requestedRate) ?? ORIGIN_UNSPECIFIED);
+      setForm(getInitialForm([]));
+      setOpenCategory(REQUEST_CATALOG[0].key);
+      setOrigin(ORIGIN_UNSPECIFIED);
       recaptchaRef.current?.reset();
+      router.replace(pathname, { scroll: false });
     } catch (submitError) {
       const message = submitError instanceof Error ? submitError.message : t('errors.unknown');
       setError(message);
@@ -501,7 +504,7 @@ export default function QuotePage() {
 
   const currentCategory = visibleCategories.find((category) => category.key === openCategory);
   const titleKey = showOrigin ? 'title' : 'noCardsTitle';
-  const showRegisteredOffice = form.demandes.some(isRegisteredOfficeAvailable);
+  const showRegisteredOffice = form.requestSlugs.some(isRegisteredOfficeAvailable);
 
   return (
     <>
@@ -635,7 +638,7 @@ export default function QuotePage() {
                   <div className="flex flex-wrap gap-2 min-[425px]:gap-2.5">
                     {visibleCategories.map((category) => {
                       const selectedCount = category.options.filter((option) =>
-                        form.demandes.includes(option.slug),
+                        form.requestSlugs.includes(option.slug),
                       ).length;
                       const isOpen = openCategory === category.key;
                       const isActive = category.standalone ? selectedCount > 0 : isOpen;
@@ -671,8 +674,8 @@ export default function QuotePage() {
                   {currentCategory && !currentCategory.standalone && (
                     <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                       {currentCategory.options.map((option) => {
-                        const isOptionSelected = form.demandes.includes(option.slug);
-                        const quantity = form.quantites[option.slug] ?? 1;
+                        const isOptionSelected = form.requestSlugs.includes(option.slug);
+                        const quantity = form.quantities[option.slug] ?? 1;
                         const displayedOrigin: SelectableOrigin = origin === 'etranger' ? 'etranger' : 'malgache';
                         const displayedUnitPrice = option.pricesByQuantity?.[quantity]
                           ?? option.pricesByQuantity?.[1]
@@ -736,11 +739,21 @@ export default function QuotePage() {
                     </div>
                   )}
 
+                  {currentCategory?.key === 'recruitment' && (
+                    <Link
+                      href="/recrutement"
+                      className="mt-4 inline-flex items-center gap-2 rounded-lg bg-secondary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-secondary/90"
+                    >
+                      {t('viewRecruitment')}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
+
                   {/* Summary of checked requests (all categories combined) */}
-                  {form.demandes.length > 0 && (
+                  {form.requestSlugs.length > 0 && (
                     <ul className="mt-4 flex flex-wrap gap-2" aria-label={t('form.requestType')}>
-                      {ALL_OPTIONS.filter((option) => form.demandes.includes(option.slug)).map((option) => {
-                        const quantity = form.quantites[option.slug] ?? 1;
+                      {ALL_OPTIONS.filter((option) => form.requestSlugs.includes(option.slug)).map((option) => {
+                        const quantity = form.quantities[option.slug] ?? 1;
                         const price = getOptionPrice(option, quantity, origin);
 
                         return (
@@ -760,7 +773,7 @@ export default function QuotePage() {
                     </ul>
                   )}
 
-                  {fieldErrors.demande && <p className="mt-2 text-xs text-red-600">{fieldErrors.demande}</p>}
+                  {fieldErrors.requestType && <p className="mt-2 text-xs text-red-600">{fieldErrors.requestType}</p>}
                 </fieldset>
 
                 {showRegisteredOffice && (

@@ -20,9 +20,19 @@ const toSingleLine = (value: unknown): string => String(value ?? '').replace(/[\
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { nom, phone, whatsapp, email, demande, message, origin, domicilierAxcel, captchaToken } = body ?? {};
+    const {
+      nom,
+      phone,
+      whatsapp,
+      email,
+      demande: requestType,
+      message,
+      origin,
+      domicilierAxcel,
+      captchaToken,
+    } = body ?? {};
 
-    if (!nom || !phone || !demande || !origin) {
+    if (!nom || !phone || !requestType || !origin) {
       return NextResponse.json({ error: 'Champs requis manquants.' }, { status: 400 });
     }
 
@@ -83,8 +93,8 @@ export async function POST(request: NextRequest) {
 
     const originLabel = ORIGIN_LABELS[String(origin)];
 
-    const demandeLabel = toSingleLine(demande);
-    const subject = `Nouvelle demande de devis - ${demandeLabel} (${originLabel})`;
+    const requestLabel = toSingleLine(requestType);
+    const subject = `Nouvelle demande de devis - ${requestLabel} (${originLabel})`;
 
     const senderAddress = process.env.SMTP_FROM || 'devis@axcel.mg';
     const recipientAddress = process.env.DEVIS_TO || 'contact@axcel.mg';
@@ -102,7 +112,7 @@ export async function POST(request: NextRequest) {
         ${whatsapp ? `<p><strong>WhatsApp :</strong> ${escapeHtml(whatsapp)}</p>` : ''}
         ${email ? `<p><strong>Email :</strong> ${escapeHtml(email)}</p>` : ''}
         <p><strong>Origine :</strong> ${escapeHtml(originLabel)}</p>
-        <p><strong>Type de demande :</strong> ${escapeHtml(demandeLabel)}</p>
+        <p><strong>Type de demande :</strong> ${escapeHtml(requestLabel)}</p>
         <p><strong>Domicilier chez Axcel Company :</strong> ${domicilierAxcel ? 'Oui' : 'Non'}</p>
         <p><strong>Message :</strong></p>
         <p>${safeMessage}</p>

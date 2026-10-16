@@ -93,7 +93,7 @@ export default async function TranslationRetrieval() {
                             />
                         </>
                     }
-                    imageSrc="/images/courier/courier-2.jpg"
+                    imageSrc="/images/courier/courier-2.jpeg"
                     ctasDisplay
                     requiredSelectionType="courier-translation-retrieval"
                     t={translationRetrieval}

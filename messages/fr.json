@@ -972,6 +972,7 @@
   },
   "QuotePage": {
     "noCardsTitle": "Parlez-nous de votre projet",
+    "viewRecruitment": "Voir la page de recrutement",
     "eyebrow": "Demande de devis",
     "title": "Choisissez votre origine puis décrivez votre besoin",
     "subtitle": "Sélectionnez votre profil pour recevoir une réponse adaptée à votre situation.",
@@ -1007,7 +1008,7 @@
       "administrativeAssistant": "Assistante administrative",
       "prospector": "Prospecteur",
       "partnershipsManager": "Responsable de partenariat",
-      "baccDegree": "Diplôme BACC",
+      "baccDegree": "Récupération du diplôme BACC",
       "nonProfitAssociation": "Association à but non lucratif",
       "establishmentOfReligiousAssociation": "Association cultuelle",
       "societyCreationSa": "Société Anonyme (SA)",

@@ -973,6 +973,7 @@
 
   "QuotePage": {
     "noCardsTitle": "Tell us about your project",
+    "viewRecruitment": "View recruitment page",
     "eyebrow": "Request a quote",
     "title": "Choose your origin then describe your need",
     "subtitle": "Select your profile to receive a response tailored to your situation.",
@@ -1008,7 +1009,7 @@
       "administrativeAssistant": "Administrative Assistant",
       "prospector": "Prospector",
       "partnershipsManager": "Partnerships Manager",
-      "baccDegree": "BACC Degree",
+      "baccDegree": "BACC Degree Retrieval",
       "nonProfitAssociation": "Non-Profit Association",
       "establishmentOfReligiousAssociation": "Establishment of a Religious Association",
       "societyCreationSa": "Public Limited Company (SA)",
