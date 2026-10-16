@@ -768,7 +768,21 @@
     "title": "Recruitment & Talent Sourcing",
     "description": "We support businesses in Madagascar in identifying and selecting the best talent, combining targeted sourcing, application screening, and preliminary interviews. Our approach allows us to put forward qualified candidates who align with your company culture and business requirements, helping you reduce recruitment timelines and make more confident hiring decisions.",
     "contact": "Contact us",
-    "quote": "Request a quote"
+    "quotePoolOfCVs": "Request a Pool of CVs",
+    "quote": "Request a quote",
+    "roles": {
+      "seniorAccountant": "Senior Accountant",
+      "telesalesAgents": "Telesales Agents",
+      "fieldAgents": "Field Agents",
+      "graphicDesignIntern": "Graphic Design Intern",
+      "cleaner": "Cleaner",
+      "salesRepresentative": "Sales Representative",
+      "fieldSalesRepresentative": "Field Sales Representative",
+      "bankBranchManager": "Bank Branch Manager",
+      "administrativeAssistant": "Administrative Assistant",
+      "prospector": "Prospector",
+      "partnershipsManager": "Partnerships Manager"
+    }
   },
   "OurPacks": {
     "eyebrow": "Our Packs",
@@ -978,10 +992,22 @@
       "courier": "Courier Service",
       "legalDepartment": "Legal Department",
       "roomRental": "Room Rental",
-      "adviceAndAssistance": "Advice and Assistance"
+      "adviceAndAssistance": "Advice and Assistance",
+      "recruitment": "Recruitment"
     },
     "requestOptions": {
       "forProfitAssociation": "For-Profit Association",
+      "seniorAccountant": "Senior Accountant",
+      "telesalesAgents": "Telesales Agents",
+      "fieldAgents": "Field Agents",
+      "graphicDesignIntern": "Graphic Design Intern",
+      "cleaner": "Cleaner",
+      "salesRepresentative": "Sales Representative",
+      "fieldSalesRepresentative": "Field Sales Representative",
+      "bankBranchManager": "Bank Branch Manager",
+      "administrativeAssistant": "Administrative Assistant",
+      "prospector": "Prospector",
+      "partnershipsManager": "Partnerships Manager",
       "baccDegree": "BACC Degree",
       "nonProfitAssociation": "Non-Profit Association",
       "establishmentOfReligiousAssociation": "Establishment of a Religious Association",

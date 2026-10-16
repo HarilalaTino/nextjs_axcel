@@ -143,6 +143,23 @@ const REQUEST_CATALOG: RequestCategory[] = [
     ],
   },
   {
+    key: 'recruitment',
+    labelKey: 'requestCategories.recruitment',
+    options: [
+      { slug: 'senior-accountant', labelKey: 'requestOptions.seniorAccountant' },
+      { slug: 'telesales-agents', labelKey: 'requestOptions.telesalesAgents' },
+      { slug: 'field-agents', labelKey: 'requestOptions.fieldAgents' },
+      { slug: 'graphic-design-intern', labelKey: 'requestOptions.graphicDesignIntern' },
+      { slug: 'cleaner', labelKey: 'requestOptions.cleaner' },
+      { slug: 'sales-representative', labelKey: 'requestOptions.salesRepresentative' },
+      { slug: 'field-sales-representative', labelKey: 'requestOptions.fieldSalesRepresentative' },
+      { slug: 'bank-branch-manager', labelKey: 'requestOptions.bankBranchManager' },
+      { slug: 'administrative-assistant', labelKey: 'requestOptions.administrativeAssistant' },
+      { slug: 'prospector', labelKey: 'requestOptions.prospector' },
+      { slug: 'partnerships-manager', labelKey: 'requestOptions.partnershipsManager' },
+    ],
+  },
+  {
     key: 'otherDemand',
     labelKey: 'otherDemand',
     standalone: true,

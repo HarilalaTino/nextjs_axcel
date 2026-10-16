@@ -768,7 +768,21 @@
       "title": "Recrutement & Sourcing de talents",
       "description": "Nous accompagnons les entreprises à Madagascar dans l'identification et la sélection des meilleurs profils, en combinant sourcing ciblé, analyse des candidatures et entretiens de présélection. Notre approche nous permet de vous proposer des candidats qualifiés, alignés avec votre culture d'entreprise et vos exigences métier, afin de réduire vos délais de recrutement et de sécuriser vos décisions d'embauche.",
       "contact": "Nous contacter",
-      "quote": "Demander un devis"
+      "quote": "Demander un devis",
+      "quotePoolOfCVs": "Demander un banque de CV",
+      "roles": {
+        "seniorAccountant": "Comptable senior",
+        "telesalesAgents": "Téléprospectrices",
+        "fieldAgents": "Agents sur terrain",
+        "graphicDesignIntern": "Stagiaire graphiste",
+        "cleaner": "Femme de ménage",
+        "salesRepresentative": "Commercial",
+        "fieldSalesRepresentative": "Commercial sur terrain",
+        "bankBranchManager": "Directeur d'agence bancaire",
+        "administrativeAssistant": "Assistante administrative",
+        "prospector": "Prospecteur",
+        "partnershipsManager": "Responsable de partenariat"
+      }
   },
   "OurPacks": {
     "eyebrow": "Nos packs",
@@ -976,11 +990,23 @@
       "courier": "Service de coursier",
       "legalDepartment": "Service juridique",
       "roomRental": "Location de salle",
-      "adviceAndAssistance": "Conseils et Assistance"
+      "adviceAndAssistance": "Conseils et Assistance",
+      "recruitment": "Recrutement"
     },
     "otherDemand": "Autre",
     "requestOptions": {
       "forProfitAssociation": "Association à but lucratif",
+      "seniorAccountant": "Comptable senior",
+      "telesalesAgents": "Téléprospectrices",
+      "fieldAgents": "Agents sur terrain",
+      "graphicDesignIntern": "Stagiaire graphiste",
+      "cleaner": "Femme de ménage",
+      "salesRepresentative": "Commercial",
+      "fieldSalesRepresentative": "Commercial sur terrain",
+      "bankBranchManager": "Directeur d'agence bancaire",
+      "administrativeAssistant": "Assistante administrative",
+      "prospector": "Prospecteur",
+      "partnershipsManager": "Responsable de partenariat",
       "baccDegree": "Diplôme BACC",
       "nonProfitAssociation": "Association à but non lucratif",
       "establishmentOfReligiousAssociation": "Association cultuelle",

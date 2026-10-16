@@ -1,19 +1,21 @@
 'use client'
 import { useCallback, useEffect, useState } from 'react'
 import Image from 'next/image'
+import { Link } from '@/i18n/navigation'
 
 type GalleryImage = {
     src: string
     alt: string
+    quoteSlug?: string
 }
 
 type ImageLightboxCarouselProps = {
     images: GalleryImage[]
+    quotePoolOfCVs?: string
 }
 
-export default function ImageLightboxCarousel({ images }: ImageLightboxCarouselProps) {
+export default function ImageLightboxCarousel({ images, quotePoolOfCVs }: ImageLightboxCarouselProps) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null)
-
     const close = useCallback(() => setActiveIndex(null), [])
     const showPrev = useCallback(() => {
         setActiveIndex((i) => (i === null ? null : (i - 1 + images.length) % images.length))
@@ -46,7 +48,7 @@ export default function ImageLightboxCarousel({ images }: ImageLightboxCarouselP
                 {images.map((image, n) => (
                     <div
                         key={image.src}
-                        className="h-[420px] w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]"
+                        className="group relative h-[420px] w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]"
                     >
                         <button
                             type="button"
@@ -62,6 +64,15 @@ export default function ImageLightboxCarousel({ images }: ImageLightboxCarouselP
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                             />
                         </button>
+                        {image.quoteSlug && quotePoolOfCVs && (
+                            <Link
+                                href={{ pathname: '/devis', query: { type: image.quoteSlug } }}
+                                aria-label={`${quotePoolOfCVs} : ${image.alt}`}
+                                className="pointer-events-none absolute bottom-5 left-1/2 z-10 -translate-x-1/2 translate-y-2 whitespace-nowrap rounded-lg bg-secondary px-5 py-3 text-sm font-semibold text-white opacity-0 shadow-lg transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100"
+                            >
+                                {quotePoolOfCVs}
+                            </Link>
+                        )}
                     </div>
                 ))}
             </div>

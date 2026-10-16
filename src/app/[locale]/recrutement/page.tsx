@@ -6,10 +6,24 @@ import { getTranslations } from "next-intl/server";
 
 export default async function Recruitment() {
     const t = await getTranslations("Recruitment");
-      const images = Array.from({ length: 11 }, (_, index) => ({
+    const roles = [
+        { slug: "senior-accountant", labelKey: "seniorAccountant" },
+        { slug: "telesales-agents", labelKey: "telesalesAgents" },
+        { slug: "field-agents", labelKey: "fieldAgents" },
+        { slug: "graphic-design-intern", labelKey: "graphicDesignIntern" },
+        { slug: "cleaner", labelKey: "cleaner" },
+        { slug: "sales-representative", labelKey: "salesRepresentative" },
+        { slug: "field-sales-representative", labelKey: "fieldSalesRepresentative" },
+        { slug: "bank-branch-manager", labelKey: "bankBranchManager" },
+        { slug: "administrative-assistant", labelKey: "administrativeAssistant" },
+        { slug: "prospector", labelKey: "prospector" },
+        { slug: "partnerships-manager", labelKey: "partnershipsManager" },
+    ] as const;
+    const images = roles.map((role, index) => ({
         src: `/images/recruitment/recruitment-${index + 1}.jpeg`,
-        alt: `Recrutement ${index + 1}`,
-    }))
+        alt: t(`roles.${role.labelKey}`),
+        quoteSlug: role.slug,
+    }));
     return (
         <>
             <TopMenu />
@@ -21,7 +35,7 @@ export default async function Recruitment() {
                 </h2>
                 <div className="mt-4 h-1 w-16 bg-secondary"></div>
                 <p className="mt-5 my-8 text-sm text-primary/70 sm:text-base">{t('description')}</p>
-                <ImageLightboxCarousel images={images} />
+                <ImageLightboxCarousel images={images} quotePoolOfCVs={t('quotePoolOfCVs')} />
                 <ContactCTA />
             </div>
         </>
