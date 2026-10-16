@@ -671,6 +671,12 @@ export default function QuotePage() {
                     })}
                   </div>
 
+                  {currentCategory?.key === 'recruitment' && (
+                    <p className="mt-8 text-sm text-muted-foreground">
+                      {globalTranslation('recruitmentInfo')}
+                    </p>
+                  )}
+
                   {currentCategory && !currentCategory.standalone && (
                     <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                       {currentCategory.options.map((option) => {
